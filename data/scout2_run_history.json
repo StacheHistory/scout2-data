@@ -65,6 +65,15 @@
         "Software/OS": 1
       },
       "notes": ""
+    },
+    {
+      "run_timestamp_utc": "2026-05-10T17:00:01Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 0,
+      "items_live": 94,
+      "alerts_count": 67,
+      "items_quarantined": 178,
+      "archive_file": "archive/scout2_dump_20260510_1700.json"
     }
   ]
 }
