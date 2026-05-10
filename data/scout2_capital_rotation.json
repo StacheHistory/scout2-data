@@ -1,0 +1,470 @@
+{
+  "meta": {
+    "system": "Scout-2 Phase 2 / Investing with SPACE",
+    "version": "1.3",
+    "generated_at_utc": "2026-05-10T23:28:13Z",
+    "total_evaluated": 53,
+    "top_n": 15,
+    "philosophy": "Core-first, but momentum rotation allowed when high-conviction early opportunities emerge. Accessible upside weighted above raw score — prefer scalable accumulation before institutional crowding.",
+    "field_guide": {
+      "accessible_upside_score": "1–10: price accessibility + mktcap headroom + low institutional + momentum",
+      "rotation_priority_score": "1–10: composite rotation signal (aus×0.30 + score×0.25 + timing×0.20 + portfolio need×0.15 + momentum×0.10)",
+      "opportunity_window": "early | expanding | crowded | late_stage",
+      "recommended_rotation": "core_reinforcement | emerging_accumulation | watch_only | no_chase",
+      "ring_balance_impact": "underweight | balanced | overweight — vs target ring allocation",
+      "why_now": "Concise narrative for the rotation signal"
+    }
+  },
+  "ring_balance_summary": [
+    {
+      "ring": "Ring 2",
+      "count": 30,
+      "avg_rot_score": 5.5,
+      "ring_balance": "underweight"
+    },
+    {
+      "ring": "Core",
+      "count": 19,
+      "avg_rot_score": 4.2,
+      "ring_balance": "balanced"
+    },
+    {
+      "ring": "Ring 3",
+      "count": 4,
+      "avg_rot_score": 4.2,
+      "ring_balance": "balanced"
+    }
+  ],
+  "rotation_opportunities": [
+    {
+      "ticker": "PL",
+      "company": "Planet Labs",
+      "ring": "Core",
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "signal_count": 21,
+      "capital_priority": "high",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 4,
+        "mktcap_est_b": 0.8,
+        "institutional_pct": 40,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 7,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "same_day",
+      "why_now": "Early/expanding window with accessible accumulation profile | Low unit price (~$4) enables share count scaling | Small cap (~$0.8B) leaves significant growth runway | High feed repetition (21 mentions) — broad coverage",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 1
+    },
+    {
+      "ticker": "IREN",
+      "company": "IREN",
+      "ring": "Ring 2",
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": 0,
+      "signal_count": 1,
+      "capital_priority": "medium",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 12,
+        "mktcap_est_b": 1.5,
+        "institutional_pct": 35,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 7,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "same_day",
+      "why_now": "Early/expanding window with accessible accumulation profile | Small cap (~$1.5B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 2
+    },
+    {
+      "ticker": "BKSY",
+      "company": "BlackSky",
+      "ring": "Ring 2",
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 6,
+        "mktcap_est_b": 0.4,
+        "institutional_pct": 30,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 7,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile | Low unit price (~$6) enables share count scaling | Small cap (~$0.4B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 3
+    },
+    {
+      "ticker": "RDW",
+      "company": "Redwire",
+      "ring": "Ring 2",
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 9,
+        "mktcap_est_b": 0.5,
+        "institutional_pct": 30,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 7,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile | Low unit price (~$9) enables share count scaling | Small cap (~$0.5B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 4
+    },
+    {
+      "ticker": "SPIR",
+      "company": "Spire Global",
+      "ring": "Ring 2",
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 1,
+      "capital_priority": "low",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 12,
+        "mktcap_est_b": 0.5,
+        "institutional_pct": 40,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 7,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile | Small cap (~$0.5B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 5
+    },
+    {
+      "ticker": "LUNR",
+      "company": "Intuitive Machines",
+      "ring": "Core",
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 8,
+        "mktcap_est_b": 1,
+        "institutional_pct": 35,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 6,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile | Low unit price (~$8) enables share count scaling | Small cap (~$1B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 6
+    },
+    {
+      "ticker": "MP",
+      "company": "MP Materials",
+      "ring": "Core",
+      "layers": [
+        "Energy/Materials"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "signal_count": 19,
+      "capital_priority": "high",
+      "accessible_upside_score": 7,
+      "accessible_upside_breakdown": {
+        "price_est": 25,
+        "mktcap_est_b": 3,
+        "institutional_pct": 55,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 6,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "same_day",
+      "why_now": "Early/expanding window with accessible accumulation profile | High feed repetition (19 mentions) — broad coverage",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 7
+    },
+    {
+      "ticker": "CRDO",
+      "company": "Credo Technology",
+      "ring": "Ring 2",
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 7,
+      "accessible_upside_breakdown": {
+        "price_est": 35,
+        "mktcap_est_b": 5,
+        "institutional_pct": 55,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 6,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 8
+    },
+    {
+      "ticker": null,
+      "company": "Quantinuum",
+      "ring": "Ring 2",
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "IPO-watch",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 7,
+      "accessible_upside_breakdown": {
+        "price_est": null,
+        "mktcap_est_b": 10,
+        "institutional_pct": 0,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 6,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 9
+    },
+    {
+      "ticker": "RKLB",
+      "company": "Rocket Lab",
+      "ring": "Core",
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "signal_count": 3,
+      "capital_priority": "high",
+      "accessible_upside_score": 5,
+      "accessible_upside_breakdown": {
+        "price_est": 100,
+        "mktcap_est_b": 22,
+        "institutional_pct": 65,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 6,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "core_reinforcement",
+      "active_alert_urgency": "same_day",
+      "why_now": "Core ring position — portfolio balanced | High feed repetition (3 mentions) — broad coverage",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 10
+    },
+    {
+      "ticker": null,
+      "company": "Starfighters Space",
+      "ring": "Ring 3",
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 10,
+      "accessible_upside_breakdown": {
+        "price_est": 4,
+        "mktcap_est_b": 0.1,
+        "institutional_pct": 10,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 5,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "watch_only",
+      "active_alert_urgency": "none",
+      "why_now": "Low unit price (~$4) enables share count scaling | Small cap (~$0.1B) leaves significant growth runway",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 11
+    },
+    {
+      "ticker": "MDA.TO",
+      "company": "MDA Space",
+      "ring": "Ring 2",
+      "layers": [
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": -1,
+      "signal_count": 1,
+      "capital_priority": "medium",
+      "accessible_upside_score": 8,
+      "accessible_upside_breakdown": {
+        "price_est": 27,
+        "mktcap_est_b": 2.5,
+        "institutional_pct": 40,
+        "score_momentum": -1
+      },
+      "rotation_priority_score": 5,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "watch_only",
+      "active_alert_urgency": "none",
+      "why_now": "Score 6/10 with expanding opportunity window",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 12
+    },
+    {
+      "ticker": "ASTS",
+      "company": "AST SpaceMobile",
+      "ring": "Core",
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 8,
+      "accessible_upside_breakdown": {
+        "price_est": 25,
+        "mktcap_est_b": 5,
+        "institutional_pct": 45,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 5,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "none",
+      "why_now": "Early/expanding window with accessible accumulation profile",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 13
+    },
+    {
+      "ticker": null,
+      "company": "Firefly Aerospace",
+      "ring": "Ring 2",
+      "layers": [
+        "Launch"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "signal_count": 0,
+      "capital_priority": "low",
+      "accessible_upside_score": 8,
+      "accessible_upside_breakdown": {
+        "price_est": 38,
+        "mktcap_est_b": 2,
+        "institutional_pct": 35,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 5,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "underweight",
+      "recommended_rotation": "watch_only",
+      "active_alert_urgency": "none",
+      "why_now": "Score 5/10 with expanding opportunity window",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 14
+    },
+    {
+      "ticker": "VSAT",
+      "company": "Viasat",
+      "ring": "Core",
+      "layers": [
+        "Communications",
+        "Defense/SDA"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": 0,
+      "signal_count": 1,
+      "capital_priority": "medium",
+      "accessible_upside_score": 7,
+      "accessible_upside_breakdown": {
+        "price_est": 18,
+        "mktcap_est_b": 2,
+        "institutional_pct": 70,
+        "score_momentum": 0
+      },
+      "rotation_priority_score": 5,
+      "opportunity_window": "expanding",
+      "ring_balance_impact": "balanced",
+      "recommended_rotation": "emerging_accumulation",
+      "active_alert_urgency": "same_day",
+      "why_now": "Early/expanding window with accessible accumulation profile",
+      "generated_at_utc": "2026-05-10T23:28:13Z",
+      "rank": 15
+    }
+  ]
+}

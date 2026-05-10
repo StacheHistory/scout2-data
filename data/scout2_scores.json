@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T19:08:32Z"
+    "generated_at_utc": "2026-05-10T23:28:13Z"
   },
   "scores": [
     {
@@ -17,11 +17,11 @@
       "prior_score": 10,
       "score_change": 0,
       "score_change_reason": "IPO signal detected",
-      "signal_count": 18,
+      "signal_count": 15,
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "MP Materials",
@@ -34,12 +34,12 @@
       "score": 10,
       "prior_score": 10,
       "score_change": 0,
-      "score_change_reason": "Defense contract or award signal detected",
-      "signal_count": 28,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 19,
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "NASA",
@@ -53,11 +53,11 @@
       "prior_score": 10,
       "score_change": 0,
       "score_change_reason": "Contract signal detected",
-      "signal_count": 22,
+      "signal_count": 17,
       "signal_status": "active",
       "capital_priority": "watch",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Planet Labs",
@@ -70,12 +70,12 @@
       "score": 10,
       "prior_score": 10,
       "score_change": 0,
-      "score_change_reason": "Earnings signal detected",
-      "signal_count": 29,
+      "score_change_reason": "Acquisition signal detected",
+      "signal_count": 21,
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Rocket Lab",
@@ -91,11 +91,11 @@
       "prior_score": 10,
       "score_change": 0,
       "score_change_reason": "Defense contract or award signal detected",
-      "signal_count": 4,
+      "signal_count": 3,
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "SES",
@@ -109,30 +109,11 @@
       "prior_score": 10,
       "score_change": 0,
       "score_change_reason": "IPO signal detected",
-      "signal_count": 13,
+      "signal_count": 8,
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "company": "HawkEye 360",
-      "ticker": "HE360",
-      "status": "public",
-      "ring": 1,
-      "layers": [
-        "Defense/SDA",
-        "Data/EO"
-      ],
-      "score": 9,
-      "prior_score": 9,
-      "score_change": 0,
-      "score_change_reason": "IPO signal detected",
-      "signal_count": 2,
-      "signal_status": "active",
-      "capital_priority": "high",
-      "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Lunar Outpost",
@@ -151,81 +132,26 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "company": "Globalstar",
-      "ticker": "GSAT",
+      "company": "HawkEye 360",
+      "ticker": "HE360",
       "status": "public",
       "ring": 1,
       "layers": [
-        "Communications"
-      ],
-      "score": 8,
-      "prior_score": 8,
-      "score_change": 0,
-      "score_change_reason": "Earnings signal detected",
-      "signal_count": 2,
-      "signal_status": "active",
-      "capital_priority": "high",
-      "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "company": "MDA Space",
-      "ticker": "MDA.TO",
-      "status": "public",
-      "ring": 2,
-      "layers": [
-        "Infrastructure",
-        "Logistics",
-        "Lunar/Deep Space"
+        "Defense/SDA",
+        "Data/EO"
       ],
       "score": 7,
-      "prior_score": 7,
-      "score_change": 0,
-      "score_change_reason": "Earnings signal detected",
-      "signal_count": 2,
-      "signal_status": "active",
-      "capital_priority": "medium",
-      "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "company": "Nvidia",
-      "ticker": "NVDA",
-      "status": "public",
-      "ring": 1,
-      "layers": [
-        "AI/Compute"
-      ],
-      "score": 7,
-      "prior_score": 7,
-      "score_change": 0,
-      "score_change_reason": "2 mentions in current window",
-      "signal_count": 2,
-      "signal_status": "active",
-      "capital_priority": "medium",
-      "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "company": "Skyroot Aerospace",
-      "ticker": null,
-      "status": "private",
-      "ring": 2,
-      "layers": [
-        "Launch"
-      ],
-      "score": 7,
-      "prior_score": 7,
-      "score_change": 0,
-      "score_change_reason": "Contract signal detected",
+      "prior_score": 9,
+      "score_change": -2,
+      "score_change_reason": "IPO signal detected",
       "signal_count": 1,
       "signal_status": "active",
-      "capital_priority": "low",
-      "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "capital_priority": "medium",
+      "recommended_action": "hold",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "SpaceX",
@@ -245,7 +171,25 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "company": "Globalstar",
+      "ticker": "GSAT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "score": 6,
+      "prior_score": 8,
+      "score_change": -2,
+      "score_change_reason": "Acquisition signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "recommended_action": "hold",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "IREN",
@@ -263,25 +207,45 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "company": "Telesat",
-      "ticker": "TSAT",
+      "company": "MDA Space",
+      "ticker": "MDA.TO",
       "status": "public",
       "ring": 2,
       "layers": [
-        "Communications"
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
       ],
       "score": 6,
-      "prior_score": 6,
-      "score_change": 0,
-      "score_change_reason": "Earnings signal detected",
-      "signal_count": 2,
+      "prior_score": 7,
+      "score_change": -1,
+      "score_change_reason": "1 mentions in current window",
+      "signal_count": 1,
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "AI/Compute"
+      ],
+      "score": 6,
+      "prior_score": 7,
+      "score_change": -1,
+      "score_change_reason": "1 mentions in current window",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "recommended_action": "hold",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Viasat",
@@ -300,7 +264,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "AST SpaceMobile",
@@ -448,7 +412,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Capella Space",
@@ -744,7 +708,7 @@
       "signal_status": "active",
       "capital_priority": "watch",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "NRO",
@@ -891,12 +855,12 @@
       "score": 5,
       "prior_score": 5,
       "score_change": 0,
-      "score_change_reason": "1 mentions in current window",
-      "signal_count": 1,
-      "signal_status": "active",
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": null
     },
     {
       "company": "Relativity Space",
@@ -933,7 +897,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Shield AI",
@@ -974,6 +938,24 @@
       "last_signal_at_utc": null
     },
     {
+      "company": "Skyroot Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 7,
+      "score_change": -2,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
       "company": "Spire Global",
       "ticker": "SPIR",
       "status": "public",
@@ -985,12 +967,12 @@
       "score": 5,
       "prior_score": 5,
       "score_change": 0,
-      "score_change_reason": "2 mentions in current window",
-      "signal_count": 2,
+      "score_change_reason": "1 mentions in current window",
+      "signal_count": 1,
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Starfighters Space",
@@ -1010,6 +992,24 @@
       "capital_priority": "low",
       "recommended_action": "watch",
       "last_signal_at_utc": null
+    },
+    {
+      "company": "Telesat",
+      "ticker": "TSAT",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 5,
+      "prior_score": 6,
+      "score_change": -1,
+      "score_change_reason": "1 mentions in current window",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Terran Orbital",
@@ -1100,7 +1100,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     }
   ]
 }

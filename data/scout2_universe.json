@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T19:08:32Z",
+    "generated_at_utc": "2026-05-10T23:28:13Z",
     "total_companies": 59,
     "locked": true,
     "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
@@ -22,7 +22,7 @@
       "score": 7,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Rocket Lab",
@@ -39,7 +39,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Blue Origin",
@@ -55,7 +55,7 @@
       "score": 5,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "United Launch Alliance",
@@ -113,10 +113,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 7,
-      "signal_status": "active",
+      "score": 5,
+      "signal_status": "silent",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": null
     },
     {
       "company": "Starfighters Space",
@@ -183,7 +183,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Raytheon Technologies",
@@ -230,10 +230,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 7,
+      "score": 6,
       "signal_status": "active",
       "capital_priority": "medium",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Redwire",
@@ -248,9 +248,9 @@
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
       "score": 5,
-      "signal_status": "active",
+      "signal_status": "silent",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": null
     },
     {
       "company": "Terran Orbital",
@@ -328,7 +328,7 @@
       "score": 5,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Leidos",
@@ -404,10 +404,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 9,
+      "score": 7,
       "signal_status": "active",
-      "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "capital_priority": "medium",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Odin Space",
@@ -454,7 +454,7 @@
       "score": 6,
       "signal_status": "active",
       "capital_priority": "medium",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Iridium",
@@ -481,10 +481,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 8,
+      "score": 6,
       "signal_status": "active",
-      "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "capital_priority": "medium",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Telesat",
@@ -496,10 +496,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 6,
+      "score": 5,
       "signal_status": "active",
-      "capital_priority": "medium",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "SES",
@@ -514,7 +514,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Intelsat",
@@ -559,7 +559,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Maxar Technologies",
@@ -591,7 +591,7 @@
       "score": 5,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "BlackSky",
@@ -667,7 +667,7 @@
       "score": 5,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Nvidia",
@@ -679,10 +679,10 @@
       ],
       "locked": true,
       "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
-      "score": 7,
+      "score": 6,
       "signal_status": "active",
       "capital_priority": "medium",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Palantir",
@@ -744,7 +744,7 @@
       "score": 6,
       "signal_status": "active",
       "capital_priority": "medium",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "MP Materials",
@@ -759,7 +759,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "high",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Intuitive Machines",
@@ -791,7 +791,7 @@
       "score": 9,
       "signal_status": "active",
       "capital_priority": "low",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "Astrobotic",
@@ -851,7 +851,7 @@
       "score": 10,
       "signal_status": "active",
       "capital_priority": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "USSF / Space Force",
@@ -912,7 +912,7 @@
       "score": 5,
       "signal_status": "active",
       "capital_priority": "watch",
-      "last_signal_at_utc": "2026-05-10T19:08:32Z"
+      "last_signal_at_utc": "2026-05-10T23:28:13Z"
     },
     {
       "company": "MDA (Missile Defense)",

@@ -1,9 +1,9 @@
 {
   "meta": {
     "system": "Scout-2 Phase 2 / Investing with SPACE",
-    "version": "1.1",
-    "generated_at_utc": "2026-05-10T19:08:32Z",
-    "total_candidates": 19,
+    "version": "1.3",
+    "generated_at_utc": "2026-05-10T23:28:13Z",
+    "total_candidates": 20,
     "signals_ranked": 10,
     "field_guide": {
       "net_signal_rating": "1–10 composite: thesis_align(30%) + capital_impact(25%) + prob_follow(25%) + priority_norm(20%) ± risk/reaction adjustments",
@@ -21,99 +21,6 @@
   "priority_signals": [
     {
       "rank": 1,
-      "priority_score": 20.0,
-      "net_signal_rating": 9,
-      "company": "Rocket Lab",
-      "ticker": "RKLB",
-      "event_type": [
-        "earnings",
-        "defense_award"
-      ],
-      "urgency": "same_day",
-      "alert_score": 8,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "capital_impact_score": 8,
-      "probability_of_follow_through": 10,
-      "time_horizon": "short_term",
-      "thesis_alignment_score": 9,
-      "layer_weight": "core",
-      "signal_strength_reason": [
-        "repeated across feeds",
-        "direct company involvement",
-        "macro trend support"
-      ],
-      "expected_market_reaction": "overreaction risk",
-      "execution_risk": "low",
-      "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
-      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
-      "summary": "Rocket Lab hit record quarterly revenue in the first quarter of 2026 and shared momentum for the upcoming Neutron launch vehicle as well as a robotics acquisition and work on [] The post Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition appeared first on Via Satellite .",
-      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Rocket Lab",
-      "cross_layer_impact": [
-        "Defense/SDA",
-        "Ground Segment",
-        "Infrastructure",
-        "Launch",
-        "Logistics"
-      ],
-      "score_impact": "+3 to +5",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "time_sensitivity": "today",
-      "feed_label": "Satellite Today",
-      "age_hours": 45.9,
-      "published_utc": "2026-05-08T19:04:34Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "rank": 2,
-      "priority_score": 19.0,
-      "net_signal_rating": 9,
-      "company": "HawkEye 360",
-      "ticker": "HE360",
-      "event_type": [
-        "contract",
-        "ipo"
-      ],
-      "urgency": "same_day",
-      "alert_score": 7,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "capital_impact_score": 10,
-      "probability_of_follow_through": 10,
-      "time_horizon": "short_term",
-      "thesis_alignment_score": 9,
-      "layer_weight": "core",
-      "signal_strength_reason": [
-        "direct company involvement",
-        "revenue impact implied",
-        "macro trend support"
-      ],
-      "expected_market_reaction": "overreaction risk",
-      "execution_risk": "low",
-      "headline": "HawkEye 360 Raises $416M, Pricing at High End for IPO",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/",
-      "summary": "HawkEye 360 raised $416 million in its initial public offering (IPO) on Thursday, becoming the second space company to go public this year. The signals intelligence company began trading on [] The post HawkEye 360 Raises $416M, Pricing at High End for IPO appeared first on Via Satellite .",
-      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: HawkEye 360, SES, MP Materials",
-      "cross_layer_impact": [
-        "AI/Compute",
-        "Communications",
-        "Data/EO",
-        "Defense/SDA",
-        "Energy/Materials",
-        "Infrastructure"
-      ],
-      "score_impact": "+3 to +5",
-      "recommended_action": "Review S-1 filing and valuation before IPO date",
-      "time_sensitivity": "today",
-      "feed_label": "Satellite Today",
-      "age_hours": 68.9,
-      "published_utc": "2026-05-07T20:03:15Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "rank": 3,
       "priority_score": 19.0,
       "net_signal_rating": 9,
       "company": "SES",
@@ -153,53 +60,58 @@
       "recommended_action": "Confirm contract size and duration; assess backlog impact",
       "time_sensitivity": "today",
       "feed_label": "Payload Space",
-      "age_hours": 52.5,
+      "age_hours": 57.7,
       "published_utc": "2026-05-08T12:31:11Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "created_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "rank": 4,
+      "rank": 2,
       "priority_score": 18.0,
       "net_signal_rating": 8,
-      "company": "Planet Labs",
-      "ticker": "PL",
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
       "event_type": [
-        "earnings"
+        "earnings",
+        "defense_award"
       ],
-      "urgency": "immediate",
-      "alert_score": 6,
+      "urgency": "same_day",
+      "alert_score": 7,
       "confidence": "high",
       "false_positive_risk": "low",
       "requires_council_review": true,
-      "capital_impact_score": 6,
+      "capital_impact_score": 8,
       "probability_of_follow_through": 10,
-      "time_horizon": "intraday",
-      "thesis_alignment_score": 7,
-      "layer_weight": "emerging",
+      "time_horizon": "short_term",
+      "thesis_alignment_score": 9,
+      "layer_weight": "core",
       "signal_strength_reason": [
         "repeated across feeds",
-        "direct company involvement"
+        "direct company involvement",
+        "macro trend support"
       ],
-      "expected_market_reaction": "underpriced",
+      "expected_market_reaction": "overreaction risk",
       "execution_risk": "low",
-      "headline": "Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/know-paypal-holdings-pypl-q1-155238714.html",
-      "summary": "",
-      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs",
+      "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
+      "summary": "Rocket Lab hit record quarterly revenue in the first quarter of 2026 and shared momentum for the upcoming Neutron launch vehicle as well as a robotics acquisition and work on [] The post Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition appeared first on Via Satellite .",
+      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Rocket Lab",
       "cross_layer_impact": [
-        "Data/EO",
-        "General"
+        "Defense/SDA",
+        "Ground Segment",
+        "Infrastructure",
+        "Launch",
+        "Logistics"
       ],
-      "score_impact": "+2 to +3",
-      "recommended_action": "Review guidance and revenue trend before next position decision",
-      "time_sensitivity": "immediate",
-      "feed_label": "Yahoo Finance",
-      "age_hours": 1.1,
-      "published_utc": "2026-05-10T15:52:38Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "score_impact": "+3 to +5",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 51.1,
+      "published_utc": "2026-05-08T19:04:34Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "rank": 5,
+      "rank": 3,
       "priority_score": 18.0,
       "net_signal_rating": 8,
       "company": "Boeing",
@@ -242,99 +154,12 @@
       "recommended_action": "Review S-1 filing and valuation before IPO date",
       "time_sensitivity": "today",
       "feed_label": "Payload Space",
-      "age_hours": 53.1,
+      "age_hours": 58.3,
       "published_utc": "2026-05-08T11:54:44Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "created_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "rank": 6,
-      "priority_score": 17.0,
-      "net_signal_rating": 8,
-      "company": "Skyroot Aerospace",
-      "ticker": "MP",
-      "event_type": [
-        "contract",
-        "funding"
-      ],
-      "urgency": "same_day",
-      "alert_score": 6,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "capital_impact_score": 8,
-      "probability_of_follow_through": 10,
-      "time_horizon": "medium_term",
-      "thesis_alignment_score": 9,
-      "layer_weight": "core",
-      "signal_strength_reason": [
-        "direct company involvement",
-        "revenue impact implied"
-      ],
-      "expected_market_reaction": "overreaction risk",
-      "execution_risk": "low",
-      "headline": "Skyroot Secures $60M in Funding, Becoming India’s First Space ‘Unicorn’",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/skyroot-secures-60m-in-funding-becoming-indias-first-space-unicorn/",
-      "summary": "Skyroot Aerospace, the Indian launch startup, has secured another $60 million in funding. The company is one of the rising stars in India’s space economy and becomes the nations first [] The post Skyroot Secures $60M in Funding, Becoming Indias First Space Unicorn appeared first on Via Satellite .",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: Skyroot Aerospace, MP Materials",
-      "cross_layer_impact": [
-        "Energy/Materials",
-        "Infrastructure",
-        "Launch"
-      ],
-      "score_impact": "+2 to +4",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "time_sensitivity": "today",
-      "feed_label": "Satellite Today",
-      "age_hours": 68.0,
-      "published_utc": "2026-05-07T20:59:29Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "rank": 7,
-      "priority_score": 17.0,
-      "net_signal_rating": 8,
-      "company": "Boeing",
-      "ticker": "BA",
-      "event_type": [
-        "acquisition"
-      ],
-      "urgency": "same_day",
-      "alert_score": 5,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "capital_impact_score": 6,
-      "probability_of_follow_through": 10,
-      "time_horizon": "medium_term",
-      "thesis_alignment_score": 9,
-      "layer_weight": "core",
-      "signal_strength_reason": [
-        "repeated across feeds",
-        "direct company involvement"
-      ],
-      "expected_market_reaction": "overreaction risk",
-      "execution_risk": "low",
-      "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
-      "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
-      "summary": "Globalstar grew revenue 17% year-over-year in the first quarter of 2026, which Globalstar reported as the operator is now in a process to be acquired by Amazon. Globalstar provided a [] The post Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process appeared first on Via Satellite .",
-      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Boeing, Globalstar",
-      "cross_layer_impact": [
-        "Communications",
-        "Defense/SDA",
-        "Infrastructure",
-        "Launch",
-        "Logistics"
-      ],
-      "score_impact": "+3 to +5",
-      "recommended_action": "Assess impact on supply chain and competing positions",
-      "time_sensitivity": "today",
-      "feed_label": "Satellite Today",
-      "age_hours": 45.9,
-      "published_utc": "2026-05-08T19:07:30Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "rank": 8,
+      "rank": 4,
       "priority_score": 17.0,
       "net_signal_rating": 8,
       "company": "Rocket Lab",
@@ -374,18 +199,18 @@
       "recommended_action": "Assess impact on supply chain and competing positions",
       "time_sensitivity": "today",
       "feed_label": "Payload Space",
-      "age_hours": 52.7,
+      "age_hours": 57.9,
       "published_utc": "2026-05-08T12:19:15Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "created_at_utc": "2026-05-10T23:28:13Z"
     },
     {
-      "rank": 9,
-      "priority_score": 17.0,
+      "rank": 5,
+      "priority_score": 15.0,
       "net_signal_rating": 8,
-      "company": "Rocket Lab",
-      "ticker": "RKLB",
+      "company": "Boeing",
+      "ticker": "BA",
       "event_type": [
-        "defense_award"
+        "acquisition"
       ],
       "urgency": "same_day",
       "alert_score": 4,
@@ -395,51 +220,6 @@
       "capital_impact_score": 6,
       "probability_of_follow_through": 10,
       "time_horizon": "medium_term",
-      "thesis_alignment_score": 10,
-      "layer_weight": "core",
-      "signal_strength_reason": [
-        "repeated across feeds",
-        "direct company involvement",
-        "macro trend support"
-      ],
-      "expected_market_reaction": "overreaction risk",
-      "execution_risk": "low",
-      "headline": "Rocket Lab joins Raytheon on space interceptor program for Golden Dome",
-      "link": "https://spacenews.com/rocket-lab-joins-raytheon-on-space-interceptor-program-for-golden-dome/",
-      "summary": "The company also announced a new contract to fly hypersonic test flights for Anduril",
-      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Directly involves tracked universe companies: Rocket Lab, MP Materials",
-      "cross_layer_impact": [
-        "Defense/SDA",
-        "Energy/Materials",
-        "Ground Segment",
-        "Launch",
-        "Logistics"
-      ],
-      "score_impact": "+2 to +4",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "time_sensitivity": "today",
-      "feed_label": "SpaceNews",
-      "age_hours": 67.0,
-      "published_utc": "2026-05-07T22:00:18Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "rank": 10,
-      "priority_score": 15.0,
-      "net_signal_rating": 8,
-      "company": "Boeing",
-      "ticker": "BA",
-      "event_type": [
-        "earnings"
-      ],
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "capital_impact_score": 6,
-      "probability_of_follow_through": 10,
-      "time_horizon": "short_term",
       "thesis_alignment_score": 9,
       "layer_weight": "core",
       "signal_strength_reason": [
@@ -448,25 +228,224 @@
       ],
       "expected_market_reaction": "overreaction risk",
       "execution_risk": "low",
-      "headline": "MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says ‘No Change’ Due to Globalstar Deal",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/mda-space-satellite-revenue-grows-40-in-q1-greenley-says-no-change-due-to-globalstar-deal/",
-      "summary": "MDA Space posted 32% year-over-year revenue growth in the first quarter of 2026 and more than 40% growth for its satellite manufacturing business, driven by work for Telesat Lightspeed and [] The post MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says No Change Due to Globalstar Deal appeare",
-      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Boeing, MDA Space, Globalstar",
+      "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
+      "summary": "Globalstar grew revenue 17% year-over-year in the first quarter of 2026, which Globalstar reported as the operator is now in a process to be acquired by Amazon. Globalstar provided a [] The post Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process appeared first on Via Satellite .",
+      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Boeing, Globalstar",
       "cross_layer_impact": [
         "Communications",
         "Defense/SDA",
         "Infrastructure",
         "Launch",
-        "Logistics",
-        "Lunar/Deep Space"
+        "Logistics"
       ],
-      "score_impact": "+2 to +3",
-      "recommended_action": "Review guidance and revenue trend before next position decision",
+      "score_impact": "+3 to +5",
+      "recommended_action": "Assess impact on supply chain and competing positions",
       "time_sensitivity": "today",
       "feed_label": "Satellite Today",
-      "age_hours": 69.1,
-      "published_utc": "2026-05-07T19:51:57Z",
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "age_hours": 51.1,
+      "published_utc": "2026-05-08T19:07:30Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "rank": 6,
+      "priority_score": 11.0,
+      "net_signal_rating": 5,
+      "company": "unknown",
+      "ticker": null,
+      "event_type": [
+        "ipo"
+      ],
+      "urgency": "same_day",
+      "alert_score": 6,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": false,
+      "capital_impact_score": 5,
+      "probability_of_follow_through": 8,
+      "time_horizon": "short_term",
+      "thesis_alignment_score": 4,
+      "layer_weight": "emerging",
+      "signal_strength_reason": [
+        "macro trend support"
+      ],
+      "expected_market_reaction": "fairly priced",
+      "execution_risk": "medium",
+      "headline": "Exclusive-Cerebras to raise IPO price range to $150-$160 as demand surges, sources say​​​​​​​​​​​​​​​​",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/exclusive-cerebras-raise-ipo-price-213927145.html",
+      "summary": "",
+      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle",
+      "cross_layer_impact": [
+        "AI/Compute",
+        "General"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Review S-1 filing and valuation before IPO date",
+      "time_sensitivity": "immediate",
+      "feed_label": "Yahoo Finance",
+      "age_hours": 0.6,
+      "published_utc": "2026-05-10T21:39:27Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "rank": 7,
+      "priority_score": 11.0,
+      "net_signal_rating": 6,
+      "company": "unknown",
+      "ticker": null,
+      "event_type": [
+        "earnings"
+      ],
+      "urgency": "same_day",
+      "alert_score": 6,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": false,
+      "capital_impact_score": 5,
+      "probability_of_follow_through": 8,
+      "time_horizon": "short_term",
+      "thesis_alignment_score": 4,
+      "layer_weight": "emerging",
+      "signal_strength_reason": [
+        "single source signal"
+      ],
+      "expected_market_reaction": "underpriced",
+      "execution_risk": "medium",
+      "headline": "HNI Q1 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/hni-q1-earnings-call-highlights-210414296.html",
+      "summary": "",
+      "why_it_matters": "Earnings data validates or challenges current thesis assumptions",
+      "cross_layer_impact": [
+        "General"
+      ],
+      "score_impact": "+1",
+      "recommended_action": "Review guidance and revenue trend before next position decision",
+      "time_sensitivity": "immediate",
+      "feed_label": "Yahoo Finance",
+      "age_hours": 1.1,
+      "published_utc": "2026-05-10T21:04:14Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "rank": 8,
+      "priority_score": 11.0,
+      "net_signal_rating": 7,
+      "company": "IREN",
+      "ticker": "IREN",
+      "event_type": [
+        "acquisition"
+      ],
+      "urgency": "same_day",
+      "alert_score": 4,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "capital_impact_score": 6,
+      "probability_of_follow_through": 10,
+      "time_horizon": "medium_term",
+      "thesis_alignment_score": 7,
+      "layer_weight": "infrastructure",
+      "signal_strength_reason": [
+        "direct company involvement"
+      ],
+      "expected_market_reaction": "overreaction risk",
+      "execution_risk": "low",
+      "headline": "Iren acquires Spanish data center developer Nostrum",
+      "link": "https://www.datacenterdynamics.com/en/news/iren-acquires-spanish-data-center-developer-nostrum/",
+      "summary": "Busy week for the former crypto company",
+      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: IREN, MP Materials",
+      "cross_layer_impact": [
+        "AI/Compute",
+        "Energy/Materials",
+        "Infrastructure",
+        "Logistics"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Assess impact on supply chain and competing positions",
+      "time_sensitivity": "today",
+      "feed_label": "Data Center Dynamics",
+      "age_hours": 53.5,
+      "published_utc": "2026-05-08T16:44:00Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "rank": 9,
+      "priority_score": 7.0,
+      "net_signal_rating": 6,
+      "company": "unknown",
+      "ticker": null,
+      "event_type": [
+        "contract"
+      ],
+      "urgency": "watch",
+      "alert_score": 1,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": false,
+      "capital_impact_score": 8,
+      "probability_of_follow_through": 8,
+      "time_horizon": "medium_term",
+      "thesis_alignment_score": 6,
+      "layer_weight": "core",
+      "signal_strength_reason": [
+        "revenue impact implied"
+      ],
+      "expected_market_reaction": "overreaction risk",
+      "execution_risk": "medium",
+      "headline": "Munitions at risk? Inside the Pentagon’s $350B gamble",
+      "link": "https://breakingdefense.com/2026/05/heres-whats-at-risk-if-the-pentagons-350b-reconciliation-gambit-fails/",
+      "summary": "Congress has teed up a second reconciliation bill with immigration enforcement money, but future reconciliation funds for defense remain nebulous.",
+      "why_it_matters": "Contract award confirms revenue visibility and backlog growth",
+      "cross_layer_impact": [
+        "Defense/SDA"
+      ],
+      "score_impact": "+1 to +2",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "multi-day",
+      "feed_label": "Breaking Defense",
+      "age_hours": 57.5,
+      "published_utc": "2026-05-08T12:45:00Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
+    },
+    {
+      "rank": 10,
+      "priority_score": 1.0,
+      "net_signal_rating": 1,
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "event_type": [
+        "product_launch"
+      ],
+      "urgency": "watch",
+      "alert_score": 1,
+      "confidence": "low",
+      "false_positive_risk": "high",
+      "requires_council_review": false,
+      "capital_impact_score": 2,
+      "probability_of_follow_through": 1,
+      "time_horizon": "long_term",
+      "thesis_alignment_score": 8,
+      "layer_weight": "core",
+      "signal_strength_reason": [
+        "direct company involvement"
+      ],
+      "expected_market_reaction": "overreaction risk",
+      "execution_risk": "high",
+      "headline": "Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027",
+      "link": "https://www.airandspaceforces.com/missile-defense-agency-counter-hypersonic-test-2027/",
+      "summary": "The Missile Defense Agency plans to test its ability to track and take down a hypersonic missile, staging a test flight in fiscal 2027 called “Project Maverick.” The post Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027 appeared first on Air & Space Forces Magazine .",
+      "why_it_matters": "Directly involves tracked universe companies: Planet Labs",
+      "cross_layer_impact": [
+        "Data/EO",
+        "Defense/SDA"
+      ],
+      "score_impact": "+0 to +1",
+      "recommended_action": "Monitor and log for next council review",
+      "time_sensitivity": "multi-day",
+      "feed_label": "Air & Space Forces",
+      "age_hours": 51.9,
+      "published_utc": "2026-05-08T18:20:14Z",
+      "created_at_utc": "2026-05-10T23:28:13Z"
     }
   ]
 }

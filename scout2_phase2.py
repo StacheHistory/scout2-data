@@ -34,7 +34,7 @@ from typing import Optional
 #  CONSTANTS
 # ══════════════════════════════════════════════════════════════════════
 
-VERSION     = "1.1"
+VERSION     = "1.3"
 SYSTEM_NAME = "Scout-2 Phase 2 / Investing with SPACE"
 NOW_UTC     = datetime.now(timezone.utc)
 NOW_STR     = NOW_UTC.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -1716,12 +1716,837 @@ def build_priority(alerts: list, scores: list) -> dict:
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  CAPITAL ROTATION ENGINE
+#  Philosophy: Core-first, but allow momentum rotation when high-
+#  conviction early opportunities emerge. Prefer scalable accumulation
+#  in strong companies BEFORE they become expensive.
+#
+#  Key distinction from scores/priority:
+#  - Scores measure SIGNAL QUALITY
+#  - Rotation measures WHERE CAPITAL ATTENTION SHOULD SHIFT
+#  - Asymmetric upside + accessibility are first-class metrics here
+# ══════════════════════════════════════════════════════════════════════
+
+# ── PRICE TIER LOOKUP ─────────────────────────────────────────────────
+# Rough price ranges for accessibility scoring.
+# Lower price = easier to accumulate meaningful shares.
+# These are approximate — updated quarterly by human review.
+PRICE_TIER = {
+    # Core holdings
+    "Rocket Lab":           {"price_est": 100,  "mktcap_b": 22,   "institutional_pct": 65},
+    "AST SpaceMobile":      {"price_est": 25,   "mktcap_b": 5,    "institutional_pct": 45},
+    "Redwire":              {"price_est": 9,    "mktcap_b": 0.5,  "institutional_pct": 30},
+    "Firefly Aerospace":    {"price_est": 38,   "mktcap_b": 2,    "institutional_pct": 35},
+    "MDA Space":            {"price_est": 27,   "mktcap_b": 2.5,  "institutional_pct": 40},
+    # Ring 1.5
+    "Intuitive Machines":   {"price_est": 8,    "mktcap_b": 1,    "institutional_pct": 35},
+    "HawkEye 360":          {"price_est": 26,   "mktcap_b": 0.8,  "institutional_pct": 25},
+    # Ring 2
+    "Planet Labs":          {"price_est": 4,    "mktcap_b": 0.8,  "institutional_pct": 40},
+    "BlackSky":             {"price_est": 6,    "mktcap_b": 0.4,  "institutional_pct": 30},
+    "Viasat":               {"price_est": 18,   "mktcap_b": 2,    "institutional_pct": 70},
+    "Globalstar":           {"price_est": 2,    "mktcap_b": 4,    "institutional_pct": 55},
+    "Iridium":              {"price_est": 30,   "mktcap_b": 4,    "institutional_pct": 75},
+    "Spire Global":         {"price_est": 12,   "mktcap_b": 0.5,  "institutional_pct": 40},
+    # Ring 3
+    "Satellogic":           {"price_est": 2,    "mktcap_b": 0.2,  "institutional_pct": 20},
+    "Sidus Space":          {"price_est": 3,    "mktcap_b": 0.05, "institutional_pct": 10},
+    "Starfighters Space":   {"price_est": 4,    "mktcap_b": 0.1,  "institutional_pct": 10},
+    # Ring 4 — stabilizers (high price, low accessible upside)
+    "Northrop Grumman":     {"price_est": 500,  "mktcap_b": 75,   "institutional_pct": 85},
+    "Lockheed Martin":      {"price_est": 480,  "mktcap_b": 110,  "institutional_pct": 85},
+    "Raytheon Technologies":{"price_est": 125,  "mktcap_b": 95,   "institutional_pct": 80},
+    "L3Harris":             {"price_est": 220,  "mktcap_b": 41,   "institutional_pct": 82},
+    "Leidos":               {"price_est": 180,  "mktcap_b": 24,   "institutional_pct": 78},
+    "Boeing":               {"price_est": 185,  "mktcap_b": 120,  "institutional_pct": 75},
+    # Ring 5 — testing
+    "Ametek":               {"price_est": 220,  "mktcap_b": 52,   "institutional_pct": 80},
+    "Keysight Technologies":{"price_est": 130,  "mktcap_b": 23,   "institutional_pct": 82},
+    "Teledyne Technologies":{"price_est": 400,  "mktcap_b": 19,   "institutional_pct": 80},
+    # Ring 6 — AI/Compute
+    "Nvidia":               {"price_est": 130,  "mktcap_b": 3200, "institutional_pct": 65},
+    "AMD":                  {"price_est": 110,  "mktcap_b": 180,  "institutional_pct": 70},
+    "Palantir":             {"price_est": 22,   "mktcap_b": 48,   "institutional_pct": 55},
+    "IREN":                 {"price_est": 12,   "mktcap_b": 1.5,  "institutional_pct": 35},
+    "Credo Technology":     {"price_est": 35,   "mktcap_b": 5,    "institutional_pct": 55},
+    # Ring 7 — materials
+    "MP Materials":         {"price_est": 25,   "mktcap_b": 3,    "institutional_pct": 55},
+    # Ring 9 — IPO watch (private, no price)
+    "Quantinuum":           {"price_est": None, "mktcap_b": 10,   "institutional_pct": 0},
+}
+
+
+def accessible_upside_score(entry: dict, score: int, score_change: int) -> tuple:
+    """
+    Calculate accessible_upside_score (1–10) and its component breakdown.
+
+    Factors:
+    + Low price → easier to accumulate meaningful share count         (+0 to +3)
+    + Small/mid market cap → more room to grow                        (+0 to +3)
+    + Low institutional saturation → early-mover advantage            (+0 to +2)
+    + Positive score momentum → signal acceleration                   (+0 to +2)
+    - Very high price (hard to build position size)                   (-2)
+    - Mega-cap / institutionally saturated                            (-2)
+    """
+    company = entry.get("company", "")
+    pt      = PRICE_TIER.get(company, {})
+    price   = pt.get("price_est")
+    mktcap  = pt.get("mktcap_b", 10)
+    inst    = pt.get("institutional_pct", 60)
+
+    aus = 5  # base
+
+    # Price accessibility
+    if price is None:
+        aus += 0   # private — unknown
+    elif price < 5:
+        aus += 3   # very accumulate-friendly
+    elif price < 15:
+        aus += 2
+    elif price < 50:
+        aus += 1
+    elif price > 200:
+        aus -= 2   # expensive, hard to build size
+
+    # Market cap headroom
+    if mktcap < 0.5:
+        aus += 3   # micro — massive upside if thesis plays
+    elif mktcap < 2:
+        aus += 2   # small cap
+    elif mktcap < 10:
+        aus += 1   # mid cap
+    elif mktcap > 100:
+        aus -= 2   # mega cap — most upside already captured
+
+    # Institutional saturation (low = early, high = crowded)
+    if inst < 25:
+        aus += 2   # retail-accessible, not yet crowded
+    elif inst < 50:
+        aus += 1
+    elif inst > 80:
+        aus -= 2   # fully institutionally owned
+
+    # Score momentum
+    if score_change >= 2:
+        aus += 2
+    elif score_change >= 1:
+        aus += 1
+    elif score_change <= -2:
+        aus -= 1
+
+    aus = max(1, min(10, aus))
+
+    breakdown = {
+        "price_est":          price,
+        "mktcap_est_b":       mktcap,
+        "institutional_pct":  inst,
+        "score_momentum":     score_change,
+    }
+    return aus, breakdown
+
+
+def opportunity_window(entry: dict, score: int, score_change: int,
+                        aus: int, signal_count: int) -> str:
+    """
+    Classify the opportunity window.
+    early      = strong thesis + low price/cap + rising momentum + few eyes on it
+    expanding  = momentum building, institutional discovery phase
+    crowded    = widely held, high institutional, premium valuation
+    late_stage = fully priced, limited upside, or declining signal
+    """
+    company = entry.get("company", "")
+    pt      = PRICE_TIER.get(company, {})
+    inst    = pt.get("institutional_pct", 60)
+    mktcap  = pt.get("mktcap_b", 10)
+
+    if score >= 7 and score_change >= 1 and inst < 45 and mktcap < 5:
+        return "early"
+    if score >= 6 and score_change >= 0 and inst < 65:
+        return "expanding"
+    if inst >= 75 or mktcap > 50:
+        return "crowded"
+    if score <= 4 or score_change <= -2:
+        return "late_stage"
+    return "expanding"
+
+
+def ring_balance_impact(entry: dict, holdings_data: dict) -> str:
+    """
+    Compare this company's ring to current portfolio ring weights.
+    Returns underweight / balanced / overweight.
+    holdings_data = {ring_name: total_value}
+    """
+    ring       = entry.get("ring", "Core")
+    total      = sum(holdings_data.values()) or 1
+    ring_val   = holdings_data.get(ring, 0)
+    ring_pct   = ring_val / total * 100
+
+    TARGETS = {
+        "Core":    (40, 70),   # want 40–70% in core
+        "Ring 1.5":(5,  15),
+        "Ring 2":  (5,  20),
+        "Ring 3":  (0,  10),
+        "Ring 4":  (0,  15),
+        "Ring 5":  (0,  10),
+        "Ring 6":  (5,  15),
+        "Ring 7":  (0,  5),
+        "Ring 8":  (0,  5),
+        "Ring 9":  (0,  0),    # private, no direct allocation
+    }
+
+    lo, hi = TARGETS.get(ring, (0, 20))
+    if ring_pct < lo:
+        return "underweight"
+    if ring_pct > hi:
+        return "overweight"
+    return "balanced"
+
+
+def recommended_rotation(entry: dict, aus: int, opp_window: str,
+                           ring_balance: str, score: int,
+                           score_change: int) -> str:
+    """
+    core_reinforcement   = Core ring, underweight, high conviction → add more
+    emerging_accumulation= Early/expanding window, accessible, rising momentum
+    watch_only           = Good thesis but window not right yet
+    no_chase             = Crowded, late stage, or overweight
+    """
+    ring   = entry.get("ring", "Core")
+    status = entry.get("status", "public")
+
+    # Private companies — watch only
+    if status not in ("public", "IPO-watch"):
+        return "watch_only"
+
+    # No chase: crowded or late stage regardless of ring
+    if opp_window in ("crowded", "late_stage"):
+        return "no_chase"
+
+    # Core reinforcement: Core ring, underweight, decent score
+    if ring == "Core" and ring_balance == "underweight" and score >= 6:
+        return "core_reinforcement"
+
+    # Emerging accumulation: early/expanding, accessible (aus >= 6), rising
+    if opp_window in ("early", "expanding") and aus >= 6 and score_change >= 0:
+        return "emerging_accumulation"
+
+    # Core reinforcement even if balanced, if score is very high
+    if ring == "Core" and score >= 8:
+        return "core_reinforcement"
+
+    # Watch only: everything else
+    return "watch_only"
+
+
+def rotation_priority_score(entry: dict, score: int, aus: int,
+                              opp_window: str, ring_balance: str,
+                              rec: str, score_change: int) -> int:
+    """
+    rotation_priority_score (1–10):
+    Combines thesis quality, accessible upside, timing, and portfolio need.
+
+    Weights:
+    score            × 0.25   (thesis signal quality)
+    aus              × 0.30   (accessibility + asymmetry — weighted higher)
+    opp_window bonus × 0.20   (timing)
+    ring_balance     × 0.15   (portfolio need)
+    score_change     × 0.10   (momentum acceleration)
+    """
+    opp_bonus = {"early": 3, "expanding": 2, "crowded": 0, "late_stage": -2}.get(opp_window, 1)
+    bal_bonus = {"underweight": 2, "balanced": 1, "overweight": -1}.get(ring_balance, 0)
+    mom_bonus = 2 if score_change >= 2 else 1 if score_change >= 1 else 0 if score_change == 0 else -1
+
+    raw = (score * 0.25 + aus * 0.30 + opp_bonus * 2 * 0.20
+           + bal_bonus * 5 * 0.15 + mom_bonus * 5 * 0.10)
+
+    # Boost for no_chase / watch_only to never crowd the top
+    if rec == "no_chase":
+        raw = min(raw, 3)
+    if rec == "watch_only":
+        raw = min(raw, 5)
+
+    return max(1, min(10, round(raw)))
+
+
+def why_now_rotation(entry: dict, score: int, aus: int, opp_window: str,
+                      ring_balance: str, rec: str, score_change: int,
+                      signal_count: int) -> str:
+    """Generate a concise why_now explanation for the rotation signal."""
+    company  = entry.get("company", "")
+    ring     = entry.get("ring", "Core")
+    pt       = PRICE_TIER.get(company, {})
+    price    = pt.get("price_est")
+    mktcap   = pt.get("mktcap_b")
+    inst     = pt.get("institutional_pct", 60)
+
+    parts = []
+
+    if rec == "core_reinforcement":
+        parts.append(f"Core ring position — portfolio {ring_balance}")
+    if rec == "emerging_accumulation":
+        parts.append(f"Early/expanding window with accessible accumulation profile")
+    if opp_window == "early":
+        parts.append(f"Low institutional ownership ({inst}%) — retail-accessible early stage")
+    if opp_window == "crowded":
+        parts.append("Institutionally saturated — limited incremental upside")
+    if price and price < 10:
+        parts.append(f"Low unit price (~${price}) enables share count scaling")
+    if mktcap and mktcap < 2:
+        parts.append(f"Small cap (~${mktcap}B) leaves significant growth runway")
+    if score_change >= 2:
+        parts.append(f"Score accelerating (+{score_change} this run)")
+    elif score_change <= -2:
+        parts.append(f"Score decelerating ({score_change} this run) — wait for stabilization")
+    if signal_count >= 3:
+        parts.append(f"High feed repetition ({signal_count} mentions) — broad coverage")
+    if not parts:
+        parts.append(f"Score {score}/10 with {opp_window} opportunity window")
+
+    return " | ".join(parts[:4])  # cap at 4 reasons
+
+
+def build_capital_rotation(scores: list, trends: dict,
+                            alerts: list, holdings_json: list) -> dict:
+    """
+    Build the Capital Rotation Engine output.
+    Top 15 opportunities ranked by rotation_priority_score.
+    """
+    # Build portfolio ring weights from holdings
+    holdings_ring_values: dict = {}
+    for h in holdings_json:
+        ring = h.get("ring", "Core")
+        # Use avg_cost * shares as proxy value (no real-time price here)
+        val  = float(h.get("shares", 0)) * float(h.get("avg_cost", 0))
+        holdings_ring_values[ring] = holdings_ring_values.get(ring, 0) + val
+
+    # Build signal count map from trends
+    company_counts = trends.get("_raw_company_counts", {})
+
+    # Gather alert urgency per company
+    alert_urgency_map: dict = {}
+    for a in alerts:
+        for c in a.get("company", []):
+            existing = alert_urgency_map.get(c, "none")
+            this     = a.get("urgency", "none")
+            priority = {"immediate": 3, "same_day": 2, "watch": 1, "none": 0}
+            if priority.get(this, 0) > priority.get(existing, 0):
+                alert_urgency_map[c] = this
+
+    candidates = []
+
+    for s in scores:
+        company      = s.get("company", "")
+        ticker       = s.get("ticker")
+        status       = s.get("status", "public")
+        ring         = s.get("ring", 1)
+        layers_list  = s.get("layers", [])
+        score        = s.get("score", 5)
+        score_change = s.get("score_change", 0)
+        signal_count = s.get("signal_count", 0)
+        cap_priority = s.get("capital_priority", "low")
+
+        # Look up MASTER_UNIVERSE for ring name (scores use ring number)
+        entry_data = UNIVERSE_MAP.get(company.lower(), {})
+        ring_name  = entry_data.get("ring_name",
+                     {1:"Core",2:"Ring 2",3:"Ring 3",4:"Ring 4"}.get(ring, f"Ring {ring}"))
+
+        # Build a synthetic entry dict for helpers
+        entry = {
+            "company":    company,
+            "ring":       ring_name,
+            "status":     status,
+            "layers":     layers_list,
+        }
+
+        # Skip government/non-investable entries
+        if status in ("watch",) and company in (
+            "NASA", "USSF / Space Force", "DARPA", "NRO", "NGA",
+            "MDA (Missile Defense)"
+        ):
+            continue
+
+        # Calculate all rotation metrics
+        aus, aus_breakdown     = accessible_upside_score(entry, score, score_change)
+        opp_win                = opportunity_window(entry, score, score_change, aus, signal_count)
+        ring_bal               = ring_balance_impact(entry, holdings_ring_values)
+        rec                    = recommended_rotation(entry, aus, opp_win, ring_bal, score, score_change)
+        rot_score              = rotation_priority_score(entry, score, aus, opp_win, ring_bal, rec, score_change)
+        why                    = why_now_rotation(entry, score, aus, opp_win, ring_bal, rec, score_change, signal_count)
+        active_alert           = alert_urgency_map.get(company, "none")
+
+        candidates.append({
+            "_rot_score":            rot_score,
+            # ── Identity ────────────────────────────────────────────
+            "ticker":                ticker,
+            "company":               company,
+            "ring":                  ring_name,
+            "layers":                layers_list,
+            "status":                status,
+            # ── Core scores ──────────────────────────────────────────
+            "current_score":         score,
+            "score_change":          score_change,
+            "signal_count":          signal_count,
+            "capital_priority":      cap_priority,
+            # ── Rotation metrics ─────────────────────────────────────
+            "accessible_upside_score":     aus,
+            "accessible_upside_breakdown": aus_breakdown,
+            "rotation_priority_score":     rot_score,
+            "opportunity_window":          opp_win,
+            "ring_balance_impact":         ring_bal,
+            "recommended_rotation":        rec,
+            # ── Alert context ────────────────────────────────────────
+            "active_alert_urgency":  active_alert,
+            # ── Narrative ────────────────────────────────────────────
+            "why_now":               why,
+            "generated_at_utc":      NOW_STR,
+        })
+
+    # Sort by rotation_priority_score desc, then accessible_upside desc
+    candidates.sort(key=lambda x: (-x["_rot_score"], -x["accessible_upside_score"]))
+
+    # Remove internal sort field, take top 15
+    top15 = []
+    for c in candidates:
+        if len(top15) >= 15:
+            break
+        item = {k: v for k, v in c.items() if k != "_rot_score"}
+        item["rank"] = len(top15) + 1
+        top15.append(item)
+
+    # Ring balance summary across full universe
+    ring_summary = {}
+    for c in candidates:
+        r = c["ring"]
+        if r not in ring_summary:
+            ring_summary[r] = {"ring": r, "count": 0, "avg_rot_score": 0,
+                                "ring_balance": c["ring_balance_impact"]}
+        ring_summary[r]["count"] += 1
+        ring_summary[r]["avg_rot_score"] = round(
+            (ring_summary[r]["avg_rot_score"] * (ring_summary[r]["count"]-1) + c["_rot_score"])
+            / ring_summary[r]["count"], 1)
+
+    return {
+        "meta": {
+            "system":            SYSTEM_NAME,
+            "version":           VERSION,
+            "generated_at_utc":  NOW_STR,
+            "total_evaluated":   len(candidates),
+            "top_n":             len(top15),
+            "philosophy": (
+                "Core-first, but momentum rotation allowed when high-conviction "
+                "early opportunities emerge. Accessible upside weighted above raw score — "
+                "prefer scalable accumulation before institutional crowding."
+            ),
+            "field_guide": {
+                "accessible_upside_score":  "1–10: price accessibility + mktcap headroom + low institutional + momentum",
+                "rotation_priority_score":  "1–10: composite rotation signal (aus×0.30 + score×0.25 + timing×0.20 + portfolio need×0.15 + momentum×0.10)",
+                "opportunity_window":       "early | expanding | crowded | late_stage",
+                "recommended_rotation":     "core_reinforcement | emerging_accumulation | watch_only | no_chase",
+                "ring_balance_impact":      "underweight | balanced | overweight — vs target ring allocation",
+                "why_now":                  "Concise narrative for the rotation signal",
+            },
+        },
+        "ring_balance_summary": sorted(ring_summary.values(),
+                                       key=lambda x: -x["avg_rot_score"]),
+        "rotation_opportunities": top15,
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════
+#  PHASE 6 — PORTFOLIO PHASE ENGINE
+# ══════════════════════════════════════════════════════════════════════
+
+PORTFOLIO_PHASES = {
+    1: {
+        "name":        "Asymmetric Accumulation",
+        "description": (
+            "Early-stage concentrated accumulation into high-conviction asymmetric "
+            "opportunities. Intentional concentration allowed. Volatility tolerated. "
+            "Ecosystem leadership prioritized over diversification. Do not over-penalize "
+            "concentration when conviction, thesis alignment, and asymmetric upside are high."
+        ),
+        "risk_tolerance":        "high",
+        "concentration_policy":  "allow_intentional",
+        "volatility_tolerance":  "high",
+        "diversification_target":"low",
+        "core_target_pct":       [50, 80],
+        "stabilizer_target_pct": [0,  15],
+        "emerging_target_pct":   [10, 40],
+    },
+    2: {
+        "name":        "Scaling + Stabilization",
+        "description": (
+            "Rotate portion of gains into stabilizers. Reduce single-name concentration. "
+            "Maintain core positions but add ballast. Risk-adjusted returns become important."
+        ),
+        "risk_tolerance":        "medium",
+        "concentration_policy":  "monitor_and_trim",
+        "volatility_tolerance":  "medium",
+        "diversification_target":"medium",
+        "core_target_pct":       [35, 60],
+        "stabilizer_target_pct": [15, 30],
+        "emerging_target_pct":   [5,  20],
+    },
+    3: {
+        "name":        "Wealth Preservation",
+        "description": (
+            "Capital protection is primary. Dividend and income layer dominant. "
+            "Core positions trimmed to target weight. Stabilizers lead. Volatility minimized."
+        ),
+        "risk_tolerance":        "low",
+        "concentration_policy":  "enforce_limits",
+        "volatility_tolerance":  "low",
+        "diversification_target":"high",
+        "core_target_pct":       [20, 40],
+        "stabilizer_target_pct": [35, 60],
+        "emerging_target_pct":   [0,  10],
+    },
+}
+
+CURRENT_PHASE = 1
+
+ASYMMETRIC_PROFILES = {
+    "Rocket Lab":           {"upside_scalability": 9, "ecosystem_positioning": 9, "infrastructure_leverage": 8},
+    "AST SpaceMobile":      {"upside_scalability": 9, "ecosystem_positioning": 8, "infrastructure_leverage": 7},
+    "Redwire":              {"upside_scalability": 8, "ecosystem_positioning": 7, "infrastructure_leverage": 7},
+    "Firefly Aerospace":    {"upside_scalability": 9, "ecosystem_positioning": 8, "infrastructure_leverage": 7},
+    "MDA Space":            {"upside_scalability": 7, "ecosystem_positioning": 7, "infrastructure_leverage": 8},
+    "Intuitive Machines":   {"upside_scalability": 8, "ecosystem_positioning": 7, "infrastructure_leverage": 6},
+    "HawkEye 360":          {"upside_scalability": 7, "ecosystem_positioning": 7, "infrastructure_leverage": 5},
+    "Planet Labs":          {"upside_scalability": 7, "ecosystem_positioning": 7, "infrastructure_leverage": 6},
+    "BlackSky":             {"upside_scalability": 7, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Spire Global":         {"upside_scalability": 6, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Globalstar":           {"upside_scalability": 6, "ecosystem_positioning": 6, "infrastructure_leverage": 6},
+    "Viasat":               {"upside_scalability": 5, "ecosystem_positioning": 6, "infrastructure_leverage": 6},
+    "Iridium":              {"upside_scalability": 4, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Satellogic":           {"upside_scalability": 8, "ecosystem_positioning": 5, "infrastructure_leverage": 4},
+    "Starfighters Space":   {"upside_scalability": 8, "ecosystem_positioning": 5, "infrastructure_leverage": 4},
+    "Northrop Grumman":     {"upside_scalability": 3, "ecosystem_positioning": 7, "infrastructure_leverage": 6},
+    "Lockheed Martin":      {"upside_scalability": 3, "ecosystem_positioning": 7, "infrastructure_leverage": 6},
+    "Raytheon Technologies":{"upside_scalability": 3, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "L3Harris":             {"upside_scalability": 3, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Leidos":               {"upside_scalability": 4, "ecosystem_positioning": 5, "infrastructure_leverage": 4},
+    "Boeing":               {"upside_scalability": 3, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Ametek":               {"upside_scalability": 4, "ecosystem_positioning": 5, "infrastructure_leverage": 5},
+    "Keysight Technologies":{"upside_scalability": 4, "ecosystem_positioning": 5, "infrastructure_leverage": 5},
+    "Teledyne Technologies":{"upside_scalability": 4, "ecosystem_positioning": 5, "infrastructure_leverage": 5},
+    "Nvidia":               {"upside_scalability": 5, "ecosystem_positioning": 8, "infrastructure_leverage": 9},
+    "AMD":                  {"upside_scalability": 6, "ecosystem_positioning": 7, "infrastructure_leverage": 7},
+    "Palantir":             {"upside_scalability": 6, "ecosystem_positioning": 7, "infrastructure_leverage": 7},
+    "IREN":                 {"upside_scalability": 7, "ecosystem_positioning": 5, "infrastructure_leverage": 5},
+    "Credo Technology":     {"upside_scalability": 7, "ecosystem_positioning": 6, "infrastructure_leverage": 6},
+    "MP Materials":         {"upside_scalability": 7, "ecosystem_positioning": 7, "infrastructure_leverage": 8},
+    "SpaceX":               {"upside_scalability": 10,"ecosystem_positioning": 10,"infrastructure_leverage": 10},
+    "Blue Origin":          {"upside_scalability": 7, "ecosystem_positioning": 7, "infrastructure_leverage": 7},
+    "Relativity Space":     {"upside_scalability": 8, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Capella Space":        {"upside_scalability": 8, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+    "Umbra":                {"upside_scalability": 8, "ecosystem_positioning": 6, "infrastructure_leverage": 5},
+}
+
+
+def calc_asymmetric_opportunity_score(entry: dict, score: int,
+                                       score_change: int, aus: int) -> tuple:
+    company     = entry.get("company", "")
+    profile     = ASYMMETRIC_PROFILES.get(company, {})
+    pt          = PRICE_TIER.get(company, {})
+    upside_scal = profile.get("upside_scalability",    5)
+    eco_pos     = profile.get("ecosystem_positioning",  5)
+    infra_lev   = profile.get("infrastructure_leverage",5)
+    mktcap      = pt.get("mktcap_b", 10)
+    inst        = pt.get("institutional_pct", 60)
+
+    if mktcap < 0.5:    mktcap_score = 10
+    elif mktcap < 2:    mktcap_score = 8
+    elif mktcap < 10:   mktcap_score = 6
+    elif mktcap < 50:   mktcap_score = 4
+    elif mktcap < 200:  mktcap_score = 3
+    else:               mktcap_score = 1
+
+    if inst < 20:    inst_score = 10
+    elif inst < 40:  inst_score = 8
+    elif inst < 60:  inst_score = 6
+    elif inst < 75:  inst_score = 4
+    else:            inst_score = 2
+
+    raw = (upside_scal*0.25 + mktcap_score*0.20 + inst_score*0.15
+           + eco_pos*0.20 + infra_lev*0.10 + aus*0.10)
+
+    if CURRENT_PHASE == 1 and upside_scal >= 8 and eco_pos >= 7:
+        raw = min(10, raw + 0.8)
+    if score_change >= 2:    raw = min(10, raw + 0.5)
+    elif score_change <= -2: raw = max(1,  raw - 0.5)
+
+    aos = max(1, min(10, round(raw, 1)))
+    breakdown = {
+        "upside_scalability":      upside_scal,
+        "market_cap_score":        mktcap_score,
+        "institutional_score":     inst_score,
+        "ecosystem_positioning":   eco_pos,
+        "infrastructure_leverage": infra_lev,
+        "accessibility_score":     aus,
+    }
+    return aos, breakdown
+
+
+def calc_concentration_risk(holdings: list, phase: int) -> dict:
+    if not holdings:
+        return {"status": "no_holdings", "flags": [], "acceptable_concentrations": [],
+                "positions": [], "ring_weights": {}, "stabilizer_pct": 0,
+                "phase_context": "", "total_value_basis": 0}
+
+    positions   = []
+    ring_totals: dict = {}
+    total_value = 0.0
+
+    for h in holdings:
+        val  = float(h.get("shares", 0)) * float(h.get("avg_cost", 0))
+        ring = h.get("ring", "Core")
+        positions.append({"ticker": h.get("ticker",""), "company": h.get("company",""),
+                           "ring": ring, "value": val})
+        ring_totals[ring] = ring_totals.get(ring, 0) + val
+        total_value += val
+
+    if total_value == 0:
+        return {"status": "no_value", "flags": [], "acceptable_concentrations": [],
+                "positions": positions, "ring_weights": {}, "stabilizer_pct": 0,
+                "phase_context": "", "total_value_basis": 0}
+
+    thresholds = {1: 60, 2: 35, 3: 20}
+    single_threshold = thresholds.get(phase, 40)
+    flags, warnings = [], []
+
+    for p in positions:
+        pct = p["value"] / total_value * 100
+        p["weight_pct"] = round(pct, 1)
+        if pct > single_threshold:
+            if phase == 1:
+                profile = ASYMMETRIC_PROFILES.get(p["company"], {})
+                eco     = profile.get("ecosystem_positioning", 5)
+                infra   = profile.get("infrastructure_leverage", 5)
+                if eco >= 7 and infra >= 6:
+                    warnings.append({"type": "intentional_concentration", "ticker": p["ticker"],
+                                     "weight": p["weight_pct"], "severity": "acceptable_in_phase_1",
+                                     "note": f"High conviction {pct:.0f}% — Phase 1 intentional. Eco:{eco}/10 Infra:{infra}/10"})
+                else:
+                    flags.append({"type": "concentration_risk", "ticker": p["ticker"],
+                                  "weight": p["weight_pct"], "severity": "moderate",
+                                  "note": f"{pct:.0f}% single-name. Low ecosystem score — review thesis."})
+            else:
+                flags.append({"type": "concentration_risk", "ticker": p["ticker"],
+                              "weight": p["weight_pct"],
+                              "severity": "high" if pct > single_threshold*1.5 else "moderate",
+                              "note": f"{pct:.0f}% exceeds Phase {phase} limit of {single_threshold}%."})
+
+    ring_thresholds = {1: 85, 2: 70, 3: 55}
+    ring_threshold  = ring_thresholds.get(phase, 75)
+    for ring, val in ring_totals.items():
+        pct = val / total_value * 100
+        if pct > ring_threshold:
+            if phase == 1 and ring == "Core":
+                warnings.append({"type": "core_concentration", "ring": ring,
+                                  "weight": round(pct,1), "severity": "acceptable_in_phase_1",
+                                  "note": f"Core at {pct:.0f}% — Phase 1 core-first strategy."})
+            else:
+                flags.append({"type": "ring_concentration", "ring": ring,
+                              "weight": round(pct,1), "severity": "moderate",
+                              "note": f"{ring} {pct:.0f}% exceeds Phase {phase} limit of {ring_threshold}%."})
+
+    stabilizer_val = sum(v for r,v in ring_totals.items() if r in {"Ring 4","Ring 5"})
+    stabilizer_pct = stabilizer_val/total_value*100 if total_value else 0
+    phase_cfg      = PORTFOLIO_PHASES[phase]
+    stab_lo, stab_hi = phase_cfg["stabilizer_target_pct"]
+    if stabilizer_pct < stab_lo and phase >= 2:
+        flags.append({"type": "stabilizer_underweight", "weight": round(stabilizer_pct,1),
+                      "severity": "moderate",
+                      "note": f"Stabilizer {stabilizer_pct:.0f}% below Phase {phase} target {stab_lo}–{stab_hi}%."})
+
+    high_flags = [f for f in flags if f.get("severity") == "high"]
+    status = ("elevated_risk"                    if high_flags else
+              "moderate_risk"                    if flags else
+              "phase_1_intentional_concentration" if warnings else
+              "within_phase_parameters")
+
+    phase_context = (
+        f"Phase {phase} ({phase_cfg['name']}): "
+        f"concentration={phase_cfg['concentration_policy']}, "
+        f"risk={phase_cfg['risk_tolerance']}"
+    )
+
+    return {
+        "status":                    status,
+        "phase":                     phase,
+        "phase_name":                phase_cfg["name"],
+        "phase_context":             phase_context,
+        "total_value_basis":         round(total_value, 2),
+        "positions":                 sorted(positions, key=lambda x: -x["value"]),
+        "ring_weights":              {r: round(v/total_value*100,1) for r,v in ring_totals.items()},
+        "stabilizer_pct":            round(stabilizer_pct, 1),
+        "flags":                     flags,
+        "acceptable_concentrations": warnings,
+    }
+
+
+def build_portfolio_phase(scores: list, holdings: list,
+                           rotation: dict, trends: dict) -> dict:
+    phase     = CURRENT_PHASE
+    phase_cfg = PORTFOLIO_PHASES[phase]
+
+    company_profiles = []
+    for s in scores:
+        company      = s.get("company", "")
+        ticker       = s.get("ticker")
+        score        = s.get("score", 5)
+        score_change = s.get("score_change", 0)
+        status       = s.get("status", "public")
+        ring_num     = s.get("ring", 1)
+        layers       = s.get("layers", [])
+
+        if status == "watch" and company in (
+            "NASA","USSF / Space Force","DARPA","NRO","NGA","MDA (Missile Defense)"
+        ):
+            continue
+
+        rotation_entry = next(
+            (r for r in rotation.get("rotation_opportunities",[]) if r.get("company")==company), {}
+        )
+        aus = rotation_entry.get("accessible_upside_score", 5)
+        entry = {"company": company, "ring": ring_num, "status": status}
+        aos, aos_breakdown = calc_asymmetric_opportunity_score(entry, score, score_change, aus)
+
+        if status not in ("public","IPO-watch"):
+            phase_rec = "watch_private"
+        elif phase == 1:
+            if aos >= 8 and score >= 6:   phase_rec = "strategic_accumulation"
+            elif aos >= 6 and score >= 5: phase_rec = "accumulate"
+            elif score >= 7 and aos < 5:  phase_rec = "hold_watch_price"
+            else:                          phase_rec = "monitor"
+        elif phase == 2:
+            if aos >= 7 and score >= 7:   phase_rec = "selective_add"
+            elif score >= 8:              phase_rec = "hold"
+            else:                          phase_rec = "monitor"
+        else:
+            if score >= 9:                phase_rec = "hold_core"
+            elif score >= 7:              phase_rec = "trim_to_target"
+            else:                          phase_rec = "reduce"
+
+        is_held = any(h.get("ticker")==ticker or h.get("company")==company for h in holdings)
+
+        company_profiles.append({
+            "ticker":                       ticker,
+            "company":                      company,
+            "ring":                         ring_num,
+            "layers":                       layers,
+            "status":                       status,
+            "current_score":                score,
+            "score_change":                 score_change,
+            "accessible_upside_score":      aus,
+            "asymmetric_opportunity_score": aos,
+            "aos_breakdown":                aos_breakdown,
+            "phase_recommendation":         phase_rec,
+            "is_held":                      is_held,
+        })
+
+    company_profiles.sort(key=lambda x: (-x["asymmetric_opportunity_score"], -x["current_score"]))
+
+    concentration = calc_concentration_risk(holdings, phase)
+
+    total_basis = concentration.get("total_value_basis", 0) or 1
+    asym_val = stab_val_ph = 0.0
+    for h in holdings:
+        val     = float(h.get("shares",0)) * float(h.get("avg_cost",0))
+        company = h.get("company","")
+        ring    = h.get("ring","Core")
+        cp = next((p for p in company_profiles if p["company"]==company), {})
+        if cp.get("asymmetric_opportunity_score",0) >= 7:
+            asym_val += val
+        if ring in ("Ring 4","Ring 5"):
+            stab_val_ph += val
+
+    asym_pct  = round(asym_val/total_basis*100, 1) if total_basis else 0
+    stab_pct  = round(stab_val_ph/total_basis*100, 1) if total_basis else 0
+    stab_lo, stab_hi = phase_cfg["stabilizer_target_pct"]
+    stab_status = ("underweight" if stab_pct < stab_lo else
+                   "overweight"  if stab_pct > stab_hi else "on_target")
+
+    conc_status = concentration.get("status","unknown")
+    if conc_status == "elevated_risk" and phase == 1:
+        phase_adjusted_risk = "moderate"
+        risk_note = "Concentration flags present but within Phase 1 intentional accumulation parameters."
+    elif conc_status == "elevated_risk":
+        phase_adjusted_risk = "high"
+        risk_note = "Concentration exceeds phase parameters. Review position sizing."
+    elif conc_status in ("phase_1_intentional_concentration","within_phase_parameters"):
+        phase_adjusted_risk = "phase_appropriate"
+        risk_note = f"Risk profile appropriate for Phase {phase} ({phase_cfg['name']})."
+    else:
+        phase_adjusted_risk = "moderate"
+        risk_note = "Monitor concentration as portfolio grows."
+
+    top_asym = [p for p in company_profiles
+                if p["asymmetric_opportunity_score"] >= 7
+                and p["status"] in ("public","IPO-watch")][:10]
+
+    strategic_candidates = [
+        p for p in company_profiles
+        if p["asymmetric_opportunity_score"] >= 8
+        and p["current_score"] >= 6
+        and p["status"] == "public"
+        and ASYMMETRIC_PROFILES.get(p["company"],{}).get("ecosystem_positioning",0) >= 7
+    ][:8]
+
+    return {
+        "meta": {
+            "system":           SYSTEM_NAME,
+            "version":          VERSION,
+            "generated_at_utc": NOW_STR,
+            "philosophy": (
+                "Phase-aware portfolio evaluation. Phase 1 intentional concentration "
+                "in high-conviction asymmetric opportunities is EXPECTED and should NOT "
+                "be penalized if ecosystem positioning and infrastructure leverage are high."
+            ),
+        },
+        "current_portfolio_phase": phase,
+        "phase_name":              phase_cfg["name"],
+        "phase_description":       phase_cfg["description"],
+        "phase_parameters":        {
+            "risk_tolerance":        phase_cfg["risk_tolerance"],
+            "concentration_policy":  phase_cfg["concentration_policy"],
+            "volatility_tolerance":  phase_cfg["volatility_tolerance"],
+            "diversification_target":phase_cfg["diversification_target"],
+            "core_target_pct":       phase_cfg["core_target_pct"],
+            "stabilizer_target_pct": phase_cfg["stabilizer_target_pct"],
+            "emerging_target_pct":   phase_cfg["emerging_target_pct"],
+        },
+        "asymmetric_concentration_meter": {
+            "pct_in_asymmetric_plays": asym_pct,
+            "description":             "% of portfolio basis in companies with AOS ≥ 7",
+            "phase_1_target":          "50–90% intentional asymmetric concentration",
+            "status": ("on_target"    if asym_pct >= 50 else
+                       "building"     if asym_pct >= 25 else
+                       "underweighted"),
+        },
+        "stabilizer_exposure_meter": {
+            "pct_in_stabilizers": stab_pct,
+            "target_range_pct":   list(phase_cfg["stabilizer_target_pct"]),
+            "status":             stab_status,
+            "description":        "% of portfolio in Ring 4 (defense primes) + Ring 5 (testing)",
+        },
+        "portfolio_phase_adjusted_risk": phase_adjusted_risk,
+        "risk_note":                     risk_note,
+        "concentration_analysis":        concentration,
+        "top_asymmetric_opportunities":  top_asym,
+        "strategic_concentration_candidates": strategic_candidates,
+        "company_profiles":              company_profiles,
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  MAIN
 # ══════════════════════════════════════════════════════════════════════
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Scout-2 Phase 2 Processor v1.0"
+        description="Scout-2 Phase 2 Processor v1.3"
     )
     ap.add_argument("--data-dir", default="data",
         help="Data directory (default: data)")
@@ -1766,6 +2591,18 @@ def main():
     supply_chain = build_supply_chain(items)
     recommendations = build_recommendations(alerts)
     priority     = build_priority(alerts, scores)
+
+    # Load holdings for rotation engine (from data folder if exists)
+    holdings_path = data_dir / "scout2_holdings.json"
+    holdings_raw  = []
+    if holdings_path.exists():
+        try:
+            holdings_raw = json.loads(holdings_path.read_text(encoding="utf-8")).get("holdings", [])
+        except Exception:
+            holdings_raw = []
+
+    rotation     = build_capital_rotation(scores, trends, alerts, holdings_raw)
+    portfolio_phase = build_portfolio_phase(scores, holdings_raw, rotation, trends)
     run_entry    = update_run_history(history_path, stats, alerts, scores, trends)
     summary      = build_dashboard_summary(stats, alerts, scores, trends, feed_logs)
     email_text   = build_email_alert(alerts, summary)
@@ -1802,6 +2639,8 @@ def main():
     save_json(data_dir / "scout2_supply_chain.json",     supply_chain,    args.quiet)
     save_json(data_dir / "scout2_recommendations.json",  recommendations, args.quiet)
     save_json(data_dir / "scout2_priority.json",         priority,        args.quiet)
+    save_json(data_dir / "scout2_capital_rotation.json", rotation,        args.quiet)
+    save_json(data_dir / "scout2_portfolio_phase.json",  portfolio_phase,  args.quiet)
     save_json(data_dir / "scout2_dashboard_summary.json",summary,         args.quiet)
 
     # Email alert text
@@ -1817,6 +2656,9 @@ def main():
         print(f"  ⚡ Same-day alerts  : {len(same_day)}", file=sys.stderr)
         print(f"  👁  Watch alerts    : {len(watch_)}", file=sys.stderr)
         print(f"  🏆 Priority signals : {len(priority['priority_signals'])}", file=sys.stderr)
+        print(f"  🔄 Rotation opps    : {len(rotation['rotation_opportunities'])}", file=sys.stderr)
+        print(f"  🎯 Phase            : {portfolio_phase['current_portfolio_phase']} — {portfolio_phase['phase_name']}", file=sys.stderr)
+        print(f"  📐 Phase risk       : {portfolio_phase['portfolio_phase_adjusted_risk']}", file=sys.stderr)
         print(f"  🏢 Universe tracked : {len(MASTER_UNIVERSE)}", file=sys.stderr)
         print(f"  📊 Companies scored : {len(scores)}", file=sys.stderr)
         print(f"{'─'*50}\n", file=sys.stderr)

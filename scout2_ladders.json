@@ -1,7 +1,7 @@
 {
   "last_updated_utc": "2026-05-10T00:00:00Z",
   "meta": {
-    "note": "Buy ladders define price tiers for adding to positions. Edit in dashboard. current_price is filled by price feed or manually.",
+    "note": "Buy ladder tiers. Edit via dashboard Buy Ladders tab. current_price filled by price feed or manual entry.",
     "version": "1.0"
   },
   "ladders": [
@@ -11,16 +11,10 @@
       "ring": "Core",
       "current_price": null,
       "no_chase_above": 105,
-      "tier_1_min": 95,
-      "tier_1_max": 100,
-      "tier_1_action": "Light add",
-      "tier_2_min": 88,
-      "tier_2_max": 95,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 88,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 95, "tier_1_max": 100, "tier_1_action": "Light add",
+      "tier_2_min": 88, "tier_2_max": 95,  "tier_2_action": "Primary add",
+      "tier_3_max": 88,                     "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "RDW",
@@ -28,16 +22,10 @@
       "ring": "Core",
       "current_price": null,
       "no_chase_above": 11,
-      "tier_1_min": 9.80,
-      "tier_1_max": 10.50,
-      "tier_1_action": "Light add",
-      "tier_2_min": 9.00,
-      "tier_2_max": 9.80,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 9.00,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 9.80, "tier_1_max": 10.50, "tier_1_action": "Light add",
+      "tier_2_min": 9.00, "tier_2_max": 9.80,  "tier_2_action": "Primary add",
+      "tier_3_max": 9.00,                        "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "ASTS",
@@ -45,16 +33,10 @@
       "ring": "Core",
       "current_price": null,
       "no_chase_above": 75,
-      "tier_1_min": 68,
-      "tier_1_max": 72,
-      "tier_1_action": "Light add",
-      "tier_2_min": 62,
-      "tier_2_max": 68,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 62,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 68, "tier_1_max": 72, "tier_1_action": "Light add",
+      "tier_2_min": 62, "tier_2_max": 68, "tier_2_action": "Primary add",
+      "tier_3_max": 62,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "MDA",
@@ -62,16 +44,10 @@
       "ring": "Ring 1.5",
       "current_price": null,
       "no_chase_above": 34,
-      "tier_1_min": 31,
-      "tier_1_max": 33,
-      "tier_1_action": "Light add",
-      "tier_2_min": 28,
-      "tier_2_max": 31,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 28,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": "CAD prices"
+      "tier_1_min": 31, "tier_1_max": 33, "tier_1_action": "Light add",
+      "tier_2_min": 28, "tier_2_max": 31, "tier_2_action": "Primary add",
+      "tier_3_max": 28,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": "CAD prices"
     },
     {
       "ticker": "FLY",
@@ -79,16 +55,10 @@
       "ring": "Core",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": null,
-      "tier_1_max": null,
-      "tier_1_action": "Light add on 5–8% pullback from current",
-      "tier_2_min": null,
-      "tier_2_max": null,
-      "tier_2_action": "Primary add on 10–15% pullback",
-      "tier_3_max": null,
-      "tier_3_action": "Strong add on 20%+ pullback",
-      "status": "watch",
-      "notes": "Adjust tier prices after establishing current baseline. Edit manually."
+      "tier_1_min": null, "tier_1_max": null, "tier_1_action": "Light add on 5-8% pullback from current",
+      "tier_2_min": null, "tier_2_max": null, "tier_2_action": "Primary add on 10-15% pullback",
+      "tier_3_max": null,                     "tier_3_action": "Strong add on 20%+ pullback",
+      "status": "watch", "notes": "Edit tier prices after establishing current baseline"
     },
     {
       "ticker": "AME",
@@ -96,16 +66,10 @@
       "ring": "Ring 5",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 215,
-      "tier_1_max": 225,
-      "tier_1_action": "Light add",
-      "tier_2_min": 200,
-      "tier_2_max": 215,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 200,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 215, "tier_1_max": 225, "tier_1_action": "Light add",
+      "tier_2_min": 200, "tier_2_max": 215, "tier_2_action": "Primary add",
+      "tier_3_max": 200,                    "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "KEYS",
@@ -113,16 +77,10 @@
       "ring": "Ring 5",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 335,
-      "tier_1_max": 350,
-      "tier_1_action": "Light add",
-      "tier_2_min": 315,
-      "tier_2_max": 335,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 315,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 335, "tier_1_max": 350, "tier_1_action": "Light add",
+      "tier_2_min": 315, "tier_2_max": 335, "tier_2_action": "Primary add",
+      "tier_3_max": 315,                    "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "TDY",
@@ -130,16 +88,10 @@
       "ring": "Ring 5",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 585,
-      "tier_1_max": 610,
-      "tier_1_action": "Light add",
-      "tier_2_min": 550,
-      "tier_2_max": 585,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 550,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 585, "tier_1_max": 610, "tier_1_action": "Light add",
+      "tier_2_min": 550, "tier_2_max": 585, "tier_2_action": "Primary add",
+      "tier_3_max": 550,                    "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "PL",
@@ -147,16 +99,10 @@
       "ring": "Ring 2",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 33,
-      "tier_1_max": 36,
-      "tier_1_action": "Light add",
-      "tier_2_min": 29,
-      "tier_2_max": 33,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 29,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 33, "tier_1_max": 36, "tier_1_action": "Light add",
+      "tier_2_min": 29, "tier_2_max": 33, "tier_2_action": "Primary add",
+      "tier_3_max": 29,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "BKSY",
@@ -164,16 +110,10 @@
       "ring": "Ring 2",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 33,
-      "tier_1_max": 36,
-      "tier_1_action": "Light add",
-      "tier_2_min": 29,
-      "tier_2_max": 33,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 29,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 33, "tier_1_max": 36, "tier_1_action": "Light add",
+      "tier_2_min": 29, "tier_2_max": 33, "tier_2_action": "Primary add",
+      "tier_3_max": 29,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "VSAT",
@@ -181,16 +121,10 @@
       "ring": "Ring 2",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 62,
-      "tier_1_max": 67,
-      "tier_1_action": "Light add",
-      "tier_2_min": 56,
-      "tier_2_max": 62,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 56,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 62, "tier_1_max": 67, "tier_1_action": "Light add",
+      "tier_2_min": 56, "tier_2_max": 62, "tier_2_action": "Primary add",
+      "tier_3_max": 56,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "GSAT",
@@ -198,16 +132,10 @@
       "ring": "Ring 2",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 72,
-      "tier_1_max": 78,
-      "tier_1_action": "Light add",
-      "tier_2_min": 65,
-      "tier_2_max": 72,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 65,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 72, "tier_1_max": 78, "tier_1_action": "Light add",
+      "tier_2_min": 65, "tier_2_max": 72, "tier_2_action": "Primary add",
+      "tier_3_max": 65,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     },
     {
       "ticker": "IREN",
@@ -215,16 +143,10 @@
       "ring": "Ring 6",
       "current_price": null,
       "no_chase_above": null,
-      "tier_1_min": 51,
-      "tier_1_max": 56,
-      "tier_1_action": "Light add",
-      "tier_2_min": 44,
-      "tier_2_max": 51,
-      "tier_2_action": "Primary add",
-      "tier_3_max": 44,
-      "tier_3_action": "Strong add",
-      "status": "watch",
-      "notes": ""
+      "tier_1_min": 51, "tier_1_max": 56, "tier_1_action": "Light add",
+      "tier_2_min": 44, "tier_2_max": 51, "tier_2_action": "Primary add",
+      "tier_3_max": 44,                   "tier_3_action": "Strong add",
+      "status": "watch", "notes": ""
     }
   ]
 }

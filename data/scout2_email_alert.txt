@@ -1,21 +1,12 @@
 ============================================================
 SCOUT-2 INTELLIGENCE ALERT — Investing with SPACE
-Generated: 2026-05-10T19:08:32Z
+Generated: 2026-05-10T23:28:13Z
 ============================================================
 
 SYSTEM STATUS : OPERATIONAL
 FEED HEALTH   : 17/17 feeds OK
-LIVE ITEMS    : 94
-TOTAL ALERTS  : 19
-
-🚨 IMMEDIATE ALERTS
-----------------------------------------
-  [EARNINGS]
-  Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings
-  Companies: Planet Labs
-  Why: Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs
-  Action: Review guidance and revenue trend before next position decision
-  Link: https://finance.yahoo.com/markets/stocks/articles/know-paypal-holdings-pypl-q1-155238714.html
+LIVE ITEMS    : 79
+TOTAL ALERTS  : 20
 
 ⚡ SAME DAY ALERTS
 ----------------------------------------
@@ -25,14 +16,14 @@ TOTAL ALERTS  : 19
   [CONTRACT, IPO] HawkEye 360 Raises $416M in IPO
   Link: https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/
 
-  [CONTRACT, IPO] HawkEye 360 Raises $416M, Pricing at High End for IPO
-  Link: https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/
+  [IPO] Exclusive-Cerebras to raise IPO price range to $150-$160 as demand surges, sourc
+  Link: https://finance.yahoo.com/markets/stocks/articles/exclusive-cerebras-raise-ipo-price-213927145.html
 
-  [CONTRACT, FUNDING] Lunar Outpost Closes $30M Series B, Unveils New Rover
-  Link: https://payloadspace.com/lunar-outpost-closes-30m-series-b-unveils-new-rover/
+  [EARNINGS] HNI Q1 Earnings Call Highlights
+  Link: https://finance.yahoo.com/markets/stocks/articles/hni-q1-earnings-call-highlights-210414296.html
 
-  [CONTRACT, FUNDING] Lunar Outpost raises $30 million
-  Link: https://spacenews.com/lunar-outpost-raises-30-million/
+  [EARNINGS] Hinge Health Q1 Earnings Call Highlights
+  Link: https://finance.yahoo.com/markets/stocks/articles/hinge-health-q1-earnings-call-210414439.html
 
 ============================================================
 Dashboard: https://stachehistory.github.io/scout2-data/

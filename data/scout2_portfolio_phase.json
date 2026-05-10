@@ -1,0 +1,1538 @@
+{
+  "meta": {
+    "system": "Scout-2 Phase 2 / Investing with SPACE",
+    "version": "1.3",
+    "generated_at_utc": "2026-05-10T23:28:13Z",
+    "philosophy": "Phase-aware portfolio evaluation. Phase 1 intentional concentration in high-conviction asymmetric opportunities is EXPECTED and should NOT be penalized if ecosystem positioning and infrastructure leverage are high."
+  },
+  "current_portfolio_phase": 1,
+  "phase_name": "Asymmetric Accumulation",
+  "phase_description": "Early-stage concentrated accumulation into high-conviction asymmetric opportunities. Intentional concentration allowed. Volatility tolerated. Ecosystem leadership prioritized over diversification. Do not over-penalize concentration when conviction, thesis alignment, and asymmetric upside are high.",
+  "phase_parameters": {
+    "risk_tolerance": "high",
+    "concentration_policy": "allow_intentional",
+    "volatility_tolerance": "high",
+    "diversification_target": "low",
+    "core_target_pct": [
+      50,
+      80
+    ],
+    "stabilizer_target_pct": [
+      0,
+      15
+    ],
+    "emerging_target_pct": [
+      10,
+      40
+    ]
+  },
+  "asymmetric_concentration_meter": {
+    "pct_in_asymmetric_plays": 56.4,
+    "description": "% of portfolio basis in companies with AOS ≥ 7",
+    "phase_1_target": "50–90% intentional asymmetric concentration",
+    "status": "on_target"
+  },
+  "stabilizer_exposure_meter": {
+    "pct_in_stabilizers": 0.0,
+    "target_range_pct": [
+      0,
+      15
+    ],
+    "status": "on_target",
+    "description": "% of portfolio in Ring 4 (defense primes) + Ring 5 (testing)"
+  },
+  "portfolio_phase_adjusted_risk": "phase_appropriate",
+  "risk_note": "Risk profile appropriate for Phase 1 (Asymmetric Accumulation).",
+  "concentration_analysis": {
+    "status": "within_phase_parameters",
+    "phase": 1,
+    "phase_name": "Asymmetric Accumulation",
+    "phase_context": "Phase 1 (Asymmetric Accumulation): concentration=allow_intentional, risk=high",
+    "total_value_basis": 13320.51,
+    "positions": [
+      {
+        "ticker": "AMD",
+        "company": "AMD",
+        "ring": "Ring 6",
+        "value": 4976.736,
+        "weight_pct": 37.4
+      },
+      {
+        "ticker": "ASTS",
+        "company": "AST SpaceMobile",
+        "ring": "Core",
+        "value": 4120.3885,
+        "weight_pct": 30.9
+      },
+      {
+        "ticker": "RKLB",
+        "company": "Rocket Lab",
+        "ring": "Core",
+        "value": 1214.2499400000002,
+        "weight_pct": 9.1
+      },
+      {
+        "ticker": "FLY",
+        "company": "Firefly Aerospace",
+        "ring": "Core",
+        "value": 1205.92,
+        "weight_pct": 9.1
+      },
+      {
+        "ticker": "RDW",
+        "company": "Redwire",
+        "ring": "Core",
+        "value": 972.114,
+        "weight_pct": 7.3
+      },
+      {
+        "ticker": "MDA",
+        "company": "MDA Space",
+        "ring": "Ring 1.5",
+        "value": 541.1,
+        "weight_pct": 4.1
+      },
+      {
+        "ticker": "MARS",
+        "company": "MARS ETF",
+        "ring": "Core",
+        "value": 290.0,
+        "weight_pct": 2.2
+      }
+    ],
+    "ring_weights": {
+      "Core": 58.6,
+      "Ring 1.5": 4.1,
+      "Ring 6": 37.4
+    },
+    "stabilizer_pct": 0.0,
+    "flags": [],
+    "acceptable_concentrations": []
+  },
+  "top_asymmetric_opportunities": [
+    {
+      "ticker": "RDW",
+      "company": "Redwire",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 8.7,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": "LUNR",
+      "company": "Intuitive Machines",
+      "ring": 1,
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 8.6,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "ASTS",
+      "company": "AST SpaceMobile",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 8,
+      "asymmetric_opportunity_score": 8.2,
+      "aos_breakdown": {
+        "upside_scalability": 9,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 8,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 8
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": "BKSY",
+      "company": "BlackSky",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.7,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 10,
+        "institutional_score": 8,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "RKLB",
+      "company": "Rocket Lab",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 7.5,
+      "aos_breakdown": {
+        "upside_scalability": 9,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 9,
+        "infrastructure_leverage": 8,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": "PL",
+      "company": "Planet Labs",
+      "ring": 1,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.2,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 8,
+        "institutional_score": 6,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "IREN",
+      "company": "IREN",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.0,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    }
+  ],
+  "strategic_concentration_candidates": [],
+  "company_profiles": [
+    {
+      "ticker": "RDW",
+      "company": "Redwire",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 8.7,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": null,
+      "company": "Firefly Aerospace",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 8,
+      "asymmetric_opportunity_score": 8.6,
+      "aos_breakdown": {
+        "upside_scalability": 9,
+        "market_cap_score": 6,
+        "institutional_score": 8,
+        "ecosystem_positioning": 8,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 8
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": true
+    },
+    {
+      "ticker": "LUNR",
+      "company": "Intuitive Machines",
+      "ring": 1,
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 8.6,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "SpaceX",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Infrastructure",
+        "Communications"
+      ],
+      "status": "private",
+      "current_score": 7,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 8.2,
+      "aos_breakdown": {
+        "upside_scalability": 10,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 10,
+        "infrastructure_leverage": 10,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "ASTS",
+      "company": "AST SpaceMobile",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 8,
+      "asymmetric_opportunity_score": 8.2,
+      "aos_breakdown": {
+        "upside_scalability": 9,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 8,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 8
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": null,
+      "company": "Starfighters Space",
+      "ring": 3,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.9,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 10,
+        "institutional_score": 10,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 4,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "BKSY",
+      "company": "BlackSky",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.7,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 10,
+        "institutional_score": 8,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "RKLB",
+      "company": "Rocket Lab",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 7.5,
+      "aos_breakdown": {
+        "upside_scalability": 9,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 9,
+        "infrastructure_leverage": 8,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": "PL",
+      "company": "Planet Labs",
+      "ring": 1,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.2,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 8,
+        "institutional_score": 6,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "IREN",
+      "company": "IREN",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 7.0,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "MP",
+      "company": "MP Materials",
+      "ring": 1,
+      "layers": [
+        "Energy/Materials"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 7,
+      "asymmetric_opportunity_score": 6.8,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 8,
+        "accessibility_score": 7
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "MDA.TO",
+      "company": "MDA Space",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": -1,
+      "accessible_upside_score": 8,
+      "asymmetric_opportunity_score": 6.8,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 8,
+        "accessibility_score": 8
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": true
+    },
+    {
+      "ticker": "SPIR",
+      "company": "Spire Global",
+      "ring": 2,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 10,
+      "asymmetric_opportunity_score": 6.7,
+      "aos_breakdown": {
+        "upside_scalability": 6,
+        "market_cap_score": 8,
+        "institutional_score": 6,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 10
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "HE360",
+      "company": "HawkEye 360",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 7,
+      "score_change": -2,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 6.5,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 8,
+        "institutional_score": 8,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": "CRDO",
+      "company": "Credo Technology",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 7,
+      "asymmetric_opportunity_score": 6.4,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 7
+      },
+      "phase_recommendation": "accumulate",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Blue Origin",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Lunar/Deep Space"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.8,
+      "aos_breakdown": {
+        "upside_scalability": 7,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "PLTR",
+      "company": "Palantir",
+      "ring": 1,
+      "layers": [
+        "AI/Compute",
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.8,
+      "aos_breakdown": {
+        "upside_scalability": 6,
+        "market_cap_score": 4,
+        "institutional_score": 6,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 7,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Quantinuum",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "IPO-watch",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 7,
+      "asymmetric_opportunity_score": 5.8,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 10,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 7
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Capella Space",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.6,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Relativity Space",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.6,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Umbra",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.6,
+      "aos_breakdown": {
+        "upside_scalability": 8,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "VSAT",
+      "company": "Viasat",
+      "ring": 1,
+      "layers": [
+        "Communications",
+        "Defense/SDA"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": 0,
+      "accessible_upside_score": 7,
+      "asymmetric_opportunity_score": 5.5,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 6,
+        "institutional_score": 4,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 7
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "GSAT",
+      "company": "Globalstar",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": -2,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.4,
+      "aos_breakdown": {
+        "upside_scalability": 6,
+        "market_cap_score": 6,
+        "institutional_score": 6,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "NVDA",
+      "company": "Nvidia",
+      "ring": 1,
+      "layers": [
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 6,
+      "score_change": -1,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 5.0,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 1,
+        "institutional_score": 4,
+        "ecosystem_positioning": 8,
+        "infrastructure_leverage": 9,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "SGBAF",
+      "company": "SES",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "hold_watch_price",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Lunar Outpost",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space",
+        "Logistics"
+      ],
+      "status": "private",
+      "current_score": 9,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "AJRD",
+      "company": "Aerojet Rocketdyne",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "status": "acquired",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Anduril Industries",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Astrobotic",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Axiom Space",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "BAESY",
+      "company": "BAE Systems",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "SATS",
+      "company": "EchoStar",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "ICEYE",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Intelsat",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "IRDM",
+      "company": "Iridium",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 4,
+        "market_cap_score": 6,
+        "institutional_score": 2,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Maxar Technologies",
+      "ring": 1,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "status": "acquired",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "MNTS",
+      "company": "Momentus",
+      "ring": 2,
+      "layers": [
+        "Logistics"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Odin Space",
+      "ring": 3,
+      "layers": [
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Otto Aerospace",
+      "ring": 3,
+      "layers": [
+        "Testing/Validation"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "SatVu",
+      "ring": 3,
+      "layers": [
+        "Data/EO",
+        "Energy/Materials"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Shield AI",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Sierra Space",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Launch"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "TSAT",
+      "company": "Telesat",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": -1,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "LLAP",
+      "company": "Terran Orbital",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "United Launch Alliance",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Voyager Space",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.7,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "LMT",
+      "company": "Lockheed Martin",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.2,
+      "aos_breakdown": {
+        "upside_scalability": 3,
+        "market_cap_score": 3,
+        "institutional_score": 2,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "NOC",
+      "company": "Northrop Grumman",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.2,
+      "aos_breakdown": {
+        "upside_scalability": 3,
+        "market_cap_score": 3,
+        "institutional_score": 2,
+        "ecosystem_positioning": 7,
+        "infrastructure_leverage": 6,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": null,
+      "company": "Skyroot Aerospace",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "status": "private",
+      "current_score": 5,
+      "score_change": -2,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.2,
+      "aos_breakdown": {
+        "upside_scalability": 5,
+        "market_cap_score": 4,
+        "institutional_score": 4,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "watch_private",
+      "is_held": false
+    },
+    {
+      "ticker": "LHX",
+      "company": "L3Harris",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Communications",
+        "Ground Segment"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.1,
+      "aos_breakdown": {
+        "upside_scalability": 3,
+        "market_cap_score": 4,
+        "institutional_score": 2,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "LDOS",
+      "company": "Leidos",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 4.0,
+      "aos_breakdown": {
+        "upside_scalability": 4,
+        "market_cap_score": 4,
+        "institutional_score": 2,
+        "ecosystem_positioning": 5,
+        "infrastructure_leverage": 4,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    },
+    {
+      "ticker": "BA",
+      "company": "Boeing",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "status": "public",
+      "current_score": 10,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 3.9,
+      "aos_breakdown": {
+        "upside_scalability": 3,
+        "market_cap_score": 3,
+        "institutional_score": 2,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "hold_watch_price",
+      "is_held": false
+    },
+    {
+      "ticker": "RTX",
+      "company": "Raytheon Technologies",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure"
+      ],
+      "status": "public",
+      "current_score": 5,
+      "score_change": 0,
+      "accessible_upside_score": 5,
+      "asymmetric_opportunity_score": 3.9,
+      "aos_breakdown": {
+        "upside_scalability": 3,
+        "market_cap_score": 3,
+        "institutional_score": 2,
+        "ecosystem_positioning": 6,
+        "infrastructure_leverage": 5,
+        "accessibility_score": 5
+      },
+      "phase_recommendation": "monitor",
+      "is_held": false
+    }
+  ]
+}

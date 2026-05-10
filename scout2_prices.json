@@ -1,7 +1,7 @@
 {
   "last_updated_utc": "2026-05-10T00:00:00Z",
   "meta": {
-    "note": "Prices populated by API (Finnhub/Twelve Data) or manual entry in dashboard Settings tab. Dashboard falls back to this file if API unavailable.",
+    "note": "Prices populated by Finnhub/Twelve Data API (set key in Mission Control tab) or manual entry. Dashboard falls back to this file if API unavailable.",
     "version": "1.0"
   },
   "prices": [

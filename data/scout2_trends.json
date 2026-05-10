@@ -1,16 +1,16 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T19:08:32Z",
-    "items_analyzed": 94,
+    "generated_at_utc": "2026-05-10T23:28:13Z",
+    "items_analyzed": 79,
     "window": "72h"
   },
   "company_mentions": [
     {
       "company": "Planet Labs",
       "ticker": "PL",
-      "count": 29,
-      "prior": 29,
-      "trend": "stable",
+      "count": 21,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Data/EO"
       ]
@@ -18,9 +18,9 @@
     {
       "company": "MP Materials",
       "ticker": "MP",
-      "count": 28,
-      "prior": 28,
-      "trend": "stable",
+      "count": 19,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Energy/Materials"
       ]
@@ -28,9 +28,9 @@
     {
       "company": "NASA",
       "ticker": null,
-      "count": 22,
-      "prior": 22,
-      "trend": "stable",
+      "count": 17,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "NASA/Gov"
       ]
@@ -38,9 +38,9 @@
     {
       "company": "Boeing",
       "ticker": "BA",
-      "count": 18,
-      "prior": 18,
-      "trend": "stable",
+      "count": 15,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Defense/SDA",
         "Infrastructure",
@@ -50,31 +50,19 @@
     {
       "company": "SES",
       "ticker": "SGBAF",
-      "count": 13,
-      "prior": 13,
-      "trend": "stable",
+      "count": 8,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Communications"
-      ]
-    },
-    {
-      "company": "Rocket Lab",
-      "ticker": "RKLB",
-      "count": 4,
-      "prior": 4,
-      "trend": "stable",
-      "layers": [
-        "Launch",
-        "Defense/SDA",
-        "Logistics"
       ]
     },
     {
       "company": "SpaceX",
       "ticker": null,
       "count": 3,
-      "prior": 3,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Launch",
         "Infrastructure",
@@ -82,11 +70,45 @@
       ]
     },
     {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "count": 3,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ]
+    },
+    {
+      "company": "Lunar Outpost",
+      "ticker": null,
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Lunar/Deep Space",
+        "Logistics"
+      ]
+    },
+    {
+      "company": "SatVu",
+      "ticker": null,
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Data/EO",
+        "Energy/Materials"
+      ]
+    },
+    {
       "company": "Nvidia",
       "ticker": "NVDA",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "AI/Compute"
       ]
@@ -94,9 +116,9 @@
     {
       "company": "MDA Space",
       "ticker": "MDA.TO",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Infrastructure",
         "Logistics",
@@ -104,75 +126,11 @@
       ]
     },
     {
-      "company": "Globalstar",
-      "ticker": "GSAT",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Communications"
-      ]
-    },
-    {
-      "company": "Spire Global",
-      "ticker": "SPIR",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Data/EO",
-        "Infrastructure"
-      ]
-    },
-    {
-      "company": "Lunar Outpost",
-      "ticker": null,
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Lunar/Deep Space",
-        "Logistics"
-      ]
-    },
-    {
-      "company": "HawkEye 360",
-      "ticker": "HE360",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Defense/SDA",
-        "Data/EO"
-      ]
-    },
-    {
-      "company": "SatVu",
-      "ticker": null,
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Data/EO",
-        "Energy/Materials"
-      ]
-    },
-    {
-      "company": "Telesat",
-      "ticker": "TSAT",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable",
-      "layers": [
-        "Communications"
-      ]
-    },
-    {
       "company": "Viasat",
       "ticker": "VSAT",
       "count": 1,
-      "prior": 1,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Communications",
         "Defense/SDA"
@@ -182,8 +140,8 @@
       "company": "Voyager Space",
       "ticker": null,
       "count": 1,
-      "prior": 1,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Infrastructure"
       ]
@@ -192,19 +150,29 @@
       "company": "NGA",
       "ticker": null,
       "count": 1,
-      "prior": 1,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Defense/SDA",
         "Data/EO"
       ]
     },
     {
+      "company": "Globalstar",
+      "ticker": "GSAT",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications"
+      ]
+    },
+    {
       "company": "IREN",
       "ticker": "IREN",
       "count": 1,
-      "prior": 1,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "AI/Compute"
       ]
@@ -213,78 +181,104 @@
       "company": "Blue Origin",
       "ticker": null,
       "count": 1,
-      "prior": 1,
-      "trend": "stable",
+      "prior": 0,
+      "trend": "new",
       "layers": [
         "Launch",
         "Lunar/Deep Space"
+      ]
+    },
+    {
+      "company": "Spire Global",
+      "ticker": "SPIR",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ]
+    },
+    {
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ]
+    },
+    {
+      "company": "Telesat",
+      "ticker": "TSAT",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications"
       ]
     }
   ],
   "layer_mentions": [
     {
       "layer": "Infrastructure",
-      "count": 27,
-      "prior": 27,
-      "trend": "stable"
+      "count": 23,
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "Defense/SDA",
-      "count": 25,
-      "prior": 25,
-      "trend": "stable"
+      "count": 16,
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "NASA/Gov",
-      "count": 20,
-      "prior": 20,
-      "trend": "stable"
+      "count": 15,
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "Launch",
-      "count": 19,
-      "prior": 19,
-      "trend": "stable"
+      "count": 14,
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "Lunar/Deep Space",
-      "count": 17,
-      "prior": 17,
-      "trend": "stable"
+      "count": 13,
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "AI/Compute",
       "count": 12,
-      "prior": 12,
-      "trend": "stable"
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "Data/EO",
       "count": 3,
-      "prior": 3,
-      "trend": "stable"
+      "prior": 0,
+      "trend": "new"
     },
     {
       "layer": "Communications",
-      "count": 2,
-      "prior": 2,
-      "trend": "stable"
-    },
-    {
-      "layer": "Energy/Materials",
       "count": 1,
-      "prior": 1,
-      "trend": "stable"
+      "prior": 0,
+      "trend": "new"
     }
   ],
   "event_type_counts": {
-    "earnings": 3,
-    "contract": 9,
+    "ipo": 2,
+    "earnings": 6,
+    "contract": 7,
     "acquisition": 4,
-    "defense_award": 2,
+    "defense_award": 1,
     "product_launch": 2,
-    "funding": 3,
-    "ipo": 2
+    "funding": 2
   },
   "rising_companies": [],
   "silent_tracked": [
@@ -324,6 +318,16 @@
         "Defense/SDA",
         "Communications",
         "Ground Segment"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Redwire",
+      "ticker": "RDW",
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
       ],
       "note": "No signal in current 72h window"
     },
@@ -408,14 +412,6 @@
       "layers": [
         "Lunar/Deep Space",
         "Launch"
-      ],
-      "note": "No signal in current 72h window"
-    },
-    {
-      "company": "Momentus",
-      "ticker": "MNTS",
-      "layers": [
-        "Logistics"
       ],
       "note": "No signal in current 72h window"
     }
