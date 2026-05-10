@@ -1,0 +1,1106 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-05-10T16:20:34Z"
+  },
+  "scores": [
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 18,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Energy/Materials"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 28,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "NASA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "NASA/Gov"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 22,
+      "signal_status": "active",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "AI/Compute"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Earnings signal detected",
+      "signal_count": 3,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Data/EO"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 30,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 4,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "SES",
+      "ticker": "SGBAF",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 13,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "SpaceX",
+      "ticker": null,
+      "status": "private",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Infrastructure",
+        "Communications"
+      ],
+      "score": 10,
+      "prior_score": 5,
+      "score_change": 5,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 3,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Globalstar",
+      "ticker": "GSAT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "score": 9,
+      "prior_score": 5,
+      "score_change": 4,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "score": 9,
+      "prior_score": 5,
+      "score_change": 4,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "MDA Space",
+      "ticker": "MDA.TO",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
+      ],
+      "score": 9,
+      "prior_score": 5,
+      "score_change": 4,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "NGA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "score": 8,
+      "prior_score": 5,
+      "score_change": 3,
+      "score_change_reason": "Defense contract or award signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Blue Origin",
+      "ticker": null,
+      "status": "private",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Lunar/Deep Space"
+      ],
+      "score": 7,
+      "prior_score": 5,
+      "score_change": 2,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Lunar Outpost",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space",
+        "Logistics"
+      ],
+      "score": 7,
+      "prior_score": 5,
+      "score_change": 2,
+      "score_change_reason": "Funding round signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Skyroot Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "score": 7,
+      "prior_score": 5,
+      "score_change": 2,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Telesat",
+      "ticker": "TSAT",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 7,
+      "prior_score": 5,
+      "score_change": 2,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "recommended_action": "review",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "IREN",
+      "ticker": "IREN",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "score": 6,
+      "prior_score": 5,
+      "score_change": 1,
+      "score_change_reason": "Acquisition signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "recommended_action": "hold",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "SatVu",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Data/EO",
+        "Energy/Materials"
+      ],
+      "score": 6,
+      "prior_score": 5,
+      "score_change": 1,
+      "score_change_reason": "Earnings signal detected",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Viasat",
+      "ticker": "VSAT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications",
+        "Defense/SDA"
+      ],
+      "score": 6,
+      "prior_score": 5,
+      "score_change": 1,
+      "score_change_reason": "Contract signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "recommended_action": "hold",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Voyager Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "score": 6,
+      "prior_score": 5,
+      "score_change": 1,
+      "score_change_reason": "IPO signal detected",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "AST SpaceMobile",
+      "ticker": "ASTS",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Aerojet Rocketdyne",
+      "ticker": "AJRD",
+      "status": "acquired",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Anduril Industries",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Astrobotic",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Axiom Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "BAE Systems",
+      "ticker": "BAESY",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "BlackSky",
+      "ticker": "BKSY",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Capella Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Credo Technology",
+      "ticker": "CRDO",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "DARPA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "EchoStar",
+      "ticker": "SATS",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Firefly Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "ICEYE",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Intelsat",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Intuitive Machines",
+      "ticker": "LUNR",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Iridium",
+      "ticker": "IRDM",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "L3Harris",
+      "ticker": "LHX",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Communications",
+        "Ground Segment"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Leidos",
+      "ticker": "LDOS",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Lockheed Martin",
+      "ticker": "LMT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "MDA (Missile Defense)",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Maxar Technologies",
+      "ticker": null,
+      "status": "acquired",
+      "ring": 1,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Momentus",
+      "ticker": "MNTS",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Logistics"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "NRO",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Northrop Grumman",
+      "ticker": "NOC",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Odin Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Otto Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Testing/Validation"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Palantir",
+      "ticker": "PLTR",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "AI/Compute",
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Quantinuum",
+      "ticker": null,
+      "status": "IPO-watch",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Raytheon Technologies",
+      "ticker": "RTX",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Redwire",
+      "ticker": "RDW",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "1 mentions in current window",
+      "signal_count": 1,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Relativity Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Shield AI",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Sierra Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Launch"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Spire Global",
+      "ticker": "SPIR",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "2 mentions in current window",
+      "signal_count": 2,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Starfighters Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Terran Orbital",
+      "ticker": "LLAP",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "USSF / Space Force",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Umbra",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "United Launch Alliance",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "score": 5,
+      "prior_score": 5,
+      "score_change": 0,
+      "score_change_reason": "No signals in current 72h window",
+      "signal_count": 0,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "recommended_action": "watch",
+      "last_signal_at_utc": null
+    }
+  ]
+}

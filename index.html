@@ -5,547 +5,362 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scout-2 | Investing with SPACE</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
-
-  :root {
-    --bg:         #080c14;
-    --bg2:        #0d1520;
-    --bg3:        #111d2e;
-    --border:     #1e3050;
-    --accent:     #00d4ff;
-    --accent2:    #0066ff;
-    --red:        #ff3b5c;
-    --yellow:     #ffb800;
-    --blue:       #3b8eff;
-    --green:      #00e676;
-    --text:       #cdd8e8;
-    --text-dim:   #5a7a9a;
-    --text-bright:#ffffff;
-    --mono:       'Space Mono', monospace;
-    --sans:       'Syne', sans-serif;
-  }
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--sans);
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--bg2);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .logo-icon {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(135deg, var(--accent2), var(--accent));
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-  }
-
-  .logo-text {
-    font-family: var(--sans);
-    font-weight: 800;
-    font-size: 18px;
-    color: var(--text-bright);
-    letter-spacing: -0.5px;
-  }
-
-  .logo-sub {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-  }
-
-  .header-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--green);
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  .last-updated {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-  }
-
-  .refresh-btn {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    color: var(--accent);
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 6px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-    letter-spacing: 1px;
-  }
-
-  .refresh-btn:hover {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-
-  /* ── SUMMARY CARDS ── */
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-
-  .stat-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .stat-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--accent);
-  }
-
-  .stat-card.alert-card::before { background: var(--red); }
-  .stat-card.warn-card::before  { background: var(--yellow); }
-  .stat-card.watch-card::before { background: var(--blue); }
-  .stat-card.feed-card::before  { background: var(--green); }
-
-  .stat-label {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-  }
-
-  .stat-value {
-    font-family: var(--mono);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text-bright);
-    line-height: 1;
-  }
-
-  .stat-card.alert-card .stat-value { color: var(--red); }
-  .stat-card.warn-card  .stat-value { color: var(--yellow); }
-  .stat-card.watch-card .stat-value { color: var(--blue); }
-
-  /* ── MAIN GRID ── */
-  .main-grid {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: 20px;
-  }
-
-  @media (max-width: 1000px) {
-    .main-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ── PANELS ── */
-  .panel {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .panel-header {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: var(--bg3);
-  }
-
-  .panel-title {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-bright);
-  }
-
-  .panel-count {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    background: var(--bg);
-    padding: 2px 8px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-  }
-
-  .panel-body {
-    overflow-y: auto;
-    max-height: 75vh;
-  }
-
-  /* ── CONTROLS BAR ── */
-  .controls {
-    padding: 12px 18px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    background: var(--bg2);
-  }
-
-  .search-input {
-    flex: 1;
-    min-width: 160px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    outline: none;
-  }
-
-  .search-input:focus { border-color: var(--accent); }
-  .search-input::placeholder { color: var(--text-dim); }
-
-  .filter-btn {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    white-space: nowrap;
-  }
-
-  .filter-btn:hover,
-  .filter-btn.active {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(0, 212, 255, 0.08);
-  }
-
-  .toggle-alerts {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text-dim);
-    font-family: var(--mono);
-    font-size: 10px;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.15s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .toggle-alerts.active {
-    border-color: var(--red);
-    color: var(--red);
-    background: rgba(255, 59, 92, 0.08);
-  }
-
-  /* ── ALERT ITEMS ── */
-  .alert-item {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    transition: background 0.15s;
-    position: relative;
-  }
-
-  .alert-item:hover { background: var(--bg3); }
-
-  .alert-item::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-  }
-
-  .alert-item.immediate::before { background: var(--red); }
-  .alert-item.same_day::before  { background: var(--yellow); }
-  .alert-item.watch::before     { background: var(--blue); }
-
-  .alert-urgency {
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .immediate .alert-urgency { color: var(--red); }
-  .same_day  .alert-urgency { color: var(--yellow); }
-  .watch     .alert-urgency { color: var(--blue); }
-
-  .alert-types {
-    font-family: var(--mono);
-    font-size: 9px;
-    color: var(--text-dim);
-    margin-left: auto;
-    display: flex;
-    gap: 4px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  .type-tag {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-size: 8px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .alert-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-bright);
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-
-  .alert-meta {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    display: flex;
-    gap: 12px;
-  }
-
-  /* ── FEED ITEMS ── */
-  .feed-item {
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border);
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-
-  .feed-item:hover { background: rgba(255,255,255,0.02); }
-  .feed-item:last-child { border-bottom: none; }
-
-  .feed-item-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 5px;
-    flex-wrap: wrap;
-  }
-
-  .category-badge {
-    font-family: var(--mono);
-    font-size: 9px;
-    padding: 2px 7px;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .cat-space    { background: rgba(0,212,255,0.1);  color: var(--accent);  border: 1px solid rgba(0,212,255,0.2);  }
-  .cat-defense  { background: rgba(255,59,92,0.1);  color: var(--red);     border: 1px solid rgba(255,59,92,0.2);  }
-  .cat-nasa     { background: rgba(0,230,118,0.1);  color: var(--green);   border: 1px solid rgba(0,230,118,0.2);  }
-  .cat-sat      { background: rgba(59,142,255,0.1); color: var(--blue);    border: 1px solid rgba(59,142,255,0.2); }
-  .cat-biz      { background: rgba(255,184,0,0.1);  color: var(--yellow);  border: 1px solid rgba(255,184,0,0.2);  }
-  .cat-aero     { background: rgba(160,120,255,0.1);color: #a078ff;        border: 1px solid rgba(160,120,255,0.2);}
-  .cat-tech     { background: rgba(255,100,0,0.1);  color: #ff6400;        border: 1px solid rgba(255,100,0,0.2);  }
-
-  .feed-age {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-    margin-left: auto;
-  }
-
-  .alert-indicator {
-    font-size: 10px;
-  }
-
-  .feed-title {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-bright);
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-
-  .feed-summary {
-    font-size: 12px;
-    color: var(--text-dim);
-    line-height: 1.5;
-    margin-bottom: 5px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .feed-source {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-  }
-
-  .feed-source a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-
-  .feed-source a:hover { text-decoration: underline; }
-
-  /* ── EMPTY STATE ── */
-  .empty-state {
-    padding: 48px 24px;
-    text-align: center;
-    color: var(--text-dim);
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  /* ── LOADING ── */
-  .loading {
-    padding: 48px 24px;
-    text-align: center;
-    color: var(--text-dim);
-    font-family: var(--mono);
-    font-size: 12px;
-  }
-
-  .spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-bottom: 12px;
-  }
-
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ── RUN HISTORY ── */
-  .history-panel {
-    margin-top: 20px;
-    grid-column: 1 / -1;
-  }
-
-  .history-row {
-    display: grid;
-    grid-template-columns: 180px 80px 80px 80px 80px 1fr;
-    padding: 10px 18px;
-    border-bottom: 1px solid var(--border);
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--text-dim);
-    align-items: center;
-    gap: 8px;
-  }
-
-  .history-row.header {
-    color: var(--text-dim);
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    background: var(--bg3);
-  }
-
-  .history-row:hover:not(.header) { background: var(--bg3); }
-
-  .num-green  { color: var(--green); }
-  .num-red    { color: var(--red); }
-  .num-yellow { color: var(--yellow); }
-
-  /* ── ERROR BANNER ── */
-  .error-banner {
-    background: rgba(255,59,92,0.1);
-    border: 1px solid rgba(255,59,92,0.3);
-    color: var(--red);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 12px 18px;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    display: none;
-  }
-
-  /* ── NEXT REFRESH TIMER ── */
-  .next-refresh {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--text-dim);
-  }
-
-  /* ── SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--accent2); }
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg:       #06090f;
+  --bg2:      #0b1220;
+  --bg3:      #101c30;
+  --border:   #1a2d48;
+  --accent:   #00d4ff;
+  --accent2:  #0055ff;
+  --red:      #ff3355;
+  --yellow:   #ffb800;
+  --blue:     #3b8eff;
+  --green:    #00e676;
+  --purple:   #a855f7;
+  --orange:   #ff6b00;
+  --text:     #c8d8ec;
+  --dim:      #4a6a8a;
+  --bright:   #ffffff;
+  --mono:     'Space Mono', monospace;
+  --sans:     'Syne', sans-serif;
+  --radius:   6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; top: 0; z-index: 200;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-icon {
+  width: 34px; height: 34px;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.logo-name { font-weight: 800; font-size: 17px; color: var(--bright); letter-spacing: -0.3px; }
+.logo-sub  { font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
+
+.header-center {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+
+.nav-btn {
+  background: transparent; border: 1px solid var(--border);
+  color: var(--dim); font-family: var(--mono); font-size: 10px;
+  padding: 5px 12px; border-radius: var(--radius); cursor: pointer;
+  transition: all 0.15s; text-transform: uppercase; letter-spacing: 1px;
+}
+.nav-btn:hover, .nav-btn.active {
+  border-color: var(--accent); color: var(--accent);
+  background: rgba(0,212,255,0.06);
+}
+
+.header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+.hdr-meta { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+
+.search-wrap { position: relative; }
+.search-wrap input {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text); font-family: var(--mono); font-size: 11px;
+  padding: 5px 10px 5px 28px; border-radius: var(--radius);
+  outline: none; width: 180px;
+}
+.search-wrap input:focus { border-color: var(--accent); }
+.search-wrap input::placeholder { color: var(--dim); }
+.search-icon { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--dim); pointer-events: none; }
+
+.refresh-btn {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--accent); font-family: var(--mono); font-size: 10px;
+  padding: 5px 12px; border-radius: var(--radius); cursor: pointer;
+  transition: all 0.15s; letter-spacing: 1px;
+}
+.refresh-btn:hover { background: var(--accent); color: var(--bg); }
+
+/* ── LAYOUT ──────────────────────────────────────────────── */
+.container { max-width: 1440px; margin: 0 auto; padding: 20px; }
+
+/* ── ERROR BANNER ────────────────────────────────────────── */
+.err { background: rgba(255,51,85,.1); border: 1px solid rgba(255,51,85,.3);
+  color: var(--red); font-family: var(--mono); font-size: 11px;
+  padding: 10px 16px; border-radius: var(--radius); margin-bottom: 16px; display: none; }
+
+/* ── STAT CARDS ──────────────────────────────────────────── */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 10px; margin-bottom: 20px; }
+
+.stat {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px; position: relative; overflow: hidden;
+}
+.stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
+.stat.red::before    { background: var(--red); }
+.stat.yellow::before { background: var(--yellow); }
+.stat.blue::before   { background: var(--blue); }
+.stat.green::before  { background: var(--green); }
+.stat.purple::before { background: var(--purple); }
+.stat.accent::before { background: var(--accent); }
+
+.stat-lbl { font-family: var(--mono); font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+.stat-val { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--bright); line-height: 1; }
+.stat.red    .stat-val { color: var(--red); }
+.stat.yellow .stat-val { color: var(--yellow); }
+.stat.blue   .stat-val { color: var(--blue); }
+.stat.green  .stat-val { color: var(--green); }
+.stat-sub { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-top: 4px; }
+
+/* ── SECTION TITLE ───────────────────────────────────────── */
+.section { margin-bottom: 24px; }
+.section-hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.section-title { font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--bright); }
+.section-count { font-family: var(--mono); font-size: 10px; color: var(--dim); background: var(--bg3); padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border); }
+
+/* ── ALERTS GRID ─────────────────────────────────────────── */
+.alerts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 10px; }
+
+.alert-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  cursor: pointer; transition: transform 0.15s, border-color 0.15s;
+  position: relative; overflow: hidden;
+}
+.alert-card:hover { transform: translateY(-1px); }
+.alert-card::before { content:''; position:absolute; left:0;top:0;bottom:0; width:3px; }
+.alert-card.immediate::before { background: var(--red); }
+.alert-card.same_day::before  { background: var(--yellow); }
+.alert-card.watch::before     { background: var(--blue); }
+.alert-card.immediate { border-color: rgba(255,51,85,.25); }
+.alert-card.same_day  { border-color: rgba(255,184,0,.25); }
+
+.alert-top { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
+.urgency-badge {
+  font-family: var(--mono); font-size: 9px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px; padding: 2px 7px;
+  border-radius: 3px;
+}
+.immediate .urgency-badge { background: rgba(255,51,85,.15); color: var(--red); border: 1px solid rgba(255,51,85,.3); }
+.same_day  .urgency-badge { background: rgba(255,184,0,.12); color: var(--yellow); border: 1px solid rgba(255,184,0,.3); }
+.watch     .urgency-badge { background: rgba(59,142,255,.12); color: var(--blue); border: 1px solid rgba(59,142,255,.3); }
+
+.alert-score { font-family: var(--mono); font-size: 9px; color: var(--dim); }
+.event-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
+.event-tag {
+  font-family: var(--mono); font-size: 8px; padding: 1px 5px;
+  border-radius: 2px; background: var(--bg3); border: 1px solid var(--border);
+  color: var(--dim); text-transform: uppercase;
+}
+
+.alert-title { font-size: 13px; font-weight: 600; color: var(--bright); line-height: 1.4; margin-bottom: 5px; }
+.alert-why   { font-size: 11px; color: var(--dim); line-height: 1.5; margin-bottom: 6px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.alert-bottom { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.alert-meta  { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+.alert-action { font-family: var(--mono); font-size: 9px; color: var(--accent); background: rgba(0,212,255,.07); border: 1px solid rgba(0,212,255,.2); padding: 2px 7px; border-radius: 3px; }
+
+/* ── TWO-COL GRID ────────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:900px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ── SCORES TABLE ────────────────────────────────────────── */
+.scores-table { width: 100%; border-collapse: collapse; }
+.scores-table th {
+  font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--dim); padding: 8px 10px; text-align: left;
+  border-bottom: 1px solid var(--border); background: var(--bg3);
+}
+.scores-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 12px; vertical-align: middle; }
+.scores-table tr:hover td { background: var(--bg3); }
+.scores-table tr:last-child td { border-bottom: none; }
+
+.score-num { font-family: var(--mono); font-size: 14px; font-weight: 700; }
+.s10,.s9 { color: var(--green); }
+.s8,.s7  { color: var(--accent); }
+.s6,.s5  { color: var(--text); }
+.s4,.s3  { color: var(--yellow); }
+.s2,.s1  { color: var(--red); }
+
+.score-delta { font-family: var(--mono); font-size: 10px; }
+.delta-up   { color: var(--green); }
+.delta-down { color: var(--red); }
+.delta-flat { color: var(--dim); }
+
+.ticker-badge {
+  font-family: var(--mono); font-size: 9px; padding: 1px 6px;
+  border-radius: 3px; background: var(--bg3); border: 1px solid var(--border); color: var(--accent);
+}
+
+.cap-badge {
+  font-family: var(--mono); font-size: 8px; padding: 1px 5px;
+  border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.cap-high   { background: rgba(0,230,118,.1); color: var(--green); border: 1px solid rgba(0,230,118,.2); }
+.cap-medium { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.2); }
+.cap-low    { background: rgba(255,255,255,.04); color: var(--dim); border: 1px solid var(--border); }
+.cap-watch  { background: rgba(255,184,0,.1); color: var(--yellow); border: 1px solid rgba(255,184,0,.2); }
+
+/* ── LAYER TRENDS ────────────────────────────────────────── */
+.layer-bars { display: flex; flex-direction: column; gap: 8px; }
+.layer-row  { display: flex; align-items: center; gap: 10px; }
+.layer-name { font-family: var(--mono); font-size: 10px; color: var(--text); width: 160px; flex-shrink: 0; }
+.layer-bar-wrap { flex: 1; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+.layer-bar  { height: 100%; border-radius: 3px; background: var(--accent); transition: width 0.5s; }
+.layer-trend { font-family: var(--mono); font-size: 9px; width: 50px; text-align: right; flex-shrink: 0; }
+.trend-rising  { color: var(--green); }
+.trend-falling { color: var(--red); }
+.trend-stable  { color: var(--dim); }
+.trend-new     { color: var(--yellow); }
+.layer-count { font-family: var(--mono); font-size: 10px; color: var(--dim); width: 30px; text-align: right; flex-shrink: 0; }
+
+/* ── UNIVERSE TABLE ──────────────────────────────────────── */
+.universe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 8px; }
+.uni-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 12px;
+  cursor: pointer; transition: border-color 0.15s;
+}
+.uni-card:hover { border-color: var(--accent); }
+.uni-name { font-size: 12px; font-weight: 600; color: var(--bright); margin-bottom: 3px; }
+.uni-meta { font-family: var(--mono); font-size: 9px; color: var(--dim); display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
+.uni-layers { display: flex; gap: 3px; flex-wrap: wrap; }
+.uni-layer {
+  font-family: var(--mono); font-size: 8px; padding: 1px 4px;
+  border-radius: 2px; background: var(--bg3); border: 1px solid var(--border); color: var(--dim);
+}
+.status-pub     { color: var(--green); }
+.status-private { color: var(--dim); }
+.status-ipo     { color: var(--yellow); }
+.status-watch   { color: var(--blue); }
+.status-acq     { color: var(--red); }
+
+/* ── RECOMMENDATIONS ─────────────────────────────────────── */
+.rec-list { display: flex; flex-direction: column; gap: 8px; }
+.rec-card {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 14px;
+  cursor: pointer; transition: border-color 0.15s;
+}
+.rec-card:hover { border-color: var(--accent); }
+.rec-top { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
+.rec-company { font-size: 13px; font-weight: 700; color: var(--bright); }
+.rec-action {
+  font-family: var(--mono); font-size: 9px; padding: 2px 7px;
+  border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.action-buy    { background: rgba(0,230,118,.1); color: var(--green); border: 1px solid rgba(0,230,118,.3); }
+.action-hold   { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.3); }
+.action-watch  { background: rgba(255,184,0,.1); color: var(--yellow); border: 1px solid rgba(255,184,0,.3); }
+.action-review { background: rgba(168,85,247,.1); color: var(--purple); border: 1px solid rgba(168,85,247,.3); }
+.action-avoid  { background: rgba(255,51,85,.1); color: var(--red); border: 1px solid rgba(255,51,85,.3); }
+
+.rec-rationale { font-size: 11px; color: var(--dim); line-height: 1.5; margin-bottom: 4px; }
+.rec-risk { font-family: var(--mono); font-size: 9px; color: var(--yellow); }
+.rec-agent { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-top: 3px; }
+
+/* ── RUN HISTORY ─────────────────────────────────────────── */
+.history-table { width: 100%; border-collapse: collapse; }
+.history-table th { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--dim); padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); background: var(--bg3); }
+.history-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--dim); }
+.history-table tr:hover td { background: var(--bg3); }
+.history-table tr:last-child td { border-bottom: none; }
+.num-g { color: var(--green); }
+.num-r { color: var(--red); }
+.num-y { color: var(--yellow); }
+
+/* ── MISSION CONTROL ─────────────────────────────────────── */
+.mc-toggle { font-family: var(--mono); font-size: 10px; color: var(--accent); cursor: pointer; background: none; border: 1px solid var(--border); padding: 5px 12px; border-radius: var(--radius); letter-spacing: 1px; margin-bottom: 16px; }
+.mc-toggle:hover { background: var(--accent); color: var(--bg); }
+.mc-panel { display: none; }
+.mc-panel.open { display: block; }
+.mc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 12px; }
+.mc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
+.mc-title { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 10px; }
+.mc-entry { font-size: 11px; color: var(--dim); padding: 4px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: flex-start; }
+.mc-entry:last-child { border-bottom: none; }
+.mc-company { color: var(--text); font-weight: 600; flex-shrink: 0; min-width: 100px; }
+
+/* ── SUPPLY CHAIN ────────────────────────────────────────── */
+.supply-chain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 10px; }
+.sc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
+.sc-core { font-size: 13px; font-weight: 700; color: var(--bright); margin-bottom: 6px; }
+.sc-row  { display: flex; gap: 6px; margin-bottom: 4px; align-items: flex-start; }
+.sc-lbl  { font-family: var(--mono); font-size: 9px; color: var(--dim); width: 72px; flex-shrink: 0; text-transform: uppercase; padding-top: 2px; }
+.sc-vals { font-size: 11px; color: var(--text); line-height: 1.5; }
+
+/* ── FEED PANEL ──────────────────────────────────────────── */
+.feed-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.filter-btn {
+  background: var(--bg2); border: 1px solid var(--border);
+  color: var(--dim); font-family: var(--mono); font-size: 9px;
+  padding: 5px 10px; border-radius: var(--radius); cursor: pointer;
+  transition: all 0.15s; text-transform: uppercase; letter-spacing: 1px;
+}
+.filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.06); }
+.filter-btn.alerts-only { }
+.filter-btn.alerts-only.active { border-color: var(--red); color: var(--red); background: rgba(255,51,85,.06); }
+
+.feed-list { display: flex; flex-direction: column; gap: 0; }
+.feed-item {
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+  cursor: pointer; transition: background 0.1s;
+}
+.feed-item:last-child { border-bottom: none; }
+.feed-item:hover { background: rgba(255,255,255,.01); }
+.feed-item-top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.cat-badge { font-family: var(--mono); font-size: 8px; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; white-space: nowrap; }
+.cat-space   { background: rgba(0,212,255,.08); color: var(--accent); border: 1px solid rgba(0,212,255,.2); }
+.cat-defense { background: rgba(255,51,85,.08);  color: var(--red);    border: 1px solid rgba(255,51,85,.2); }
+.cat-nasa    { background: rgba(0,230,118,.08);  color: var(--green);  border: 1px solid rgba(0,230,118,.2); }
+.cat-sat     { background: rgba(59,142,255,.08); color: var(--blue);   border: 1px solid rgba(59,142,255,.2); }
+.cat-biz     { background: rgba(255,184,0,.08);  color: var(--yellow); border: 1px solid rgba(255,184,0,.2); }
+.cat-aero    { background: rgba(168,85,247,.08); color: var(--purple); border: 1px solid rgba(168,85,247,.2); }
+.cat-tech    { background: rgba(255,107,0,.08);  color: var(--orange); border: 1px solid rgba(255,107,0,.2); }
+.item-age  { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-left: auto; }
+.alert-pip { font-size: 10px; }
+.feed-title { font-size: 13px; font-weight: 600; color: var(--bright); line-height: 1.4; margin-bottom: 3px; }
+.feed-summary { font-size: 11px; color: var(--dim); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 3px; }
+.feed-source { font-family: var(--mono); font-size: 9px; color: var(--dim); }
+.feed-source a { color: var(--accent); text-decoration: none; }
+.feed-source a:hover { text-decoration: underline; }
+
+/* ── UTILS ───────────────────────────────────────────────── */
+.empty { padding: 32px; text-align: center; color: var(--dim); font-family: var(--mono); font-size: 11px; }
+.loading { padding: 40px; text-align: center; color: var(--dim); }
+.spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 10px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.panel { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.panel-inner { padding: 16px; max-height: 500px; overflow-y: auto; }
+::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: var(--bg); } ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+/* ── SECTION VISIBILITY ──────────────────────────────────── */
+.page-section { display: block; }
+.page-section.hidden { display: none; }
 </style>
 </head>
 <body>
@@ -554,363 +369,549 @@
   <div class="logo">
     <div class="logo-icon">🛰</div>
     <div>
-      <div class="logo-text">Scout-2</div>
+      <div class="logo-name">Scout-2</div>
       <div class="logo-sub">Investing with SPACE</div>
     </div>
   </div>
+
+  <div class="header-center">
+    <button class="nav-btn active" onclick="showSection('alerts',this)">Alerts</button>
+    <button class="nav-btn" onclick="showSection('scores',this)">Scores</button>
+    <button class="nav-btn" onclick="showSection('trends',this)">Trends</button>
+    <button class="nav-btn" onclick="showSection('universe',this)">Universe</button>
+    <button class="nav-btn" onclick="showSection('recs',this)">Recs</button>
+    <button class="nav-btn" onclick="showSection('feed',this)">Live Feed</button>
+    <button class="nav-btn" onclick="showSection('supply',this)">Supply Chain</button>
+    <button class="nav-btn" onclick="showSection('history',this)">History</button>
+  </div>
+
   <div class="header-right">
-    <div class="status-dot" id="statusDot"></div>
-    <div class="last-updated" id="lastUpdated">Loading...</div>
-    <div class="next-refresh" id="nextRefresh"></div>
-    <button class="refresh-btn" onclick="loadAll()">↻ REFRESH</button>
+    <div class="live-dot"></div>
+    <div class="hdr-meta" id="lastUpdated">Loading...</div>
+    <div class="hdr-meta" id="countdown"></div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" placeholder="Search..." oninput="applySearch()">
+    </div>
+    <button class="refresh-btn" onclick="loadAll()">↻</button>
   </div>
 </header>
 
 <div class="container">
+  <div class="err" id="errBanner"></div>
 
-  <div class="error-banner" id="errorBanner"></div>
+  <!-- SUMMARY STATS -->
+  <div class="stats-row" id="statsRow">
+    <div class="stat red"><div class="stat-lbl">🚨 Immediate</div><div class="stat-val" id="sImmediate">—</div></div>
+    <div class="stat yellow"><div class="stat-lbl">⚡ Same Day</div><div class="stat-val" id="sSameDay">—</div></div>
+    <div class="stat blue"><div class="stat-lbl">👁 Watch</div><div class="stat-val" id="sWatch">—</div></div>
+    <div class="stat accent"><div class="stat-lbl">Live Items</div><div class="stat-val" id="sItems">—</div></div>
+    <div class="stat green"><div class="stat-lbl">Feed Health</div><div class="stat-val" id="sFeedHealth">—</div><div class="stat-sub" id="sStatus">—</div></div>
+    <div class="stat purple"><div class="stat-lbl">Universe</div><div class="stat-val" id="sUniverse">—</div><div class="stat-sub">tracked</div></div>
+    <div class="stat"><div class="stat-lbl">Top Layer</div><div class="stat-val" style="font-size:14px;margin-top:4px" id="sTopLayer">—</div></div>
+    <div class="stat"><div class="stat-lbl">Top Mover</div><div class="stat-val" style="font-size:14px;margin-top:4px" id="sTopMover">—</div></div>
+  </div>
 
-  <!-- SUMMARY CARDS -->
-  <div class="summary-grid">
-    <div class="stat-card">
-      <div class="stat-label">Live Items</div>
-      <div class="stat-value" id="statItems">—</div>
+  <!-- ── ALERTS SECTION ───────────────────────── -->
+  <div class="page-section" id="sec-alerts">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">🚨 Immediate Alerts</div>
+        <div class="section-count" id="cImmediate">0</div>
+      </div>
+      <div class="alerts-grid" id="alertsImmediate"><div class="empty">No immediate alerts</div></div>
     </div>
-    <div class="stat-card alert-card">
-      <div class="stat-label">🚨 Immediate</div>
-      <div class="stat-value" id="statImmediate">—</div>
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">⚡ Same-Day Alerts</div>
+        <div class="section-count" id="cSameDay">0</div>
+      </div>
+      <div class="alerts-grid" id="alertsSameDay"><div class="empty">No same-day alerts</div></div>
     </div>
-    <div class="stat-card warn-card">
-      <div class="stat-label">⚡ Same Day</div>
-      <div class="stat-value" id="statSameDay">—</div>
-    </div>
-    <div class="stat-card watch-card">
-      <div class="stat-label">👁 Watch</div>
-      <div class="stat-value" id="statWatch">—</div>
-    </div>
-    <div class="stat-card feed-card">
-      <div class="stat-label">Feeds OK</div>
-      <div class="stat-value" id="statFeeds">—</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">Quarantined</div>
-      <div class="stat-value" id="statQuarantine">—</div>
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">👁 Watch Alerts</div>
+        <div class="section-count" id="cWatch">0</div>
+      </div>
+      <div class="alerts-grid" id="alertsWatch"><div class="empty">No watch alerts</div></div>
     </div>
   </div>
 
-  <!-- MAIN GRID -->
-  <div class="main-grid">
-
-    <!-- LEFT: ALERTS PANEL -->
-    <div class="panel">
-      <div class="panel-header">
-        <div class="panel-title">🚨 Alerts</div>
-        <div class="panel-count" id="alertCount">0</div>
+  <!-- ── SCORES SECTION ───────────────────────── -->
+  <div class="page-section hidden" id="sec-scores">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">📊 Company Scores</div>
+        <div class="section-count" id="cScores">0</div>
       </div>
-      <div class="panel-body" id="alertsBody">
-        <div class="loading"><div class="spinner"></div><br>Loading alerts...</div>
-      </div>
+      <div class="panel"><div class="panel-inner" style="max-height:600px;overflow-x:auto">
+        <table class="scores-table" id="scoresTable">
+          <thead><tr>
+            <th>Score</th><th>Δ</th><th>Company</th><th>Ticker</th>
+            <th>Priority</th><th>Action</th><th>Status</th><th>Signal</th>
+          </tr></thead>
+          <tbody id="scoresTbody"><tr><td colspan="8" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div></div>
     </div>
-
-    <!-- RIGHT: LIVE FEED PANEL -->
-    <div class="panel">
-      <div class="panel-header">
-        <div class="panel-title">📡 Live Feed</div>
-        <div class="panel-count" id="feedCount">0</div>
-      </div>
-
-      <!-- CONTROLS -->
-      <div class="controls">
-        <input class="search-input" type="text" id="searchInput"
-               placeholder="Search headlines..." oninput="applyFilters()">
-        <button class="filter-btn active" onclick="setCatFilter('all', this)">All</button>
-        <button class="filter-btn" onclick="setCatFilter('Space Industry', this)">Space</button>
-        <button class="filter-btn" onclick="setCatFilter('Defense/SDA', this)">Defense</button>
-        <button class="filter-btn" onclick="setCatFilter('NASA/Gov', this)">NASA</button>
-        <button class="filter-btn" onclick="setCatFilter('Satellite/Comms', this)">Sat</button>
-        <button class="filter-btn" onclick="setCatFilter('Business/Markets', this)">Markets</button>
-        <button class="filter-btn" onclick="setCatFilter('Tech/AI/Compute', this)">AI/Tech</button>
-        <button class="toggle-alerts" id="toggleAlertsBtn" onclick="toggleAlertsOnly()">Alerts Only</button>
-      </div>
-
-      <div class="panel-body" id="feedBody">
-        <div class="loading"><div class="spinner"></div><br>Loading feed...</div>
-      </div>
-    </div>
-
-    <!-- BOTTOM: RUN HISTORY -->
-    <div class="panel history-panel">
-      <div class="panel-header">
-        <div class="panel-title">📋 Run History</div>
-        <div class="panel-count" id="historyCount">0 runs</div>
-      </div>
-      <div class="history-row header">
-        <span>Timestamp</span>
-        <span>Feeds</span>
-        <span>Failed</span>
-        <span>Items</span>
-        <span>Alerts</span>
-        <span>Archive</span>
-      </div>
-      <div id="historyBody">
-        <div class="loading">Loading history...</div>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <!-- ── TRENDS SECTION ───────────────────────── -->
+  <div class="page-section hidden" id="sec-trends">
+    <div class="two-col">
+      <div class="section">
+        <div class="section-hdr"><div class="section-title">📈 Layer Trends</div></div>
+        <div id="layerBars"><div class="empty">Loading...</div></div>
+      </div>
+      <div class="section">
+        <div class="section-hdr"><div class="section-title">🏢 Company Mentions</div></div>
+        <div id="companyMentions"><div class="empty">Loading...</div></div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-hdr"><div class="section-title">🔇 Silent Tracked Companies</div></div>
+      <div id="silentCompanies"><div class="empty">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- ── UNIVERSE SECTION ─────────────────────── -->
+  <div class="page-section hidden" id="sec-universe">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">🌐 Master Universe</div>
+        <div class="section-count" id="cUniverse">0 companies</div>
+      </div>
+      <div id="universeGrid" class="universe-grid"><div class="empty">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- ── RECOMMENDATIONS ──────────────────────── -->
+  <div class="page-section hidden" id="sec-recs">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">💡 Recommendations</div>
+        <div class="section-count" id="cRecs">0</div>
+      </div>
+      <p style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:12px;padding:8px 12px;border:1px solid rgba(255,51,85,.3);border-radius:4px;background:rgba(255,51,85,.05)">
+        ⚠ These are signal flags for human review only. NO automated trade execution. Always verify independently.
+      </p>
+      <div class="rec-list" id="recList"><div class="empty">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- ── LIVE FEED ─────────────────────────────── -->
+  <div class="page-section hidden" id="sec-feed">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">📡 Live Feed</div>
+        <div class="section-count" id="cFeed">0 items</div>
+      </div>
+      <div class="feed-filters">
+        <button class="filter-btn active" onclick="setCat('all',this)">All</button>
+        <button class="filter-btn" onclick="setCat('Space Industry',this)">Space</button>
+        <button class="filter-btn" onclick="setCat('Defense/SDA',this)">Defense</button>
+        <button class="filter-btn" onclick="setCat('NASA/Gov',this)">NASA</button>
+        <button class="filter-btn" onclick="setCat('Satellite/Comms',this)">Satellite</button>
+        <button class="filter-btn" onclick="setCat('Business/Markets',this)">Markets</button>
+        <button class="filter-btn" onclick="setCat('Tech/AI/Compute',this)">AI/Tech</button>
+        <button class="filter-btn alerts-only" id="alertsOnlyBtn" onclick="toggleAlertsOnly()">🚨 Alerts Only</button>
+      </div>
+      <div class="feed-list" id="feedList"><div class="empty">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- ── SUPPLY CHAIN ──────────────────────────── -->
+  <div class="page-section hidden" id="sec-supply">
+    <div class="section">
+      <div class="section-hdr"><div class="section-title">🔗 Supply Chain Map</div></div>
+      <div class="supply-chain-grid" id="supplyGrid"><div class="empty">Loading...</div></div>
+    </div>
+  </div>
+
+  <!-- ── HISTORY ───────────────────────────────── -->
+  <div class="page-section hidden" id="sec-history">
+    <div class="section">
+      <div class="section-hdr">
+        <div class="section-title">📋 Run History</div>
+        <div class="section-count" id="cHistory">0 runs</div>
+      </div>
+      <div class="panel"><div class="panel-inner" style="max-height:500px;overflow-x:auto">
+        <table class="history-table">
+          <thead><tr><th>Time</th><th>Items</th><th>Alerts</th><th>Imm</th><th>Same</th><th>Watch</th><th>Top Mover</th><th>Top Layer</th></tr></thead>
+          <tbody id="historyTbody"><tr><td colspan="8" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div></div>
+    </div>
+
+    <!-- MISSION CONTROL -->
+    <div class="section">
+      <button class="mc-toggle" onclick="toggleMC()">⚙ MISSION CONTROL MODE</button>
+      <div class="mc-panel" id="mcPanel">
+        <div class="mc-grid" id="mcGrid"><div class="empty">Loading mission control...</div></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
 
 <script>
-  // ── CONFIG ────────────────────────────────────────────────────
-  const BASE = 'https://raw.githubusercontent.com/StacheHistory/scout2-data/main/data/';
-  const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+// ── CONFIG ──────────────────────────────────────────────────
+const BASE    = 'https://raw.githubusercontent.com/StacheHistory/scout2-data/main/data/';
+const REFRESH = 5 * 60 * 1000;
 
-  // ── STATE ─────────────────────────────────────────────────────
-  let allItems   = [];
-  let allAlerts  = [];
-  let catFilter  = 'all';
-  let alertsOnly = false;
-  let refreshTimer;
-  let countdownTimer;
-  let nextRefreshAt;
+// ── STATE ───────────────────────────────────────────────────
+let allItems = [], allAlerts = [], alertLinks = new Set();
+let catFilter = 'all', alertsOnly = false;
+let refreshTimer, countdownTimer, nextRefreshAt;
+let currentSection = 'alerts';
 
-  // ── CATEGORY CSS CLASS ────────────────────────────────────────
-  function catClass(cat) {
-    const map = {
-      'Space Industry':    'cat-space',
-      'Defense/SDA':       'cat-defense',
-      'NASA/Gov':          'cat-nasa',
-      'Satellite/Comms':   'cat-sat',
-      'Business/Markets':  'cat-biz',
-      'Aerospace/Suppliers':'cat-aero',
-      'Tech/AI/Compute':   'cat-tech',
-    };
-    return map[cat] || 'cat-space';
-  }
+// ── NAV ─────────────────────────────────────────────────────
+function showSection(id, btn) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.remove('hidden');
+  if (btn) btn.classList.add('active');
+  currentSection = id;
+}
 
-  // ── FETCH JSON ────────────────────────────────────────────────
-  async function fetchJSON(url) {
-    const r = await fetch(url + '?t=' + Date.now());
-    if (!r.ok) throw new Error(`HTTP ${r.status} — ${url}`);
-    return r.json();
-  }
+// ── FETCH ───────────────────────────────────────────────────
+async function fetchJ(url) {
+  const r = await fetch(url + '?t=' + Date.now());
+  if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + url);
+  return r.json();
+}
 
-  // ── LOAD ALL DATA ─────────────────────────────────────────────
-  async function loadAll() {
-    try {
-      showError(null);
+// ── LOAD ALL ────────────────────────────────────────────────
+async function loadAll() {
+  showErr(null);
+  try {
+    const [summary, alerts, dump, trends, scores, universe, supply, recs, history] = await Promise.all([
+      fetchJ(BASE + 'scout2_dashboard_summary.json'),
+      fetchJ(BASE + 'scout2_alerts.json'),
+      fetchJ(BASE + 'scout2_dump_latest.json'),
+      fetchJ(BASE + 'scout2_trends.json').catch(() => ({})),
+      fetchJ(BASE + 'scout2_scores.json').catch(() => ({scores:[]})),
+      fetchJ(BASE + 'scout2_universe.json').catch(() => ({universe:[]})),
+      fetchJ(BASE + 'scout2_supply_chain.json').catch(() => ({supply_chain:[]})),
+      fetchJ(BASE + 'scout2_recommendations.json').catch(() => ({recommendations:[]})),
+      fetchJ(BASE + 'scout2_run_history.json').catch(() => ({runs:[]})),
+    ]);
 
-      const [dump, alerts, history] = await Promise.all([
-        fetchJSON(BASE + 'scout2_dump_latest.json'),
-        fetchJSON(BASE + 'scout2_alerts.json'),
-        fetchJSON(BASE + 'scout2_run_history.json').catch(() => ({ runs: [] })),
-      ]);
+    allItems  = dump.items || [];
+    const imm = alerts.immediate || [];
+    const sd  = alerts.same_day  || [];
+    const wch = alerts.watch     || [];
+    allAlerts = [...imm, ...sd, ...wch];
+    alertLinks = new Set(allAlerts.map(a => a.link));
 
-      // Update state
-      allItems  = dump.items || [];
-      allAlerts = [
-        ...(alerts.immediate || []),
-        ...(alerts.same_day  || []),
-        ...(alerts.watch     || []),
-      ];
+    // Stats
+    set('sImmediate', imm.length);
+    set('sSameDay',   sd.length);
+    set('sWatch',     wch.length);
+    set('sItems',     summary.items_live || allItems.length);
+    set('sFeedHealth',summary.feed_health || '—');
+    set('sStatus',    summary.system_status || '—');
+    set('sUniverse',  summary.universe_size || (universe.universe || []).length);
+    set('sTopLayer',  (summary.top_layer || '—').split('/')[0]);
+    set('sTopMover',  summary.top_score_mover || '—');
 
-      // Update summary cards
-      const meta = dump.meta || {};
-      document.getElementById('statItems').textContent     = meta.items_after_dedup ?? allItems.length;
-      document.getElementById('statImmediate').textContent = alerts.meta?.immediate_count ?? 0;
-      document.getElementById('statSameDay').textContent   = alerts.meta?.same_day_count  ?? 0;
-      document.getElementById('statWatch').textContent     = alerts.meta?.watch_count     ?? 0;
-      document.getElementById('statFeeds').textContent     =
-        (meta.feeds_attempted ?? 0) - (meta.feeds_failed ?? 0) + '/' + (meta.feeds_attempted ?? 0);
-      document.getElementById('statQuarantine').textContent = meta.items_quarantined ?? 0;
-
-      // Last updated
-      if (meta.run_timestamp_utc) {
-        const d = new Date(meta.run_timestamp_utc);
-        document.getElementById('lastUpdated').textContent =
-          'Updated ' + d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) +
-          ' · ' + d.toLocaleDateString([], {month:'short', day:'numeric'});
-      }
-
-      // Render
-      renderAlerts(allAlerts);
-      applyFilters();
-      renderHistory(history.runs || []);
-
-      // Schedule next refresh
-      scheduleRefresh();
-
-    } catch (err) {
-      showError('Could not load data: ' + err.message +
-        '. Check your GitHub Pages is enabled and data files exist.');
-      document.getElementById('statusDot').style.background = 'var(--red)';
-    }
-  }
-
-  // ── RENDER ALERTS ─────────────────────────────────────────────
-  function renderAlerts(alerts) {
-    const body = document.getElementById('alertsBody');
-    document.getElementById('alertCount').textContent = alerts.length;
-
-    if (!alerts.length) {
-      body.innerHTML = '<div class="empty-state">No alerts in current window</div>';
-      return;
+    // Last updated
+    if (summary.last_updated_utc) {
+      const d = new Date(summary.last_updated_utc);
+      set('lastUpdated', d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) +
+        ' · ' + d.toLocaleDateString([],{month:'short',day:'numeric'}));
     }
 
-    body.innerHTML = alerts.map(a => {
-      const types = (a.alert_types || []).map(t =>
-        `<span class="type-tag">${t.replace('_',' ')}</span>`
-      ).join('');
+    // Render all sections
+    renderAlerts(imm, sd, wch);
+    renderScores(scores.scores || []);
+    renderTrends(trends);
+    renderUniverse(universe.universe || []);
+    renderRecs(recs.recommendations || []);
+    renderFeed();
+    renderSupply(supply.supply_chain || []);
+    renderHistory(history.runs || []);
+    renderMC(scores.scores || [], alerts);
 
-      return `
-        <div class="alert-item ${a.urgency}" onclick="window.open('${a.link}','_blank')">
-          <div class="alert-urgency">
-            ${a.urgency === 'immediate' ? '🚨' : a.urgency === 'same_day' ? '⚡' : '👁'}
-            ${a.urgency.replace('_',' ').toUpperCase()}
-            <div class="alert-types">${types}</div>
-          </div>
-          <div class="alert-title">${escHtml(a.title)}</div>
-          <div class="alert-meta">
-            <span>${escHtml(a.feed_label)}</span>
-            <span>${a.age_hours ? a.age_hours + 'h ago' : ''}</span>
-          </div>
-        </div>`;
-    }).join('');
+    scheduleRefresh();
+
+  } catch(e) {
+    showErr('Could not load data: ' + e.message + '. Ensure GitHub Pages is enabled and data files exist.');
   }
+}
 
-  // ── RENDER FEED ───────────────────────────────────────────────
-  function renderFeed(items) {
-    const body = document.getElementById('feedBody');
-    document.getElementById('feedCount').textContent = items.length + ' items';
+// ── RENDER ALERTS ────────────────────────────────────────────
+function renderAlerts(imm, sd, wch) {
+  set('cImmediate', imm.length); set('cSameDay', sd.length); set('cWatch', wch.length);
+  renderAlertGroup('alertsImmediate', imm, 'No immediate alerts');
+  renderAlertGroup('alertsSameDay',   sd,  'No same-day alerts');
+  renderAlertGroup('alertsWatch',     wch, 'No watch alerts');
+}
 
-    if (!items.length) {
-      body.innerHTML = '<div class="empty-state">No items match current filters</div>';
-      return;
-    }
+function renderAlertGroup(id, alerts, emptyMsg) {
+  const el = document.getElementById(id);
+  if (!alerts.length) { el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  el.innerHTML = alerts.map(a => {
+    const types = (a.event_type || a.alert_types || []).map(t =>
+      `<span class="event-tag">${t.replace('_',' ')}</span>`).join('');
+    const cos   = (a.company || []).slice(0,2).join(', ') || 'Unknown';
+    const ticker = a.ticker ? `<span class="ticker-badge">${esc(a.ticker)}</span>` : '';
+    return `<div class="alert-card ${a.urgency}" onclick="window.open('${esc(a.link)}','_blank')">
+      <div class="alert-top">
+        <span class="urgency-badge">${a.urgency === 'immediate' ? '🚨' : a.urgency === 'same_day' ? '⚡' : '👁'} ${(a.urgency||'').replace('_',' ')}</span>
+        <span class="alert-score">Score: ${a.alert_score || 0}</span>
+        ${ticker}
+        <div class="event-tags">${types}</div>
+      </div>
+      <div class="alert-title">${esc(a.headline || a.title || '')}</div>
+      <div class="alert-why">${esc(a.why_it_matters || a.summary || '')}</div>
+      <div class="alert-bottom">
+        <span class="alert-meta">${esc(cos)} · ${a.age_hours ? a.age_hours + 'h ago' : ''}</span>
+        ${a.recommended_action ? `<span class="alert-action">${esc(a.recommended_action.slice(0,50))}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
 
-    // Set of alert fingerprints for indicator
-    const alertLinks = new Set(allAlerts.map(a => a.link));
+// ── RENDER SCORES ────────────────────────────────────────────
+function renderScores(scores) {
+  set('cScores', scores.length);
+  const tb = document.getElementById('scoresTbody');
+  if (!scores.length) { tb.innerHTML = '<tr><td colspan="8" class="empty">No scores yet</td></tr>'; return; }
+  tb.innerHTML = scores.slice(0,50).map(s => {
+    const sc    = s.score || 5;
+    const cls   = 's' + sc;
+    const delta = s.score_change || 0;
+    const dCls  = delta > 0 ? 'delta-up' : delta < 0 ? 'delta-down' : 'delta-flat';
+    const dStr  = delta > 0 ? '▲' + delta : delta < 0 ? '▼' + Math.abs(delta) : '—';
+    const ticker = s.ticker ? `<span class="ticker-badge">${esc(s.ticker)}</span>` : '—';
+    const capCls = 'cap-' + (s.capital_priority || 'low');
+    const actCls = 'action-' + (s.recommended_action || 'watch').replace('_on_pullback','').replace('_','');
+    const sigDot = s.signal_status === 'silent' ? '○' : '●';
+    return `<tr>
+      <td><span class="score-num ${cls}">${sc}</span></td>
+      <td><span class="score-delta ${dCls}">${dStr}</span></td>
+      <td>${esc(s.company)}</td>
+      <td>${ticker}</td>
+      <td><span class="cap-badge ${capCls}">${s.capital_priority || '—'}</span></td>
+      <td><span class="cap-badge ${actCls}">${(s.recommended_action || '').replace('_',' ')}</span></td>
+      <td style="font-family:var(--mono);font-size:10px;color:var(--dim)">${esc(s.status || '')}</td>
+      <td style="font-family:var(--mono);font-size:11px;color:${s.signal_status==='silent'?'var(--dim)':'var(--green)'}">${sigDot} ${s.signal_status || ''}</td>
+    </tr>`;
+  }).join('');
+}
 
-    body.innerHTML = items.map(item => {
-      const isAlert  = alertLinks.has(item.link);
-      const cc       = catClass(item.category);
-      const summary  = item.summary ? `<div class="feed-summary">${escHtml(item.summary)}</div>` : '';
+// ── RENDER TRENDS ────────────────────────────────────────────
+function renderTrends(trends) {
+  const layers  = trends.layer_mentions   || [];
+  const comps   = trends.company_mentions || [];
+  const silent  = trends.silent_tracked   || [];
 
-      return `
-        <div class="feed-item" onclick="window.open('${item.link}','_blank')">
-          <div class="feed-item-header">
-            <span class="category-badge ${cc}">${escHtml(item.category)}</span>
-            ${isAlert ? '<span class="alert-indicator">🚨</span>' : ''}
-            <span class="feed-age">${item.age_hours ? item.age_hours + 'h' : ''}</span>
-          </div>
-          <div class="feed-title">${escHtml(item.title)}</div>
-          ${summary}
-          <div class="feed-source">
-            <a href="${item.link}" target="_blank" onclick="event.stopPropagation()">
-              ${escHtml(item.feed_label)}
-            </a>
-            · ${item.published_display || ''}
-          </div>
-        </div>`;
-    }).join('');
-  }
+  const maxCount = layers.length ? Math.max(...layers.map(l => l.count)) : 1;
+  document.getElementById('layerBars').innerHTML = layers.slice(0,12).map(l => {
+    const pct  = Math.round((l.count / maxCount) * 100);
+    const tCls = 'trend-' + (l.trend || 'stable');
+    return `<div class="layer-row">
+      <span class="layer-name">${esc(l.layer)}</span>
+      <div class="layer-bar-wrap"><div class="layer-bar" style="width:${pct}%"></div></div>
+      <span class="layer-count">${l.count}</span>
+      <span class="layer-trend ${tCls}">${l.trend || ''}</span>
+    </div>`;
+  }).join('') || '<div class="empty">No trend data yet</div>';
 
-  // ── RENDER HISTORY ────────────────────────────────────────────
-  function renderHistory(runs) {
-    const body = document.getElementById('historyBody');
-    document.getElementById('historyCount').textContent = runs.length + ' runs';
+  document.getElementById('companyMentions').innerHTML = `<div class="layer-bars">` +
+    comps.slice(0,15).map(c => {
+      const tCls = 'trend-' + (c.trend || 'stable');
+      const ticker = c.ticker ? ` <span class="ticker-badge">${esc(c.ticker)}</span>` : '';
+      return `<div class="layer-row">
+        <span class="layer-name">${esc(c.company)}${ticker}</span>
+        <div class="layer-bar-wrap"><div class="layer-bar" style="width:${Math.round(c.count/((comps[0]?.count)||1)*100)}%;background:var(--purple)"></div></div>
+        <span class="layer-count">${c.count}</span>
+        <span class="layer-trend ${tCls}">${c.trend || ''}</span>
+      </div>`;
+    }).join('') + `</div>` || '<div class="empty">No mention data yet</div>';
 
-    if (!runs.length) {
-      body.innerHTML = '<div class="empty-state">No run history yet</div>';
-      return;
-    }
+  document.getElementById('silentCompanies').innerHTML = silent.slice(0,12).map(s => {
+    const ticker = s.ticker ? ` (${s.ticker})` : '';
+    return `<span style="display:inline-block;background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:3px 8px;margin:3px;font-family:var(--mono);font-size:10px;color:var(--dim)">${esc(s.company)}${ticker}</span>`;
+  }).join('') || '<div class="empty">All tracked companies have recent signals</div>';
+}
 
-    // Most recent first
-    const sorted = [...runs].reverse();
-    body.innerHTML = sorted.map(r => {
-      const d = new Date(r.run_timestamp_utc);
-      const ts = d.toLocaleString([], {
-        month:'short', day:'numeric',
-        hour:'2-digit', minute:'2-digit'
-      });
-      const failClass = r.feeds_failed > 0 ? 'num-red' : 'num-green';
-      return `
-        <div class="history-row">
-          <span>${ts}</span>
-          <span class="num-green">${r.feeds_attempted}</span>
-          <span class="${failClass}">${r.feeds_failed}</span>
-          <span>${r.items_live}</span>
-          <span class="${r.alerts_count > 0 ? 'num-yellow' : ''}">${r.alerts_count}</span>
-          <span style="color:var(--text-dim);font-size:10px">${r.archive_file || '—'}</span>
-        </div>`;
-    }).join('');
-  }
+// ── RENDER UNIVERSE ──────────────────────────────────────────
+function renderUniverse(universe) {
+  set('cUniverse', universe.length + ' companies');
+  document.getElementById('universeGrid').innerHTML = universe.map(u => {
+    const stMap = {public:'status-pub',private:'status-private','IPO-watch':'status-ipo',watch:'status-watch',acquired:'status-acq'};
+    const stCls = stMap[u.status] || 'status-private';
+    const layers = (u.layers || []).map(l => `<span class="uni-layer">${esc(l.split('/')[0])}</span>`).join('');
+    const ticker = u.ticker ? `<span class="ticker-badge" style="font-size:8px">${esc(u.ticker)}</span>` : '';
+    const sigDot = u.signal_status === 'silent' ? '○' : '●';
+    const sigCol = u.signal_status === 'silent' ? 'var(--dim)' : 'var(--green)';
+    return `<div class="uni-card" onclick="openLink(event,'${esc(u.company)}')">
+      <div class="uni-name">${esc(u.company)}</div>
+      <div class="uni-meta">
+        <span class="${stCls}">${u.status || ''}</span>
+        ${ticker}
+        <span style="font-family:var(--mono);font-size:9px;color:${sigCol};margin-left:auto">${sigDot}</span>
+        <span style="font-family:var(--mono);font-size:9px;color:var(--dim)">R${u.ring || '?'}</span>
+      </div>
+      <div class="uni-layers">${layers}</div>
+    </div>`;
+  }).join('') || '<div class="empty">No universe data</div>';
+}
 
-  // ── APPLY FILTERS ─────────────────────────────────────────────
-  function applyFilters() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const alertLinks = new Set(allAlerts.map(a => a.link));
+// ── RENDER RECS ──────────────────────────────────────────────
+function renderRecs(recs) {
+  set('cRecs', recs.length);
+  document.getElementById('recList').innerHTML = recs.map(r => {
+    const actCls = 'action-' + (r.action_type || 'watch').replace('_on_pullback','').replace('_','');
+    const urgCls = r.urgency === 'immediate' ? 'var(--red)' : r.urgency === 'same_day' ? 'var(--yellow)' : 'var(--dim)';
+    const ticker = r.ticker ? `<span class="ticker-badge">${esc(r.ticker)}</span>` : '';
+    return `<div class="rec-card" onclick="window.open('${esc(r.link||'')}','_blank')">
+      <div class="rec-top">
+        <span class="rec-company">${esc(r.company)}</span>
+        ${ticker}
+        <span class="rec-action ${actCls}">${(r.action_type||'').replace('_',' ')}</span>
+        <span style="font-family:var(--mono);font-size:9px;color:${urgCls};margin-left:auto">${r.urgency||''}</span>
+      </div>
+      <div class="rec-rationale">${esc(r.rationale || '')}</div>
+      <div class="rec-risk">⚠ ${esc(r.risk_note || '')}</div>
+      <div class="rec-agent">Agent: ${esc(r.council_agent || '')}</div>
+    </div>`;
+  }).join('') || '<div class="empty">No recommendations in current window</div>';
+}
 
-    let filtered = allItems.filter(item => {
-      const matchCat   = catFilter === 'all' || item.category === catFilter;
-      const matchAlert = !alertsOnly || alertLinks.has(item.link);
-      const matchSearch = !query ||
-        item.title.toLowerCase().includes(query) ||
-        (item.summary || '').toLowerCase().includes(query) ||
-        (item.feed_label || '').toLowerCase().includes(query);
-      return matchCat && matchAlert && matchSearch;
-    });
+// ── RENDER FEED ──────────────────────────────────────────────
+function renderFeed() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  let filtered = allItems.filter(item => {
+    const matchCat   = catFilter === 'all' || item.category === catFilter;
+    const matchAlert = !alertsOnly || alertLinks.has(item.link);
+    const matchSrch  = !query || (item.title||'').toLowerCase().includes(query) || (item.summary||'').toLowerCase().includes(query);
+    return matchCat && matchAlert && matchSrch;
+  });
+  set('cFeed', filtered.length + ' items');
+  const catMap = {'Space Industry':'cat-space','Defense/SDA':'cat-defense','NASA/Gov':'cat-nasa','Satellite/Comms':'cat-sat','Business/Markets':'cat-biz','Aerospace/Suppliers':'cat-aero','Tech/AI/Compute':'cat-tech'};
+  document.getElementById('feedList').innerHTML = filtered.map(item => {
+    const cc  = catMap[item.category] || 'cat-space';
+    const pip = alertLinks.has(item.link) ? '<span class="alert-pip">🚨</span>' : '';
+    const sum = item.summary ? `<div class="feed-summary">${esc(item.summary)}</div>` : '';
+    return `<div class="feed-item" onclick="window.open('${esc(item.link)}','_blank')">
+      <div class="feed-item-top">
+        <span class="cat-badge ${cc}">${esc(item.category||'')}</span>
+        ${pip}
+        <span class="item-age">${item.age_hours ? item.age_hours + 'h' : ''}</span>
+      </div>
+      <div class="feed-title">${esc(item.title||'')}</div>
+      ${sum}
+      <div class="feed-source"><a href="${esc(item.link)}" target="_blank" onclick="event.stopPropagation()">${esc(item.feed_label||'')}</a> · ${item.published_display||''}</div>
+    </div>`;
+  }).join('') || '<div class="empty">No items match current filters</div>';
+}
 
-    renderFeed(filtered);
-  }
+// ── RENDER SUPPLY CHAIN ──────────────────────────────────────
+function renderSupply(supply) {
+  document.getElementById('supplyGrid').innerHTML = supply.map(s => {
+    const sups = (s.suppliers || []).join(', ') || '—';
+    const custs = (s.customers || []).slice(0,4).join(', ') || '—';
+    const parts = (s.partners || []).slice(0,3).join(', ') || '—';
+    const arts  = (s.related_articles || []).length;
+    return `<div class="sc-card">
+      <div class="sc-core">${esc(s.core_company)}</div>
+      <div class="sc-row"><span class="sc-lbl">Suppliers</span><span class="sc-vals">${esc(sups)}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Customers</span><span class="sc-vals">${esc(custs)}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Partners</span><span class="sc-vals">${esc(parts)}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Layer</span><span class="sc-vals">${esc(s.layer||'')}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Conf.</span><span class="sc-vals">${s.confidence || 0}/10 · ${arts} recent article${arts !== 1 ? 's' : ''}</span></div>
+    </div>`;
+  }).join('') || '<div class="empty">No supply chain data</div>';
+}
 
-  // ── FILTER CONTROLS ───────────────────────────────────────────
-  function setCatFilter(cat, btn) {
-    catFilter = cat;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    applyFilters();
-  }
+// ── RENDER HISTORY ───────────────────────────────────────────
+function renderHistory(runs) {
+  set('cHistory', runs.length + ' runs');
+  const sorted = [...runs].reverse().slice(0, 30);
+  document.getElementById('historyTbody').innerHTML = sorted.map(r => {
+    const d   = new Date(r.run_timestamp_utc);
+    const ts  = d.toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    const fCls = r.feeds_failed > 0 ? 'num-r' : 'num-g';
+    return `<tr>
+      <td>${ts}</td>
+      <td>${r.items_live || 0}</td>
+      <td class="${r.alerts_count > 0 ? 'num-y' : ''}">${r.alerts_count || 0}</td>
+      <td class="${r.immediate_count > 0 ? 'num-r' : ''}">${r.immediate_count || 0}</td>
+      <td class="${r.same_day_count > 0 ? 'num-y' : ''}">${r.same_day_count || 0}</td>
+      <td>${r.watch_count || 0}</td>
+      <td style="color:var(--text)">${esc(r.top_score_mover || '—')}</td>
+      <td style="color:var(--text)">${esc(r.top_layer_mover || '—')}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="8" class="empty">No history yet — runs will appear here after first execution</td></tr>';
+}
 
-  function toggleAlertsOnly() {
-    alertsOnly = !alertsOnly;
-    const btn = document.getElementById('toggleAlertsBtn');
-    btn.classList.toggle('active', alertsOnly);
-    applyFilters();
-  }
+// ── RENDER MISSION CONTROL ───────────────────────────────────
+function renderMC(scores, alerts) {
+  const imm = (alerts.immediate || []).slice(0,5);
+  const topScores = scores.filter(s => s.score >= 7).slice(0,10);
+  document.getElementById('mcGrid').innerHTML = `
+    <div class="mc-card">
+      <div class="mc-title">Top Scored Companies</div>
+      ${topScores.map(s => `<div class="mc-entry">
+        <span class="mc-company">${esc(s.company)}</span>
+        <span style="font-family:var(--mono);font-size:10px;color:var(--green)">${s.score}/10</span>
+        <span style="font-family:var(--mono);font-size:9px;color:var(--dim);margin-left:auto">${s.signal_status||''}</span>
+      </div>`).join('') || '<div class="empty">No high-score companies</div>'}
+    </div>
+    <div class="mc-card">
+      <div class="mc-title">Immediate Alert Detail</div>
+      ${imm.map(a => `<div class="mc-entry">
+        <span class="mc-company">${esc((a.company||[])[0]||'?')}</span>
+        <span style="font-size:11px">${esc((a.headline||'').slice(0,60))}...</span>
+      </div>`).join('') || '<div class="empty">No immediate alerts</div>'}
+    </div>`;
+}
 
-  // ── SCHEDULE REFRESH ──────────────────────────────────────────
-  function scheduleRefresh() {
-    clearTimeout(refreshTimer);
-    clearInterval(countdownTimer);
-    nextRefreshAt = Date.now() + REFRESH_INTERVAL;
-    refreshTimer  = setTimeout(loadAll, REFRESH_INTERVAL);
+// ── CONTROLS ─────────────────────────────────────────────────
+function setCat(cat, btn) {
+  catFilter = cat;
+  document.querySelectorAll('.filter-btn:not(.alerts-only)').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderFeed();
+}
 
-    countdownTimer = setInterval(() => {
-      const remaining = Math.max(0, Math.round((nextRefreshAt - Date.now()) / 1000));
-      const m = Math.floor(remaining / 60);
-      const s = remaining % 60;
-      document.getElementById('nextRefresh').textContent =
-        `Next refresh: ${m}:${s.toString().padStart(2,'0')}`;
-      if (remaining === 0) clearInterval(countdownTimer);
-    }, 1000);
-  }
+function toggleAlertsOnly() {
+  alertsOnly = !alertsOnly;
+  document.getElementById('alertsOnlyBtn').classList.toggle('active', alertsOnly);
+  renderFeed();
+}
 
-  // ── HELPERS ───────────────────────────────────────────────────
-  function escHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;')
-              .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-  }
+function applySearch() { renderFeed(); }
 
-  function showError(msg) {
-    const el = document.getElementById('errorBanner');
-    if (msg) { el.textContent = msg; el.style.display = 'block'; }
-    else      { el.style.display = 'none'; }
-  }
+function toggleMC() {
+  const p = document.getElementById('mcPanel');
+  p.classList.toggle('open');
+}
 
-  // ── INIT ──────────────────────────────────────────────────────
-  loadAll();
+// ── SCHEDULE ─────────────────────────────────────────────────
+function scheduleRefresh() {
+  clearTimeout(refreshTimer); clearInterval(countdownTimer);
+  nextRefreshAt = Date.now() + REFRESH;
+  refreshTimer  = setTimeout(loadAll, REFRESH);
+  countdownTimer = setInterval(() => {
+    const s = Math.max(0, Math.round((nextRefreshAt - Date.now()) / 1000));
+    const m = Math.floor(s / 60), sec = s % 60;
+    set('countdown', `↻ ${m}:${sec.toString().padStart(2,'0')}`);
+    if (s === 0) clearInterval(countdownTimer);
+  }, 1000);
+}
+
+// ── HELPERS ──────────────────────────────────────────────────
+function set(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
+function esc(s) { return (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function showErr(msg) { const el = document.getElementById('errBanner'); el.textContent = msg||''; el.style.display = msg ? 'block':'none'; }
+function openLink(e, company) { const q = encodeURIComponent(company + ' space'); window.open('https://finance.yahoo.com/quote/' + q,'_blank'); }
+
+// ── INIT ─────────────────────────────────────────────────────
+loadAll();
 </script>
 </body>
 </html>

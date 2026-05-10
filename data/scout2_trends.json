@@ -1,0 +1,431 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-05-10T16:20:34Z",
+    "items_analyzed": 97,
+    "window": "72h"
+  },
+  "company_mentions": [
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "count": 30,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Data/EO"
+      ]
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "count": 28,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Energy/Materials"
+      ]
+    },
+    {
+      "company": "NASA",
+      "ticker": null,
+      "count": 22,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "NASA/Gov"
+      ]
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "count": 18,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ]
+    },
+    {
+      "company": "SES",
+      "ticker": "SGBAF",
+      "count": 13,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications"
+      ]
+    },
+    {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "count": 4,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ]
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "count": 3,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "AI/Compute"
+      ]
+    },
+    {
+      "company": "SpaceX",
+      "ticker": null,
+      "count": 3,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Launch",
+        "Infrastructure",
+        "Communications"
+      ]
+    },
+    {
+      "company": "MDA Space",
+      "ticker": "MDA.TO",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
+      ]
+    },
+    {
+      "company": "Globalstar",
+      "ticker": "GSAT",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications"
+      ]
+    },
+    {
+      "company": "Spire Global",
+      "ticker": "SPIR",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ]
+    },
+    {
+      "company": "Lunar Outpost",
+      "ticker": null,
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Lunar/Deep Space",
+        "Logistics"
+      ]
+    },
+    {
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ]
+    },
+    {
+      "company": "SatVu",
+      "ticker": null,
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Data/EO",
+        "Energy/Materials"
+      ]
+    },
+    {
+      "company": "Telesat",
+      "ticker": "TSAT",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications"
+      ]
+    },
+    {
+      "company": "Viasat",
+      "ticker": "VSAT",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Communications",
+        "Defense/SDA"
+      ]
+    },
+    {
+      "company": "Voyager Space",
+      "ticker": null,
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Infrastructure"
+      ]
+    },
+    {
+      "company": "NGA",
+      "ticker": null,
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ]
+    },
+    {
+      "company": "IREN",
+      "ticker": "IREN",
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "AI/Compute"
+      ]
+    },
+    {
+      "company": "Blue Origin",
+      "ticker": null,
+      "count": 1,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Launch",
+        "Lunar/Deep Space"
+      ]
+    }
+  ],
+  "layer_mentions": [
+    {
+      "layer": "Infrastructure",
+      "count": 27,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Defense/SDA",
+      "count": 25,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "NASA/Gov",
+      "count": 20,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Launch",
+      "count": 19,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Lunar/Deep Space",
+      "count": 17,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "AI/Compute",
+      "count": 12,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Data/EO",
+      "count": 3,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Communications",
+      "count": 2,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Energy/Materials",
+      "count": 1,
+      "prior": 0,
+      "trend": "new"
+    },
+    {
+      "layer": "Software/OS",
+      "count": 1,
+      "prior": 0,
+      "trend": "new"
+    }
+  ],
+  "event_type_counts": {
+    "earnings": 30,
+    "partnership": 10,
+    "funding": 11,
+    "ipo": 33,
+    "contract": 7,
+    "defense_award": 23,
+    "product_launch": 10,
+    "acquisition": 6
+  },
+  "rising_companies": [],
+  "silent_tracked": [
+    {
+      "company": "Northrop Grumman",
+      "ticker": "NOC",
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Lockheed Martin",
+      "ticker": "LMT",
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Raytheon Technologies",
+      "ticker": "RTX",
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "L3Harris",
+      "ticker": "LHX",
+      "layers": [
+        "Defense/SDA",
+        "Communications",
+        "Ground Segment"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Terran Orbital",
+      "ticker": "LLAP",
+      "layers": [
+        "Infrastructure"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Leidos",
+      "ticker": "LDOS",
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "BAE Systems",
+      "ticker": "BAESY",
+      "layers": [
+        "Defense/SDA"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "AST SpaceMobile",
+      "ticker": "ASTS",
+      "layers": [
+        "Communications"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Iridium",
+      "ticker": "IRDM",
+      "layers": [
+        "Communications"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "EchoStar",
+      "ticker": "SATS",
+      "layers": [
+        "Communications"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "BlackSky",
+      "ticker": "BKSY",
+      "layers": [
+        "Data/EO"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Palantir",
+      "ticker": "PLTR",
+      "layers": [
+        "AI/Compute",
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Credo Technology",
+      "ticker": "CRDO",
+      "layers": [
+        "AI/Compute"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Intuitive Machines",
+      "ticker": "LUNR",
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "note": "No signal in current 72h window"
+    },
+    {
+      "company": "Momentus",
+      "ticker": "MNTS",
+      "layers": [
+        "Logistics"
+      ],
+      "note": "No signal in current 72h window"
+    }
+  ],
+  "top_emerging_themes": []
+}

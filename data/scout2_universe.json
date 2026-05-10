@@ -1,0 +1,933 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-05-10T16:20:34Z",
+    "total_companies": 59,
+    "locked": true,
+    "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+    "note": "Companies persist in universe even with no recent news signals"
+  },
+  "universe": [
+    {
+      "company": "SpaceX",
+      "ticker": null,
+      "status": "private",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Infrastructure",
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Blue Origin",
+      "ticker": null,
+      "status": "private",
+      "ring": 1,
+      "layers": [
+        "Launch",
+        "Lunar/Deep Space"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 7,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "United Launch Alliance",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Firefly Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Relativity Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Skyroot Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 7,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Starfighters Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Northrop Grumman",
+      "ticker": "NOC",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Lockheed Martin",
+      "ticker": "LMT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Raytheon Technologies",
+      "ticker": "RTX",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Infrastructure"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "L3Harris",
+      "ticker": "LHX",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Communications",
+        "Ground Segment"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "MDA Space",
+      "ticker": "MDA.TO",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics",
+        "Lunar/Deep Space"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 9,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Redwire",
+      "ticker": "RDW",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Lunar/Deep Space",
+        "Energy/Materials"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Terran Orbital",
+      "ticker": "LLAP",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Aerojet Rocketdyne",
+      "ticker": "AJRD",
+      "status": "acquired",
+      "ring": 2,
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Sierra Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Axiom Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure",
+        "Logistics"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Voyager Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Infrastructure"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 6,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Leidos",
+      "ticker": "LDOS",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "BAE Systems",
+      "ticker": "BAESY",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Anduril Industries",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Shield AI",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Defense/SDA",
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 9,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Odin Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Defense/SDA",
+        "Logistics"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "AST SpaceMobile",
+      "ticker": "ASTS",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Viasat",
+      "ticker": "VSAT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications",
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 6,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Iridium",
+      "ticker": "IRDM",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Globalstar",
+      "ticker": "GSAT",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 9,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Telesat",
+      "ticker": "TSAT",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 7,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "SES",
+      "ticker": "SGBAF",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Intelsat",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "EchoStar",
+      "ticker": "SATS",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Communications"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Maxar Technologies",
+      "ticker": null,
+      "status": "acquired",
+      "ring": 1,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Spire Global",
+      "ticker": "SPIR",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Data/EO",
+        "Infrastructure"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "BlackSky",
+      "ticker": "BKSY",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Capella Space",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Umbra",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "ICEYE",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "SatVu",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Data/EO",
+        "Energy/Materials"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 6,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Palantir",
+      "ticker": "PLTR",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "AI/Compute",
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Quantinuum",
+      "ticker": null,
+      "status": "IPO-watch",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Credo Technology",
+      "ticker": "CRDO",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "IREN",
+      "ticker": "IREN",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "AI/Compute"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 6,
+      "signal_status": "active",
+      "capital_priority": "medium",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Energy/Materials"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "high",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Intuitive Machines",
+      "ticker": "LUNR",
+      "status": "public",
+      "ring": 1,
+      "layers": [
+        "Lunar/Deep Space",
+        "Launch"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Lunar Outpost",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space",
+        "Logistics"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 7,
+      "signal_status": "active",
+      "capital_priority": "low",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "Astrobotic",
+      "ticker": null,
+      "status": "private",
+      "ring": 2,
+      "layers": [
+        "Lunar/Deep Space"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Momentus",
+      "ticker": "MNTS",
+      "status": "public",
+      "ring": 2,
+      "layers": [
+        "Logistics"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "Otto Aerospace",
+      "ticker": null,
+      "status": "private",
+      "ring": 3,
+      "layers": [
+        "Testing/Validation"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "low",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "NASA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "NASA/Gov"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 10,
+      "signal_status": "active",
+      "capital_priority": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "USSF / Space Force",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "DARPA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "NRO",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    },
+    {
+      "company": "NGA",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA",
+        "Data/EO"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 8,
+      "signal_status": "active",
+      "capital_priority": "watch",
+      "last_signal_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "company": "MDA (Missile Defense)",
+      "ticker": null,
+      "status": "watch",
+      "ring": 1,
+      "layers": [
+        "Defense/SDA"
+      ],
+      "locked": true,
+      "removal_rule": "Only remove if dissolved, acquired, leaves thesis, or Cory approves",
+      "score": 5,
+      "signal_status": "silent",
+      "capital_priority": "watch",
+      "last_signal_at_utc": null
+    }
+  ]
+}

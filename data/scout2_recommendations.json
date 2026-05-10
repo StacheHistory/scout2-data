@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-05-10T16:20:34Z",
+    "total_recommendations": 25,
+    "disclaimer": "These are signal-based flags for human review only. No automated trade execution. Always verify independently."
+  },
+  "recommendations": [
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings",
+        "ipo",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Boeing",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Smaller AIM-9X Could Give Drone Wingmen More Firepower",
+      "link": "https://www.airandspaceforces.com/smaller-aim-9x-cca-more-firepower/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "action_type": "Assess impact on supply chain and competing positions",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings",
+        "acquisition",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | M&A reshapes competitive landscape and supply chain dependencies | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Rocket Lab",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings",
+        "ipo",
+        "defense_award",
+        "product_launch"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027",
+      "link": "https://www.airandspaceforces.com/missile-defense-agency-counter-hypersonic-test-2027/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "contract",
+        "earnings",
+        "ipo"
+      ],
+      "rationale": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Boeing, MP Materials, NASA",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "NASA, Industry Advance High Performance Spaceflight Computing",
+      "link": "https://www.nasa.gov/directorates/stmd/nasa-industry-advance-high-performance-spaceflight-computing/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "contract",
+        "ipo",
+        "acquisition",
+        "product_launch"
+      ],
+      "rationale": "IPO creates new publicly tradeable space thesis vehicle | M&A reshapes competitive landscape and supply chain dependencies | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: Rocket Lab, Planet Labs, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "Rocket Lab announces large launch contract and plans to acquire space robotics company",
+      "link": "https://spacenews.com/rocket-lab-announces-large-launch-contract-and-plans-to-acquire-space-robotics-company/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "funding",
+        "ipo",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: HawkEye 360, SES, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "HawkEye 360 Raises $416M, Pricing at High End for IPO",
+      "link": "https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "funding",
+        "ipo",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Iran Campaign Demonstrates Need for More B-21s",
+      "link": "https://www.airandspaceforces.com/iran-campaign-demonstrates-need-for-more-b-21s/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "ipo",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Directly involves tracked universe companies: Planet Labs",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "After the B-52? Air Force to Study More Heavy Bomber Options",
+      "link": "https://www.airandspaceforces.com/after-the-b-52-air-force-to-study-more-heavy-bomber-options/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "action_type": "Confirm contract size and duration; assess backlog impact",
+      "urgency": "immediate",
+      "event_types": [
+        "contract",
+        "defense_award",
+        "partnership"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Pentagon will ‘never again’ rely on a single AI provider, official says",
+      "link": "https://www.defenseone.com/policy/2026/05/pentagon-will-never-again-rely-single-ai-provider-official-says/413409/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "action_type": "Confirm contract size and duration; assess backlog impact",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "US and Iran exchange fire as Trump says war will ‘be over quickly’",
+      "link": "https://www.defensenews.com/news/your-navy/2026/05/07/us-and-iran-exchange-fire-as-trump-says-war-will-be-over-quickly/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "ipo",
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Directly involves tracked universe companies: Boeing, Planet Labs",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Air Force Plans to Ditch BACN Jets for Satellite Communications",
+      "link": "https://www.airandspaceforces.com/air-force-plan-ditch-bacn-jets-satcom/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "SES",
+      "ticker": "SGBAF",
+      "action_type": "Review guidance and revenue trend before next position decision",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings"
+      ],
+      "rationale": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: SES",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "Cipher Digital (CIFR) Releases Q1 2026 Financial Results",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/cipher-digital-cifr-releases-q1-155428859.html",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "action_type": "Review guidance and revenue trend before next position decision",
+      "urgency": "immediate",
+      "event_types": [
+        "earnings"
+      ],
+      "rationale": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Nvidia",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "Advanced Micro Devices (AMD) Doesn’t Need to Beat Nvidia (NVDA) To Be a Winner – Cathie Wood’s Top AI Chip Stock",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/advanced-micro-devices-amd-doesn-134832094.html",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "MDA Space",
+      "ticker": "MDA.TO",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "ipo"
+      ],
+      "rationale": "IPO creates new publicly tradeable space thesis vehicle | Directly involves tracked universe companies: MDA Space, SES",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "MDA Space continues work on Gateway robotic arm",
+      "link": "https://spacenews.com/mda-space-continues-work-on-gateway-robotic-arm/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Confirm contract size and duration; assess backlog impact",
+      "urgency": "immediate",
+      "event_types": [
+        "contract",
+        "partnership"
+      ],
+      "rationale": "Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: Planet Labs",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Data & AI Agent",
+      "headline": "Greek Government Taps Planet for New Satellite Data Deal",
+      "link": "https://www.satellitetoday.com/imagery-and-sensing/2026/05/08/greek-government-taps-planet-for-new-satellite-data-deal/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "immediate",
+      "event_types": [
+        "funding",
+        "ipo"
+      ],
+      "rationale": "IPO creates new publicly tradeable space thesis vehicle | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: Boeing, HawkEye 360, SES",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "HawkEye 360 Raises $416M in IPO",
+      "link": "https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "SES",
+      "ticker": "SGBAF",
+      "action_type": "Monitor valuation and IPO timeline",
+      "urgency": "immediate",
+      "event_types": [
+        "funding"
+      ],
+      "rationale": "Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: SES",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Private Markets Agent",
+      "headline": "Oppenheimer Raises PT on QXO (QXO) Stock",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/oppenheimer-raises-pt-qxo-qxo-155404175.html",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "MP Materials",
+      "ticker": "MP",
+      "action_type": "Confirm contract size and duration; assess backlog impact",
+      "urgency": "same_day",
+      "event_types": [
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | Directly involves tracked universe companies: MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Hegseth aims to cut through the bureaucracy with ‘Deal Team Six’",
+      "link": "https://www.defensenews.com/news/pentagon-congress/2026/05/08/hegseth-aims-to-cut-through-the-bureaucracy-with-deal-team-six/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "IREN",
+      "ticker": "IREN",
+      "action_type": "Assess impact on supply chain and competing positions",
+      "urgency": "same_day",
+      "event_types": [
+        "acquisition"
+      ],
+      "rationale": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: IREN, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "M&A Monitoring Agent",
+      "headline": "Iren acquires Spanish data center developer Nostrum",
+      "link": "https://www.datacenterdynamics.com/en/news/iren-acquires-spanish-data-center-developer-nostrum/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "NASA",
+      "ticker": null,
+      "action_type": "Review S-1 filing and valuation before IPO date",
+      "urgency": "same_day",
+      "event_types": [
+        "ipo"
+      ],
+      "rationale": "IPO creates new publicly tradeable space thesis vehicle | Directly involves tracked universe companies: NASA",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Capital Markets Agent",
+      "headline": "The charred hull of Artemis 2's Orion | Space photo of the day for May 8, 2026",
+      "link": "https://www.space.com/space-exploration/human-spaceflight/the-charred-hull-of-artemis-2s-orion-space-photo-of-the-day-for-may-8-2026",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Assess impact on supply chain and competing positions",
+      "urgency": "same_day",
+      "event_types": [
+        "acquisition"
+      ],
+      "rationale": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Planet Labs, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "M&A Monitoring Agent",
+      "headline": "Amazon Data Services buys 1,300 acres of land outside Austin, Texas",
+      "link": "https://www.datacenterdynamics.com/en/news/amazon-data-services-buys-1300-acres-of-land-outside-austin-texas/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Confirm contract size and duration; assess backlog impact",
+      "urgency": "same_day",
+      "event_types": [
+        "defense_award"
+      ],
+      "rationale": "Direct DoD/USSF contract signal — validates defense space spending thesis | Directly involves tracked universe companies: Planet Labs, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Defense & SDA Agent",
+      "headline": "Top Pentagon tech officials optimistic Mythos-style AI tools will improve cyber defense",
+      "link": "https://breakingdefense.com/2026/05/top-pentagon-tech-officials-optimistic-mythos-style-ai-tools-will-improve-cyber-defense/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "NASA",
+      "ticker": null,
+      "action_type": "Monitor and log for next council review",
+      "urgency": "same_day",
+      "event_types": [
+        "partnership"
+      ],
+      "rationale": "Directly involves tracked universe companies: NASA",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "General Scout Agent",
+      "headline": "NASA's Artemis 2 commander and astrophotographer team up to capture breathtaking, never-before-seen shots of the moon's far side",
+      "link": "https://www.space.com/space-exploration/artemis/nasas-artemis-2-commander-and-astrophotographer-team-up-to-capture-breathtaking-never-before-seen-shots-of-the-moons-far-side",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "action_type": "Monitor and log for next council review",
+      "urgency": "same_day",
+      "event_types": [
+        "partnership"
+      ],
+      "rationale": "Directly involves tracked universe companies: Planet Labs, MP Materials",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "Data & AI Agent",
+      "headline": "Sponsored: In-rack CDU v. floor-mounted CDU: Which option is better for your data center?",
+      "link": "https://www.datacenterdynamics.com/en/opinions/in-rack-cdu-v-floor-mounted-cdu-which-option-is-better-for-your-data-center/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    },
+    {
+      "company": "Boeing",
+      "ticker": "BA",
+      "action_type": "Monitor and log for next council review",
+      "urgency": "watch",
+      "event_types": [
+        "product_launch"
+      ],
+      "rationale": "Directly involves tracked universe companies: Boeing, Planet Labs",
+      "risk_note": "This is a signal flag, not a trade recommendation. Verify before acting.",
+      "council_agent": "General Scout Agent",
+      "headline": "First-of-its-kind electromagnetic spectrum exercise tests senior leaders in Arctic conditions",
+      "link": "https://breakingdefense.com/2026/05/first-of-its-kind-electromagnetic-spectrum-exercise-tests-senior-leaders-in-arctic-conditions/",
+      "created_at_utc": "2026-05-10T16:20:34Z",
+      "disclaimer": "NO AUTOMATED TRADE EXECUTION. Human review required."
+    }
+  ]
+}

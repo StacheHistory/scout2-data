@@ -1,0 +1,304 @@
+{
+  "meta": {
+    "generated_at_utc": "2026-05-10T16:20:34Z",
+    "total_relationships": 10,
+    "note": "Static base map enriched with live article signals"
+  },
+  "supply_chain": [
+    {
+      "core_company": "SpaceX",
+      "suppliers": [
+        "Aerojet Rocketdyne",
+        "Northrop Grumman",
+        "Nvidia"
+      ],
+      "customers": [
+        "NASA",
+        "USSF / Space Force",
+        "Globalstar",
+        "Anthropic"
+      ],
+      "partners": [
+        "NASA",
+        "Anduril Industries"
+      ],
+      "dependency_type": "launch_provider",
+      "layer": "Launch",
+      "confidence": 9,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "NASA’s SpaceX 34th Commercial Resupply Mission Overview",
+          "link": "https://www.nasa.gov/general/nasas-spacex-34th-commercial-resupply-mission-overview/",
+          "age_hours": 41.5
+        },
+        {
+          "headline": "Glowing Views from the Space Station",
+          "link": "https://www.nasa.gov/image-article/glowing-views-from-the-space-station/",
+          "age_hours": 49.0
+        },
+        {
+          "headline": "SpaceX just fired up its 33-engine Starship 'V3' Super Heavy rocket booster. When could it fly? (video)",
+          "link": "https://www.space.com/space-exploration/launches-spacecraft/spacex-just-fired-up-its-33-engine-starship-v3-super-heavy-rocket-booster-when-could-it-fly",
+          "age_hours": 52.3
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "Rocket Lab",
+      "suppliers": [
+        "Motiv Space Systems"
+      ],
+      "customers": [
+        "NASA",
+        "USSF / Space Force",
+        "Anduril Industries",
+        "Raytheon Technologies"
+      ],
+      "partners": [
+        "Raytheon Technologies",
+        "Anduril Industries"
+      ],
+      "dependency_type": "launch_and_defense",
+      "layer": "Launch",
+      "confidence": 9,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
+          "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
+          "age_hours": 45.3
+        },
+        {
+          "headline": "Rocket Lab To Acquire Motiv Space Systems",
+          "link": "https://payloadspace.com/rocket-lab-to-acquire-motiv-space-systems/",
+          "age_hours": 52.0
+        },
+        {
+          "headline": "Rocket Lab announces large launch contract and plans to acquire space robotics company",
+          "link": "https://spacenews.com/rocket-lab-announces-large-launch-contract-and-plans-to-acquire-space-robotics-company/",
+          "age_hours": 52.7
+        },
+        {
+          "headline": "Rocket Lab joins Raytheon on space interceptor program for Golden Dome",
+          "link": "https://spacenews.com/rocket-lab-joins-raytheon-on-space-interceptor-program-for-golden-dome/",
+          "age_hours": 66.3
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "MDA Space",
+      "suppliers": [
+        "Surrey Satellite Technology"
+      ],
+      "customers": [
+        "Telesat",
+        "Globalstar",
+        "NASA",
+        "Canadian Space Agency"
+      ],
+      "partners": [
+        "Canadian Space Agency"
+      ],
+      "dependency_type": "satellite_manufacturer",
+      "layer": "Infrastructure",
+      "confidence": 8,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "MDA Space continues work on Gateway robotic arm",
+          "link": "https://spacenews.com/mda-space-continues-work-on-gateway-robotic-arm/",
+          "age_hours": 16.8
+        },
+        {
+          "headline": "MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says ‘No Change’ Due to Globalstar Deal",
+          "link": "https://www.satellitetoday.com/finance/2026/05/07/mda-space-satellite-revenue-grows-40-in-q1-greenley-says-no-change-due-to-globalstar-deal/",
+          "age_hours": 68.5
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "Planet Labs",
+      "suppliers": [
+        "SpaceX"
+      ],
+      "customers": [
+        "NGA",
+        "Greek Government",
+        "Marshall Islands",
+        "Commercial"
+      ],
+      "partners": [
+        "NGA",
+        "NASA"
+      ],
+      "dependency_type": "eo_data_provider",
+      "layer": "Data/EO",
+      "confidence": 8,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "Greek Government Taps Planet for New Satellite Data Deal",
+          "link": "https://www.satellitetoday.com/imagery-and-sensing/2026/05/08/greek-government-taps-planet-for-new-satellite-data-deal/",
+          "age_hours": 44.6
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "AST SpaceMobile",
+      "suppliers": [
+        "SpaceX"
+      ],
+      "customers": [
+        "Mobile Network Operators",
+        "AT&T",
+        "Vodafone"
+      ],
+      "partners": [
+        "Verizon",
+        "Rakuten"
+      ],
+      "dependency_type": "d2d_communications",
+      "layer": "Communications",
+      "confidence": 8,
+      "last_signal": null,
+      "related_articles": [],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "Globalstar",
+      "suppliers": [
+        "SpaceX",
+        "MDA Space"
+      ],
+      "customers": [
+        "Apple",
+        "Amazon"
+      ],
+      "partners": [
+        "Amazon"
+      ],
+      "dependency_type": "satcom_acquisition_target",
+      "layer": "Communications",
+      "confidence": 9,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
+          "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
+          "age_hours": 45.2
+        },
+        {
+          "headline": "MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says ‘No Change’ Due to Globalstar Deal",
+          "link": "https://www.satellitetoday.com/finance/2026/05/07/mda-space-satellite-revenue-grows-40-in-q1-greenley-says-no-change-due-to-globalstar-deal/",
+          "age_hours": 68.5
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "HawkEye 360",
+      "suppliers": [
+        "SpaceX"
+      ],
+      "customers": [
+        "NRO",
+        "NGA",
+        "USSF / Space Force",
+        "DoD"
+      ],
+      "partners": [
+        "DoD"
+      ],
+      "dependency_type": "sigint_eo_provider",
+      "layer": "Defense/SDA",
+      "confidence": 8,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "HawkEye 360 Raises $416M in IPO",
+          "link": "https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/",
+          "age_hours": 52.4
+        },
+        {
+          "headline": "HawkEye 360 Raises $416M, Pricing at High End for IPO",
+          "link": "https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/",
+          "age_hours": 68.3
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "Viasat",
+      "suppliers": [
+        "Boeing",
+        "Lockheed Martin"
+      ],
+      "customers": [
+        "U.S. Marine Corps",
+        "DoD",
+        "Commercial Airlines"
+      ],
+      "partners": [
+        "U.S. Marine Corps"
+      ],
+      "dependency_type": "satcom_defense",
+      "layer": "Communications",
+      "confidence": 9,
+      "last_signal": "2026-05-10T16:20:34Z",
+      "related_articles": [
+        {
+          "headline": "Viasat wins $307 million Marine Corps satellite communications contract",
+          "link": "https://spacenews.com/viasat-wins-307-million-marine-corps-satellite-communications-contract/",
+          "age_hours": 24.8
+        }
+      ],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "Northrop Grumman",
+      "suppliers": [
+        "Aerojet Rocketdyne",
+        "L3Harris"
+      ],
+      "customers": [
+        "USSF / Space Force",
+        "NASA",
+        "DoD"
+      ],
+      "partners": [
+        "NASA",
+        "USSF / Space Force"
+      ],
+      "dependency_type": "prime_defense_contractor",
+      "layer": "Defense/SDA",
+      "confidence": 9,
+      "last_signal": null,
+      "related_articles": [],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    },
+    {
+      "core_company": "MP Materials",
+      "suppliers": [],
+      "customers": [
+        "DoD",
+        "GM",
+        "Apple",
+        "Raytheon Technologies"
+      ],
+      "partners": [
+        "DoD"
+      ],
+      "dependency_type": "rare_earth_supplier",
+      "layer": "Energy/Materials",
+      "confidence": 8,
+      "last_signal": null,
+      "related_articles": [],
+      "generated_at_utc": "2026-05-10T16:20:34Z"
+    }
+  ]
+}

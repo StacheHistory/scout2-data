@@ -1,0 +1,15 @@
+{
+  "last_updated_utc": "2026-05-10T16:20:34Z",
+  "system_status": "operational",
+  "feed_health": "17/17 feeds OK",
+  "top_alert": "Smaller AIM-9X Could Give Drone Wingmen More Firepower",
+  "top_layer": "Infrastructure",
+  "top_score_mover": "Boeing",
+  "top_score_change": 5,
+  "immediate_alert_count": 44,
+  "same_day_alert_count": 28,
+  "watch_alert_count": 4,
+  "total_alerts": 76,
+  "items_live": 97,
+  "universe_size": 59
+}
