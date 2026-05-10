@@ -1,0 +1,5 @@
+# Scout-2 gitignore
+xml_audit/
+__pycache__/
+*.pyc
+*.log

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scout-2 | Investing with SPACE</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+  :root {
+    --bg:         #080c14;
+    --bg2:        #0d1520;
+    --bg3:        #111d2e;
+    --border:     #1e3050;
+    --accent:     #00d4ff;
+    --accent2:    #0066ff;
+    --red:        #ff3b5c;
+    --yellow:     #ffb800;
+    --blue:       #3b8eff;
+    --green:      #00e676;
+    --text:       #cdd8e8;
+    --text-dim:   #5a7a9a;
+    --text-bright:#ffffff;
+    --mono:       'Space Mono', monospace;
+    --sans:       'Syne', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .logo-text {
+    font-family: var(--sans);
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--text-bright);
+    letter-spacing: -0.5px;
+  }
+
+  .logo-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .last-updated {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+  }
+
+  .refresh-btn {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+  }
+
+  .refresh-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  /* ── SUMMARY CARDS ── */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+  }
+
+  .stat-card.alert-card::before { background: var(--red); }
+  .stat-card.warn-card::before  { background: var(--yellow); }
+  .stat-card.watch-card::before { background: var(--blue); }
+  .stat-card.feed-card::before  { background: var(--green); }
+
+  .stat-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: var(--mono);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-bright);
+    line-height: 1;
+  }
+
+  .stat-card.alert-card .stat-value { color: var(--red); }
+  .stat-card.warn-card  .stat-value { color: var(--yellow); }
+  .stat-card.watch-card .stat-value { color: var(--blue); }
+
+  /* ── MAIN GRID ── */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: 1000px) {
+    .main-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── PANELS ── */
+  .panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg3);
+  }
+
+  .panel-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-bright);
+  }
+
+  .panel-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    background: var(--bg);
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+
+  .panel-body {
+    overflow-y: auto;
+    max-height: 75vh;
+  }
+
+  /* ── CONTROLS BAR ── */
+  .controls {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    background: var(--bg2);
+  }
+
+  .search-input {
+    flex: 1;
+    min-width: 160px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .search-input:focus { border-color: var(--accent); }
+  .search-input::placeholder { color: var(--text-dim); }
+
+  .filter-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(0, 212, 255, 0.08);
+  }
+
+  .toggle-alerts {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 10px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .toggle-alerts.active {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(255, 59, 92, 0.08);
+  }
+
+  /* ── ALERT ITEMS ── */
+  .alert-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+    position: relative;
+  }
+
+  .alert-item:hover { background: var(--bg3); }
+
+  .alert-item::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+
+  .alert-item.immediate::before { background: var(--red); }
+  .alert-item.same_day::before  { background: var(--yellow); }
+  .alert-item.watch::before     { background: var(--blue); }
+
+  .alert-urgency {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .immediate .alert-urgency { color: var(--red); }
+  .same_day  .alert-urgency { color: var(--yellow); }
+  .watch     .alert-urgency { color: var(--blue); }
+
+  .alert-types {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text-dim);
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .type-tag {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .alert-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-bright);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .alert-meta {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    display: flex;
+    gap: 12px;
+  }
+
+  /* ── FEED ITEMS ── */
+  .feed-item {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .feed-item:hover { background: rgba(255,255,255,0.02); }
+  .feed-item:last-child { border-bottom: none; }
+
+  .feed-item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+  }
+
+  .category-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .cat-space    { background: rgba(0,212,255,0.1);  color: var(--accent);  border: 1px solid rgba(0,212,255,0.2);  }
+  .cat-defense  { background: rgba(255,59,92,0.1);  color: var(--red);     border: 1px solid rgba(255,59,92,0.2);  }
+  .cat-nasa     { background: rgba(0,230,118,0.1);  color: var(--green);   border: 1px solid rgba(0,230,118,0.2);  }
+  .cat-sat      { background: rgba(59,142,255,0.1); color: var(--blue);    border: 1px solid rgba(59,142,255,0.2); }
+  .cat-biz      { background: rgba(255,184,0,0.1);  color: var(--yellow);  border: 1px solid rgba(255,184,0,0.2);  }
+  .cat-aero     { background: rgba(160,120,255,0.1);color: #a078ff;        border: 1px solid rgba(160,120,255,0.2);}
+  .cat-tech     { background: rgba(255,100,0,0.1);  color: #ff6400;        border: 1px solid rgba(255,100,0,0.2);  }
+
+  .feed-age {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  .alert-indicator {
+    font-size: 10px;
+  }
+
+  .feed-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-bright);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+
+  .feed-summary {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-bottom: 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .feed-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  .feed-source a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .feed-source a:hover { text-decoration: underline; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  /* ── LOADING ── */
+  .loading {
+    padding: 48px 24px;
+    text-align: center;
+    color: var(--text-dim);
+    font-family: var(--mono);
+    font-size: 12px;
+  }
+
+  .spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 12px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── RUN HISTORY ── */
+  .history-panel {
+    margin-top: 20px;
+    grid-column: 1 / -1;
+  }
+
+  .history-row {
+    display: grid;
+    grid-template-columns: 180px 80px 80px 80px 80px 1fr;
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    align-items: center;
+    gap: 8px;
+  }
+
+  .history-row.header {
+    color: var(--text-dim);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--bg3);
+  }
+
+  .history-row:hover:not(.header) { background: var(--bg3); }
+
+  .num-green  { color: var(--green); }
+  .num-red    { color: var(--red); }
+  .num-yellow { color: var(--yellow); }
+
+  /* ── ERROR BANNER ── */
+  .error-banner {
+    background: rgba(255,59,92,0.1);
+    border: 1px solid rgba(255,59,92,0.3);
+    color: var(--red);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 12px 18px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: none;
+  }
+
+  /* ── NEXT REFRESH TIMER ── */
+  .next-refresh {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent2); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">🛰</div>
+    <div>
+      <div class="logo-text">Scout-2</div>
+      <div class="logo-sub">Investing with SPACE</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="status-dot" id="statusDot"></div>
+    <div class="last-updated" id="lastUpdated">Loading...</div>
+    <div class="next-refresh" id="nextRefresh"></div>
+    <button class="refresh-btn" onclick="loadAll()">↻ REFRESH</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="error-banner" id="errorBanner"></div>
+
+  <!-- SUMMARY CARDS -->
+  <div class="summary-grid">
+    <div class="stat-card">
+      <div class="stat-label">Live Items</div>
+      <div class="stat-value" id="statItems">—</div>
+    </div>
+    <div class="stat-card alert-card">
+      <div class="stat-label">🚨 Immediate</div>
+      <div class="stat-value" id="statImmediate">—</div>
+    </div>
+    <div class="stat-card warn-card">
+      <div class="stat-label">⚡ Same Day</div>
+      <div class="stat-value" id="statSameDay">—</div>
+    </div>
+    <div class="stat-card watch-card">
+      <div class="stat-label">👁 Watch</div>
+      <div class="stat-value" id="statWatch">—</div>
+    </div>
+    <div class="stat-card feed-card">
+      <div class="stat-label">Feeds OK</div>
+      <div class="stat-value" id="statFeeds">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Quarantined</div>
+      <div class="stat-value" id="statQuarantine">—</div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-grid">
+
+    <!-- LEFT: ALERTS PANEL -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">🚨 Alerts</div>
+        <div class="panel-count" id="alertCount">0</div>
+      </div>
+      <div class="panel-body" id="alertsBody">
+        <div class="loading"><div class="spinner"></div><br>Loading alerts...</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: LIVE FEED PANEL -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title">📡 Live Feed</div>
+        <div class="panel-count" id="feedCount">0</div>
+      </div>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <input class="search-input" type="text" id="searchInput"
+               placeholder="Search headlines..." oninput="applyFilters()">
+        <button class="filter-btn active" onclick="setCatFilter('all', this)">All</button>
+        <button class="filter-btn" onclick="setCatFilter('Space Industry', this)">Space</button>
+        <button class="filter-btn" onclick="setCatFilter('Defense/SDA', this)">Defense</button>
+        <button class="filter-btn" onclick="setCatFilter('NASA/Gov', this)">NASA</button>
+        <button class="filter-btn" onclick="setCatFilter('Satellite/Comms', this)">Sat</button>
+        <button class="filter-btn" onclick="setCatFilter('Business/Markets', this)">Markets</button>
+        <button class="filter-btn" onclick="setCatFilter('Tech/AI/Compute', this)">AI/Tech</button>
+        <button class="toggle-alerts" id="toggleAlertsBtn" onclick="toggleAlertsOnly()">Alerts Only</button>
+      </div>
+
+      <div class="panel-body" id="feedBody">
+        <div class="loading"><div class="spinner"></div><br>Loading feed...</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM: RUN HISTORY -->
+    <div class="panel history-panel">
+      <div class="panel-header">
+        <div class="panel-title">📋 Run History</div>
+        <div class="panel-count" id="historyCount">0 runs</div>
+      </div>
+      <div class="history-row header">
+        <span>Timestamp</span>
+        <span>Feeds</span>
+        <span>Failed</span>
+        <span>Items</span>
+        <span>Alerts</span>
+        <span>Archive</span>
+      </div>
+      <div id="historyBody">
+        <div class="loading">Loading history...</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // ── CONFIG ────────────────────────────────────────────────────
+  const BASE = 'https://raw.githubusercontent.com/StacheHistory/scout2-data/main/data/';
+  const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+
+  // ── STATE ─────────────────────────────────────────────────────
+  let allItems   = [];
+  let allAlerts  = [];
+  let catFilter  = 'all';
+  let alertsOnly = false;
+  let refreshTimer;
+  let countdownTimer;
+  let nextRefreshAt;
+
+  // ── CATEGORY CSS CLASS ────────────────────────────────────────
+  function catClass(cat) {
+    const map = {
+      'Space Industry':    'cat-space',
+      'Defense/SDA':       'cat-defense',
+      'NASA/Gov':          'cat-nasa',
+      'Satellite/Comms':   'cat-sat',
+      'Business/Markets':  'cat-biz',
+      'Aerospace/Suppliers':'cat-aero',
+      'Tech/AI/Compute':   'cat-tech',
+    };
+    return map[cat] || 'cat-space';
+  }
+
+  // ── FETCH JSON ────────────────────────────────────────────────
+  async function fetchJSON(url) {
+    const r = await fetch(url + '?t=' + Date.now());
+    if (!r.ok) throw new Error(`HTTP ${r.status} — ${url}`);
+    return r.json();
+  }
+
+  // ── LOAD ALL DATA ─────────────────────────────────────────────
+  async function loadAll() {
+    try {
+      showError(null);
+
+      const [dump, alerts, history] = await Promise.all([
+        fetchJSON(BASE + 'scout2_dump_latest.json'),
+        fetchJSON(BASE + 'scout2_alerts.json'),
+        fetchJSON(BASE + 'scout2_run_history.json').catch(() => ({ runs: [] })),
+      ]);
+
+      // Update state
+      allItems  = dump.items || [];
+      allAlerts = [
+        ...(alerts.immediate || []),
+        ...(alerts.same_day  || []),
+        ...(alerts.watch     || []),
+      ];
+
+      // Update summary cards
+      const meta = dump.meta || {};
+      document.getElementById('statItems').textContent     = meta.items_after_dedup ?? allItems.length;
+      document.getElementById('statImmediate').textContent = alerts.meta?.immediate_count ?? 0;
+      document.getElementById('statSameDay').textContent   = alerts.meta?.same_day_count  ?? 0;
+      document.getElementById('statWatch').textContent     = alerts.meta?.watch_count     ?? 0;
+      document.getElementById('statFeeds').textContent     =
+        (meta.feeds_attempted ?? 0) - (meta.feeds_failed ?? 0) + '/' + (meta.feeds_attempted ?? 0);
+      document.getElementById('statQuarantine').textContent = meta.items_quarantined ?? 0;
+
+      // Last updated
+      if (meta.run_timestamp_utc) {
+        const d = new Date(meta.run_timestamp_utc);
+        document.getElementById('lastUpdated').textContent =
+          'Updated ' + d.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) +
+          ' · ' + d.toLocaleDateString([], {month:'short', day:'numeric'});
+      }
+
+      // Render
+      renderAlerts(allAlerts);
+      applyFilters();
+      renderHistory(history.runs || []);
+
+      // Schedule next refresh
+      scheduleRefresh();
+
+    } catch (err) {
+      showError('Could not load data: ' + err.message +
+        '. Check your GitHub Pages is enabled and data files exist.');
+      document.getElementById('statusDot').style.background = 'var(--red)';
+    }
+  }
+
+  // ── RENDER ALERTS ─────────────────────────────────────────────
+  function renderAlerts(alerts) {
+    const body = document.getElementById('alertsBody');
+    document.getElementById('alertCount').textContent = alerts.length;
+
+    if (!alerts.length) {
+      body.innerHTML = '<div class="empty-state">No alerts in current window</div>';
+      return;
+    }
+
+    body.innerHTML = alerts.map(a => {
+      const types = (a.alert_types || []).map(t =>
+        `<span class="type-tag">${t.replace('_',' ')}</span>`
+      ).join('');
+
+      return `
+        <div class="alert-item ${a.urgency}" onclick="window.open('${a.link}','_blank')">
+          <div class="alert-urgency">
+            ${a.urgency === 'immediate' ? '🚨' : a.urgency === 'same_day' ? '⚡' : '👁'}
+            ${a.urgency.replace('_',' ').toUpperCase()}
+            <div class="alert-types">${types}</div>
+          </div>
+          <div class="alert-title">${escHtml(a.title)}</div>
+          <div class="alert-meta">
+            <span>${escHtml(a.feed_label)}</span>
+            <span>${a.age_hours ? a.age_hours + 'h ago' : ''}</span>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── RENDER FEED ───────────────────────────────────────────────
+  function renderFeed(items) {
+    const body = document.getElementById('feedBody');
+    document.getElementById('feedCount').textContent = items.length + ' items';
+
+    if (!items.length) {
+      body.innerHTML = '<div class="empty-state">No items match current filters</div>';
+      return;
+    }
+
+    // Set of alert fingerprints for indicator
+    const alertLinks = new Set(allAlerts.map(a => a.link));
+
+    body.innerHTML = items.map(item => {
+      const isAlert  = alertLinks.has(item.link);
+      const cc       = catClass(item.category);
+      const summary  = item.summary ? `<div class="feed-summary">${escHtml(item.summary)}</div>` : '';
+
+      return `
+        <div class="feed-item" onclick="window.open('${item.link}','_blank')">
+          <div class="feed-item-header">
+            <span class="category-badge ${cc}">${escHtml(item.category)}</span>
+            ${isAlert ? '<span class="alert-indicator">🚨</span>' : ''}
+            <span class="feed-age">${item.age_hours ? item.age_hours + 'h' : ''}</span>
+          </div>
+          <div class="feed-title">${escHtml(item.title)}</div>
+          ${summary}
+          <div class="feed-source">
+            <a href="${item.link}" target="_blank" onclick="event.stopPropagation()">
+              ${escHtml(item.feed_label)}
+            </a>
+            · ${item.published_display || ''}
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── RENDER HISTORY ────────────────────────────────────────────
+  function renderHistory(runs) {
+    const body = document.getElementById('historyBody');
+    document.getElementById('historyCount').textContent = runs.length + ' runs';
+
+    if (!runs.length) {
+      body.innerHTML = '<div class="empty-state">No run history yet</div>';
+      return;
+    }
+
+    // Most recent first
+    const sorted = [...runs].reverse();
+    body.innerHTML = sorted.map(r => {
+      const d = new Date(r.run_timestamp_utc);
+      const ts = d.toLocaleString([], {
+        month:'short', day:'numeric',
+        hour:'2-digit', minute:'2-digit'
+      });
+      const failClass = r.feeds_failed > 0 ? 'num-red' : 'num-green';
+      return `
+        <div class="history-row">
+          <span>${ts}</span>
+          <span class="num-green">${r.feeds_attempted}</span>
+          <span class="${failClass}">${r.feeds_failed}</span>
+          <span>${r.items_live}</span>
+          <span class="${r.alerts_count > 0 ? 'num-yellow' : ''}">${r.alerts_count}</span>
+          <span style="color:var(--text-dim);font-size:10px">${r.archive_file || '—'}</span>
+        </div>`;
+    }).join('');
+  }
+
+  // ── APPLY FILTERS ─────────────────────────────────────────────
+  function applyFilters() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const alertLinks = new Set(allAlerts.map(a => a.link));
+
+    let filtered = allItems.filter(item => {
+      const matchCat   = catFilter === 'all' || item.category === catFilter;
+      const matchAlert = !alertsOnly || alertLinks.has(item.link);
+      const matchSearch = !query ||
+        item.title.toLowerCase().includes(query) ||
+        (item.summary || '').toLowerCase().includes(query) ||
+        (item.feed_label || '').toLowerCase().includes(query);
+      return matchCat && matchAlert && matchSearch;
+    });
+
+    renderFeed(filtered);
+  }
+
+  // ── FILTER CONTROLS ───────────────────────────────────────────
+  function setCatFilter(cat, btn) {
+    catFilter = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilters();
+  }
+
+  function toggleAlertsOnly() {
+    alertsOnly = !alertsOnly;
+    const btn = document.getElementById('toggleAlertsBtn');
+    btn.classList.toggle('active', alertsOnly);
+    applyFilters();
+  }
+
+  // ── SCHEDULE REFRESH ──────────────────────────────────────────
+  function scheduleRefresh() {
+    clearTimeout(refreshTimer);
+    clearInterval(countdownTimer);
+    nextRefreshAt = Date.now() + REFRESH_INTERVAL;
+    refreshTimer  = setTimeout(loadAll, REFRESH_INTERVAL);
+
+    countdownTimer = setInterval(() => {
+      const remaining = Math.max(0, Math.round((nextRefreshAt - Date.now()) / 1000));
+      const m = Math.floor(remaining / 60);
+      const s = remaining % 60;
+      document.getElementById('nextRefresh').textContent =
+        `Next refresh: ${m}:${s.toString().padStart(2,'0')}`;
+      if (remaining === 0) clearInterval(countdownTimer);
+    }, 1000);
+  }
+
+  // ── HELPERS ───────────────────────────────────────────────────
+  function escHtml(str) {
+    if (!str) return '';
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;')
+              .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('errorBanner');
+    if (msg) { el.textContent = msg; el.style.display = 'block'; }
+    else      { el.style.display = 'none'; }
+  }
+
+  // ── INIT ──────────────────────────────────────────────────────
+  loadAll();
+</script>
+</body>
+</html>

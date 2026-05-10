@@ -1,0 +1,13 @@
+{
+  "runs": [
+    {
+      "run_timestamp_utc": "2026-05-10T13:54:03Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 0,
+      "items_live": 105,
+      "alerts_count": 79,
+      "items_quarantined": 167,
+      "archive_file": "archive/scout2_dump_20260510_1354.json"
+    }
+  ]
+}
