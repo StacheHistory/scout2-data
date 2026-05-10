@@ -1,99 +1,94 @@
 {
   "last_updated_utc": "2026-05-10T00:00:00Z",
   "meta": {
-    "note": "Edit shares and avg_price directly in the dashboard. This file is the fallback default.",
-    "currency": "USD"
+    "note": "Edit holdings in the dashboard Portfolio tab. Data saved to browser localStorage. Use Export to save a backup.",
+    "currency": "USD",
+    "version": "2.0"
   },
   "holdings": [
     {
       "ticker": "RKLB",
       "company": "Rocket Lab",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Launch",
-      "notes": ""
+      "shares": 18,
+      "avg_cost": 67.45833,
+      "target_min_shares": 25,
+      "target_max_shares": 50,
+      "ring": "Core",
+      "subring": "Launch / Defense / Infrastructure",
+      "notes": "",
+      "editable": true
     },
     {
       "ticker": "ASTS",
       "company": "AST SpaceMobile",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Communications",
-      "notes": ""
-    },
-    {
-      "ticker": "LUNR",
-      "company": "Intuitive Machines",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Lunar/Deep Space",
-      "notes": ""
-    },
-    {
-      "ticker": "PL",
-      "company": "Planet Labs",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Data/EO",
-      "notes": ""
-    },
-    {
-      "ticker": "VSAT",
-      "company": "Viasat",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Communications",
-      "notes": ""
-    },
-    {
-      "ticker": "MP",
-      "company": "MP Materials",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Energy/Materials",
-      "notes": ""
-    },
-    {
-      "ticker": "HE360",
-      "company": "HawkEye 360",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Defense/SDA",
-      "notes": ""
-    },
-    {
-      "ticker": "FLY",
-      "company": "Firefly Aerospace",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 1,
-      "layer": "Launch",
-      "notes": ""
+      "shares": 50,
+      "avg_cost": 82.40777,
+      "target_min_shares": 50,
+      "target_max_shares": 100,
+      "ring": "Core",
+      "subring": "Communications / D2D",
+      "notes": "",
+      "editable": true
     },
     {
       "ticker": "RDW",
       "company": "Redwire",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 2,
-      "layer": "Infrastructure",
-      "notes": ""
+      "shares": 103,
+      "avg_cost": 9.438,
+      "target_min_shares": 150,
+      "target_max_shares": 300,
+      "ring": "Core",
+      "subring": "Infrastructure / Manufacturing",
+      "notes": "",
+      "editable": true
     },
     {
-      "ticker": "SPIR",
-      "company": "Spire Global",
-      "shares": 0,
-      "avg_price": 0,
-      "ring": 2,
-      "layer": "Data/EO",
-      "notes": ""
+      "ticker": "FLY",
+      "company": "Firefly Aerospace",
+      "shares": 32,
+      "avg_cost": 37.685,
+      "target_min_shares": 40,
+      "target_max_shares": 75,
+      "ring": "Core",
+      "subring": "Launch / Lunar / Defense",
+      "notes": "",
+      "editable": true
+    },
+    {
+      "ticker": "MDA",
+      "company": "MDA Space",
+      "shares": 20,
+      "avg_cost": 27.055,
+      "target_min_shares": 30,
+      "target_max_shares": 60,
+      "ring": "Ring 1.5",
+      "subring": "Robotics / Satellite Manufacturing",
+      "notes": "CAD-listed. Prices in CAD.",
+      "editable": true
+    },
+    {
+      "ticker": "AMD",
+      "company": "AMD",
+      "shares": 47,
+      "avg_cost": 105.888,
+      "target_min_shares": 47,
+      "target_max_shares": 75,
+      "ring": "Ring 6",
+      "subring": "AI / Compute",
+      "notes": "External account — not easily sold.",
+      "editable": true
+    },
+    {
+      "ticker": "MARS",
+      "company": "MARS ETF",
+      "shares": 10,
+      "avg_cost": 29.0,
+      "target_min_shares": 10,
+      "target_max_shares": 25,
+      "ring": "Core",
+      "subring": "Space ETF / Diversified",
+      "notes": "Cost basis $290 total.",
+      "editable": true
     }
   ]
 }

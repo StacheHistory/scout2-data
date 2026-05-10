@@ -1,0 +1,195 @@
+{
+  "last_updated_utc": "2026-05-10T00:00:00Z",
+  "meta": {
+    "version": "1.0",
+    "note": "Full ring and subring structure for Investing with SPACE. Companies may appear in multiple rings/layers."
+  },
+  "rings": [
+    {
+      "ring": "Core",
+      "ring_number": 0,
+      "label": "Core / Sun",
+      "color": "#00d4ff",
+      "description": "Highest conviction space economy pure plays",
+      "companies": [
+        {"ticker": "RKLB", "company": "Rocket Lab",      "subring": "Launch / Defense / Infrastructure"},
+        {"ticker": "ASTS", "company": "AST SpaceMobile", "subring": "Communications / D2D"},
+        {"ticker": "RDW",  "company": "Redwire",         "subring": "Infrastructure / Manufacturing"},
+        {"ticker": "FLY",  "company": "Firefly Aerospace","subring": "Launch / Lunar / Defense"},
+        {"ticker": "MDA",  "company": "MDA Space",       "subring": "Robotics / Satellite Mfg"},
+        {"ticker": "MARS", "company": "MARS ETF",        "subring": "Space ETF / Diversified"}
+      ]
+    },
+    {
+      "ring": "Ring 1.5",
+      "ring_number": 1,
+      "label": "Ring 1.5 — Core-Adjacent Accelerators",
+      "color": "#00c9a7",
+      "description": "High-conviction adjacent plays with strong thesis alignment",
+      "companies": [
+        {"ticker": "MDA",  "company": "MDA Space",             "subring": "Robotics / Satellite Mfg"},
+        {"ticker": "LUNR", "company": "Intuitive Machines",    "subring": "Lunar / Landing"},
+        {"ticker": "FLY",  "company": "Firefly Aerospace",     "subring": "Launch / Lunar"},
+        {"ticker": "HE360","company": "HawkEye 360",           "subring": "SIGINT / SDA"}
+      ]
+    },
+    {
+      "ring": "Ring 2",
+      "ring_number": 2,
+      "label": "Ring 2 — Revenue / Stability / High-Conviction Support",
+      "color": "#a855f7",
+      "description": "Established revenue streams, strong fundamentals, thesis support",
+      "companies": [
+        {"ticker": "IRDM", "company": "Iridium",          "subring": "Communications / LEO"},
+        {"ticker": "PL",   "company": "Planet Labs",      "subring": "Earth Observation"},
+        {"ticker": "BKSY", "company": "BlackSky",         "subring": "Earth Observation"},
+        {"ticker": "VSAT", "company": "Viasat",           "subring": "Satcom / Defense"},
+        {"ticker": "GSAT", "company": "Globalstar",       "subring": "Communications / D2D"},
+        {"ticker": "MDA",  "company": "MDA Space",        "subring": "Satellite Manufacturing"},
+        {"ticker": "SPIR", "company": "Spire Global",     "subring": "Data / EO / Analytics"}
+      ]
+    },
+    {
+      "ring": "Ring 3",
+      "ring_number": 3,
+      "label": "Ring 3 — Optionality / Emerging Upside",
+      "color": "#ffb800",
+      "description": "Higher risk, higher upside emerging space plays",
+      "companies": [
+        {"ticker": "SATL", "company": "Satellogic",       "subring": "Earth Observation"},
+        {"ticker": "SPIR", "company": "Spire Global",     "subring": "Data / Weather"},
+        {"ticker": "SIDU", "company": "Sidus Space",      "subring": "SmallSat"},
+        {"ticker": "LUNR", "company": "Intuitive Machines","subring": "Lunar"},
+        {"ticker": "FJET", "company": "Starfighters Space","subring": "Air-Launch"},
+        {"ticker": "VELO", "company": "Velodyne / VELO",  "subring": "Sensor / Lidar"},
+        {"ticker": "AERG", "company": "Aerogrow / AERG",  "subring": "Emerging"},
+        {"ticker": "HLEO", "company": "Heliogen / HLEO",  "subring": "Energy / Solar"},
+        {"ticker": null,   "company": "Astrobotic",       "subring": "Lunar Lander"},
+        {"ticker": null,   "company": "Orbital Transfer",  "subring": "Logistics"}
+      ]
+    },
+    {
+      "ring": "Ring 4",
+      "ring_number": 4,
+      "label": "Ring 4 — Defense / Aerospace Stabilizers",
+      "color": "#ff6b00",
+      "description": "Large-cap defense and aerospace primes — stability and dividend layer",
+      "companies": [
+        {"ticker": "LHX",  "company": "L3Harris",              "subring": "Defense Electronics"},
+        {"ticker": "RTX",  "company": "Raytheon Technologies",  "subring": "Missiles / Defense"},
+        {"ticker": "NOC",  "company": "Northrop Grumman",       "subring": "Space Systems / Defense"},
+        {"ticker": "LMT",  "company": "Lockheed Martin",        "subring": "Space / Defense"},
+        {"ticker": "GD",   "company": "General Dynamics",       "subring": "Defense / IT"},
+        {"ticker": "BA",   "company": "Boeing",                 "subring": "Aerospace / Defense"},
+        {"ticker": "GE",   "company": "GE Aerospace",           "subring": "Propulsion / Aviation"},
+        {"ticker": "HWM",  "company": "Howmet Aerospace",       "subring": "Aerospace Materials"},
+        {"ticker": "TDG",  "company": "TransDigm",              "subring": "Aerospace Components"},
+        {"ticker": "WWD",  "company": "Woodward",               "subring": "Aerospace Controls"},
+        {"ticker": "HON",  "company": "Honeywell",              "subring": "Aerospace / Quantum"},
+        {"ticker": "KBR",  "company": "KBR",                   "subring": "Gov Services / Space"},
+        {"ticker": "LDOS", "company": "Leidos",                 "subring": "Defense IT / AI"},
+        {"ticker": "RYCEY","company": "Rolls-Royce",            "subring": "Propulsion / Nuclear"}
+      ]
+    },
+    {
+      "ring": "Ring 5",
+      "ring_number": 5,
+      "label": "Ring 5 — Testing Infrastructure",
+      "color": "#3b8eff",
+      "description": "Test, measurement, and validation equipment for aerospace",
+      "companies": [
+        {"ticker": "AME",  "company": "Ametek",                "subring": "Test / Measurement"},
+        {"ticker": "KEYS", "company": "Keysight Technologies",  "subring": "RF / Electronic Test"},
+        {"ticker": "TDY",  "company": "Teledyne Technologies",  "subring": "Instruments / Defense"},
+        {"ticker": "FJET", "company": "Starfighters Space",     "subring": "Air-Launch Testing"},
+        {"ticker": null,   "company": "Otto Aerospace",         "subring": "Laminar Flow / Testing"},
+        {"ticker": null,   "company": "Aerospace Testing Intl", "subring": "Test Infrastructure"}
+      ]
+    },
+    {
+      "ring": "Ring 6",
+      "ring_number": 6,
+      "label": "Ring 6 — AI / Compute / Data Center",
+      "color": "#ff3355",
+      "description": "Semiconductor, AI infrastructure, and compute layer",
+      "companies": [
+        {"ticker": "AMD",  "company": "AMD",                   "subring": "GPU / CPU / AI"},
+        {"ticker": "NVDA", "company": "Nvidia",                "subring": "GPU / AI Accelerators"},
+        {"ticker": "MU",   "company": "Micron",                "subring": "Memory / Storage"},
+        {"ticker": "IREN", "company": "IREN",                  "subring": "AI Data Centers"},
+        {"ticker": null,   "company": "Cerebras Systems",       "subring": "AI Chips / Private"},
+        {"ticker": "HON",  "company": "Quantinuum (Honeywell)", "subring": "Quantum Computing"},
+        {"ticker": "PLTR", "company": "Palantir",              "subring": "AI / Defense Analytics"},
+        {"ticker": "CRDO", "company": "Credo Technology",      "subring": "AI Interconnect"}
+      ]
+    },
+    {
+      "ring": "Ring 7",
+      "ring_number": 7,
+      "label": "Ring 7 — Raw Materials / Power / Energy",
+      "color": "#00e676",
+      "description": "Rare earths, nuclear, battery, and power systems",
+      "companies": [
+        {"ticker": "MP",   "company": "MP Materials",          "subring": "Rare Earth Mining"},
+        {"ticker": "ATLX", "company": "Atlas Lithium",         "subring": "Lithium / Battery Materials"},
+        {"ticker": "SDST", "company": "Stardust Power",        "subring": "Battery Materials"},
+        {"ticker": "QS",   "company": "QuantumScape",          "subring": "Solid State Battery"},
+        {"ticker": "BWXT", "company": "BWX Technologies",      "subring": "Nuclear / Reactors"},
+        {"ticker": null,   "company": "Zeno Power",            "subring": "Nuclear / RTG / Private"},
+        {"ticker": null,   "company": "Aerojet Rocketdyne",    "subring": "Propulsion (acquired)"}
+      ]
+    },
+    {
+      "ring": "Ring 8",
+      "ring_number": 8,
+      "label": "Ring 8 — Ground Segment / Logistics / Software",
+      "color": "#00d4ff",
+      "description": "Ground infrastructure, in-orbit servicing, and mission software",
+      "companies": [
+        {"ticker": null, "company": "KSAT",              "subring": "Ground Stations"},
+        {"ticker": null, "company": "ALL.SPACE",         "subring": "Ground Terminals"},
+        {"ticker": null, "company": "Skylo",             "subring": "NTN / D2D Software"},
+        {"ticker": null, "company": "Xona Space",        "subring": "Navigation / PNT"},
+        {"ticker": null, "company": "Slingshot Aerospace","subring": "SDA / SSA Software"},
+        {"ticker": null, "company": "Astroscale",        "subring": "Debris Removal"},
+        {"ticker": null, "company": "Orbit Fab",         "subring": "In-Orbit Refueling"},
+        {"ticker": null, "company": "D-Orbit",           "subring": "Orbital Transfer / Logistics"},
+        {"ticker": null, "company": "True Anomaly",      "subring": "SDA / Space Defense SW"},
+        {"ticker": null, "company": "Impulse Space",     "subring": "Last-Mile Orbital Delivery"}
+      ]
+    },
+    {
+      "ring": "Ring 9",
+      "ring_number": 9,
+      "label": "Ring 9 — Private / IPO Watch",
+      "color": "#a855f7",
+      "description": "Private companies — monitor for IPO signals",
+      "companies": [
+        {"ticker": null,   "company": "SpaceX",           "subring": "Launch / Starlink"},
+        {"ticker": null,   "company": "Blue Origin",      "subring": "Launch / Lunar"},
+        {"ticker": null,   "company": "Sierra Space",     "subring": "Space Station / Transport"},
+        {"ticker": null,   "company": "Vast",             "subring": "Space Station"},
+        {"ticker": null,   "company": "Axiom Space",      "subring": "Commercial Station"},
+        {"ticker": null,   "company": "Stoke Space",      "subring": "Reusable Launch"},
+        {"ticker": null,   "company": "Relativity Space", "subring": "3D-Printed Launch"},
+        {"ticker": "HE360","company": "HawkEye 360",      "subring": "SIGINT / RF / IPO"},
+        {"ticker": null,   "company": "York Space Systems","subring": "SmallSat Manufacturing"},
+        {"ticker": null,   "company": "Capella Space",    "subring": "SAR / EO"},
+        {"ticker": null,   "company": "Umbra",            "subring": "SAR / EO"},
+        {"ticker": null,   "company": "ICEYE",            "subring": "SAR / EO"},
+        {"ticker": null,   "company": "Pixxel",           "subring": "Hyperspectral EO"},
+        {"ticker": null,   "company": "Tomorrow.io",      "subring": "Space Weather"},
+        {"ticker": null,   "company": "SatVu",            "subring": "Thermal EO"},
+        {"ticker": null,   "company": "Skyroot Aerospace","subring": "Indian Launch"},
+        {"ticker": null,   "company": "AgniKul Cosmos",  "subring": "Indian Launch"},
+        {"ticker": null,   "company": "Quantum Space",    "subring": "Cislunar / Navigation"},
+        {"ticker": null,   "company": "Lunar Outpost",    "subring": "Lunar Rover"},
+        {"ticker": null,   "company": "Astranis",         "subring": "GEO / Broadband"},
+        {"ticker": null,   "company": "Starcloud",        "subring": "Orbital Compute"},
+        {"ticker": null,   "company": "Revolution Space", "subring": "In-Orbit Servicing"},
+        {"ticker": null,   "company": "Overview Energy",  "subring": "Space Energy"},
+        {"ticker": null,   "company": "LiveEO",           "subring": "EO Analytics"}
+      ]
+    }
+  ]
+}

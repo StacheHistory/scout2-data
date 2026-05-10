@@ -1,0 +1,30 @@
+{
+  "last_updated_utc": "2026-05-10T00:00:00Z",
+  "meta": {
+    "note": "Prices populated by API (Finnhub/Twelve Data) or manual entry in dashboard Settings tab. Dashboard falls back to this file if API unavailable.",
+    "version": "1.0"
+  },
+  "prices": [
+    {"ticker": "RKLB", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "ASTS", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "RDW",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "FLY",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "MDA",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "AMD",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "MARS", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "PL",   "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "BKSY", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "VSAT", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "GSAT", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "IREN", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "AME",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "KEYS", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "TDY",  "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "LUNR", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "SPIR", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "NVDA", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "MP",   "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "FJET", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""},
+    {"ticker": "PLTR", "price": null, "change_pct": null, "source": "manual", "updated_at_utc": ""}
+  ]
+}
