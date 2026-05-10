@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T17:03:21Z",
+    "generated_at_utc": "2026-05-10T18:48:46Z",
     "total_relationships": 10,
     "note": "Static base map enriched with live article signals"
   },
@@ -25,7 +25,7 @@
       "dependency_type": "launch_provider",
       "layer": "Launch",
       "confidence": 9,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "NASA’s SpaceX 34th Commercial Resupply Mission Overview",
@@ -43,7 +43,7 @@
           "age_hours": 53.0
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "Rocket Lab",
@@ -63,7 +63,7 @@
       "dependency_type": "launch_and_defense",
       "layer": "Launch",
       "confidence": 9,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
@@ -86,7 +86,7 @@
           "age_hours": 67.0
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "MDA Space",
@@ -105,7 +105,7 @@
       "dependency_type": "satellite_manufacturer",
       "layer": "Infrastructure",
       "confidence": 8,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "MDA Space continues work on Gateway robotic arm",
@@ -118,7 +118,7 @@
           "age_hours": 69.1
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "Planet Labs",
@@ -138,7 +138,7 @@
       "dependency_type": "eo_data_provider",
       "layer": "Data/EO",
       "confidence": 8,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "Greek Government Taps Planet for New Satellite Data Deal",
@@ -146,7 +146,7 @@
           "age_hours": 45.2
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "AST SpaceMobile",
@@ -167,7 +167,7 @@
       "confidence": 8,
       "last_signal": null,
       "related_articles": [],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "Globalstar",
@@ -185,7 +185,7 @@
       "dependency_type": "satcom_acquisition_target",
       "layer": "Communications",
       "confidence": 9,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
@@ -198,7 +198,7 @@
           "age_hours": 69.1
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "HawkEye 360",
@@ -217,7 +217,7 @@
       "dependency_type": "sigint_eo_provider",
       "layer": "Defense/SDA",
       "confidence": 8,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "HawkEye 360 Raises $416M in IPO",
@@ -230,7 +230,7 @@
           "age_hours": 68.9
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "Viasat",
@@ -249,7 +249,7 @@
       "dependency_type": "satcom_defense",
       "layer": "Communications",
       "confidence": 9,
-      "last_signal": "2026-05-10T17:03:21Z",
+      "last_signal": "2026-05-10T18:48:46Z",
       "related_articles": [
         {
           "headline": "Viasat wins $307 million Marine Corps satellite communications contract",
@@ -257,7 +257,7 @@
           "age_hours": 25.4
         }
       ],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "Northrop Grumman",
@@ -279,7 +279,7 @@
       "confidence": 9,
       "last_signal": null,
       "related_articles": [],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     },
     {
       "core_company": "MP Materials",
@@ -298,7 +298,7 @@
       "confidence": 8,
       "last_signal": null,
       "related_articles": [],
-      "generated_at_utc": "2026-05-10T17:03:21Z"
+      "generated_at_utc": "2026-05-10T18:48:46Z"
     }
   ]
 }

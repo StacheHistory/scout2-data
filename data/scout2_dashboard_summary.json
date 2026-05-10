@@ -1,15 +1,15 @@
 {
-  "last_updated_utc": "2026-05-10T17:03:21Z",
+  "last_updated_utc": "2026-05-10T18:48:46Z",
   "system_status": "operational",
   "feed_health": "17/17 feeds OK",
-  "top_alert": "Smaller AIM-9X Could Give Drone Wingmen More Firepower",
+  "top_alert": "Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings",
   "top_layer": "Infrastructure",
   "top_score_mover": "Firefly Aerospace",
-  "top_score_change": 5,
-  "immediate_alert_count": 42,
-  "same_day_alert_count": 27,
-  "watch_alert_count": 4,
-  "total_alerts": 73,
+  "top_score_change": -5,
+  "immediate_alert_count": 1,
+  "same_day_alert_count": 13,
+  "watch_alert_count": 5,
+  "total_alerts": 19,
   "items_live": 94,
   "universe_size": 59
 }

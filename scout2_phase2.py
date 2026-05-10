@@ -34,7 +34,7 @@ from typing import Optional
 #  CONSTANTS
 # ══════════════════════════════════════════════════════════════════════
 
-VERSION     = "1.0"
+VERSION     = "1.1"
 SYSTEM_NAME = "Scout-2 Phase 2 / Investing with SPACE"
 NOW_UTC     = datetime.now(timezone.utc)
 NOW_STR     = NOW_UTC.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -52,10 +52,10 @@ MASTER_UNIVERSE = [
     {"company": "Rocket Lab",           "ticker": "RKLB",  "status": "public",    "ring": 1, "layers": ["Launch", "Defense/SDA", "Logistics"]},
     {"company": "Blue Origin",          "ticker": None,    "status": "private",   "ring": 1, "layers": ["Launch", "Lunar/Deep Space"]},
     {"company": "United Launch Alliance","ticker": None,   "status": "private",   "ring": 2, "layers": ["Launch", "Defense/SDA"]},
-    {"company": "Firefly Aerospace", "ticker": "FLY", "status": "public", "ring": 1, "layers": ["Launch", "Defense/SDA"]},
+    {"company": "Firefly Aerospace",    "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
     {"company": "Relativity Space",     "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
     {"company": "Skyroot Aerospace",    "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
-    {"company": "Starfighters Space", "ticker": "FJET", "status": "public", "ring": 2, "layers": ["Launch", "Defense/SDA"]},
+    {"company": "Starfighters Space",   "ticker": None,    "status": "private",   "ring": 3, "layers": ["Launch", "Defense/SDA"]},
 
     # ── Infrastructure / Manufacturing ────────────────────────────────
     {"company": "Northrop Grumman",     "ticker": "NOC",   "status": "public",    "ring": 1, "layers": ["Defense/SDA", "Infrastructure", "Launch"]},
@@ -232,36 +232,271 @@ SUPPLY_CHAIN_BASE = [
 
 
 # ══════════════════════════════════════════════════════════════════════
-#  ALERT KEYWORDS — for enhanced classification
+#  ALERT CLASSIFICATION ENGINE v2
+#  Precision-first: evidence-based event detection, not keyword spray.
+#  Each event type requires strong headline/summary evidence.
+#  Immediate = confirmed action on a tracked company only.
 # ══════════════════════════════════════════════════════════════════════
 
-ALERT_PATTERNS = {
-    "contract":      ["contract", "award", "awarded", "task order", "idiq",
-                      "firm fixed price", "ffp", "indefinite delivery", "ota",
-                      "other transaction", "procurement", "sole source", "mecs"],
-    "earnings":      ["earnings", "revenue", "quarterly", "q1", "q2", "q3", "q4",
-                      "annual report", "guidance", "backlog", "beat", "miss",
-                      "profit", "ebitda", "margin", "record revenue"],
-    "funding":       ["funding", "raises", "raised", "series a", "series b",
-                      "series c", "seed round", "investment", "venture",
-                      "valuation", "unicorn", "capital round"],
-    "ipo":           ["ipo", "initial public offering", "spac", "goes public",
-                      "public markets", "s-1", "listing", "nasdaq", "nyse",
-                      "priced shares", "public offering"],
-    "acquisition":   ["acquires", "acquisition", "merger", "acquired", "takeover",
-                      "buys", "purchase", "m&a", "to acquire"],
-    "defense_award": ["space force", "ussf", "darpa", "pentagon", "dod", "nro",
-                      "missile defense", "golden dome", "sda", "space domain",
-                      "classified contract", "defense contract", "military contract",
-                      "golden dome", "space interceptor", "sbi"],
-    "partnership":   ["partnership", "partner", "teaming", "joint venture",
-                      "agreement", "memorandum", "mou", "collaboration"],
-    "product_launch":["launches", "unveiled", "announces", "first flight",
-                      "static fire", "test flight", "milestone", "operational"],
+# ── DISQUALIFIER PATTERNS ─────────────────────────────────────────────
+# Items matching these are capped at "watch" regardless of other signals.
+DISQUALIFIERS = {
+    "opinion":        ["opinion", "analysis", "commentary", "editorial", "podcast",
+                       "interview", "episode", "newsletter", "roundup", "weekly",
+                       "according to", "experts say", "i think", "we think",
+                       "outlook", "perspective", "in our view"],
+    "nasa_info":      ["nasa image", "photo of the day", "space photo", "astronaut photo",
+                       "glowing views", "i am artemis", "meet the fleet",
+                       "captures mars", "artemis 2 commander",
+                       "artemis astronauts saw", "scientists found",
+                       "how you'd really die", "may sky", "star-hops",
+                       "black holes", "exoplanets", "neutron star",
+                       "titan be humanity", "moon joy", "curiosity rover wheels"],
+    "general_defense":["fitness test", "insider trading", "prediction markets",
+                       "ukrainian ground robot", "iran exchange fire",
+                       "b-52 study", "cruise missiles on cargo",
+                       "us strikes iran", "iran campaign demonstrates",
+                       "europe defense autonomy", "turkish air force",
+                       "aselsan", "electromagnetic spectrum exercise",
+                       "hegseth", "deal team six", "munitions at risk",
+                       "air force fitness", "sof insider"],
+    "macro_markets":  ["strawberry fields reit", "ppl corporation",
+                       "creative media", "brookfield business",
+                       "stocks finish higher", "dow jones", "s&p 500",
+                       "nasdaq record", "eli lilly", "omada health",
+                       "data center in cleveland", "data center in nepal",
+                       "data center in melbourne", "data center in lagos",
+                       "medallion sues", "zerra dc", "stockland",
+                       "prime breaks ground", "accelerate infrastructure",
+                       "algeria and oman", "duos edge"],
 }
 
+# ── STRONG EVIDENCE PATTERNS ──────────────────────────────────────────
+# These require the pattern to appear in the HEADLINE specifically,
+# not just the summary, to reduce false positives.
+
+# Contract: must have dollar value or specific award language
+CONTRACT_STRONG = [
+    r"\$[\d,]+\s*(million|billion|m\b|b\b)",  # dollar amount
+    r"wins?\s+\$",                             # wins $X
+    r"awarded?\s+\$",                          # awarded $X
+    r"award[s]?\s+contract",                   # awards contract
+    r"contract\s+award",                       # contract award
+    r"task\s+order",                           # task order
+    r"idiq",                                   # IDIQ
+    r"firm.fixed.price",                       # FFP
+    r"indefinite.delivery",                    # IDIQ full
+    r"other\s+transaction\s+authority",        # OTA
+    r"mecs\d*",                                # MECS (Marine Corps contract)
+    r"sole.source\s+contract",
+]
+
+# Earnings: must reference actual results, not just the word
+EARNINGS_STRONG = [
+    r"q[1-4]\s+202[0-9]\s+(earnings|results|revenue|takeaways)",
+    r"(quarterly|annual)\s+(earnings|results|revenue)",
+    r"(beats?|misses?)\s+(earnings|estimates|expectations)",
+    r"record\s+(quarterly|annual)\s+revenue",
+    r"revenue\s+(grows?|grew|jumps?|falls?|declined?)\s+\d+",
+    r"(earnings|revenue)\s+call",
+    r"(guidance|backlog)\s+(raised?|lowered?|updated?|increased?)",
+    r"(q[1-4]|full.year)\s+(eps|revenue|profit)",
+]
+
+# IPO: must reference actual event, not just mention of public markets
+IPO_STRONG = [
+    r"raises?\s+\$[\d,]+\s*(million|billion).*ipo",
+    r"ipo\b",
+    r"initial\s+public\s+offering",
+    r"prices?\s+(its\s+)?(shares?|ipo)",
+    r"begins?\s+trading",
+    r"lists?\s+on\s+(nasdaq|nyse|stock)",
+    r"s.?1\s+(filing|filed)",
+    r"going\s+public",
+    r"spac\s+(merger|deal)",
+]
+
+# Acquisition: must reference definitive deal, not speculation
+ACQUISITION_STRONG = [
+    r"acquires?\s+\w",              # acquires X
+    r"to\s+acquire\s+\w",          # to acquire X
+    r"acquisition\s+of\s+\w",      # acquisition of X
+    r"merger\s+(agreement|with)",  # merger agreement/with
+    r"acquired\s+by\s+\w",         # acquired by X
+    r"takeover\s+(bid|offer)",     # takeover bid/offer
+    r"buyout\s+of\s+\w",           # buyout of X
+    r"acquisition\s+process",      # in acquisition process
+]
+
+# Funding: must reference confirmed round, not just mention of money
+FUNDING_STRONG = [
+    r"raises?\s+\$[\d,]+\s*(million|billion)",  # raises $X
+    r"closes?\s+\$[\d,]+",                      # closes $X
+    r"series\s+[a-e]\s+(funding|round)",        # Series A/B/C round
+    r"seed\s+(round|funding)",                  # seed round
+    r"\$[\d,]+\s*(million|billion)\s+(in\s+)?(funding|round|investment)",
+    r"unicorn",                                  # unicorn status
+    r"valuation\s+of\s+(more\s+than\s+)?\$",   # valuation of $X
+]
+
+# Defense award: must confirm actual award to a tracked company
+DEFENSE_AWARD_STRONG = [
+    r"(space\s+force|ussf|darpa|nro|nga|pentagon|dod)\s+(awards?|contracts?)",
+    r"awards?\s+\$[\d,]+.*?(space\s+force|ussf|darpa|nro|nga|dod|pentagon)",
+    r"(golden\s+dome|sbi|space.based\s+interceptor)",
+    r"classified\s+contract",
+    r"military\s+contract\s+to\s+\w",
+    r"defense\s+contract\s+award",
+]
+
+# Guidance/revenue update (subset of earnings, treated separately)
+GUIDANCE_STRONG = [
+    r"raises?\s+(guidance|outlook|forecast)",
+    r"(raises?|increases?|updates?)\s+full.year",
+    r"(record|all.time.high)\s+(revenue|backlog|orders)",
+    r"backlog\s+(grows?|reaches?|hits?)\s+\$",
+]
+
+
+def match_patterns(text: str, patterns: list) -> bool:
+    """Return True if any regex pattern matches the text."""
+    for p in patterns:
+        if re.search(p, text, re.IGNORECASE):
+            return True
+    return False
+
+
+def is_disqualified(title: str, summary: str) -> tuple:
+    """
+    Check if item should be capped at watch/same_day due to content type.
+    Returns (is_disqualified: bool, reason: str)
+    """
+    combined = f"{title} {summary}".lower()
+    for reason, patterns in DISQUALIFIERS.items():
+        if any(p in combined for p in patterns):
+            return True, reason
+    return False, None
+
+
+def classify_event_types_v2(title: str, summary: str) -> tuple:
+    """
+    Precision event type detection.
+    Requires strong headline evidence for high-confidence types.
+    Returns (event_types: list, confidence: str, false_positive_risk: str)
+    """
+    title_lower   = title.lower()
+    combined      = f"{title} {summary}".lower()
+    event_types   = []
+    evidence_count = 0
+
+    # Check each event type with strong pattern matching
+    if match_patterns(title_lower, CONTRACT_STRONG):
+        event_types.append("contract")
+        evidence_count += 3
+    elif match_patterns(combined, CONTRACT_STRONG[:4]):  # looser for summary
+        event_types.append("contract")
+        evidence_count += 1
+
+    if match_patterns(title_lower, EARNINGS_STRONG) or match_patterns(combined, EARNINGS_STRONG):
+        event_types.append("earnings")
+        evidence_count += 3
+
+    if match_patterns(title_lower, IPO_STRONG) or match_patterns(combined, IPO_STRONG):
+        event_types.append("ipo")
+        evidence_count += 3
+
+    if match_patterns(title_lower, ACQUISITION_STRONG) or match_patterns(combined, ACQUISITION_STRONG):
+        event_types.append("acquisition")
+        evidence_count += 3
+
+    if match_patterns(title_lower, FUNDING_STRONG) or match_patterns(combined, FUNDING_STRONG):
+        event_types.append("funding")
+        evidence_count += 2
+
+    if match_patterns(title_lower, DEFENSE_AWARD_STRONG) or match_patterns(combined, DEFENSE_AWARD_STRONG):
+        event_types.append("defense_award")
+        evidence_count += 3
+
+    if match_patterns(title_lower, GUIDANCE_STRONG) or match_patterns(combined, GUIDANCE_STRONG):
+        if "earnings" not in event_types:
+            event_types.append("guidance")
+        evidence_count += 2
+
+    # Softer signals — only add if no hard signals found
+    if not event_types:
+        if any(kw in combined for kw in ["partnership", "teaming agreement", "joint venture", "mou with"]):
+            event_types.append("partnership")
+            evidence_count += 1
+        if any(kw in combined for kw in ["static fire", "test flight", "first flight", "maiden flight",
+                                          "launch milestone", "successfully launched", "achieved orbit"]):
+            event_types.append("product_launch")
+            evidence_count += 1
+
+    # Confidence and false positive risk
+    if evidence_count >= 3:
+        confidence         = "high"
+        false_positive_risk = "low"
+    elif evidence_count == 2:
+        confidence         = "medium"
+        false_positive_risk = "medium"
+    else:
+        confidence         = "low"
+        false_positive_risk = "high"
+
+    return event_types, confidence, false_positive_risk
+
+
+def calc_urgency_v2(
+    event_types:        list,
+    tracked_companies:  list,
+    confidence:         str,
+    false_positive_risk:str,
+    disqualified:       bool,
+    age_hours:          float,
+) -> tuple:
+    """
+    Precision urgency classification.
+    Immediate ONLY when:
+    - tracked company involved AND
+    - hard event type (contract/earnings/ipo/acquisition/defense_award/guidance) AND
+    - high or medium confidence AND
+    - not disqualified AND
+    - published within 24h
+
+    Returns (urgency: str, requires_council_review: bool)
+    """
+    IMMEDIATE_TYPES = {"contract", "earnings", "ipo", "acquisition", "defense_award", "guidance"}
+    SOFT_TYPES      = {"partnership", "product_launch", "funding"}
+
+    has_tracked    = len(tracked_companies) > 0
+    has_hard_event = bool(IMMEDIATE_TYPES & set(event_types))
+    has_soft_only  = bool(event_types) and not has_hard_event
+    is_fresh       = age_hours <= 24
+    is_high_conf   = confidence in ("high", "medium")
+    is_low_fp      = false_positive_risk in ("low", "medium")
+
+    # Immediate: all gates must pass
+    if (has_hard_event and has_tracked and is_high_conf
+            and is_low_fp and not disqualified and is_fresh):
+        requires_review = True
+        return "immediate", requires_review
+
+    # Same day: tracked company + hard event but older, or soft event + tracked + fresh
+    if has_tracked and has_hard_event and not disqualified:
+        return "same_day", True
+
+    if has_tracked and has_soft_only and is_fresh and not disqualified:
+        return "same_day", False
+
+    if has_hard_event and not has_tracked and not disqualified and is_fresh:
+        return "same_day", False
+
+    # Watch: everything else that passed disqualification
+    return "watch", False
+
+
 URGENCY_WEIGHTS = {
-    "contract": 3, "earnings": 3, "ipo": 3,
+    "contract": 3, "earnings": 3, "ipo": 3, "guidance": 3,
     "acquisition": 3, "defense_award": 3, "funding": 2,
     "partnership": 1, "product_launch": 1,
 }
@@ -340,23 +575,22 @@ def detect_layers(text: str) -> list:
 
 
 def detect_event_types(text: str) -> list:
-    """Detect event types from text."""
-    found = []
-    lower = text.lower()
-    for etype, keywords in ALERT_PATTERNS.items():
-        if any(kw in lower for kw in keywords):
-            found.append(etype)
-    return found
+    """Legacy wrapper — used by trends/scores. Uses v2 classifier internally."""
+    title   = text[:120]  # treat first 120 chars as headline proxy
+    summary = text[120:]
+    types, _, _ = classify_event_types_v2(title, summary)
+    return types
 
 
 def calc_alert_score(event_types: list, age_hours: float) -> int:
     """Score 1-10 based on event types and freshness."""
-    base = sum(URGENCY_WEIGHTS.get(e, 1) for e in event_types)
+    base      = sum(URGENCY_WEIGHTS.get(e, 1) for e in event_types)
     freshness = max(0, 3 - int(age_hours / 24))
     return min(10, max(1, base + freshness))
 
 
 def calc_urgency(score: int, age_hours: float) -> str:
+    """Legacy wrapper kept for compatibility."""
     if score >= 6 or (score >= 3 and age_hours <= 6):
         return "immediate"
     elif score >= 3 or age_hours <= 24:
@@ -422,21 +656,68 @@ def why_it_matters(event_types: list, companies: list, layers: list) -> str:
 # ══════════════════════════════════════════════════════════════════════
 
 def build_enhanced_alerts(items: list) -> list:
-    """Build enhanced alerts from live items."""
-    alerts = []
+    """
+    Build enhanced alerts from live items — precision v2.
+    Uses evidence-based classification, not keyword spray.
+    Immediate only fires when all gates pass.
+    """
+    alerts  = []
+    skipped = 0
+
+    # Source weight map — higher weight = more reliable source
+    HIGH_WEIGHT_SOURCES = {
+        "spacenews.com", "breakingdefense.com", "payloadspace.com",
+        "satellitetoday.com", "airandspaceforces.com", "defensenews.com",
+        "defenseone.com",
+    }
+
     for item in items:
-        combined   = f"{item.get('title','')} {item.get('summary','')}".lower()
-        event_types = detect_event_types(combined)
+        title     = item.get("title",   "")
+        summary   = item.get("summary", "")
+        combined  = f"{title} {summary}"
+        age_hours = item.get("age_hours") or 72
+        source    = item.get("source_url", "").lower()
+
+        # ── Step 1: Disqualify opinion/info/macro items ───────────────
+        disqualified, disq_reason = is_disqualified(title, summary)
+
+        # ── Step 2: Precision event classification ────────────────────
+        event_types, confidence, fp_risk = classify_event_types_v2(title, summary)
+
+        # No event types at all → skip entirely (not even a watch alert)
         if not event_types:
+            skipped += 1
             continue
 
-        companies  = detect_companies(combined)
-        layers     = detect_layers(combined)
-        age_hours  = item.get("age_hours") or 72
-        score      = calc_alert_score(event_types, age_hours)
-        urgency    = calc_urgency(score, age_hours)
+        # ── Step 3: Company detection (tracked universe only) ─────────
+        companies = detect_companies(combined)
+        layers    = detect_layers(combined)
 
-        # Get ticker for first matched company
+        # ── Step 4: Urgency with all gates ────────────────────────────
+        urgency, requires_review = calc_urgency_v2(
+            event_types, companies, confidence, fp_risk,
+            disqualified, age_hours
+        )
+
+        # Disqualified items cap at watch
+        if disqualified and urgency != "watch":
+            urgency = "watch"
+            requires_review = False
+
+        # ── Step 5: Alert score ───────────────────────────────────────
+        score = calc_alert_score(event_types, age_hours)
+        # Penalty for disqualified or low confidence
+        if disqualified:
+            score = max(1, score - 3)
+        if confidence == "low":
+            score = max(1, score - 2)
+        if fp_risk == "high":
+            score = max(1, score - 1)
+
+        # ── Step 6: Source weight ─────────────────────────────────────
+        src_weight = 8 if any(s in source for s in HIGH_WEIGHT_SOURCES) else 5
+
+        # ── Step 7: Ticker ────────────────────────────────────────────
         ticker = None
         for c in companies:
             entry = UNIVERSE_MAP.get(c.lower())
@@ -444,33 +725,57 @@ def build_enhanced_alerts(items: list) -> list:
                 ticker = entry["ticker"]
                 break
 
+        ring = min(
+            [UNIVERSE_MAP.get(c.lower(), {}).get("ring", 3) for c in companies],
+            default=3
+        ) if companies else 3
+
         alerts.append({
-            "urgency":            urgency,
-            "alert_score":        score,
-            "source_weight":      8 if "spacenews" in item.get("source_url","").lower()
-                                   or "breakingdefense" in item.get("source_url","").lower()
-                                   else 6,
-            "event_type":         event_types,
-            "company":            companies[:3] if companies else ["Unknown"],
-            "ticker":             ticker,
-            "layer":              layers[:3] if layers else ["General"],
-            "ring":               min([UNIVERSE_MAP.get(c.lower(),{}).get("ring",3)
-                                       for c in companies], default=3) if companies else 3,
-            "headline":           item.get("title",""),
-            "link":               item.get("link",""),
-            "summary":            item.get("summary","")[:400],
-            "why_it_matters":     why_it_matters(event_types, companies, layers),
-            "recommended_action": recommended_action(event_types, urgency),
-            "recommended_agent":  recommended_agent(event_types, layers),
-            "feed_label":         item.get("feed_label",""),
-            "published_utc":      item.get("published_utc",""),
-            "age_hours":          age_hours,
-            "created_at_utc":     NOW_STR,
+            # ── Core urgency fields ───────────────────────────────────
+            "urgency":              urgency,
+            "alert_score":          score,
+            "confidence":           confidence,
+            "false_positive_risk":  fp_risk,
+            "requires_council_review": requires_review,
+            # ── Event classification ──────────────────────────────────
+            "event_type":           event_types,
+            "disqualified":         disqualified,
+            "disqualify_reason":    disq_reason,
+            # ── Source ───────────────────────────────────────────────
+            "source_weight":        src_weight,
+            "feed_label":           item.get("feed_label", ""),
+            "source_url":           item.get("source_url", ""),
+            # ── Company / thesis ──────────────────────────────────────
+            "company":              companies[:3] if companies else [],
+            "ticker":               ticker,
+            "layer":                layers[:3] if layers else ["General"],
+            "ring":                 ring,
+            # ── Content ───────────────────────────────────────────────
+            "headline":             title,
+            "link":                 item.get("link", ""),
+            "summary":              summary[:400],
+            # ── Analysis ─────────────────────────────────────────────
+            "why_it_matters":       why_it_matters(event_types, companies, layers),
+            "recommended_action":   recommended_action(event_types, urgency),
+            "recommended_agent":    recommended_agent(event_types, layers),
+            # ── Timestamps ───────────────────────────────────────────
+            "published_utc":        item.get("published_utc", ""),
+            "age_hours":            age_hours,
+            "created_at_utc":       NOW_STR,
         })
 
-    # Sort: immediate first, then by score desc
+    # Sort: immediate first → score desc → age asc
     order = {"immediate": 0, "same_day": 1, "watch": 2}
-    alerts.sort(key=lambda a: (order.get(a["urgency"], 9), -a["alert_score"]))
+    alerts.sort(key=lambda a: (order.get(a["urgency"], 9), -a["alert_score"], a["age_hours"]))
+
+    # Log classification stats
+    immediate_n = sum(1 for a in alerts if a["urgency"] == "immediate")
+    same_day_n  = sum(1 for a in alerts if a["urgency"] == "same_day")
+    watch_n     = sum(1 for a in alerts if a["urgency"] == "watch")
+    print(f"  Alert classifier v2: {len(alerts)} alerts "
+          f"({immediate_n} immediate / {same_day_n} same_day / {watch_n} watch) "
+          f"| {skipped} items skipped (no evidence)", file=sys.stderr)
+
     return alerts
 
 

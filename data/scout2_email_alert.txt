@@ -1,66 +1,38 @@
 ============================================================
 SCOUT-2 INTELLIGENCE ALERT — Investing with SPACE
-Generated: 2026-05-10T17:03:21Z
+Generated: 2026-05-10T18:48:46Z
 ============================================================
 
 SYSTEM STATUS : OPERATIONAL
 FEED HEALTH   : 17/17 feeds OK
 LIVE ITEMS    : 94
-TOTAL ALERTS  : 73
+TOTAL ALERTS  : 19
 
 🚨 IMMEDIATE ALERTS
 ----------------------------------------
-  [EARNINGS, IPO, DEFENSE_AWARD]
-  Smaller AIM-9X Could Give Drone Wingmen More Firepower
-  Companies: Boeing
-  Why: Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Earnings data va
-  Action: Review S-1 filing and valuation before IPO date
-  Link: https://www.airandspaceforces.com/smaller-aim-9x-cca-more-firepower/
-
-  [EARNINGS, IPO, DEFENSE_AWARD, PARTNERSHIP]
-  NASA’s SpaceX 34th Commercial Resupply Mission Overview
-  Companies: SpaceX, Planet Labs, MP Materials
-  Why: Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Earnings data va
-  Action: Review S-1 filing and valuation before IPO date
-  Link: https://www.nasa.gov/general/nasas-spacex-34th-commercial-resupply-mission-overview/
-
-  [EARNINGS, ACQUISITION, DEFENSE_AWARD]
-  Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition
-  Companies: Rocket Lab
-  Why: Direct DoD/USSF contract signal — validates defense space spending thesis | M&A reshapes competitive landscape and supply chain dependencies | Earning
-  Action: Assess impact on supply chain and competing positions
-  Link: https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/
-
-  [EARNINGS, IPO, DEFENSE_AWARD, PRODUCT_LAUNCH]
-  Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027
+  [EARNINGS]
+  Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings
   Companies: Planet Labs
-  Why: Direct DoD/USSF contract signal — validates defense space spending thesis | IPO creates new publicly tradeable space thesis vehicle | Earnings data va
-  Action: Review S-1 filing and valuation before IPO date
-  Link: https://www.airandspaceforces.com/missile-defense-agency-counter-hypersonic-test-2027/
-
-  [CONTRACT, EARNINGS, IPO]
-  NASA, Industry Advance High Performance Spaceflight Computing
-  Companies: Boeing, MP Materials, NASA
-  Why: IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Earnings data validates or c
-  Action: Review S-1 filing and valuation before IPO date
-  Link: https://www.nasa.gov/directorates/stmd/nasa-industry-advance-high-performance-spaceflight-computing/
+  Why: Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs
+  Action: Review guidance and revenue trend before next position decision
+  Link: https://finance.yahoo.com/markets/stocks/articles/know-paypal-holdings-pypl-q1-155238714.html
 
 ⚡ SAME DAY ALERTS
 ----------------------------------------
-  [CONTRACT] Viasat wins $307 million Marine Corps satellite communications contract
-  Link: https://spacenews.com/viasat-wins-307-million-marine-corps-satellite-communications-contract/
+  [EARNINGS, DEFENSE_AWARD] Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition
+  Link: https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/
 
-  [IPO] This Week In Space podcast: Episode 209 — Astronauts for America
-  Link: https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-209-astronauts-for-america
+  [CONTRACT, IPO] HawkEye 360 Raises $416M in IPO
+  Link: https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/
 
-  [IPO] NASA's twin Voyager spacecraft are very low on power after nearly 50 years. How 
-  Link: https://www.space.com/space-exploration/how-long-can-the-voyager-probes-keep-exploring-interstellar-space-nasa-gearing-up-for-big-bang-maneuver-to-boost-dwindling-power-levels
+  [CONTRACT, IPO] HawkEye 360 Raises $416M, Pricing at High End for IPO
+  Link: https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/
 
-  [DEFENSE_AWARD] Hegseth aims to cut through the bureaucracy with ‘Deal Team Six’
-  Link: https://www.defensenews.com/news/pentagon-congress/2026/05/08/hegseth-aims-to-cut-through-the-bureaucracy-with-deal-team-six/
+  [CONTRACT, FUNDING] Lunar Outpost Closes $30M Series B, Unveils New Rover
+  Link: https://payloadspace.com/lunar-outpost-closes-30m-series-b-unveils-new-rover/
 
-  [IPO] How you'd really die in space: What sci-fi gets right (and wrong) about extra-te
-  Link: https://www.space.com/entertainment/space-movies-shows/how-youd-really-die-in-space-what-sci-fi-gets-right-and-wrong-about-extra-terrestrial-expirations
+  [CONTRACT, FUNDING] Lunar Outpost raises $30 million
+  Link: https://spacenews.com/lunar-outpost-raises-30-million/
 
 ============================================================
 Dashboard: https://stachehistory.github.io/scout2-data/
