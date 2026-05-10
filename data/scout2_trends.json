@@ -1,14 +1,14 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T16:20:34Z",
-    "items_analyzed": 97,
+    "generated_at_utc": "2026-05-10T17:03:21Z",
+    "items_analyzed": 94,
     "window": "72h"
   },
   "company_mentions": [
     {
       "company": "Planet Labs",
       "ticker": "PL",
-      "count": 30,
+      "count": 29,
       "prior": 0,
       "trend": "new",
       "layers": [
@@ -58,6 +58,17 @@
       ]
     },
     {
+      "company": "Firefly Aerospace",
+      "ticker": "FLY",
+      "count": 6,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ]
+    },
+    {
       "company": "Rocket Lab",
       "ticker": "RKLB",
       "count": 4,
@@ -70,16 +81,6 @@
       ]
     },
     {
-      "company": "Nvidia",
-      "ticker": "NVDA",
-      "count": 3,
-      "prior": 0,
-      "trend": "new",
-      "layers": [
-        "AI/Compute"
-      ]
-    },
-    {
       "company": "SpaceX",
       "ticker": null,
       "count": 3,
@@ -89,6 +90,16 @@
         "Launch",
         "Infrastructure",
         "Communications"
+      ]
+    },
+    {
+      "company": "Nvidia",
+      "ticker": "NVDA",
+      "count": 2,
+      "prior": 0,
+      "trend": "new",
+      "layers": [
+        "AI/Compute"
       ]
     },
     {
@@ -208,17 +219,6 @@
       "layers": [
         "AI/Compute"
       ]
-    },
-    {
-      "company": "Blue Origin",
-      "ticker": null,
-      "count": 1,
-      "prior": 0,
-      "trend": "new",
-      "layers": [
-        "Launch",
-        "Lunar/Deep Space"
-      ]
     }
   ],
   "layer_mentions": [
@@ -275,17 +275,11 @@
       "count": 1,
       "prior": 0,
       "trend": "new"
-    },
-    {
-      "layer": "Software/OS",
-      "count": 1,
-      "prior": 0,
-      "trend": "new"
     }
   ],
   "event_type_counts": {
-    "earnings": 30,
-    "partnership": 10,
+    "earnings": 28,
+    "partnership": 9,
     "funding": 11,
     "ipo": 33,
     "contract": 7,
@@ -295,6 +289,15 @@
   },
   "rising_companies": [],
   "silent_tracked": [
+    {
+      "company": "Starfighters Space",
+      "ticker": "FJET",
+      "layers": [
+        "Launch",
+        "Defense/SDA"
+      ],
+      "note": "No signal in current 72h window"
+    },
     {
       "company": "Northrop Grumman",
       "ticker": "NOC",
@@ -415,14 +418,6 @@
       "layers": [
         "Lunar/Deep Space",
         "Launch"
-      ],
-      "note": "No signal in current 72h window"
-    },
-    {
-      "company": "Momentus",
-      "ticker": "MNTS",
-      "layers": [
-        "Logistics"
       ],
       "note": "No signal in current 72h window"
     }

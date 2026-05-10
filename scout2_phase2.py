@@ -52,10 +52,10 @@ MASTER_UNIVERSE = [
     {"company": "Rocket Lab",           "ticker": "RKLB",  "status": "public",    "ring": 1, "layers": ["Launch", "Defense/SDA", "Logistics"]},
     {"company": "Blue Origin",          "ticker": None,    "status": "private",   "ring": 1, "layers": ["Launch", "Lunar/Deep Space"]},
     {"company": "United Launch Alliance","ticker": None,   "status": "private",   "ring": 2, "layers": ["Launch", "Defense/SDA"]},
-    {"company": "Firefly Aerospace",    "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
+    {"company": "Firefly Aerospace", "ticker": "FLY", "status": "public", "ring": 1, "layers": ["Launch", "Defense/SDA"]},
     {"company": "Relativity Space",     "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
     {"company": "Skyroot Aerospace",    "ticker": None,    "status": "private",   "ring": 2, "layers": ["Launch"]},
-    {"company": "Starfighters Space",   "ticker": None,    "status": "private",   "ring": 3, "layers": ["Launch", "Defense/SDA"]},
+    {"company": "Starfighters Space", "ticker": "FJET", "status": "public", "ring": 2, "layers": ["Launch", "Defense/SDA"]},
 
     # ── Infrastructure / Manufacturing ────────────────────────────────
     {"company": "Northrop Grumman",     "ticker": "NOC",   "status": "public",    "ring": 1, "layers": ["Defense/SDA", "Infrastructure", "Launch"]},
