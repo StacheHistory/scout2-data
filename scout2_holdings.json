@@ -1,0 +1,99 @@
+{
+  "last_updated_utc": "2026-05-10T00:00:00Z",
+  "meta": {
+    "note": "Edit shares and avg_price directly in the dashboard. This file is the fallback default.",
+    "currency": "USD"
+  },
+  "holdings": [
+    {
+      "ticker": "RKLB",
+      "company": "Rocket Lab",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Launch",
+      "notes": ""
+    },
+    {
+      "ticker": "ASTS",
+      "company": "AST SpaceMobile",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Communications",
+      "notes": ""
+    },
+    {
+      "ticker": "LUNR",
+      "company": "Intuitive Machines",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Lunar/Deep Space",
+      "notes": ""
+    },
+    {
+      "ticker": "PL",
+      "company": "Planet Labs",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Data/EO",
+      "notes": ""
+    },
+    {
+      "ticker": "VSAT",
+      "company": "Viasat",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Communications",
+      "notes": ""
+    },
+    {
+      "ticker": "MP",
+      "company": "MP Materials",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Energy/Materials",
+      "notes": ""
+    },
+    {
+      "ticker": "HE360",
+      "company": "HawkEye 360",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Defense/SDA",
+      "notes": ""
+    },
+    {
+      "ticker": "FLY",
+      "company": "Firefly Aerospace",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 1,
+      "layer": "Launch",
+      "notes": ""
+    },
+    {
+      "ticker": "RDW",
+      "company": "Redwire",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 2,
+      "layer": "Infrastructure",
+      "notes": ""
+    },
+    {
+      "ticker": "SPIR",
+      "company": "Spire Global",
+      "shares": 0,
+      "avg_price": 0,
+      "ring": 2,
+      "layer": "Data/EO",
+      "notes": ""
+    }
+  ]
+}

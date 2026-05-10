@@ -7,25 +7,34 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap');
 
+/* ── DESIGN TOKENS ─────────────────────────────────────────── */
 :root {
-  --bg:       #06090f;
-  --bg2:      #0b1220;
-  --bg3:      #101c30;
-  --border:   #1a2d48;
-  --accent:   #00d4ff;
-  --accent2:  #0055ff;
-  --red:      #ff3355;
-  --yellow:   #ffb800;
-  --blue:     #3b8eff;
-  --green:    #00e676;
-  --purple:   #a855f7;
-  --orange:   #ff6b00;
-  --text:     #c8d8ec;
-  --dim:      #4a6a8a;
-  --bright:   #ffffff;
-  --mono:     'Space Mono', monospace;
-  --sans:     'Syne', sans-serif;
-  --radius:   6px;
+  --bg:      #05080f;
+  --bg2:     #0a1220;
+  --bg3:     #0f1b2e;
+  --bg4:     #142038;
+  --border:  #1c2f4a;
+  --border2: #243d5c;
+  --accent:  #00d4ff;
+  --a2:      #0044ee;
+  --red:     #ff3355;
+  --yellow:  #ffb800;
+  --blue:    #3b8eff;
+  --green:   #00e676;
+  --purple:  #a855f7;
+  --orange:  #ff6b00;
+  --teal:    #00c9a7;
+  --text:    #c0d4ec;
+  --dim:     #445a72;
+  --bright:  #f0f8ff;
+  --mono:    'Space Mono', monospace;
+  --sans:    'Syne', sans-serif;
+  --r:       6px;
+  /* Ring colors */
+  --ring1:   #00d4ff;
+  --ring2:   #a855f7;
+  --ring3:   #ffb800;
+  --ring4:   #ff6b00;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -39,332 +48,357 @@ body {
   overflow-x: hidden;
 }
 
-/* ── HEADER ─────────────────────────────────────────────── */
+/* ── HEADER ─────────────────────────────────────────────────── */
 header {
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
-  padding: 12px 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: sticky; top: 0; z-index: 200;
-  gap: 12px;
+  gap: 16px;
+  position: sticky; top: 0; z-index: 300;
   flex-wrap: wrap;
 }
 
-.logo { display: flex; align-items: center; gap: 10px; }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 .logo-icon {
-  width: 34px; height: 34px;
-  background: linear-gradient(135deg, var(--accent2), var(--accent));
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
+  width: 32px; height: 32px;
+  background: linear-gradient(135deg, var(--a2), var(--accent));
+  border-radius: 7px; display: flex; align-items: center;
+  justify-content: center; font-size: 15px;
 }
-.logo-name { font-weight: 800; font-size: 17px; color: var(--bright); letter-spacing: -0.3px; }
-.logo-sub  { font-family: var(--mono); font-size: 9px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
+.logo-name { font-weight: 800; font-size: 16px; color: var(--bright); letter-spacing: -.3px; }
+.logo-sub  { font-family: var(--mono); font-size: 8px; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
 
-.header-center {
-  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
-}
-
-.nav-btn {
-  background: transparent; border: 1px solid var(--border);
+/* ── TABS ──────────────────────────────────────────────────── */
+.tabs { display: flex; gap: 2px; flex: 1; }
+.tab {
+  background: transparent; border: none;
   color: var(--dim); font-family: var(--mono); font-size: 10px;
-  padding: 5px 12px; border-radius: var(--radius); cursor: pointer;
-  transition: all 0.15s; text-transform: uppercase; letter-spacing: 1px;
+  padding: 7px 14px; border-radius: var(--r); cursor: pointer;
+  transition: all .15s; text-transform: uppercase; letter-spacing: 1px;
+  white-space: nowrap;
 }
-.nav-btn:hover, .nav-btn.active {
-  border-color: var(--accent); color: var(--accent);
-  background: rgba(0,212,255,0.06);
-}
+.tab:hover { color: var(--text); background: var(--bg3); }
+.tab.active { color: var(--accent); background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.2); }
 
-.header-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-.live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-.hdr-meta { font-family: var(--mono); font-size: 10px; color: var(--dim); }
+.hdr-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.live-dot  { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:.2} }
+.hdr-meta  { font-family: var(--mono); font-size: 9px; color: var(--dim); }
 
 .search-wrap { position: relative; }
 .search-wrap input {
   background: var(--bg3); border: 1px solid var(--border);
-  color: var(--text); font-family: var(--mono); font-size: 11px;
-  padding: 5px 10px 5px 28px; border-radius: var(--radius);
-  outline: none; width: 180px;
+  color: var(--text); font-family: var(--mono); font-size: 10px;
+  padding: 5px 9px 5px 26px; border-radius: var(--r); outline: none; width: 160px;
 }
 .search-wrap input:focus { border-color: var(--accent); }
 .search-wrap input::placeholder { color: var(--dim); }
-.search-icon { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); font-size: 11px; color: var(--dim); pointer-events: none; }
-
+.si { position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--dim);pointer-events:none; }
 .refresh-btn {
-  background: var(--bg3); border: 1px solid var(--border);
-  color: var(--accent); font-family: var(--mono); font-size: 10px;
-  padding: 5px 12px; border-radius: var(--radius); cursor: pointer;
-  transition: all 0.15s; letter-spacing: 1px;
+  background:var(--bg3);border:1px solid var(--border);color:var(--accent);
+  font-family:var(--mono);font-size:10px;padding:5px 10px;border-radius:var(--r);
+  cursor:pointer;transition:all .15s;
 }
-.refresh-btn:hover { background: var(--accent); color: var(--bg); }
+.refresh-btn:hover{background:var(--accent);color:var(--bg);}
 
-/* ── LAYOUT ──────────────────────────────────────────────── */
-.container { max-width: 1440px; margin: 0 auto; padding: 20px; }
+/* ── CONTAINER ─────────────────────────────────────────────── */
+.container { max-width: 1500px; margin: 0 auto; padding: 18px; }
+.err { background:rgba(255,51,85,.1);border:1px solid rgba(255,51,85,.3);color:var(--red);
+  font-family:var(--mono);font-size:11px;padding:10px 14px;border-radius:var(--r);
+  margin-bottom:14px;display:none; }
 
-/* ── ERROR BANNER ────────────────────────────────────────── */
-.err { background: rgba(255,51,85,.1); border: 1px solid rgba(255,51,85,.3);
-  color: var(--red); font-family: var(--mono); font-size: 11px;
-  padding: 10px 16px; border-radius: var(--radius); margin-bottom: 16px; display: none; }
+/* ── PAGE SECTIONS ─────────────────────────────────────────── */
+.page { display: none; }
+.page.active { display: block; }
 
-/* ── STAT CARDS ──────────────────────────────────────────── */
-.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 10px; margin-bottom: 20px; }
+/* ── STAT CARDS ────────────────────────────────────────────── */
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 9px; margin-bottom: 18px; }
+.stat { background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;position:relative;overflow:hidden; }
+.stat::before { content:'';position:absolute;top:0;left:0;right:0;height:2px; }
+.stat.red::before    { background:var(--red); }
+.stat.yellow::before { background:var(--yellow); }
+.stat.blue::before   { background:var(--blue); }
+.stat.green::before  { background:var(--green); }
+.stat.purple::before { background:var(--purple); }
+.stat.accent::before { background:var(--accent); }
+.stat.teal::before   { background:var(--teal); }
+.stat-lbl { font-family:var(--mono);font-size:8px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px; }
+.stat-val { font-family:var(--mono);font-size:22px;font-weight:700;color:var(--bright);line-height:1; }
+.stat.red    .stat-val { color:var(--red); }
+.stat.yellow .stat-val { color:var(--yellow); }
+.stat.green  .stat-val { color:var(--green); }
+.stat.teal   .stat-val { color:var(--teal); }
+.stat-sub { font-family:var(--mono);font-size:8px;color:var(--dim);margin-top:3px; }
 
-.stat {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 14px 16px; position: relative; overflow: hidden;
-}
-.stat::before { content:''; position:absolute; top:0;left:0;right:0; height:2px; }
-.stat.red::before    { background: var(--red); }
-.stat.yellow::before { background: var(--yellow); }
-.stat.blue::before   { background: var(--blue); }
-.stat.green::before  { background: var(--green); }
-.stat.purple::before { background: var(--purple); }
-.stat.accent::before { background: var(--accent); }
+/* ── PANEL ─────────────────────────────────────────────────── */
+.panel { background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:16px; }
+.ph { padding:11px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--bg3); }
+.pt { font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--bright); }
+.pc { font-family:var(--mono);font-size:9px;color:var(--dim);background:var(--bg);padding:2px 7px;border-radius:9px;border:1px solid var(--border); }
+.pb { padding:14px;overflow-y:auto;max-height:460px; }
 
-.stat-lbl { font-family: var(--mono); font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
-.stat-val { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--bright); line-height: 1; }
-.stat.red    .stat-val { color: var(--red); }
-.stat.yellow .stat-val { color: var(--yellow); }
-.stat.blue   .stat-val { color: var(--blue); }
-.stat.green  .stat-val { color: var(--green); }
-.stat-sub { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-top: 4px; }
+.two-col { display:grid;grid-template-columns:1fr 1fr;gap:14px; }
+.three-col { display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px; }
+@media(max-width:900px){.two-col,.three-col{grid-template-columns:1fr;}}
 
-/* ── SECTION TITLE ───────────────────────────────────────── */
-.section { margin-bottom: 24px; }
-.section-hdr {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
-}
-.section-title { font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--bright); }
-.section-count { font-family: var(--mono); font-size: 10px; color: var(--dim); background: var(--bg3); padding: 2px 8px; border-radius: 10px; border: 1px solid var(--border); }
+/* ── SECTION HEADER ────────────────────────────────────────── */
+.sh { display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding-bottom:7px;border-bottom:1px solid var(--border); }
+.st { font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--bright); }
 
-/* ── ALERTS GRID ─────────────────────────────────────────── */
-.alerts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px,1fr)); gap: 10px; }
-
+/* ── ALERT CARDS ───────────────────────────────────────────── */
+.alerts-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:9px; }
 .alert-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 14px 16px;
-  cursor: pointer; transition: transform 0.15s, border-color 0.15s;
-  position: relative; overflow: hidden;
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
+  padding:12px 14px;cursor:pointer;transition:transform .15s,border-color .15s;
+  position:relative;overflow:hidden;
 }
-.alert-card:hover { transform: translateY(-1px); }
-.alert-card::before { content:''; position:absolute; left:0;top:0;bottom:0; width:3px; }
-.alert-card.immediate::before { background: var(--red); }
-.alert-card.same_day::before  { background: var(--yellow); }
-.alert-card.watch::before     { background: var(--blue); }
-.alert-card.immediate { border-color: rgba(255,51,85,.25); }
-.alert-card.same_day  { border-color: rgba(255,184,0,.25); }
-
-.alert-top { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap; }
-.urgency-badge {
-  font-family: var(--mono); font-size: 9px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 1px; padding: 2px 7px;
-  border-radius: 3px;
+.alert-card:hover { transform:translateY(-1px); }
+.alert-card::before { content:'';position:absolute;left:0;top:0;bottom:0;width:3px; }
+.alert-card.immediate::before { background:var(--red); }
+.alert-card.same_day::before  { background:var(--yellow); }
+.alert-card.watch::before     { background:var(--blue); }
+.alert-card.immediate { border-color:rgba(255,51,85,.2); }
+.alert-card.same_day  { border-color:rgba(255,184,0,.2); }
+.ac-top { display:flex;align-items:center;gap:6px;margin-bottom:5px;flex-wrap:wrap; }
+.ubadge {
+  font-family:var(--mono);font-size:8px;font-weight:700;text-transform:uppercase;
+  letter-spacing:1px;padding:2px 6px;border-radius:3px;
 }
-.immediate .urgency-badge { background: rgba(255,51,85,.15); color: var(--red); border: 1px solid rgba(255,51,85,.3); }
-.same_day  .urgency-badge { background: rgba(255,184,0,.12); color: var(--yellow); border: 1px solid rgba(255,184,0,.3); }
-.watch     .urgency-badge { background: rgba(59,142,255,.12); color: var(--blue); border: 1px solid rgba(59,142,255,.3); }
+.immediate .ubadge { background:rgba(255,51,85,.15);color:var(--red);border:1px solid rgba(255,51,85,.3); }
+.same_day  .ubadge { background:rgba(255,184,0,.12);color:var(--yellow);border:1px solid rgba(255,184,0,.3); }
+.watch     .ubadge { background:rgba(59,142,255,.12);color:var(--blue);border:1px solid rgba(59,142,255,.3); }
+.etags { display:flex;gap:3px;flex-wrap:wrap;margin-left:auto; }
+.etag  { font-family:var(--mono);font-size:7px;padding:1px 4px;border-radius:2px;background:var(--bg);border:1px solid var(--border);color:var(--dim);text-transform:uppercase; }
+.ac-title { font-size:12px;font-weight:600;color:var(--bright);line-height:1.4;margin-bottom:4px; }
+.ac-why   { font-size:10px;color:var(--dim);line-height:1.5;margin-bottom:5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
+.ac-bot   { display:flex;gap:8px;align-items:center;flex-wrap:wrap; }
+.ac-meta  { font-family:var(--mono);font-size:9px;color:var(--dim); }
+.ac-action{ font-family:var(--mono);font-size:8px;color:var(--accent);background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);padding:1px 6px;border-radius:3px; }
 
-.alert-score { font-family: var(--mono); font-size: 9px; color: var(--dim); }
-.event-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-left: auto; }
-.event-tag {
-  font-family: var(--mono); font-size: 8px; padding: 1px 5px;
-  border-radius: 2px; background: var(--bg3); border: 1px solid var(--border);
-  color: var(--dim); text-transform: uppercase;
+/* ── PRIORITY SIGNALS ──────────────────────────────────────── */
+.priority-list { display:flex;flex-direction:column;gap:8px; }
+.pri-card {
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
+  padding:12px 14px;cursor:pointer;transition:border-color .15s;display:flex;gap:12px;align-items:flex-start;
 }
-
-.alert-title { font-size: 13px; font-weight: 600; color: var(--bright); line-height: 1.4; margin-bottom: 5px; }
-.alert-why   { font-size: 11px; color: var(--dim); line-height: 1.5; margin-bottom: 6px;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-.alert-bottom { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.alert-meta  { font-family: var(--mono); font-size: 10px; color: var(--dim); }
-.alert-action { font-family: var(--mono); font-size: 9px; color: var(--accent); background: rgba(0,212,255,.07); border: 1px solid rgba(0,212,255,.2); padding: 2px 7px; border-radius: 3px; }
-
-/* ── TWO-COL GRID ────────────────────────────────────────── */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media(max-width:900px) { .two-col { grid-template-columns: 1fr; } }
-
-/* ── SCORES TABLE ────────────────────────────────────────── */
-.scores-table { width: 100%; border-collapse: collapse; }
-.scores-table th {
-  font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1px;
-  color: var(--dim); padding: 8px 10px; text-align: left;
-  border-bottom: 1px solid var(--border); background: var(--bg3);
+.pri-card:hover { border-color:var(--accent); }
+.pri-rank {
+  font-family:var(--mono);font-size:20px;font-weight:700;
+  color:var(--dim);min-width:32px;text-align:center;flex-shrink:0;line-height:1;
 }
-.scores-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 12px; vertical-align: middle; }
-.scores-table tr:hover td { background: var(--bg3); }
-.scores-table tr:last-child td { border-bottom: none; }
-
-.score-num { font-family: var(--mono); font-size: 14px; font-weight: 700; }
-.s10,.s9 { color: var(--green); }
-.s8,.s7  { color: var(--accent); }
-.s6,.s5  { color: var(--text); }
-.s4,.s3  { color: var(--yellow); }
-.s2,.s1  { color: var(--red); }
-
-.score-delta { font-family: var(--mono); font-size: 10px; }
-.delta-up   { color: var(--green); }
-.delta-down { color: var(--red); }
-.delta-flat { color: var(--dim); }
-
-.ticker-badge {
-  font-family: var(--mono); font-size: 9px; padding: 1px 6px;
-  border-radius: 3px; background: var(--bg3); border: 1px solid var(--border); color: var(--accent);
+.pri-rank.r1,.pri-rank.r2,.pri-rank.r3 { color:var(--accent); }
+.pri-body { flex:1;min-width:0; }
+.pri-top  { display:flex;align-items:center;gap:7px;margin-bottom:4px;flex-wrap:wrap; }
+.pri-co   { font-size:13px;font-weight:700;color:var(--bright); }
+.ticker-badge { font-family:var(--mono);font-size:8px;padding:1px 5px;border-radius:3px;background:var(--bg4);border:1px solid var(--border);color:var(--accent); }
+.pri-rating { font-family:var(--mono);font-size:9px;color:var(--green);background:rgba(0,230,118,.08);border:1px solid rgba(0,230,118,.2);padding:1px 6px;border-radius:3px; }
+.pri-title { font-size:11px;color:var(--text);line-height:1.4;margin-bottom:4px; }
+.pri-metrics { display:flex;gap:10px;flex-wrap:wrap; }
+.pri-m { font-family:var(--mono);font-size:9px; }
+.pm-lbl { color:var(--dim); }
+.pm-val { color:var(--text); }
+.pm-val.cap-hi  { color:var(--green); }
+.pm-val.cap-lo  { color:var(--red); }
+.pm-val.und  { color:var(--green); }
+.pm-val.over { color:var(--red); }
+.pm-val.fair { color:var(--dim); }
+.pm-val.risk-lo  { color:var(--green); }
+.pm-val.risk-hi  { color:var(--red); }
+.pm-val.risk-med { color:var(--yellow); }
+.pri-right { display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0; }
+.net-score {
+  font-family:var(--mono);font-size:26px;font-weight:700;line-height:1;
 }
+.ns10,.ns9 { color:var(--green); }
+.ns8,.ns7  { color:var(--accent); }
+.ns6,.ns5  { color:var(--text); }
+.ns4,.ns3  { color:var(--yellow); }
+.ns2,.ns1  { color:var(--red); }
 
-.cap-badge {
-  font-family: var(--mono); font-size: 8px; padding: 1px 5px;
-  border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px;
+/* ── SCORES TABLE ──────────────────────────────────────────── */
+.tbl { width:100%;border-collapse:collapse; }
+.tbl th { font-family:var(--mono);font-size:8px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);padding:7px 9px;text-align:left;border-bottom:1px solid var(--border);background:var(--bg3);white-space:nowrap; }
+.tbl td { padding:7px 9px;border-bottom:1px solid var(--border);font-size:11px;vertical-align:middle; }
+.tbl tr:hover td { background:var(--bg3); }
+.tbl tr:last-child td { border-bottom:none; }
+.tbl-wrap { overflow-x:auto; }
+
+.snum { font-family:var(--mono);font-size:14px;font-weight:700; }
+.s10,.s9{color:var(--green);}.s8,.s7{color:var(--accent);}.s6,.s5{color:var(--text);}
+.s4,.s3{color:var(--yellow);}.s2,.s1{color:var(--red);}
+.sdelta { font-family:var(--mono);font-size:9px; }
+.du{color:var(--green);}.dd{color:var(--red);}.df{color:var(--dim);}
+.cap-badge { font-family:var(--mono);font-size:7px;padding:1px 5px;border-radius:2px;text-transform:uppercase; }
+.cap-high   { background:rgba(0,230,118,.1);color:var(--green);border:1px solid rgba(0,230,118,.2); }
+.cap-medium { background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.2); }
+.cap-low    { background:rgba(255,255,255,.04);color:var(--dim);border:1px solid var(--border); }
+.cap-watch  { background:rgba(255,184,0,.1);color:var(--yellow);border:1px solid rgba(255,184,0,.2); }
+.act-badge  { font-family:var(--mono);font-size:7px;padding:1px 5px;border-radius:2px;text-transform:uppercase; }
+.act-buy    { background:rgba(0,230,118,.1);color:var(--green);border:1px solid rgba(0,230,118,.3); }
+.act-hold   { background:rgba(0,212,255,.1);color:var(--accent);border:1px solid rgba(0,212,255,.3); }
+.act-watch  { background:rgba(255,184,0,.1);color:var(--yellow);border:1px solid rgba(255,184,0,.3); }
+.act-review { background:rgba(168,85,247,.1);color:var(--purple);border:1px solid rgba(168,85,247,.3); }
+.act-avoid  { background:rgba(255,51,85,.1);color:var(--red);border:1px solid rgba(255,51,85,.3); }
+
+/* ── PORTFOLIO ─────────────────────────────────────────────── */
+.holding-row-alert { background:rgba(255,51,85,.05)!important;border-left:2px solid var(--red); }
+.holding-row-alert td:first-child { padding-left:10px; }
+.gain-pos { color:var(--green);font-family:var(--mono);font-size:10px; }
+.gain-neg { color:var(--red);font-family:var(--mono);font-size:10px; }
+.gain-neu { color:var(--dim);font-family:var(--mono);font-size:10px; }
+input.edit-field {
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  font-family:var(--mono);font-size:10px;padding:3px 6px;border-radius:3px;
+  width:70px;outline:none;
 }
-.cap-high   { background: rgba(0,230,118,.1); color: var(--green); border: 1px solid rgba(0,230,118,.2); }
-.cap-medium { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.2); }
-.cap-low    { background: rgba(255,255,255,.04); color: var(--dim); border: 1px solid var(--border); }
-.cap-watch  { background: rgba(255,184,0,.1); color: var(--yellow); border: 1px solid rgba(255,184,0,.2); }
-
-/* ── LAYER TRENDS ────────────────────────────────────────── */
-.layer-bars { display: flex; flex-direction: column; gap: 8px; }
-.layer-row  { display: flex; align-items: center; gap: 10px; }
-.layer-name { font-family: var(--mono); font-size: 10px; color: var(--text); width: 160px; flex-shrink: 0; }
-.layer-bar-wrap { flex: 1; height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
-.layer-bar  { height: 100%; border-radius: 3px; background: var(--accent); transition: width 0.5s; }
-.layer-trend { font-family: var(--mono); font-size: 9px; width: 50px; text-align: right; flex-shrink: 0; }
-.trend-rising  { color: var(--green); }
-.trend-falling { color: var(--red); }
-.trend-stable  { color: var(--dim); }
-.trend-new     { color: var(--yellow); }
-.layer-count { font-family: var(--mono); font-size: 10px; color: var(--dim); width: 30px; text-align: right; flex-shrink: 0; }
-
-/* ── UNIVERSE TABLE ──────────────────────────────────────── */
-.universe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 8px; }
-.uni-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 10px 12px;
-  cursor: pointer; transition: border-color 0.15s;
+input.edit-field:focus { border-color:var(--accent); }
+.save-btn {
+  background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.3);
+  color:var(--accent);font-family:var(--mono);font-size:8px;padding:2px 7px;
+  border-radius:3px;cursor:pointer;transition:all .15s;
 }
-.uni-card:hover { border-color: var(--accent); }
-.uni-name { font-size: 12px; font-weight: 600; color: var(--bright); margin-bottom: 3px; }
-.uni-meta { font-family: var(--mono); font-size: 9px; color: var(--dim); display: flex; gap: 6px; align-items: center; margin-bottom: 4px; }
-.uni-layers { display: flex; gap: 3px; flex-wrap: wrap; }
-.uni-layer {
-  font-family: var(--mono); font-size: 8px; padding: 1px 4px;
-  border-radius: 2px; background: var(--bg3); border: 1px solid var(--border); color: var(--dim);
+.save-btn:hover { background:var(--accent);color:var(--bg); }
+.notes-field {
+  background:var(--bg3);border:1px solid var(--border);color:var(--text);
+  font-family:var(--mono);font-size:9px;padding:3px 6px;border-radius:3px;
+  width:120px;outline:none;
 }
-.status-pub     { color: var(--green); }
-.status-private { color: var(--dim); }
-.status-ipo     { color: var(--yellow); }
-.status-watch   { color: var(--blue); }
-.status-acq     { color: var(--red); }
-
-/* ── RECOMMENDATIONS ─────────────────────────────────────── */
-.rec-list { display: flex; flex-direction: column; gap: 8px; }
-.rec-card {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 12px 14px;
-  cursor: pointer; transition: border-color 0.15s;
+.filter-row { display:flex;gap:7px;flex-wrap:wrap;margin-bottom:12px;align-items:center; }
+.fbtn {
+  background:var(--bg2);border:1px solid var(--border);color:var(--dim);
+  font-family:var(--mono);font-size:8px;padding:4px 10px;border-radius:var(--r);
+  cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:1px;
 }
-.rec-card:hover { border-color: var(--accent); }
-.rec-top { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; flex-wrap: wrap; }
-.rec-company { font-size: 13px; font-weight: 700; color: var(--bright); }
-.rec-action {
-  font-family: var(--mono); font-size: 9px; padding: 2px 7px;
-  border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;
+.fbtn:hover,.fbtn.active { border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.06); }
+.fbtn.al-only.active { border-color:var(--red);color:var(--red);background:rgba(255,51,85,.06); }
+
+/* ── ALLOCATION BARS ───────────────────────────────────────── */
+.alloc-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px; }
+.alloc-card { background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px; }
+.alloc-lbl { font-family:var(--mono);font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;justify-content:space-between; }
+.alloc-bar-wrap { height:6px;background:var(--bg);border-radius:3px;overflow:hidden;margin-bottom:4px; }
+.alloc-bar { height:100%;border-radius:3px;transition:width .5s; }
+.alloc-warn { font-family:var(--mono);font-size:8px;color:var(--yellow); }
+
+/* ── RING VISUALIZATION ────────────────────────────────────── */
+.ring-container { position:relative;width:100%;max-width:480px;margin:0 auto;aspect-ratio:1; }
+.ring-svg { width:100%;height:100%; }
+.ring-label { font-family:var(--mono);font-size:8px;fill:var(--dim);text-anchor:middle; }
+.ring-company-dot { cursor:pointer;transition:r .15s; }
+.ring-company-dot:hover { r:5; }
+.ring-tooltip {
+  position:absolute;background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--r);padding:8px 10px;font-family:var(--mono);font-size:10px;
+  color:var(--text);pointer-events:none;display:none;z-index:100;white-space:nowrap;
 }
-.action-buy    { background: rgba(0,230,118,.1); color: var(--green); border: 1px solid rgba(0,230,118,.3); }
-.action-hold   { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.3); }
-.action-watch  { background: rgba(255,184,0,.1); color: var(--yellow); border: 1px solid rgba(255,184,0,.3); }
-.action-review { background: rgba(168,85,247,.1); color: var(--purple); border: 1px solid rgba(168,85,247,.3); }
-.action-avoid  { background: rgba(255,51,85,.1); color: var(--red); border: 1px solid rgba(255,51,85,.3); }
-
-.rec-rationale { font-size: 11px; color: var(--dim); line-height: 1.5; margin-bottom: 4px; }
-.rec-risk { font-family: var(--mono); font-size: 9px; color: var(--yellow); }
-.rec-agent { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-top: 3px; }
-
-/* ── RUN HISTORY ─────────────────────────────────────────── */
-.history-table { width: 100%; border-collapse: collapse; }
-.history-table th { font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: var(--dim); padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); background: var(--bg3); }
-.history-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); font-family: var(--mono); font-size: 11px; color: var(--dim); }
-.history-table tr:hover td { background: var(--bg3); }
-.history-table tr:last-child td { border-bottom: none; }
-.num-g { color: var(--green); }
-.num-r { color: var(--red); }
-.num-y { color: var(--yellow); }
-
-/* ── MISSION CONTROL ─────────────────────────────────────── */
-.mc-toggle { font-family: var(--mono); font-size: 10px; color: var(--accent); cursor: pointer; background: none; border: 1px solid var(--border); padding: 5px 12px; border-radius: var(--radius); letter-spacing: 1px; margin-bottom: 16px; }
-.mc-toggle:hover { background: var(--accent); color: var(--bg); }
-.mc-panel { display: none; }
-.mc-panel.open { display: block; }
-.mc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px,1fr)); gap: 12px; }
-.mc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; }
-.mc-title { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 10px; }
-.mc-entry { font-size: 11px; color: var(--dim); padding: 4px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: flex-start; }
-.mc-entry:last-child { border-bottom: none; }
-.mc-company { color: var(--text); font-weight: 600; flex-shrink: 0; min-width: 100px; }
-
-/* ── SUPPLY CHAIN ────────────────────────────────────────── */
-.supply-chain-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); gap: 10px; }
-.sc-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
-.sc-core { font-size: 13px; font-weight: 700; color: var(--bright); margin-bottom: 6px; }
-.sc-row  { display: flex; gap: 6px; margin-bottom: 4px; align-items: flex-start; }
-.sc-lbl  { font-family: var(--mono); font-size: 9px; color: var(--dim); width: 72px; flex-shrink: 0; text-transform: uppercase; padding-top: 2px; }
-.sc-vals { font-size: 11px; color: var(--text); line-height: 1.5; }
-
-/* ── FEED PANEL ──────────────────────────────────────────── */
-.feed-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-.filter-btn {
-  background: var(--bg2); border: 1px solid var(--border);
-  color: var(--dim); font-family: var(--mono); font-size: 9px;
-  padding: 5px 10px; border-radius: var(--radius); cursor: pointer;
-  transition: all 0.15s; text-transform: uppercase; letter-spacing: 1px;
+.ring-companies { display:flex;flex-direction:column;gap:0; }
+.ring-group { margin-bottom:16px; }
+.ring-group-hdr {
+  display:flex;align-items:center;gap:8px;margin-bottom:6px;
+  font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:2px;
 }
-.filter-btn:hover, .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,.06); }
-.filter-btn.alerts-only { }
-.filter-btn.alerts-only.active { border-color: var(--red); color: var(--red); background: rgba(255,51,85,.06); }
-
-.feed-list { display: flex; flex-direction: column; gap: 0; }
-.feed-item {
-  padding: 12px 0; border-bottom: 1px solid var(--border);
-  cursor: pointer; transition: background 0.1s;
+.ring-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.ring-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px; }
+.ring-co-card {
+  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
+  padding:8px 10px;display:flex;align-items:center;gap:8px;
 }
-.feed-item:last-child { border-bottom: none; }
-.feed-item:hover { background: rgba(255,255,255,.01); }
-.feed-item-top { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
-.cat-badge { font-family: var(--mono); font-size: 8px; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; white-space: nowrap; }
-.cat-space   { background: rgba(0,212,255,.08); color: var(--accent); border: 1px solid rgba(0,212,255,.2); }
-.cat-defense { background: rgba(255,51,85,.08);  color: var(--red);    border: 1px solid rgba(255,51,85,.2); }
-.cat-nasa    { background: rgba(0,230,118,.08);  color: var(--green);  border: 1px solid rgba(0,230,118,.2); }
-.cat-sat     { background: rgba(59,142,255,.08); color: var(--blue);   border: 1px solid rgba(59,142,255,.2); }
-.cat-biz     { background: rgba(255,184,0,.08);  color: var(--yellow); border: 1px solid rgba(255,184,0,.2); }
-.cat-aero    { background: rgba(168,85,247,.08); color: var(--purple); border: 1px solid rgba(168,85,247,.2); }
-.cat-tech    { background: rgba(255,107,0,.08);  color: var(--orange); border: 1px solid rgba(255,107,0,.2); }
-.item-age  { font-family: var(--mono); font-size: 9px; color: var(--dim); margin-left: auto; }
-.alert-pip { font-size: 10px; }
-.feed-title { font-size: 13px; font-weight: 600; color: var(--bright); line-height: 1.4; margin-bottom: 3px; }
-.feed-summary { font-size: 11px; color: var(--dim); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 3px; }
-.feed-source { font-family: var(--mono); font-size: 9px; color: var(--dim); }
-.feed-source a { color: var(--accent); text-decoration: none; }
-.feed-source a:hover { text-decoration: underline; }
+.ring-co-name { font-size:11px;font-weight:600;color:var(--bright);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.ring-co-score { font-family:var(--mono);font-size:11px;font-weight:700; }
 
-/* ── UTILS ───────────────────────────────────────────────── */
-.empty { padding: 32px; text-align: center; color: var(--dim); font-family: var(--mono); font-size: 11px; }
-.loading { padding: 40px; text-align: center; color: var(--dim); }
-.spinner { display: inline-block; width: 18px; height: 18px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; margin-bottom: 10px; }
-@keyframes spin { to { transform: rotate(360deg); } }
-.panel { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.panel-inner { padding: 16px; max-height: 500px; overflow-y: auto; }
-::-webkit-scrollbar { width: 4px; } ::-webkit-scrollbar-track { background: var(--bg); } ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+/* ── COMPLETION BARS ────────────────────────────────────────── */
+.completion-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-bottom:16px; }
+.comp-card { background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px; }
+.comp-top  { display:flex;align-items:center;justify-content:space-between;margin-bottom:7px; }
+.comp-lbl  { font-family:var(--mono);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px; }
+.comp-pct  { font-family:var(--mono);font-size:14px;font-weight:700; }
+.comp-bar-wrap { height:5px;background:var(--bg);border-radius:3px;overflow:hidden;margin-bottom:4px; }
+.comp-bar { height:100%;border-radius:3px;transition:width .5s; }
+.comp-sub  { font-family:var(--mono);font-size:8px;color:var(--dim); }
 
-/* ── SECTION VISIBILITY ──────────────────────────────────── */
-.page-section { display: block; }
-.page-section.hidden { display: none; }
+/* ── LAYER BARS ────────────────────────────────────────────── */
+.layer-row { display:flex;align-items:center;gap:8px;margin-bottom:7px; }
+.layer-name { font-family:var(--mono);font-size:9px;color:var(--text);width:150px;flex-shrink:0; }
+.lbar-wrap  { flex:1;height:5px;background:var(--bg);border-radius:3px;overflow:hidden; }
+.lbar       { height:100%;border-radius:3px;background:var(--accent);transition:width .5s; }
+.layer-trend-badge { font-family:var(--mono);font-size:8px;width:48px;text-align:right;flex-shrink:0; }
+.tr-rising  { color:var(--green); }
+.tr-falling { color:var(--red); }
+.tr-stable  { color:var(--dim); }
+.tr-new     { color:var(--yellow); }
+.layer-cnt  { font-family:var(--mono);font-size:9px;color:var(--dim);width:24px;text-align:right;flex-shrink:0; }
+
+/* ── FEED ITEMS ─────────────────────────────────────────────── */
+.feed-item { padding:10px 0;border-bottom:1px solid var(--border);cursor:pointer;transition:background .1s; }
+.feed-item:last-child { border-bottom:none; }
+.feed-item:hover { background:rgba(255,255,255,.01); }
+.fi-top { display:flex;align-items:center;gap:7px;margin-bottom:3px;flex-wrap:wrap; }
+.cat-badge { font-family:var(--mono);font-size:7px;padding:2px 5px;border-radius:2px;text-transform:uppercase;letter-spacing:.5px;font-weight:700;white-space:nowrap; }
+.cs{ background:rgba(0,212,255,.08);color:var(--accent);border:1px solid rgba(0,212,255,.2); }
+.cd{ background:rgba(255,51,85,.08);color:var(--red);border:1px solid rgba(255,51,85,.2); }
+.cn{ background:rgba(0,230,118,.08);color:var(--green);border:1px solid rgba(0,230,118,.2); }
+.cc{ background:rgba(59,142,255,.08);color:var(--blue);border:1px solid rgba(59,142,255,.2); }
+.cb{ background:rgba(255,184,0,.08);color:var(--yellow);border:1px solid rgba(255,184,0,.2); }
+.ca{ background:rgba(168,85,247,.08);color:var(--purple);border:1px solid rgba(168,85,247,.2); }
+.ct{ background:rgba(255,107,0,.08);color:var(--orange);border:1px solid rgba(255,107,0,.2); }
+.fi-age  { font-family:var(--mono);font-size:8px;color:var(--dim);margin-left:auto; }
+.fi-title{ font-size:12px;font-weight:600;color:var(--bright);line-height:1.4;margin-bottom:2px; }
+.fi-sum  { font-size:10px;color:var(--dim);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:2px; }
+.fi-src  { font-family:var(--mono);font-size:8px;color:var(--dim); }
+.fi-src a{ color:var(--accent);text-decoration:none; }
+.fi-src a:hover{ text-decoration:underline; }
+
+/* ── SUPPLY CHAIN ───────────────────────────────────────────── */
+.sc-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:9px; }
+.sc-card { background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px; }
+.sc-core { font-size:12px;font-weight:700;color:var(--bright);margin-bottom:6px; }
+.sc-row  { display:flex;gap:5px;margin-bottom:3px;align-items:flex-start; }
+.sc-lbl  { font-family:var(--mono);font-size:8px;color:var(--dim);width:68px;flex-shrink:0;text-transform:uppercase;padding-top:2px; }
+.sc-val  { font-size:10px;color:var(--text);line-height:1.5; }
+
+/* ── UNIVERSE GRID ──────────────────────────────────────────── */
+.uni-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:7px; }
+.uni-card { background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:9px 11px;cursor:pointer;transition:border-color .15s; }
+.uni-card:hover { border-color:var(--accent); }
+.uni-name { font-size:11px;font-weight:600;color:var(--bright);margin-bottom:2px; }
+.uni-meta { font-family:var(--mono);font-size:8px;color:var(--dim);display:flex;gap:5px;align-items:center;margin-bottom:3px; }
+.uni-layers { display:flex;gap:3px;flex-wrap:wrap; }
+.uni-layer { font-family:var(--mono);font-size:7px;padding:1px 4px;border-radius:2px;background:var(--bg4);border:1px solid var(--border);color:var(--dim); }
+.st-pub  { color:var(--green); }
+.st-priv { color:var(--dim); }
+.st-ipo  { color:var(--yellow); }
+.st-wtch { color:var(--blue); }
+.st-acq  { color:var(--red); }
+
+/* ── HISTORY TABLE ──────────────────────────────────────────── */
+.ng { color:var(--green); }
+.nr { color:var(--red); }
+.ny { color:var(--yellow); }
+
+/* ── REC CARDS ──────────────────────────────────────────────── */
+.rec-card { background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:11px 13px;cursor:pointer;transition:border-color .15s;margin-bottom:8px; }
+.rec-card:hover { border-color:var(--accent); }
+.rec-top { display:flex;align-items:center;gap:7px;margin-bottom:4px;flex-wrap:wrap; }
+.rec-co  { font-size:12px;font-weight:700;color:var(--bright); }
+.rec-rat { font-size:10px;color:var(--dim);line-height:1.5;margin-bottom:3px; }
+.rec-risk{ font-family:var(--mono);font-size:8px;color:var(--yellow); }
+.rec-agt { font-family:var(--mono);font-size:8px;color:var(--dim);margin-top:2px; }
+
+/* ── UTILS ──────────────────────────────────────────────────── */
+.empty { padding:28px;text-align:center;color:var(--dim);font-family:var(--mono);font-size:10px; }
+.loading { padding:36px;text-align:center;color:var(--dim); }
+.spinner { display:inline-block;width:16px;height:16px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:8px; }
+@keyframes spin{to{transform:rotate(360deg)}}
+::-webkit-scrollbar{width:3px;height:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.mb14 { margin-bottom:14px; }
+.section { margin-bottom:20px; }
 </style>
 </head>
 <body>
 
+<!-- ── HEADER ──────────────────────────────────────────────── -->
 <header>
   <div class="logo">
     <div class="logo-icon">🛰</div>
@@ -374,229 +408,315 @@ header {
     </div>
   </div>
 
-  <div class="header-center">
-    <button class="nav-btn active" onclick="showSection('alerts',this)">Alerts</button>
-    <button class="nav-btn" onclick="showSection('scores',this)">Scores</button>
-    <button class="nav-btn" onclick="showSection('trends',this)">Trends</button>
-    <button class="nav-btn" onclick="showSection('universe',this)">Universe</button>
-    <button class="nav-btn" onclick="showSection('recs',this)">Recs</button>
-    <button class="nav-btn" onclick="showSection('feed',this)">Live Feed</button>
-    <button class="nav-btn" onclick="showSection('supply',this)">Supply Chain</button>
-    <button class="nav-btn" onclick="showSection('history',this)">History</button>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('overview',this)">① Overview</button>
+    <button class="tab" onclick="switchTab('portfolio',this)">② Portfolio</button>
+    <button class="tab" onclick="switchTab('rings',this)">③ Rings</button>
+    <button class="tab" onclick="switchTab('intelligence',this)">④ Intelligence</button>
+    <button class="tab" onclick="switchTab('mission',this)">⑤ Mission Control</button>
   </div>
 
-  <div class="header-right">
+  <div class="hdr-right">
     <div class="live-dot"></div>
     <div class="hdr-meta" id="lastUpdated">Loading...</div>
     <div class="hdr-meta" id="countdown"></div>
     <div class="search-wrap">
-      <span class="search-icon">⌕</span>
+      <span class="si">⌕</span>
       <input type="text" id="searchInput" placeholder="Search..." oninput="applySearch()">
     </div>
-    <button class="refresh-btn" onclick="loadAll()">↻</button>
+    <button class="refresh-btn" onclick="loadAll(true)">↻</button>
   </div>
 </header>
 
 <div class="container">
   <div class="err" id="errBanner"></div>
 
-  <!-- SUMMARY STATS -->
-  <div class="stats-row" id="statsRow">
-    <div class="stat red"><div class="stat-lbl">🚨 Immediate</div><div class="stat-val" id="sImmediate">—</div></div>
-    <div class="stat yellow"><div class="stat-lbl">⚡ Same Day</div><div class="stat-val" id="sSameDay">—</div></div>
-    <div class="stat blue"><div class="stat-lbl">👁 Watch</div><div class="stat-val" id="sWatch">—</div></div>
-    <div class="stat accent"><div class="stat-lbl">Live Items</div><div class="stat-val" id="sItems">—</div></div>
-    <div class="stat green"><div class="stat-lbl">Feed Health</div><div class="stat-val" id="sFeedHealth">—</div><div class="stat-sub" id="sStatus">—</div></div>
-    <div class="stat purple"><div class="stat-lbl">Universe</div><div class="stat-val" id="sUniverse">—</div><div class="stat-sub">tracked</div></div>
-    <div class="stat"><div class="stat-lbl">Top Layer</div><div class="stat-val" style="font-size:14px;margin-top:4px" id="sTopLayer">—</div></div>
-    <div class="stat"><div class="stat-lbl">Top Mover</div><div class="stat-val" style="font-size:14px;margin-top:4px" id="sTopMover">—</div></div>
+  <!-- ══════════════════════════════════════════════════════════
+       TAB 1: OVERVIEW
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="page active" id="page-overview">
+
+    <!-- Summary stats -->
+    <div class="stats-row">
+      <div class="stat red">  <div class="stat-lbl">🚨 Immediate</div><div class="stat-val" id="sImm">—</div></div>
+      <div class="stat yellow"><div class="stat-lbl">⚡ Same Day</div> <div class="stat-val" id="sSd">—</div></div>
+      <div class="stat blue"> <div class="stat-lbl">👁 Watch</div>     <div class="stat-val" id="sWch">—</div></div>
+      <div class="stat teal"> <div class="stat-lbl">Portfolio Value</div><div class="stat-val" id="sPortVal">—</div><div class="stat-sub" id="sPortGL">—</div></div>
+      <div class="stat accent"><div class="stat-lbl">Live Items</div>  <div class="stat-val" id="sItems">—</div></div>
+      <div class="stat green"><div class="stat-lbl">Feed Health</div>  <div class="stat-val" id="sFeed">—</div><div class="stat-sub" id="sStatus">—</div></div>
+      <div class="stat">      <div class="stat-lbl">Top Layer</div>    <div class="stat-val" style="font-size:13px;margin-top:4px" id="sLayer">—</div></div>
+      <div class="stat">      <div class="stat-lbl">Top Mover</div>    <div class="stat-val" style="font-size:13px;margin-top:4px" id="sMover">—</div></div>
+    </div>
+
+    <!-- Immediate alerts -->
+    <div class="section">
+      <div class="sh"><div class="st">🚨 Immediate Alerts</div><div class="pc" id="cImm">0</div></div>
+      <div class="alerts-grid" id="ovImmediate"><div class="empty">No immediate alerts</div></div>
+    </div>
+
+    <!-- Top Priority Signals -->
+    <div class="section">
+      <div class="sh"><div class="st">🏆 Top Priority Signals</div><div class="pc" id="cPri">—</div></div>
+      <div class="priority-list" id="ovPriority"><div class="loading"><div class="spinner"></div></div></div>
+    </div>
+
+    <!-- Same day alerts -->
+    <div class="section">
+      <div class="sh"><div class="st">⚡ Same-Day Alerts</div><div class="pc" id="cSd">0</div></div>
+      <div class="alerts-grid" id="ovSameDay"><div class="empty">No same-day alerts</div></div>
+    </div>
+
   </div>
 
-  <!-- ── ALERTS SECTION ───────────────────────── -->
-  <div class="page-section" id="sec-alerts">
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">🚨 Immediate Alerts</div>
-        <div class="section-count" id="cImmediate">0</div>
-      </div>
-      <div class="alerts-grid" id="alertsImmediate"><div class="empty">No immediate alerts</div></div>
-    </div>
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">⚡ Same-Day Alerts</div>
-        <div class="section-count" id="cSameDay">0</div>
-      </div>
-      <div class="alerts-grid" id="alertsSameDay"><div class="empty">No same-day alerts</div></div>
-    </div>
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">👁 Watch Alerts</div>
-        <div class="section-count" id="cWatch">0</div>
-      </div>
-      <div class="alerts-grid" id="alertsWatch"><div class="empty">No watch alerts</div></div>
-    </div>
-  </div>
+  <!-- ══════════════════════════════════════════════════════════
+       TAB 2: PORTFOLIO
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="page" id="page-portfolio">
 
-  <!-- ── SCORES SECTION ───────────────────────── -->
-  <div class="page-section hidden" id="sec-scores">
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">📊 Company Scores</div>
-        <div class="section-count" id="cScores">0</div>
-      </div>
-      <div class="panel"><div class="panel-inner" style="max-height:600px;overflow-x:auto">
-        <table class="scores-table" id="scoresTable">
-          <thead><tr>
-            <th>Score</th><th>Δ</th><th>Company</th><th>Ticker</th>
-            <th>Priority</th><th>Action</th><th>Status</th><th>Signal</th>
-          </tr></thead>
-          <tbody id="scoresTbody"><tr><td colspan="8" class="empty">Loading...</td></tr></tbody>
-        </table>
-      </div></div>
+    <!-- Portfolio summary -->
+    <div class="stats-row">
+      <div class="stat teal"> <div class="stat-lbl">Total Value</div>  <div class="stat-val" id="ptVal">—</div></div>
+      <div class="stat green"><div class="stat-lbl">Total Gain/Loss</div><div class="stat-val" id="ptGL">—</div><div class="stat-sub" id="ptGLpct">—</div></div>
+      <div class="stat accent"><div class="stat-lbl">Positions</div>   <div class="stat-val" id="ptPos">—</div></div>
+      <div class="stat red">  <div class="stat-lbl">Alert Positions</div><div class="stat-val" id="ptAlerts">—</div></div>
     </div>
-  </div>
 
-  <!-- ── TRENDS SECTION ───────────────────────── -->
-  <div class="page-section hidden" id="sec-trends">
+    <!-- Holdings table -->
+    <div class="section">
+      <div class="sh">
+        <div class="st">📊 Holdings</div>
+        <div style="display:flex;gap:7px;align-items:center">
+          <button class="fbtn al-only" id="alertsOnlyBtn" onclick="toggleHoldingAlerts()">🚨 Alerts Only</button>
+          <button class="fbtn" onclick="sortHoldings('score')">Sort: Score</button>
+          <button class="fbtn" onclick="sortHoldings('gain')">Sort: Gain</button>
+          <button class="fbtn" onclick="sortHoldings('value')">Sort: Value</button>
+          <button class="save-btn" onclick="saveAllHoldings()">💾 Save All</button>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="tbl-wrap">
+          <table class="tbl" id="holdingsTable">
+            <thead><tr>
+              <th>Ticker</th><th>Company</th><th>Ring</th>
+              <th>Shares</th><th>Avg Price</th><th>Score</th><th>Δ Score</th>
+              <th>Priority</th><th>Alert</th><th>Gain/Loss</th><th>Value</th><th>Notes</th>
+            </tr></thead>
+            <tbody id="holdingsTbody"><tr><td colspan="12" class="empty">Loading...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Allocation -->
     <div class="two-col">
       <div class="section">
-        <div class="section-hdr"><div class="section-title">📈 Layer Trends</div></div>
-        <div id="layerBars"><div class="empty">Loading...</div></div>
+        <div class="sh"><div class="st">📊 Ring Allocation</div></div>
+        <div class="alloc-grid" id="ringAlloc"><div class="empty">Loading...</div></div>
       </div>
       <div class="section">
-        <div class="section-hdr"><div class="section-title">🏢 Company Mentions</div></div>
-        <div id="companyMentions"><div class="empty">Loading...</div></div>
+        <div class="sh"><div class="st">📊 Layer Allocation</div></div>
+        <div class="alloc-grid" id="layerAlloc"><div class="empty">Loading...</div></div>
       </div>
     </div>
-    <div class="section">
-      <div class="section-hdr"><div class="section-title">🔇 Silent Tracked Companies</div></div>
-      <div id="silentCompanies"><div class="empty">Loading...</div></div>
-    </div>
+
   </div>
 
-  <!-- ── UNIVERSE SECTION ─────────────────────── -->
-  <div class="page-section hidden" id="sec-universe">
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">🌐 Master Universe</div>
-        <div class="section-count" id="cUniverse">0 companies</div>
+  <!-- ══════════════════════════════════════════════════════════
+       TAB 3: RINGS
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="page" id="page-rings">
+
+    <!-- Ring completion -->
+    <div class="completion-grid" id="ringCompletion"></div>
+
+    <div class="two-col">
+      <!-- Ring visualization (SVG) -->
+      <div class="section">
+        <div class="sh"><div class="st">🪐 Universe Ring Map</div></div>
+        <div class="panel"><div class="pb" style="position:relative;padding:20px">
+          <div class="ring-container">
+            <svg class="ring-svg" id="ringSvg" viewBox="0 0 400 400"></svg>
+            <div class="ring-tooltip" id="ringTooltip"></div>
+          </div>
+        </div></div>
       </div>
-      <div id="universeGrid" class="universe-grid"><div class="empty">Loading...</div></div>
+
+      <!-- Ring scores summary -->
+      <div class="section">
+        <div class="sh"><div class="st">📊 Ring Scores</div></div>
+        <div id="ringGroups" class="ring-companies"></div>
+      </div>
     </div>
+
   </div>
 
-  <!-- ── RECOMMENDATIONS ──────────────────────── -->
-  <div class="page-section hidden" id="sec-recs">
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">💡 Recommendations</div>
-        <div class="section-count" id="cRecs">0</div>
+  <!-- ══════════════════════════════════════════════════════════
+       TAB 4: INTELLIGENCE
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="page" id="page-intelligence">
+
+    <div class="two-col mb14">
+      <!-- Layer Trends -->
+      <div class="section">
+        <div class="sh"><div class="st">📈 Layer Trends</div></div>
+        <div id="layerBars"><div class="empty">Loading...</div></div>
       </div>
-      <p style="font-family:var(--mono);font-size:10px;color:var(--red);margin-bottom:12px;padding:8px 12px;border:1px solid rgba(255,51,85,.3);border-radius:4px;background:rgba(255,51,85,.05)">
-        ⚠ These are signal flags for human review only. NO automated trade execution. Always verify independently.
+      <!-- Company Mentions -->
+      <div class="section">
+        <div class="sh"><div class="st">🏢 Company Mentions</div></div>
+        <div id="compMentions"><div class="empty">Loading...</div></div>
+      </div>
+    </div>
+
+    <!-- Live Feed -->
+    <div class="section">
+      <div class="sh"><div class="st">📡 Live Feed</div><div class="pc" id="cFeed">0</div></div>
+      <div class="filter-row">
+        <button class="fbtn active" onclick="setCat('all',this)">All</button>
+        <button class="fbtn" onclick="setCat('Space Industry',this)">Space</button>
+        <button class="fbtn" onclick="setCat('Defense/SDA',this)">Defense</button>
+        <button class="fbtn" onclick="setCat('NASA/Gov',this)">NASA</button>
+        <button class="fbtn" onclick="setCat('Satellite/Comms',this)">Satellite</button>
+        <button class="fbtn" onclick="setCat('Business/Markets',this)">Markets</button>
+        <button class="fbtn" onclick="setCat('Tech/AI/Compute',this)">AI/Tech</button>
+        <button class="fbtn al-only" id="feedAlertsBtn" onclick="toggleFeedAlerts()">🚨 Alerts Only</button>
+      </div>
+      <div id="feedList"><div class="empty">Loading...</div></div>
+    </div>
+
+    <!-- Supply Chain -->
+    <div class="section">
+      <div class="sh"><div class="st">🔗 Supply Chain</div></div>
+      <div class="sc-grid" id="supplyGrid"><div class="empty">Loading...</div></div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="section">
+      <div class="sh"><div class="st">💡 Recommendations</div><div class="pc" id="cRecs">0</div></div>
+      <p style="font-family:var(--mono);font-size:9px;color:var(--red);margin-bottom:10px;padding:7px 11px;border:1px solid rgba(255,51,85,.3);border-radius:4px;background:rgba(255,51,85,.05)">
+        ⚠ Signal flags for human review only. NO automated trade execution.
       </p>
-      <div class="rec-list" id="recList"><div class="empty">Loading...</div></div>
+      <div id="recList"><div class="empty">Loading...</div></div>
     </div>
+
   </div>
 
-  <!-- ── LIVE FEED ─────────────────────────────── -->
-  <div class="page-section hidden" id="sec-feed">
-    <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">📡 Live Feed</div>
-        <div class="section-count" id="cFeed">0 items</div>
-      </div>
-      <div class="feed-filters">
-        <button class="filter-btn active" onclick="setCat('all',this)">All</button>
-        <button class="filter-btn" onclick="setCat('Space Industry',this)">Space</button>
-        <button class="filter-btn" onclick="setCat('Defense/SDA',this)">Defense</button>
-        <button class="filter-btn" onclick="setCat('NASA/Gov',this)">NASA</button>
-        <button class="filter-btn" onclick="setCat('Satellite/Comms',this)">Satellite</button>
-        <button class="filter-btn" onclick="setCat('Business/Markets',this)">Markets</button>
-        <button class="filter-btn" onclick="setCat('Tech/AI/Compute',this)">AI/Tech</button>
-        <button class="filter-btn alerts-only" id="alertsOnlyBtn" onclick="toggleAlertsOnly()">🚨 Alerts Only</button>
-      </div>
-      <div class="feed-list" id="feedList"><div class="empty">Loading...</div></div>
-    </div>
-  </div>
+  <!-- ══════════════════════════════════════════════════════════
+       TAB 5: MISSION CONTROL
+  ══════════════════════════════════════════════════════════════ -->
+  <div class="page" id="page-mission">
 
-  <!-- ── SUPPLY CHAIN ──────────────────────────── -->
-  <div class="page-section hidden" id="sec-supply">
+    <!-- All priority signals expanded -->
     <div class="section">
-      <div class="section-hdr"><div class="section-title">🔗 Supply Chain Map</div></div>
-      <div class="supply-chain-grid" id="supplyGrid"><div class="empty">Loading...</div></div>
+      <div class="sh"><div class="st">🏆 All Priority Signals</div><div class="pc" id="mcPriCount">10</div></div>
+      <div class="priority-list" id="mcPriority"><div class="loading"><div class="spinner"></div></div></div>
     </div>
-  </div>
 
-  <!-- ── HISTORY ───────────────────────────────── -->
-  <div class="page-section hidden" id="sec-history">
+    <!-- Scores table (full) -->
     <div class="section">
-      <div class="section-hdr">
-        <div class="section-title">📋 Run History</div>
-        <div class="section-count" id="cHistory">0 runs</div>
-      </div>
-      <div class="panel"><div class="panel-inner" style="max-height:500px;overflow-x:auto">
-        <table class="history-table">
-          <thead><tr><th>Time</th><th>Items</th><th>Alerts</th><th>Imm</th><th>Same</th><th>Watch</th><th>Top Mover</th><th>Top Layer</th></tr></thead>
-          <tbody id="historyTbody"><tr><td colspan="8" class="empty">Loading...</td></tr></tbody>
+      <div class="sh"><div class="st">📊 Full Company Scores</div><div class="pc" id="mcScoreCount">—</div></div>
+      <div class="panel"><div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Score</th><th>Δ</th><th>Company</th><th>Ticker</th><th>Ring</th><th>Priority</th><th>Action</th><th>Status</th><th>Signal</th></tr></thead>
+          <tbody id="mcScoresTbody"><tr><td colspan="9" class="empty">Loading...</td></tr></tbody>
         </table>
       </div></div>
     </div>
 
-    <!-- MISSION CONTROL -->
+    <!-- Universe -->
     <div class="section">
-      <button class="mc-toggle" onclick="toggleMC()">⚙ MISSION CONTROL MODE</button>
-      <div class="mc-panel" id="mcPanel">
-        <div class="mc-grid" id="mcGrid"><div class="empty">Loading mission control...</div></div>
-      </div>
+      <div class="sh"><div class="st">🌐 Full Universe</div><div class="pc" id="mcUniCount">—</div></div>
+      <div class="uni-grid" id="mcUniGrid"><div class="empty">Loading...</div></div>
     </div>
-  </div>
 
+    <!-- Run History -->
+    <div class="section">
+      <div class="sh"><div class="st">📋 Run History</div><div class="pc" id="mcHistCount">—</div></div>
+      <div class="panel"><div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Time</th><th>Items</th><th>Alerts</th><th>Imm</th><th>Same</th><th>Watch</th><th>Top Mover</th><th>Top Layer</th></tr></thead>
+          <tbody id="mcHistTbody"><tr><td colspan="8" class="empty">Loading...</td></tr></tbody>
+        </table>
+      </div></div>
+    </div>
+
+    <!-- Watch alerts -->
+    <div class="section">
+      <div class="sh"><div class="st">👁 Watch Alerts</div><div class="pc" id="mcWatchCount">0</div></div>
+      <div class="alerts-grid" id="mcWatch"><div class="empty">No watch alerts</div></div>
+    </div>
+
+  </div>
 </div><!-- /container -->
 
 <script>
-// ── CONFIG ──────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+//  CONFIG & STATE
+// ═══════════════════════════════════════════════════════════════
 const BASE    = 'https://raw.githubusercontent.com/StacheHistory/scout2-data/main/data/';
 const REFRESH = 5 * 60 * 1000;
+const CACHE_TTL = 4 * 60 * 1000; // 4 min cache
 
-// ── STATE ───────────────────────────────────────────────────
-let allItems = [], allAlerts = [], alertLinks = new Set();
-let catFilter = 'all', alertsOnly = false;
+let DATA = {};          // { key: {data, ts} }
+let allItems   = [];
+let allAlerts  = [];
+let alertLinks = new Set();
+let scoreMap   = {};    // ticker/company → score entry
+let priorityMap = {};   // company → rank
+let holdings   = [];
+let catFilter  = 'all';
+let feedAlerts = false;
+let holdAlertsOnly = false;
+let holdSort   = 'score';
+let currentTab = 'overview';
 let refreshTimer, countdownTimer, nextRefreshAt;
-let currentSection = 'alerts';
 
-// ── NAV ─────────────────────────────────────────────────────
-function showSection(id, btn) {
-  document.querySelectorAll('.page-section').forEach(s => s.classList.add('hidden'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('sec-' + id).classList.remove('hidden');
+// ═══════════════════════════════════════════════════════════════
+//  TAB SWITCHING
+// ═══════════════════════════════════════════════════════════════
+function switchTab(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
   if (btn) btn.classList.add('active');
-  currentSection = id;
+  currentTab = id;
 }
 
-// ── FETCH ───────────────────────────────────────────────────
-async function fetchJ(url) {
-  const r = await fetch(url + '?t=' + Date.now());
-  if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + url);
-  return r.json();
+// ═══════════════════════════════════════════════════════════════
+//  DATA FETCHING WITH CACHE
+// ═══════════════════════════════════════════════════════════════
+async function fetchJ(key, force) {
+  const now = Date.now();
+  if (!force && DATA[key] && (now - DATA[key].ts) < CACHE_TTL) return DATA[key].data;
+  const r = await fetch(BASE + key + '?t=' + now);
+  if (!r.ok) throw new Error('HTTP ' + r.status + ' — ' + key);
+  const d = await r.json();
+  DATA[key] = { data: d, ts: now };
+  return d;
 }
 
-// ── LOAD ALL ────────────────────────────────────────────────
-async function loadAll() {
+// ═══════════════════════════════════════════════════════════════
+//  LOAD ALL DATA
+// ═══════════════════════════════════════════════════════════════
+async function loadAll(force) {
   showErr(null);
   try {
-    const [summary, alerts, dump, trends, scores, universe, supply, recs, history] = await Promise.all([
-      fetchJ(BASE + 'scout2_dashboard_summary.json'),
-      fetchJ(BASE + 'scout2_alerts.json'),
-      fetchJ(BASE + 'scout2_dump_latest.json'),
-      fetchJ(BASE + 'scout2_trends.json').catch(() => ({})),
-      fetchJ(BASE + 'scout2_scores.json').catch(() => ({scores:[]})),
-      fetchJ(BASE + 'scout2_universe.json').catch(() => ({universe:[]})),
-      fetchJ(BASE + 'scout2_supply_chain.json').catch(() => ({supply_chain:[]})),
-      fetchJ(BASE + 'scout2_recommendations.json').catch(() => ({recommendations:[]})),
-      fetchJ(BASE + 'scout2_run_history.json').catch(() => ({runs:[]})),
-    ]);
+    const [summary, alerts, dump, trends, scores, universe, supply, recs, history, priority, holdingsJ] =
+      await Promise.all([
+        fetchJ('scout2_dashboard_summary.json', force),
+        fetchJ('scout2_alerts.json', force),
+        fetchJ('scout2_dump_latest.json', force),
+        fetchJ('scout2_trends.json', force).catch(() => ({})),
+        fetchJ('scout2_scores.json', force).catch(() => ({scores:[]})),
+        fetchJ('scout2_universe.json', force).catch(() => ({universe:[]})),
+        fetchJ('scout2_supply_chain.json', force).catch(() => ({supply_chain:[]})),
+        fetchJ('scout2_recommendations.json', force).catch(() => ({recommendations:[]})),
+        fetchJ('scout2_run_history.json', force).catch(() => ({runs:[]})),
+        fetchJ('scout2_priority.json', force).catch(() => ({priority_signals:[]})),
+        fetchJ('scout2_holdings.json', force).catch(() => ({holdings:[]})),
+      ]);
 
+    // ── Process data ─────────────────────────────────────────
     allItems  = dump.items || [];
     const imm = alerts.immediate || [];
     const sd  = alerts.same_day  || [];
@@ -604,314 +724,642 @@ async function loadAll() {
     allAlerts = [...imm, ...sd, ...wch];
     alertLinks = new Set(allAlerts.map(a => a.link));
 
-    // Stats
-    set('sImmediate', imm.length);
-    set('sSameDay',   sd.length);
-    set('sWatch',     wch.length);
-    set('sItems',     summary.items_live || allItems.length);
-    set('sFeedHealth',summary.feed_health || '—');
-    set('sStatus',    summary.system_status || '—');
-    set('sUniverse',  summary.universe_size || (universe.universe || []).length);
-    set('sTopLayer',  (summary.top_layer || '—').split('/')[0]);
-    set('sTopMover',  summary.top_score_mover || '—');
+    // Build score map
+    scoreMap = {};
+    (scores.scores || []).forEach(s => {
+      scoreMap[s.company] = s;
+      if (s.ticker) scoreMap[s.ticker] = s;
+    });
 
-    // Last updated
+    // Build priority map
+    priorityMap = {};
+    (priority.priority_signals || []).forEach(p => {
+      priorityMap[p.company] = p.rank;
+      if (p.ticker) priorityMap[p.ticker] = p.rank;
+    });
+
+    // Load holdings from localStorage first, fallback to JSON
+    loadHoldings(holdingsJ.holdings || []);
+
+    // ── Update summary stats ──────────────────────────────────
+    set('sImm',    imm.length);
+    set('sSd',     sd.length);
+    set('sWch',    wch.length);
+    set('sItems',  summary.items_live || allItems.length);
+    set('sFeed',   summary.feed_health || '—');
+    set('sStatus', summary.system_status || '—');
+    set('sLayer',  (summary.top_layer || '—').split('/')[0]);
+    set('sMover',  summary.top_score_mover || '—');
+
     if (summary.last_updated_utc) {
       const d = new Date(summary.last_updated_utc);
-      set('lastUpdated', d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) +
-        ' · ' + d.toLocaleDateString([],{month:'short',day:'numeric'}));
+      set('lastUpdated',
+        d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'}) + ' · ' +
+        d.toLocaleDateString([],{month:'short',day:'numeric'}));
     }
 
-    // Render all sections
-    renderAlerts(imm, sd, wch);
-    renderScores(scores.scores || []);
-    renderTrends(trends);
-    renderUniverse(universe.universe || []);
-    renderRecs(recs.recommendations || []);
+    // ── Render all sections ───────────────────────────────────
+    renderOverview(imm, sd, priority.priority_signals || []);
+    renderPortfolio(scores.scores || []);
+    renderRings(universe.universe || [], scores.scores || []);
+    renderIntelligence(trends, supply.supply_chain || [], recs.recommendations || []);
+    renderMission(priority.priority_signals || [], scores.scores || [], universe.universe || [], history.runs || [], wch);
     renderFeed();
-    renderSupply(supply.supply_chain || []);
-    renderHistory(history.runs || []);
-    renderMC(scores.scores || [], alerts);
 
     scheduleRefresh();
 
   } catch(e) {
-    showErr('Could not load data: ' + e.message + '. Ensure GitHub Pages is enabled and data files exist.');
+    showErr('Load error: ' + e.message + ' — Check GitHub Pages is enabled and data files are pushed.');
   }
 }
 
-// ── RENDER ALERTS ────────────────────────────────────────────
-function renderAlerts(imm, sd, wch) {
-  set('cImmediate', imm.length); set('cSameDay', sd.length); set('cWatch', wch.length);
-  renderAlertGroup('alertsImmediate', imm, 'No immediate alerts');
-  renderAlertGroup('alertsSameDay',   sd,  'No same-day alerts');
-  renderAlertGroup('alertsWatch',     wch, 'No watch alerts');
+// ═══════════════════════════════════════════════════════════════
+//  OVERVIEW TAB
+// ═══════════════════════════════════════════════════════════════
+function renderOverview(imm, sd, priority) {
+  set('cImm', imm.length);
+  set('cSd',  sd.length);
+  set('cPri', priority.length + ' signals');
+  renderAlertGroup('ovImmediate', imm, 'No immediate alerts');
+  renderAlertGroup('ovSameDay',   sd,  'No same-day alerts');
+  renderPriorityList('ovPriority', priority.slice(0, 5));
 }
 
-function renderAlertGroup(id, alerts, emptyMsg) {
+function renderAlertGroup(id, alerts, empty) {
   const el = document.getElementById(id);
-  if (!alerts.length) { el.innerHTML = `<div class="empty">${emptyMsg}</div>`; return; }
+  if (!alerts.length) { el.innerHTML = `<div class="empty">${empty}</div>`; return; }
   el.innerHTML = alerts.map(a => {
-    const types = (a.event_type || a.alert_types || []).map(t =>
-      `<span class="event-tag">${t.replace('_',' ')}</span>`).join('');
-    const cos   = (a.company || []).slice(0,2).join(', ') || 'Unknown';
+    const types  = (a.event_type||[]).map(t=>`<span class="etag">${t.replace('_',' ')}</span>`).join('');
+    const cos    = (a.company||[]).slice(0,2).join(', ')||'Unknown';
     const ticker = a.ticker ? `<span class="ticker-badge">${esc(a.ticker)}</span>` : '';
     return `<div class="alert-card ${a.urgency}" onclick="window.open('${esc(a.link)}','_blank')">
-      <div class="alert-top">
-        <span class="urgency-badge">${a.urgency === 'immediate' ? '🚨' : a.urgency === 'same_day' ? '⚡' : '👁'} ${(a.urgency||'').replace('_',' ')}</span>
-        <span class="alert-score">Score: ${a.alert_score || 0}</span>
-        ${ticker}
-        <div class="event-tags">${types}</div>
+      <div class="ac-top">
+        <span class="ubadge">${a.urgency==='immediate'?'🚨':a.urgency==='same_day'?'⚡':'👁'} ${(a.urgency||'').replace('_',' ')}</span>
+        ${ticker}<div class="etags">${types}</div>
       </div>
-      <div class="alert-title">${esc(a.headline || a.title || '')}</div>
-      <div class="alert-why">${esc(a.why_it_matters || a.summary || '')}</div>
-      <div class="alert-bottom">
-        <span class="alert-meta">${esc(cos)} · ${a.age_hours ? a.age_hours + 'h ago' : ''}</span>
-        ${a.recommended_action ? `<span class="alert-action">${esc(a.recommended_action.slice(0,50))}</span>` : ''}
+      <div class="ac-title">${esc(a.headline||a.title||'')}</div>
+      <div class="ac-why">${esc(a.why_it_matters||a.summary||'')}</div>
+      <div class="ac-bot">
+        <span class="ac-meta">${esc(cos)} · ${a.age_hours||''}h ago</span>
+        ${a.recommended_action?`<span class="ac-action">${esc(a.recommended_action.slice(0,50))}</span>`:''}
       </div>
     </div>`;
   }).join('');
 }
 
-// ── RENDER SCORES ────────────────────────────────────────────
-function renderScores(scores) {
-  set('cScores', scores.length);
-  const tb = document.getElementById('scoresTbody');
-  if (!scores.length) { tb.innerHTML = '<tr><td colspan="8" class="empty">No scores yet</td></tr>'; return; }
-  tb.innerHTML = scores.slice(0,50).map(s => {
-    const sc    = s.score || 5;
-    const cls   = 's' + sc;
-    const delta = s.score_change || 0;
-    const dCls  = delta > 0 ? 'delta-up' : delta < 0 ? 'delta-down' : 'delta-flat';
-    const dStr  = delta > 0 ? '▲' + delta : delta < 0 ? '▼' + Math.abs(delta) : '—';
-    const ticker = s.ticker ? `<span class="ticker-badge">${esc(s.ticker)}</span>` : '—';
-    const capCls = 'cap-' + (s.capital_priority || 'low');
-    const actCls = 'action-' + (s.recommended_action || 'watch').replace('_on_pullback','').replace('_','');
-    const sigDot = s.signal_status === 'silent' ? '○' : '●';
-    return `<tr>
-      <td><span class="score-num ${cls}">${sc}</span></td>
-      <td><span class="score-delta ${dCls}">${dStr}</span></td>
-      <td>${esc(s.company)}</td>
-      <td>${ticker}</td>
-      <td><span class="cap-badge ${capCls}">${s.capital_priority || '—'}</span></td>
-      <td><span class="cap-badge ${actCls}">${(s.recommended_action || '').replace('_',' ')}</span></td>
-      <td style="font-family:var(--mono);font-size:10px;color:var(--dim)">${esc(s.status || '')}</td>
-      <td style="font-family:var(--mono);font-size:11px;color:${s.signal_status==='silent'?'var(--dim)':'var(--green)'}">${sigDot} ${s.signal_status || ''}</td>
-    </tr>`;
+function renderPriorityList(id, signals) {
+  const el = document.getElementById(id);
+  if (!signals.length) { el.innerHTML = '<div class="empty">No priority signals yet</div>'; return; }
+  el.innerHTML = signals.map(s => {
+    const nr    = s.net_signal_rating || s.alert_score || 5;
+    const nrCls = 'ns' + nr;
+    const ticker = s.ticker ? `<span class="ticker-badge">${esc(s.ticker)}</span>` : '';
+    const rCls   = s.rank <= 3 ? 'r' + s.rank : '';
+    const capCls = s.capital_impact_score >= 7 ? 'cap-hi' : s.capital_impact_score <= 3 ? 'cap-lo' : '';
+    const mktCls = s.expected_market_reaction === 'underpriced' ? 'und' :
+                   s.expected_market_reaction === 'overreaction risk' ? 'over' : 'fair';
+    const rkCls  = s.execution_risk === 'low' ? 'risk-lo' : s.execution_risk === 'high' ? 'risk-hi' : 'risk-med';
+
+    return `<div class="pri-card" onclick="window.open('${esc(s.link)}','_blank')">
+      <div class="pri-rank ${rCls}">#${s.rank}</div>
+      <div class="pri-body">
+        <div class="pri-top">
+          <span class="pri-co">${esc(s.company)}</span>
+          ${ticker}
+          ${s.net_signal_rating ? `<span class="pri-rating">NET ${s.net_signal_rating}/10</span>` : ''}
+          <span style="font-family:var(--mono);font-size:8px;color:var(--dim);margin-left:auto">${s.time_horizon||s.time_sensitivity||''}</span>
+        </div>
+        <div class="pri-title">${esc(s.headline)}</div>
+        <div class="pri-metrics">
+          ${s.capital_impact_score !== undefined ? `<div class="pri-m"><span class="pm-lbl">Capital: </span><span class="pm-val ${capCls}">${s.capital_impact_score}/10</span></div>` : ''}
+          ${s.probability_of_follow_through !== undefined ? `<div class="pri-m"><span class="pm-lbl">Follow-through: </span><span class="pm-val">${s.probability_of_follow_through}/10</span></div>` : ''}
+          ${s.thesis_alignment_score !== undefined ? `<div class="pri-m"><span class="pm-lbl">Thesis: </span><span class="pm-val">${s.thesis_alignment_score}/10</span></div>` : ''}
+          ${s.expected_market_reaction ? `<div class="pri-m"><span class="pm-lbl">Market: </span><span class="pm-val ${mktCls}">${s.expected_market_reaction}</span></div>` : ''}
+          ${s.execution_risk ? `<div class="pri-m"><span class="pm-lbl">Exec risk: </span><span class="pm-val ${rkCls}">${s.execution_risk}</span></div>` : ''}
+        </div>
+      </div>
+      <div class="pri-right">
+        <div class="net-score ${nrCls}">${nr}</div>
+        <div style="font-family:var(--mono);font-size:8px;color:var(--dim)">/10</div>
+      </div>
+    </div>`;
   }).join('');
 }
 
-// ── RENDER TRENDS ────────────────────────────────────────────
-function renderTrends(trends) {
-  const layers  = trends.layer_mentions   || [];
-  const comps   = trends.company_mentions || [];
-  const silent  = trends.silent_tracked   || [];
+// ═══════════════════════════════════════════════════════════════
+//  PORTFOLIO TAB
+// ═══════════════════════════════════════════════════════════════
+function loadHoldings(fallback) {
+  const saved = localStorage.getItem('scout2_holdings');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      if (parsed.length) { holdings = parsed; return; }
+    } catch(e) {}
+  }
+  // Merge fallback with localStorage — add tickers not already present
+  holdings = fallback.map(h => ({
+    ticker:    h.ticker,
+    company:   h.company,
+    shares:    h.shares || 0,
+    avg_price: h.avg_price || 0,
+    ring:      h.ring || 1,
+    layer:     h.layer || '',
+    notes:     h.notes || '',
+  }));
+}
 
-  const maxCount = layers.length ? Math.max(...layers.map(l => l.count)) : 1;
+function saveAllHoldings() {
+  // Read all editable fields from the table
+  holdings.forEach((h, i) => {
+    const sEl = document.getElementById('sh_' + i);
+    const pEl = document.getElementById('sp_' + i);
+    const nEl = document.getElementById('sn_' + i);
+    if (sEl) h.shares    = parseFloat(sEl.value) || 0;
+    if (pEl) h.avg_price = parseFloat(pEl.value) || 0;
+    if (nEl) h.notes     = nEl.value || '';
+  });
+  localStorage.setItem('scout2_holdings', JSON.stringify(holdings));
+  renderPortfolio(Object.values(scoreMap).filter(s => s.ticker));
+  showMsg('Holdings saved ✓');
+}
+
+function showMsg(msg) {
+  const el = document.getElementById('errBanner');
+  el.style.background = 'rgba(0,230,118,.1)';
+  el.style.borderColor = 'rgba(0,230,118,.3)';
+  el.style.color = 'var(--green)';
+  el.textContent = msg;
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; el.style.background=''; el.style.borderColor=''; el.style.color=''; }, 2500);
+}
+
+function renderPortfolio(scores) {
+  let totalValue = 0, totalCost = 0;
+  let alertPos   = 0;
+
+  // Sort holdings
+  let sorted = [...holdings];
+  if (holdSort === 'score') {
+    sorted.sort((a,b) => {
+      const sa = scoreMap[a.ticker]?.score || 0;
+      const sb = scoreMap[b.ticker]?.score || 0;
+      return sb - sa;
+    });
+  } else if (holdSort === 'gain') {
+    sorted.sort((a,b) => {
+      const ga = gainPct(a); const gb = gainPct(b);
+      return gb - ga;
+    });
+  } else if (holdSort === 'value') {
+    sorted.sort((a,b) => (b.shares*b.avg_price) - (a.shares*a.avg_price));
+  }
+
+  const rows = sorted.map((h, i) => {
+    const sc       = scoreMap[h.ticker] || scoreMap[h.company] || {};
+    const score    = sc.score;
+    const delta    = sc.score_change;
+    const priRank  = priorityMap[h.ticker] || priorityMap[h.company];
+    const hasAlert = allAlerts.some(a => (a.company||[]).includes(h.company) || a.ticker === h.ticker);
+
+    // Financial calcs (no real-time price — use avg as proxy)
+    const cost  = (h.shares * h.avg_price);
+    const value = cost; // would update with real price if available
+    totalValue += value; totalCost += cost;
+    if (hasAlert) alertPos++;
+
+    if (holdAlertsOnly && !hasAlert) return '';
+
+    const gpct   = 0; // no current price available without paid API
+    const glCls  = gpct > 0 ? 'gain-pos' : gpct < 0 ? 'gain-neg' : 'gain-neu';
+    const rowCls = hasAlert ? 'holding-row-alert' : '';
+    const alertBadge = hasAlert ? urgBadge(allAlerts.find(a=>
+      (a.company||[]).includes(h.company)||a.ticker===h.ticker)) : '';
+
+    const sCls  = score ? 's'+score : '';
+    const dCls  = delta > 0 ? 'du' : delta < 0 ? 'dd' : 'df';
+    const dStr  = delta > 0 ? '▲'+delta : delta < 0 ? '▼'+Math.abs(delta) : '—';
+    const ringCol = ['','var(--ring1)','var(--ring2)','var(--ring3)','var(--ring4)'][h.ring]||'var(--dim)';
+
+    // Find original index in holdings array
+    const origIdx = holdings.indexOf(h);
+
+    return `<tr class="${rowCls}">
+      <td><span class="ticker-badge" style="font-size:9px">${esc(h.ticker||'—')}</span></td>
+      <td style="font-weight:600;color:var(--bright);font-size:11px">${esc(h.company)}</td>
+      <td><span style="font-family:var(--mono);font-size:9px;color:${ringCol}">R${h.ring||'?'}</span></td>
+      <td><input class="edit-field" id="sh_${origIdx}" value="${h.shares}" type="number" min="0" onchange="autoSave(${origIdx})"></td>
+      <td><input class="edit-field" id="sp_${origIdx}" value="${h.avg_price}" type="number" min="0" step="0.01" onchange="autoSave(${origIdx})"></td>
+      <td>${score !== undefined ? `<span class="snum ${sCls}">${score}</span>` : '—'}</td>
+      <td><span class="sdelta ${dCls}">${dStr}</span></td>
+      <td>${priRank ? `<span style="font-family:var(--mono);font-size:9px;color:var(--accent)">#${priRank}</span>` : '—'}</td>
+      <td>${alertBadge}</td>
+      <td><span class="${glCls}">—</span></td>
+      <td><span style="font-family:var(--mono);font-size:9px">$${cost.toLocaleString(undefined,{maximumFractionDigits:0})}</span></td>
+      <td><input class="notes-field" id="sn_${origIdx}" value="${esc(h.notes||'')}" placeholder="notes..." onchange="autoSave(${origIdx})"></td>
+    </tr>`;
+  }).filter(Boolean);
+
+  document.getElementById('holdingsTbody').innerHTML = rows.join('') ||
+    '<tr><td colspan="12" class="empty">No holdings — add positions above</td></tr>';
+
+  // Summary cards
+  set('ptVal',  '$' + totalValue.toLocaleString(undefined,{maximumFractionDigits:0}));
+  set('ptGL',   '—');
+  set('ptGLpct','No real-time price feed');
+  set('ptPos',  holdings.filter(h=>h.shares>0).length);
+  set('ptAlerts', alertPos);
+  set('sPortVal', '$' + totalValue.toLocaleString(undefined,{maximumFractionDigits:0}));
+  set('sPortGL',  holdings.filter(h=>h.shares>0).length + ' positions');
+
+  // Allocation charts
+  renderRingAlloc();
+  renderLayerAlloc();
+}
+
+function autoSave(idx) {
+  const sEl = document.getElementById('sh_' + idx);
+  const pEl = document.getElementById('sp_' + idx);
+  const nEl = document.getElementById('sn_' + idx);
+  if (sEl) holdings[idx].shares    = parseFloat(sEl.value) || 0;
+  if (pEl) holdings[idx].avg_price = parseFloat(pEl.value) || 0;
+  if (nEl) holdings[idx].notes     = nEl.value || '';
+  localStorage.setItem('scout2_holdings', JSON.stringify(holdings));
+}
+
+function gainPct(h) {
+  if (!h.avg_price || !h.shares) return 0;
+  return 0; // no real-time price
+}
+
+function urgBadge(alert) {
+  if (!alert) return '';
+  const col = alert.urgency==='immediate'?'var(--red)':alert.urgency==='same_day'?'var(--yellow)':'var(--blue)';
+  const icon = alert.urgency==='immediate'?'🚨':alert.urgency==='same_day'?'⚡':'👁';
+  return `<span style="font-family:var(--mono);font-size:8px;color:${col}">${icon} ${(alert.event_type||[])[0]||''}</span>`;
+}
+
+function renderRingAlloc() {
+  const ringTotals = {1:0,2:0,3:0,4:0};
+  const total = holdings.reduce((s,h) => { ringTotals[h.ring||1] += h.shares*h.avg_price; return s + h.shares*h.avg_price; }, 0);
+  const RINGS = [{n:1,lbl:'Core (Ring 1)',col:'var(--ring1)'},{n:2,lbl:'Ring 2',col:'var(--ring2)'},{n:3,lbl:'Ring 3',col:'var(--ring3)'},{n:4,lbl:'Ring 4',col:'var(--ring4)'}];
+  document.getElementById('ringAlloc').innerHTML = RINGS.map(r => {
+    const pct = total > 0 ? Math.round(ringTotals[r.n]/total*100) : 0;
+    const warn = r.n===1 && pct < 50 ? '<div class="alloc-warn">⚠ Underweight core</div>' :
+                 r.n >= 3 && pct > 25 ? '<div class="alloc-warn">⚠ Overweight speculative</div>' : '';
+    return `<div class="alloc-card">
+      <div class="alloc-lbl"><span>${r.lbl}</span><span style="color:${r.col}">${pct}%</span></div>
+      <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${r.col}"></div></div>
+      ${warn}
+    </div>`;
+  }).join('');
+}
+
+function renderLayerAlloc() {
+  const layerTotals = {};
+  const total = holdings.reduce((s,h) => {
+    const v = h.shares*h.avg_price;
+    layerTotals[h.layer||'Other'] = (layerTotals[h.layer||'Other']||0) + v;
+    return s + v;
+  }, 0);
+  document.getElementById('layerAlloc').innerHTML = Object.entries(layerTotals)
+    .sort((a,b)=>b[1]-a[1])
+    .map(([layer,val]) => {
+      const pct = total > 0 ? Math.round(val/total*100) : 0;
+      return `<div class="alloc-card">
+        <div class="alloc-lbl"><span>${layer}</span><span>${pct}%</span></div>
+        <div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:var(--accent)"></div></div>
+      </div>`;
+    }).join('') || '<div class="empty">No holdings with value</div>';
+}
+
+function sortHoldings(by) { holdSort = by; renderPortfolio([]); }
+function toggleHoldingAlerts() {
+  holdAlertsOnly = !holdAlertsOnly;
+  document.getElementById('alertsOnlyBtn').classList.toggle('active', holdAlertsOnly);
+  renderPortfolio([]);
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  RINGS TAB
+// ═══════════════════════════════════════════════════════════════
+function renderRings(universe, scores) {
+  const sm = {};
+  scores.forEach(s => { sm[s.company] = s; if(s.ticker) sm[s.ticker]=s; });
+
+  const byRing = {1:[],2:[],3:[],4:[]};
+  universe.forEach(u => {
+    const r = u.ring || 1;
+    if (byRing[r]) byRing[r].push({...u, _score: sm[u.company]?.score || 5});
+  });
+
+  // Completion % = companies with score >= 6 / total per ring
+  const RING_LABELS = {1:'Core',2:'Ring 2',3:'Ring 3',4:'Ring 4'};
+  const RING_COLS   = {1:'var(--ring1)',2:'var(--ring2)',3:'var(--ring3)',4:'var(--ring4)'};
+
+  document.getElementById('ringCompletion').innerHTML = [1,2,3,4].map(r => {
+    const companies = byRing[r];
+    const active    = companies.filter(c => c._score >= 6).length;
+    const pct       = companies.length ? Math.round(active/companies.length*100) : 0;
+    return `<div class="comp-card">
+      <div class="comp-top">
+        <span class="comp-lbl" style="color:${RING_COLS[r]}">${RING_LABELS[r]}</span>
+        <span class="comp-pct" style="color:${RING_COLS[r]}">${pct}%</span>
+      </div>
+      <div class="comp-bar-wrap"><div class="comp-bar" style="width:${pct}%;background:${RING_COLS[r]}"></div></div>
+      <div class="comp-sub">${active} of ${companies.length} active signals</div>
+    </div>`;
+  }).join('');
+
+  // SVG ring map
+  renderRingSvg(byRing, RING_COLS);
+
+  // Ring groups list
+  document.getElementById('ringGroups').innerHTML = [1,2,3,4].map(r => {
+    const companies = byRing[r].sort((a,b) => b._score - a._score);
+    if (!companies.length) return '';
+    return `<div class="ring-group">
+      <div class="ring-group-hdr">
+        <div class="ring-dot" style="background:${RING_COLS[r]}"></div>
+        <span style="color:${RING_COLS[r]}">${RING_LABELS[r]}</span>
+        <span style="color:var(--dim);font-size:8px;font-weight:400">(${companies.length})</span>
+      </div>
+      <div class="ring-grid">
+        ${companies.map(c => {
+          const sCls = 's' + (c._score||5);
+          const ticker = c.ticker ? `<span class="ticker-badge">${esc(c.ticker)}</span>` : '';
+          const priRank = priorityMap[c.company] || priorityMap[c.ticker];
+          const priStr  = priRank ? `<span style="font-family:var(--mono);font-size:8px;color:var(--accent)">#${priRank}</span>` : '';
+          return `<div class="ring-co-card">
+            <div class="ring-dot" style="background:${RING_COLS[r]};width:5px;height:5px"></div>
+            <div class="ring-co-name">${esc(c.company)}</div>
+            ${ticker}${priStr}
+            <div class="ring-co-score ${sCls}">${c._score}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderRingSvg(byRing, RING_COLS) {
+  const svg    = document.getElementById('ringSvg');
+  const cx     = 200, cy = 200;
+  const radii  = {1:60, 2:110, 3:150, 4:185};
+  const labels = {1:'Core',2:'Ring 2',3:'Ring 3',4:'Ring 4'};
+  let html     = '';
+
+  // Draw rings
+  [4,3,2,1].forEach(r => {
+    html += `<circle cx="${cx}" cy="${cy}" r="${radii[r]}" fill="none"
+      stroke="${RING_COLS[r]}" stroke-width="1" stroke-dasharray="4 3" opacity=".3"/>`;
+    html += `<text x="${cx}" y="${cy - radii[r] + 10}" class="ring-label" fill="${RING_COLS[r]}">${labels[r]}</text>`;
+  });
+
+  // Draw company dots
+  [1,2,3,4].forEach(r => {
+    const companies = byRing[r];
+    const rad       = radii[r];
+    companies.forEach((c, i) => {
+      const angle = (i / Math.max(companies.length,1)) * 2 * Math.PI - Math.PI/2;
+      const x     = cx + rad * Math.cos(angle);
+      const y     = cy + rad * Math.sin(angle);
+      const score = c._score || 5;
+      const col   = score >= 8 ? 'var(--green)' : score >= 6 ? RING_COLS[r] : 'var(--dim)';
+      const size  = 2.5 + (score - 1) * 0.4;
+      html += `<circle class="ring-company-dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}"
+        r="${size.toFixed(1)}" fill="${col}" opacity=".85"
+        onmouseenter="showRingTip(event,'${esc(c.company)} (${c.ticker||'—'})\nScore: ${score}\n${(c.layers||[]).join(', ')}')"
+        onmouseleave="hideRingTip()"/>`;
+    });
+  });
+
+  // Center sun
+  html += `<circle cx="${cx}" cy="${cy}" r="18" fill="url(#sunGrad)" opacity=".9"/>`;
+  html += `<text x="${cx}" y="${cy+4}" class="ring-label" style="font-size:9px" fill="var(--bright)">SPACE</text>`;
+  html += `<defs><radialGradient id="sunGrad"><stop offset="0%" stop-color="#ffb800"/><stop offset="100%" stop-color="#ff6b00"/></radialGradient></defs>`;
+
+  svg.innerHTML = html;
+}
+
+function showRingTip(e, text) {
+  const tip = document.getElementById('ringTooltip');
+  tip.innerHTML = text.replace(/\n/g,'<br>');
+  tip.style.display = 'block';
+  const rect = e.target.closest('.ring-container').getBoundingClientRect();
+  tip.style.left = (e.clientX - rect.left + 10) + 'px';
+  tip.style.top  = (e.clientY - rect.top  + 10) + 'px';
+}
+function hideRingTip() { document.getElementById('ringTooltip').style.display='none'; }
+
+// ═══════════════════════════════════════════════════════════════
+//  INTELLIGENCE TAB
+// ═══════════════════════════════════════════════════════════════
+function renderIntelligence(trends, supply, recs) {
+  // Layer bars
+  const layers = trends.layer_mentions || [];
+  const maxL   = layers.length ? Math.max(...layers.map(l=>l.count)) : 1;
   document.getElementById('layerBars').innerHTML = layers.slice(0,12).map(l => {
-    const pct  = Math.round((l.count / maxCount) * 100);
-    const tCls = 'trend-' + (l.trend || 'stable');
+    const tCls = 'tr-' + (l.trend||'stable');
     return `<div class="layer-row">
       <span class="layer-name">${esc(l.layer)}</span>
-      <div class="layer-bar-wrap"><div class="layer-bar" style="width:${pct}%"></div></div>
-      <span class="layer-count">${l.count}</span>
-      <span class="layer-trend ${tCls}">${l.trend || ''}</span>
+      <div class="lbar-wrap"><div class="lbar" style="width:${Math.round(l.count/maxL*100)}%"></div></div>
+      <span class="layer-cnt">${l.count}</span>
+      <span class="layer-trend-badge ${tCls}">${l.trend||''}</span>
     </div>`;
   }).join('') || '<div class="empty">No trend data yet</div>';
 
-  document.getElementById('companyMentions').innerHTML = `<div class="layer-bars">` +
-    comps.slice(0,15).map(c => {
-      const tCls = 'trend-' + (c.trend || 'stable');
-      const ticker = c.ticker ? ` <span class="ticker-badge">${esc(c.ticker)}</span>` : '';
-      return `<div class="layer-row">
-        <span class="layer-name">${esc(c.company)}${ticker}</span>
-        <div class="layer-bar-wrap"><div class="layer-bar" style="width:${Math.round(c.count/((comps[0]?.count)||1)*100)}%;background:var(--purple)"></div></div>
-        <span class="layer-count">${c.count}</span>
-        <span class="layer-trend ${tCls}">${c.trend || ''}</span>
-      </div>`;
-    }).join('') + `</div>` || '<div class="empty">No mention data yet</div>';
-
-  document.getElementById('silentCompanies').innerHTML = silent.slice(0,12).map(s => {
-    const ticker = s.ticker ? ` (${s.ticker})` : '';
-    return `<span style="display:inline-block;background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:3px 8px;margin:3px;font-family:var(--mono);font-size:10px;color:var(--dim)">${esc(s.company)}${ticker}</span>`;
-  }).join('') || '<div class="empty">All tracked companies have recent signals</div>';
-}
-
-// ── RENDER UNIVERSE ──────────────────────────────────────────
-function renderUniverse(universe) {
-  set('cUniverse', universe.length + ' companies');
-  document.getElementById('universeGrid').innerHTML = universe.map(u => {
-    const stMap = {public:'status-pub',private:'status-private','IPO-watch':'status-ipo',watch:'status-watch',acquired:'status-acq'};
-    const stCls = stMap[u.status] || 'status-private';
-    const layers = (u.layers || []).map(l => `<span class="uni-layer">${esc(l.split('/')[0])}</span>`).join('');
-    const ticker = u.ticker ? `<span class="ticker-badge" style="font-size:8px">${esc(u.ticker)}</span>` : '';
-    const sigDot = u.signal_status === 'silent' ? '○' : '●';
-    const sigCol = u.signal_status === 'silent' ? 'var(--dim)' : 'var(--green)';
-    return `<div class="uni-card" onclick="openLink(event,'${esc(u.company)}')">
-      <div class="uni-name">${esc(u.company)}</div>
-      <div class="uni-meta">
-        <span class="${stCls}">${u.status || ''}</span>
-        ${ticker}
-        <span style="font-family:var(--mono);font-size:9px;color:${sigCol};margin-left:auto">${sigDot}</span>
-        <span style="font-family:var(--mono);font-size:9px;color:var(--dim)">R${u.ring || '?'}</span>
-      </div>
-      <div class="uni-layers">${layers}</div>
+  // Company mentions
+  const comps = trends.company_mentions || [];
+  const maxC  = comps.length ? Math.max(...comps.map(c=>c.count)) : 1;
+  document.getElementById('compMentions').innerHTML = comps.slice(0,15).map(c => {
+    const tCls = 'tr-' + (c.trend||'stable');
+    const ticker = c.ticker ? ` <span class="ticker-badge">${esc(c.ticker)}</span>` : '';
+    return `<div class="layer-row">
+      <span class="layer-name">${esc(c.company)}${ticker}</span>
+      <div class="lbar-wrap"><div class="lbar" style="width:${Math.round(c.count/maxC*100)}%;background:var(--purple)"></div></div>
+      <span class="layer-cnt">${c.count}</span>
+      <span class="layer-trend-badge ${tCls}">${c.trend||''}</span>
     </div>`;
-  }).join('') || '<div class="empty">No universe data</div>';
-}
+  }).join('') || '<div class="empty">No mention data yet</div>';
 
-// ── RENDER RECS ──────────────────────────────────────────────
-function renderRecs(recs) {
+  // Supply chain
+  document.getElementById('supplyGrid').innerHTML = supply.map(s => `
+    <div class="sc-card">
+      <div class="sc-core">${esc(s.core_company)}</div>
+      <div class="sc-row"><span class="sc-lbl">Suppliers</span><span class="sc-val">${(s.suppliers||[]).join(', ')||'—'}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Customers</span><span class="sc-val">${(s.customers||[]).slice(0,4).join(', ')||'—'}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Partners</span><span class="sc-val">${(s.partners||[]).slice(0,3).join(', ')||'—'}</span></div>
+      <div class="sc-row"><span class="sc-lbl">Layer</span><span class="sc-val">${esc(s.layer||'')}</span></div>
+    </div>`).join('') || '<div class="empty">No supply chain data</div>';
+
+  // Recommendations
   set('cRecs', recs.length);
   document.getElementById('recList').innerHTML = recs.map(r => {
-    const actCls = 'action-' + (r.action_type || 'watch').replace('_on_pullback','').replace('_','');
-    const urgCls = r.urgency === 'immediate' ? 'var(--red)' : r.urgency === 'same_day' ? 'var(--yellow)' : 'var(--dim)';
+    const actCls = 'act-' + (r.action_type||'watch').replace('_on_pullback','').replace('_','');
     const ticker = r.ticker ? `<span class="ticker-badge">${esc(r.ticker)}</span>` : '';
     return `<div class="rec-card" onclick="window.open('${esc(r.link||'')}','_blank')">
       <div class="rec-top">
-        <span class="rec-company">${esc(r.company)}</span>
-        ${ticker}
-        <span class="rec-action ${actCls}">${(r.action_type||'').replace('_',' ')}</span>
-        <span style="font-family:var(--mono);font-size:9px;color:${urgCls};margin-left:auto">${r.urgency||''}</span>
+        <span class="rec-co">${esc(r.company)}</span>${ticker}
+        <span class="act-badge ${actCls}">${(r.action_type||'').replace('_',' ')}</span>
+        <span style="font-family:var(--mono);font-size:8px;color:var(--dim);margin-left:auto">${r.urgency||''}</span>
       </div>
-      <div class="rec-rationale">${esc(r.rationale || '')}</div>
-      <div class="rec-risk">⚠ ${esc(r.risk_note || '')}</div>
-      <div class="rec-agent">Agent: ${esc(r.council_agent || '')}</div>
+      <div class="rec-rat">${esc(r.rationale||'')}</div>
+      <div class="rec-risk">⚠ ${esc(r.risk_note||'')}</div>
+      <div class="rec-agt">Agent: ${esc(r.council_agent||'')}</div>
     </div>`;
-  }).join('') || '<div class="empty">No recommendations in current window</div>';
+  }).join('') || '<div class="empty">No recommendations</div>';
 }
 
-// ── RENDER FEED ──────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+//  LIVE FEED
+// ═══════════════════════════════════════════════════════════════
 function renderFeed() {
   const query = document.getElementById('searchInput').value.toLowerCase();
+  const CAT_CLS = {'Space Industry':'cs','Defense/SDA':'cd','NASA/Gov':'cn','Satellite/Comms':'cc','Business/Markets':'cb','Aerospace/Suppliers':'ca','Tech/AI/Compute':'ct'};
+
   let filtered = allItems.filter(item => {
-    const matchCat   = catFilter === 'all' || item.category === catFilter;
-    const matchAlert = !alertsOnly || alertLinks.has(item.link);
+    const matchCat   = catFilter==='all' || item.category===catFilter;
+    const matchAlert = !feedAlerts || alertLinks.has(item.link);
     const matchSrch  = !query || (item.title||'').toLowerCase().includes(query) || (item.summary||'').toLowerCase().includes(query);
     return matchCat && matchAlert && matchSrch;
   });
+
   set('cFeed', filtered.length + ' items');
-  const catMap = {'Space Industry':'cat-space','Defense/SDA':'cat-defense','NASA/Gov':'cat-nasa','Satellite/Comms':'cat-sat','Business/Markets':'cat-biz','Aerospace/Suppliers':'cat-aero','Tech/AI/Compute':'cat-tech'};
   document.getElementById('feedList').innerHTML = filtered.map(item => {
-    const cc  = catMap[item.category] || 'cat-space';
-    const pip = alertLinks.has(item.link) ? '<span class="alert-pip">🚨</span>' : '';
-    const sum = item.summary ? `<div class="feed-summary">${esc(item.summary)}</div>` : '';
+    const cc  = CAT_CLS[item.category]||'cs';
+    const pip = alertLinks.has(item.link) ? '<span style="font-size:10px">🚨</span>' : '';
+    const sum = item.summary ? `<div class="fi-sum">${esc(item.summary)}</div>` : '';
     return `<div class="feed-item" onclick="window.open('${esc(item.link)}','_blank')">
-      <div class="feed-item-top">
+      <div class="fi-top">
         <span class="cat-badge ${cc}">${esc(item.category||'')}</span>
-        ${pip}
-        <span class="item-age">${item.age_hours ? item.age_hours + 'h' : ''}</span>
+        ${pip}<span class="fi-age">${item.age_hours||''}h</span>
       </div>
-      <div class="feed-title">${esc(item.title||'')}</div>
+      <div class="fi-title">${esc(item.title||'')}</div>
       ${sum}
-      <div class="feed-source"><a href="${esc(item.link)}" target="_blank" onclick="event.stopPropagation()">${esc(item.feed_label||'')}</a> · ${item.published_display||''}</div>
+      <div class="fi-src"><a href="${esc(item.link)}" target="_blank" onclick="event.stopPropagation()">${esc(item.feed_label||'')}</a> · ${item.published_display||''}</div>
     </div>`;
-  }).join('') || '<div class="empty">No items match current filters</div>';
+  }).join('') || '<div class="empty">No items match filters</div>';
 }
 
-// ── RENDER SUPPLY CHAIN ──────────────────────────────────────
-function renderSupply(supply) {
-  document.getElementById('supplyGrid').innerHTML = supply.map(s => {
-    const sups = (s.suppliers || []).join(', ') || '—';
-    const custs = (s.customers || []).slice(0,4).join(', ') || '—';
-    const parts = (s.partners || []).slice(0,3).join(', ') || '—';
-    const arts  = (s.related_articles || []).length;
-    return `<div class="sc-card">
-      <div class="sc-core">${esc(s.core_company)}</div>
-      <div class="sc-row"><span class="sc-lbl">Suppliers</span><span class="sc-vals">${esc(sups)}</span></div>
-      <div class="sc-row"><span class="sc-lbl">Customers</span><span class="sc-vals">${esc(custs)}</span></div>
-      <div class="sc-row"><span class="sc-lbl">Partners</span><span class="sc-vals">${esc(parts)}</span></div>
-      <div class="sc-row"><span class="sc-lbl">Layer</span><span class="sc-vals">${esc(s.layer||'')}</span></div>
-      <div class="sc-row"><span class="sc-lbl">Conf.</span><span class="sc-vals">${s.confidence || 0}/10 · ${arts} recent article${arts !== 1 ? 's' : ''}</span></div>
-    </div>`;
-  }).join('') || '<div class="empty">No supply chain data</div>';
-}
+// ═══════════════════════════════════════════════════════════════
+//  MISSION CONTROL TAB
+// ═══════════════════════════════════════════════════════════════
+function renderMission(priority, scores, universe, runs, watch) {
+  // Full priority signals
+  renderPriorityList('mcPriority', priority);
+  set('mcPriCount', priority.length + ' signals');
 
-// ── RENDER HISTORY ───────────────────────────────────────────
-function renderHistory(runs) {
-  set('cHistory', runs.length + ' runs');
-  const sorted = [...runs].reverse().slice(0, 30);
-  document.getElementById('historyTbody').innerHTML = sorted.map(r => {
-    const d   = new Date(r.run_timestamp_utc);
-    const ts  = d.toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-    const fCls = r.feeds_failed > 0 ? 'num-r' : 'num-g';
+  // Full scores table
+  set('mcScoreCount', scores.length + ' companies');
+  document.getElementById('mcScoresTbody').innerHTML = scores.slice(0,80).map(s => {
+    const sc   = s.score||5;
+    const dCls = s.score_change>0?'du':s.score_change<0?'dd':'df';
+    const dStr = s.score_change>0?'▲'+s.score_change:s.score_change<0?'▼'+Math.abs(s.score_change):'—';
+    const ticker = s.ticker ? `<span class="ticker-badge">${esc(s.ticker)}</span>` : '—';
+    const capCls = 'cap-'+(s.capital_priority||'low');
+    const actCls = 'act-'+(s.recommended_action||'watch').replace('_on_pullback','').replace('_','');
+    const ringCol = ['','var(--ring1)','var(--ring2)','var(--ring3)','var(--ring4)'][s.ring]||'var(--dim)';
+    const priRank = priorityMap[s.company]||priorityMap[s.ticker];
+    const sigDot  = s.signal_status==='silent'?'○':'●';
+    const sigCol  = s.signal_status==='silent'?'var(--dim)':'var(--green)';
+    return `<tr>
+      <td><span class="snum s${sc}">${sc}</span></td>
+      <td><span class="sdelta ${dCls}">${dStr}</span></td>
+      <td style="font-weight:600;color:var(--bright);font-size:11px">${esc(s.company)}</td>
+      <td>${ticker}</td>
+      <td><span style="font-family:var(--mono);font-size:9px;color:${ringCol}">R${s.ring||'?'}</span></td>
+      <td>${priRank?`<span style="font-family:var(--mono);font-size:9px;color:var(--accent)">#${priRank}</span>`:'—'}</td>
+      <td><span class="act-badge ${actCls}">${(s.recommended_action||'').replace('_',' ')}</span></td>
+      <td style="font-family:var(--mono);font-size:9px;color:var(--dim)">${s.status||''}</td>
+      <td style="font-family:var(--mono);font-size:9px;color:${sigCol}">${sigDot} ${s.signal_status||''}</td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="9" class="empty">No scores</td></tr>';
+
+  // Universe grid
+  set('mcUniCount', universe.length + ' companies');
+  const stMap = {public:'st-pub',private:'st-priv','IPO-watch':'st-ipo',watch:'st-wtch',acquired:'st-acq'};
+  document.getElementById('mcUniGrid').innerHTML = universe.map(u => {
+    const stCls = stMap[u.status]||'st-priv';
+    const ticker = u.ticker ? `<span class="ticker-badge" style="font-size:7px">${esc(u.ticker)}</span>` : '';
+    const sigDot = u.signal_status==='silent'?'○':'●';
+    const sigCol = u.signal_status==='silent'?'var(--dim)':'var(--green)';
+    const layers = (u.layers||[]).map(l=>`<span class="uni-layer">${esc(l.split('/')[0])}</span>`).join('');
+    return `<div class="uni-card">
+      <div class="uni-name">${esc(u.company)}</div>
+      <div class="uni-meta">
+        <span class="${stCls}">${u.status||''}</span>${ticker}
+        <span style="color:${sigCol};margin-left:auto">${sigDot}</span>
+        <span>R${u.ring||'?'}</span>
+      </div>
+      <div class="uni-layers">${layers}</div>
+    </div>`;
+  }).join('') || '<div class="empty">No universe</div>';
+
+  // History
+  const sorted = [...runs].reverse().slice(0,30);
+  set('mcHistCount', sorted.length + ' runs');
+  document.getElementById('mcHistTbody').innerHTML = sorted.map(r => {
+    const d  = new Date(r.run_timestamp_utc);
+    const ts = d.toLocaleString([],{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
     return `<tr>
       <td>${ts}</td>
-      <td>${r.items_live || 0}</td>
-      <td class="${r.alerts_count > 0 ? 'num-y' : ''}">${r.alerts_count || 0}</td>
-      <td class="${r.immediate_count > 0 ? 'num-r' : ''}">${r.immediate_count || 0}</td>
-      <td class="${r.same_day_count > 0 ? 'num-y' : ''}">${r.same_day_count || 0}</td>
-      <td>${r.watch_count || 0}</td>
-      <td style="color:var(--text)">${esc(r.top_score_mover || '—')}</td>
-      <td style="color:var(--text)">${esc(r.top_layer_mover || '—')}</td>
+      <td>${r.items_live||0}</td>
+      <td class="${r.alerts_count>0?'ny':''}">${r.alerts_count||0}</td>
+      <td class="${r.immediate_count>0?'nr':''}">${r.immediate_count||0}</td>
+      <td class="${r.same_day_count>0?'ny':''}">${r.same_day_count||0}</td>
+      <td>${r.watch_count||0}</td>
+      <td style="color:var(--text)">${esc(r.top_score_mover||'—')}</td>
+      <td style="color:var(--text)">${esc(r.top_layer_mover||'—')}</td>
     </tr>`;
-  }).join('') || '<tr><td colspan="8" class="empty">No history yet — runs will appear here after first execution</td></tr>';
+  }).join('') || '<tr><td colspan="8" class="empty">No history</td></tr>';
+
+  // Watch alerts
+  set('mcWatchCount', watch.length);
+  renderAlertGroup('mcWatch', watch, 'No watch alerts');
 }
 
-// ── RENDER MISSION CONTROL ───────────────────────────────────
-function renderMC(scores, alerts) {
-  const imm = (alerts.immediate || []).slice(0,5);
-  const topScores = scores.filter(s => s.score >= 7).slice(0,10);
-  document.getElementById('mcGrid').innerHTML = `
-    <div class="mc-card">
-      <div class="mc-title">Top Scored Companies</div>
-      ${topScores.map(s => `<div class="mc-entry">
-        <span class="mc-company">${esc(s.company)}</span>
-        <span style="font-family:var(--mono);font-size:10px;color:var(--green)">${s.score}/10</span>
-        <span style="font-family:var(--mono);font-size:9px;color:var(--dim);margin-left:auto">${s.signal_status||''}</span>
-      </div>`).join('') || '<div class="empty">No high-score companies</div>'}
-    </div>
-    <div class="mc-card">
-      <div class="mc-title">Immediate Alert Detail</div>
-      ${imm.map(a => `<div class="mc-entry">
-        <span class="mc-company">${esc((a.company||[])[0]||'?')}</span>
-        <span style="font-size:11px">${esc((a.headline||'').slice(0,60))}...</span>
-      </div>`).join('') || '<div class="empty">No immediate alerts</div>'}
-    </div>`;
-}
-
-// ── CONTROLS ─────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+//  CONTROLS
+// ═══════════════════════════════════════════════════════════════
 function setCat(cat, btn) {
   catFilter = cat;
-  document.querySelectorAll('.filter-btn:not(.alerts-only)').forEach(b => b.classList.remove('active'));
-  if (btn) btn.classList.add('active');
+  document.querySelectorAll('.filter-row .fbtn:not(.al-only)').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
   renderFeed();
 }
-
-function toggleAlertsOnly() {
-  alertsOnly = !alertsOnly;
-  document.getElementById('alertsOnlyBtn').classList.toggle('active', alertsOnly);
+function toggleFeedAlerts() {
+  feedAlerts = !feedAlerts;
+  document.getElementById('feedAlertsBtn').classList.toggle('active', feedAlerts);
   renderFeed();
 }
-
 function applySearch() { renderFeed(); }
 
-function toggleMC() {
-  const p = document.getElementById('mcPanel');
-  p.classList.toggle('open');
-}
-
-// ── SCHEDULE ─────────────────────────────────────────────────
+// ═══════════════════════════════════════════════════════════════
+//  REFRESH SCHEDULER
+// ═══════════════════════════════════════════════════════════════
 function scheduleRefresh() {
   clearTimeout(refreshTimer); clearInterval(countdownTimer);
-  nextRefreshAt = Date.now() + REFRESH;
-  refreshTimer  = setTimeout(loadAll, REFRESH);
+  nextRefreshAt  = Date.now() + REFRESH;
+  refreshTimer   = setTimeout(() => loadAll(true), REFRESH);
   countdownTimer = setInterval(() => {
     const s = Math.max(0, Math.round((nextRefreshAt - Date.now()) / 1000));
-    const m = Math.floor(s / 60), sec = s % 60;
-    set('countdown', `↻ ${m}:${sec.toString().padStart(2,'0')}`);
-    if (s === 0) clearInterval(countdownTimer);
+    set('countdown', `↻ ${Math.floor(s/60)}:${(s%60).toString().padStart(2,'0')}`);
+    if (!s) clearInterval(countdownTimer);
   }, 1000);
 }
 
-// ── HELPERS ──────────────────────────────────────────────────
-function set(id, val) { const el = document.getElementById(id); if (el) el.textContent = val; }
-function esc(s) { return (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function showErr(msg) { const el = document.getElementById('errBanner'); el.textContent = msg||''; el.style.display = msg ? 'block':'none'; }
-function openLink(e, company) { const q = encodeURIComponent(company + ' space'); window.open('https://finance.yahoo.com/quote/' + q,'_blank'); }
+// ═══════════════════════════════════════════════════════════════
+//  UTILS
+// ═══════════════════════════════════════════════════════════════
+function set(id, val) { const el=document.getElementById(id); if(el) el.textContent=val; }
+function esc(s) { return(s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function showErr(msg) { const el=document.getElementById('errBanner'); el.textContent=msg||''; el.style.display=msg?'block':'none'; el.style.background='rgba(255,51,85,.1)'; el.style.borderColor='rgba(255,51,85,.3)'; el.style.color='var(--red)'; }
 
-// ── INIT ─────────────────────────────────────────────────────
-loadAll();
+// ═══════════════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════════════
+loadAll(false);
 </script>
 </body>
 </html>
