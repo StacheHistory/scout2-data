@@ -1,656 +1,1224 @@
 {
   "meta": {
-    "system": "Scout-2 Phase 2 / Investing with SPACE",
-    "version": "1.1",
-    "run_timestamp_utc": "2026-05-10T19:08:32Z",
-    "total_alerts": 19,
-    "immediate_count": 1,
-    "same_day_count": 13,
-    "watch_count": 5
+    "system": "Scout-2 / Investing with SPACE",
+    "version": "4.0",
+    "run_timestamp_utc": "2026-05-10T22:12:54Z",
+    "total_alerts": 56,
+    "immediate_count": 28,
+    "same_day_count": 25,
+    "watch_count": 3,
+    "description": "High-signal items only: contracts, earnings, funding, IPO signals, defense awards, acquisitions. urgency: immediate=act now, same_day=review today, watch=monitor"
   },
   "immediate": [
     {
-      "urgency": "immediate",
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://payloadspace.com/?p=28114",
+      "feed_label": "Payload Space",
+      "category": "Space Industry",
+      "source_url": "https://payloadspace.com/feed/",
+      "title": "Rocket Lab To Acquire Motiv Space Systems",
+      "link": "https://payloadspace.com/rocket-lab-to-acquire-motiv-space-systems/",
+      "summary": "Rocket Lab will acquire space robotics company Motiv Space Systems. The acquisition, announced Thursday evening in conjunction with Rocket Lab’s Q1 earnings, will achieve two goals: Motiv is expected to be rebranded as Rocket Lab Robotics when the acquisition closes, which is scheduled for Q2. Other news: Rocket Lab announced a few other pieces of… The post Rocket Lab To Acquire Motiv Space Systems appeared first on Payload .",
+      "published_utc": "2026-05-08T12:19:15Z",
+      "published_display": "2026-05-08 12:19 UTC",
+      "age_hours": 57.9,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo",
+        "acquisition",
+        "defense_award"
+      ],
+      "alert_score": 12,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268562",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "Smaller AIM-9X Could Give Drone Wingmen More Firepower",
+      "link": "https://www.airandspaceforces.com/smaller-aim-9x-cca-more-firepower/",
+      "summary": "A combined Navy and Air Force program is seeking to build a smaller version of a ubiquitous air-to-air missile that could give advanced aircraft, such as the Collaborative Combat Aircraft, greater magazine depth in a high-end fight. The post Smaller AIM-9X Could Give Drone Wingmen More Firepower appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T23:49:38Z",
+      "published_display": "2026-05-08 23:49 UTC",
+      "age_hours": 46.4,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 9,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.nasa.gov/?p=994539",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "NASA’s SpaceX 34th Commercial Resupply Mission Overview",
+      "link": "https://www.nasa.gov/general/nasas-spacex-34th-commercial-resupply-mission-overview/",
+      "summary": "NASA and SpaceX are targetingamid-Maylaunchto deliver scientific investigations, supplies, and equipment to the International Space Station. Loadedwithabout 6,500pounds of supplies, the SpaceX Dragon spacecraftwill lift off aboardthe company’s Falcon 9 rocketfrom Launch Complex 40 at Cape Canaveral Space Force Station in Florida.Following its arrival to theorbital complex,Dragon will dock autonomously to the forward port of []",
+      "published_utc": "2026-05-08T22:50:03Z",
+      "published_display": "2026-05-08 22:50 UTC",
+      "age_hours": 47.4,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 9,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268543",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027",
+      "link": "https://www.airandspaceforces.com/missile-defense-agency-counter-hypersonic-test-2027/",
+      "summary": "The Missile Defense Agency plans to test its ability to track and take down a hypersonic missile, staging a test flight in fiscal 2027 called “Project Maverick.” The post Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027 appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T18:20:14Z",
+      "published_display": "2026-05-08 18:20 UTC",
+      "age_hours": 51.9,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 9,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.nasa.gov/?p=994033",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "NASA, Industry Advance High Performance Spaceflight Computing",
+      "link": "https://www.nasa.gov/directorates/stmd/nasa-industry-advance-high-performance-spaceflight-computing/",
+      "summary": "For decades, NASA has advanced on-board spacecraft computer processors that coordinate and execute the functions needed to support mission success. Space computing originated in the 1960s with the Apollo Guidance Computers, which were pivotal for guidance, navigation, and control computations during NASA’s first Moon missions. For decades, radiation-hardened processors have been the backbone of the []",
+      "published_utc": "2026-05-08T17:05:21Z",
+      "published_display": "2026-05-08 17:05 UTC",
+      "age_hours": 53.1,
+      "date_warning": null,
+      "alert_types": [
+        "contract",
+        "earnings",
+        "ipo"
+      ],
+      "alert_score": 9,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268465",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "Air Force to Field Cruise Missiles on Cargo Plane Pallets in 2027",
+      "link": "https://www.airandspaceforces.com/air-force-fielding-cruise-missiles-cargo-planes-pallets-2027/",
+      "summary": "A yearslong effort to find an affordable way to turn cargo planes into strike platforms is now an official program with anticipated fielding in 2027. The post Air Force to Field Cruise Missiles on Cargo Plane Pallets in 2027 appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T16:12:16Z",
+      "published_display": "2026-05-08 16:12 UTC",
+      "age_hours": 54.0,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 9,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://science.nasa.gov/photojournal/nasas-psyche-mission-captures-mars-during-gravity-assist-approach/",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "NASA’s Psyche Mission Captures Mars During Gravity Assist Approach",
+      "link": "https://science.nasa.gov/photojournal/nasas-psyche-mission-captures-mars-during-gravity-assist-approach/",
+      "summary": "Description This colorized image of Mars was captured by NASA’s Psyche mission on May 3, 2026, about 3 million miles (4.8 million kilometers) from the planet. The spacecraft is approaching the planet for a gravity assist on May 15 that will give it a boost in speed and adjust its trajectory toward asteroid Psyche for […]",
+      "published_utc": "2026-05-08T18:11:39Z",
+      "published_display": "2026-05-08 18:11 UTC",
+      "age_hours": 52.0,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "funding",
+        "ipo"
+      ],
+      "alert_score": 8,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "Hj37KQkKfvr4cu3wr3TD2J",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "Pentagon unveils trove of declassfied 'UFO' videos. How to see them all, from 'a football-shaped body' to 'a misshapen and uneven ball of white light'",
+      "link": "https://www.space.com/space-exploration/search-for-life/pentagon-unveils-trove-of-declassfied-ufo-videos-how-to-see-them-all-from-a-football-shaped-body-to-a-misshapen-and-uneven-ball-of-white-light",
+      "summary": "The Pentagon released a new tranche of UFO files on Friday (May 8). Among the documents are nearly 30 videos, which feature a range of intriguing objects.",
+      "published_utc": "2026-05-08T22:01:20Z",
+      "published_display": "2026-05-08 22:01 UTC",
+      "age_hours": 48.2,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "defense_award"
+      ],
       "alert_score": 6,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268556",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "After the B-52? Air Force to Study More Heavy Bomber Options",
+      "link": "https://www.airandspaceforces.com/after-the-b-52-air-force-to-study-more-heavy-bomber-options/",
+      "summary": "The Air Force is about to start considering alternatives for eventually replacing the B-52 Stratofortress, even as it prepares to upgrade the decades-old aircraft to a J-model featuring new engines, landing gear, avionics, and radar. The post After the B-52? Air Force to Study More Heavy Bomber Options appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T21:09:16Z",
+      "published_display": "2026-05-08 21:09 UTC",
+      "age_hours": 49.1,
+      "date_warning": null,
+      "alert_types": [
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593603",
+      "feed_label": "SpaceNews",
+      "category": "Space Industry",
+      "source_url": "https://spacenews.com/feed/",
+      "title": "Swift reboost mission completes environmental tests",
+      "link": "https://spacenews.com/swift-reboost-mission-completes-environmental-tests/",
+      "summary": "A spacecraft designed to raise the decaying orbit of a NASA astrophysics satellite has passed environmental tests ahead of a launch as soon as June.",
+      "published_utc": "2026-05-08T20:22:15Z",
+      "published_display": "2026-05-08 20:22 UTC",
+      "age_hours": 49.8,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.satellitetoday.com/?p=440017",
+      "feed_label": "Satellite Today",
+      "category": "Satellite/Comms",
+      "source_url": "https://www.satellitetoday.com/feed/",
+      "title": "Greek Government Taps Planet for New Satellite Data Deal",
+      "link": "https://www.satellitetoday.com/imagery-and-sensing/2026/05/08/greek-government-taps-planet-for-new-satellite-data-deal/",
+      "summary": "Planet Labs Germany has won a significant new contract with a major government in Europe. The Greek government has signed a 2-year, 7-figure agreement with Planet that will include numerous [] The post Greek Government Taps Planet for New Satellite Data Deal appeared first on Via Satellite .",
+      "published_utc": "2026-05-08T19:46:37Z",
+      "published_display": "2026-05-08 19:46 UTC",
+      "age_hours": 50.4,
+      "date_warning": null,
+      "alert_types": [
+        "contract",
+        "acquisition"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.defensenews.com/news/pentagon-congress/2026/05/08/hegseth-aims-to-cut-through-the-bureaucracy-with-deal-team-six/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "Hegseth aims to cut through the bureaucracy with ‘Deal Team Six’",
+      "link": "https://www.defensenews.com/news/pentagon-congress/2026/05/08/hegseth-aims-to-cut-through-the-bureaucracy-with-deal-team-six/",
+      "summary": "The Pentagon is utilizing a crew of private sector businessmen to renovate how the department negotiates with defense companies.",
+      "published_utc": "2026-05-08T19:17:59Z",
+      "published_display": "2026-05-08 19:17 UTC",
+      "age_hours": 50.9,
+      "date_warning": null,
+      "alert_types": [
+        "acquisition",
+        "defense_award"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.satellitetoday.com/?p=440013",
+      "feed_label": "Satellite Today",
+      "category": "Satellite/Comms",
+      "source_url": "https://www.satellitetoday.com/feed/",
+      "title": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
+      "summary": "Globalstar grew revenue 17% year-over-year in the first quarter of 2026, which Globalstar reported as the operator is now in a process to be acquired by Amazon. Globalstar provided a [] The post Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process appeared first on Via Satellite .",
+      "published_utc": "2026-05-08T19:07:30Z",
+      "published_display": "2026-05-08 19:07 UTC",
+      "age_hours": 51.1,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "acquisition"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.satellitetoday.com/?p=440011",
+      "feed_label": "Satellite Today",
+      "category": "Satellite/Comms",
+      "source_url": "https://www.satellitetoday.com/feed/",
+      "title": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
+      "summary": "Rocket Lab hit record quarterly revenue in the first quarter of 2026 and shared momentum for the upcoming Neutron launch vehicle as well as a robotics acquisition and work on [] The post Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition appeared first on Via Satellite .",
+      "published_utc": "2026-05-08T19:04:34Z",
+      "published_display": "2026-05-08 19:04 UTC",
+      "age_hours": 51.1,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "acquisition"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://breakingdefense.com/?p=83548",
+      "feed_label": "Breaking Defense",
+      "category": "Defense/SDA",
+      "source_url": "https://breakingdefense.com/feed/",
+      "title": "Turkish air force contracts its first batch of indigenous KAAN jets",
+      "link": "https://breakingdefense.com/2026/05/turkish-air-force-contracts-its-first-batch-of-indigenous-kaan-jets/",
+      "summary": "“The initial sale was made for the first batch of 20 Block 10 aircraft. This is the first order. Over time, we expect the numbers to increase,” Turkish Aerospace CEO Mehmet Demiroglu told Breaking Defense.",
+      "published_utc": "2026-05-08T16:34:53Z",
+      "published_display": "2026-05-08 16:34 UTC",
+      "age_hours": 53.6,
+      "date_warning": null,
+      "alert_types": [
+        "contract",
+        "ipo"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "T4vsFskk6hGNPXbaiUMbT7",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "Blue Origin tests 1st moon lander ahead of lunar launch later this year (photo)",
+      "link": "https://www.space.com/space-exploration/artemis/blue-origin-tests-1st-moon-lander-ahead-of-lunar-launch-later-this-year-photo",
+      "summary": "Blue Origin continues putting its first lunar lander through its paces, testing the spacecraft at NASA centers across the nation to prepare it for its upcoming mission to the moon.",
+      "published_utc": "2026-05-08T16:00:00Z",
+      "published_display": "2026-05-08 16:00 UTC",
+      "age_hours": 54.2,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268419",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "What Does It Take to Ace the New Air Force Fitness Test?",
+      "link": "https://www.airandspaceforces.com/new-air-force-fitness-test-sneak-peek/",
+      "summary": "Eleven members of the Air Force Honor Guard recently practiced taking the service's new fitness test. Here's what they have to share about the two-mile run, the HAMR, and more. The post What Does It Take to Ace the New Air Force Fitness Test? appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T15:46:01Z",
+      "published_display": "2026-05-08 15:46 UTC",
+      "age_hours": 54.4,
+      "date_warning": null,
+      "alert_types": [
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593494",
+      "feed_label": "SpaceNews",
+      "category": "Space Industry",
+      "source_url": "https://spacenews.com/feed/",
+      "title": "Rocket Lab announces large launch contract and plans to acquire space robotics company",
+      "link": "https://spacenews.com/rocket-lab-announces-large-launch-contract-and-plans-to-acquire-space-robotics-company/",
+      "summary": "Rocket Lab announced May 7 the largest launch contract in the company’s history as it also moves to acquire a space robotics company.",
+      "published_utc": "2026-05-08T11:40:09Z",
+      "published_display": "2026-05-08 11:40 UTC",
+      "age_hours": 58.5,
+      "date_warning": null,
+      "alert_types": [
+        "contract",
+        "ipo"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.airandspaceforces.com/?p=268485",
+      "feed_label": "Air & Space Forces",
+      "category": "Defense/SDA",
+      "source_url": "https://www.airandspaceforces.com/feed/",
+      "title": "US Strikes Iran in Response to Attacks as Ceasefire Tested",
+      "link": "https://www.airandspaceforces.com/us-strikes-iran-response-attacks-ceasefire-tested/",
+      "summary": "The U.S. military conducted strikes on Iranian targets around the Strait of Hormuz on May 7, as the conflict with Iran flared up again—though officials say the ceasefire remains in effect. The post US Strikes Iran in Response to Attacks as Ceasefire Tested appeared first on Air & Space Forces Magazine .",
+      "published_utc": "2026-05-08T00:12:57Z",
+      "published_display": "2026-05-08 00:12 UTC",
+      "age_hours": 70.0,
+      "date_warning": null,
+      "alert_types": [
+        "ipo",
+        "defense_award"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.defensenews.com/news/your-navy/2026/05/07/us-and-iran-exchange-fire-as-trump-says-war-will-be-over-quickly/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "US and Iran exchange fire as Trump says war will ‘be over quickly’",
+      "link": "https://www.defensenews.com/news/your-navy/2026/05/07/us-and-iran-exchange-fire-as-trump-says-war-will-be-over-quickly/",
+      "summary": "U.S. forces launched retaliatory strikes against Iranian military facilities Thursday after Iran fired missiles and drones at three U.S. Navy vessels.",
+      "published_utc": "2026-05-07T23:49:00Z",
+      "published_display": "2026-05-07 23:49 UTC",
+      "age_hours": 70.4,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "defense_award"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "exclusive-cerebras-raise-ipo-price-213927145.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Exclusive-Cerebras to raise IPO price range to $150-$160 as demand surges, sources say​​​​​​​​​​​​​​​​",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/exclusive-cerebras-raise-ipo-price-213927145.html",
+      "summary": "",
+      "published_utc": "2026-05-10T21:39:27Z",
+      "published_display": "2026-05-10 21:39 UTC",
+      "age_hours": 0.6,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "?src=A00220&yptr=yahoo",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Dow Jones Futures: Trump Says Iran Response To U.S. Offer 'Totally Unacceptable'; Apple, Nvidia, Boeing In Buy Areas",
+      "link": "https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-iran-trump-xi-summit-apple-nvidia-boeing/?src=A00220&yptr=yahoo",
+      "summary": "",
+      "published_utc": "2026-05-10T21:38:15Z",
+      "published_display": "2026-05-10 21:38 UTC",
+      "age_hours": 0.6,
+      "date_warning": null,
+      "alert_types": [
+        "contract"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "hni-q1-earnings-call-highlights-210414296.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "HNI Q1 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/hni-q1-earnings-call-highlights-210414296.html",
+      "summary": "",
+      "published_utc": "2026-05-10T21:04:14Z",
+      "published_display": "2026-05-10 21:04 UTC",
+      "age_hours": 1.1,
+      "date_warning": null,
+      "alert_types": [
         "earnings"
       ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 5,
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "hinge-health-q1-earnings-call-210414439.html",
       "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
       "source_url": "https://finance.yahoo.com/news/rssindex",
-      "company": [
-        "Planet Labs"
-      ],
-      "ticker": "PL",
-      "layer": [
-        "General"
-      ],
-      "ring": 1,
-      "headline": "Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/know-paypal-holdings-pypl-q1-155238714.html",
+      "title": "Hinge Health Q1 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/hinge-health-q1-earnings-call-210414439.html",
       "summary": "",
-      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs",
-      "recommended_action": "Review guidance and revenue trend before next position decision",
-      "recommended_agent": "Capital Markets Agent",
-      "published_utc": "2026-05-10T15:52:38Z",
+      "published_utc": "2026-05-10T21:04:14Z",
+      "published_display": "2026-05-10 21:04 UTC",
       "age_hours": 1.1,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "horace-mann-educators-q1-earnings-210413732.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Horace Mann Educators Q1 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/horace-mann-educators-q1-earnings-210413732.html",
+      "summary": "",
+      "published_utc": "2026-05-10T21:04:13Z",
+      "published_display": "2026-05-10 21:04 UTC",
+      "age_hours": 1.1,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "holley-q1-earnings-call-highlights-210413342.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Holley Q1 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/holley-q1-earnings-call-highlights-210413342.html",
+      "summary": "",
+      "published_utc": "2026-05-10T21:04:13Z",
+      "published_display": "2026-05-10 21:04 UTC",
+      "age_hours": 1.1,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "houlihan-lokey-q4-earnings-call-210413437.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Houlihan Lokey Q4 Earnings Call Highlights",
+      "link": "https://finance.yahoo.com/news/houlihan-lokey-q4-earnings-call-210413437.html",
+      "summary": "",
+      "published_utc": "2026-05-10T21:04:13Z",
+      "published_display": "2026-05-10 21:04 UTC",
+      "age_hours": 1.1,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://theaviationist.com/?p=104484",
+      "feed_label": "The Aviationist",
+      "category": "Aerospace/Suppliers",
+      "source_url": "https://theaviationist.com/feed",
+      "title": "U.S. Air Force Plans to Deploy Cruise Missiles from Cargo Aircraft by 2027",
+      "link": "https://theaviationist.com/2026/05/10/usaf-to-dragon-cart-by-2027/",
+      "summary": "The Rapid Dragon program, now called Dragon Cart, transitioned to a Program of Record and will see cargo aircraft able to deploy palletized cruise missiles by 2027. The U.S. Air Force’s Rapid Dragon program is now an official Program of Record (PoR), the Air Force Life Cycle Management Center (AFLCMC) announced on Apr. 30, 2026. []",
+      "published_utc": "2026-05-10T19:44:28Z",
+      "published_display": "2026-05-10 19:44 UTC",
+      "age_hours": 2.5,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
     }
   ],
   "same_day": [
     {
-      "urgency": "same_day",
-      "alert_score": 8,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "earnings",
-        "defense_award"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Satellite Today",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "company": [
-        "Rocket Lab"
-      ],
-      "ticker": "RKLB",
-      "layer": [
-        "Launch",
-        "Infrastructure"
-      ],
-      "ring": 1,
-      "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
-      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
-      "summary": "Rocket Lab hit record quarterly revenue in the first quarter of 2026 and shared momentum for the upcoming Neutron launch vehicle as well as a robotics acquisition and work on [] The post Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition appeared first on Via Satellite .",
-      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Rocket Lab",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-08T19:04:34Z",
-      "age_hours": 45.9,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 7,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract",
-        "ipo"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Payload Space",
-      "source_url": "https://payloadspace.com/feed/",
-      "company": [
-        "Boeing",
-        "HawkEye 360",
-        "SES"
-      ],
-      "ticker": "BA",
-      "layer": [
-        "General"
-      ],
-      "ring": 1,
-      "headline": "HawkEye 360 Raises $416M in IPO",
-      "link": "https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/",
-      "summary": "The VA-based company priced its 16M shares at $26 per share—at the top of the $24-$26 range shared in the company’s S-1 filing on May 1. The post HawkEye 360 Raises $416M in IPO appeared first on Payload .",
-      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: Boeing, HawkEye 360, SES",
-      "recommended_action": "Review S-1 filing and valuation before IPO date",
-      "recommended_agent": "Capital Markets Agent",
-      "published_utc": "2026-05-08T11:54:44Z",
-      "age_hours": 53.1,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 7,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract",
-        "ipo"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Satellite Today",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "company": [
-        "HawkEye 360",
-        "SES",
-        "MP Materials"
-      ],
-      "ticker": "HE360",
-      "layer": [
-        "Infrastructure",
-        "Defense/SDA"
-      ],
-      "ring": 1,
-      "headline": "HawkEye 360 Raises $416M, Pricing at High End for IPO",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/",
-      "summary": "HawkEye 360 raised $416 million in its initial public offering (IPO) on Thursday, becoming the second space company to go public this year. The signals intelligence company began trading on [] The post HawkEye 360 Raises $416M, Pricing at High End for IPO appeared first on Via Satellite .",
-      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: HawkEye 360, SES, MP Materials",
-      "recommended_action": "Review S-1 filing and valuation before IPO date",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-07T20:03:15Z",
-      "age_hours": 68.9,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 6,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract",
-        "funding"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Payload Space",
-      "source_url": "https://payloadspace.com/feed/",
-      "company": [
-        "SES",
-        "Lunar Outpost",
-        "NASA"
-      ],
-      "ticker": "SGBAF",
-      "layer": [
-        "Lunar/Deep Space",
-        "NASA/Gov"
-      ],
-      "ring": 1,
-      "headline": "Lunar Outpost Closes $30M Series B, Unveils New Rover",
-      "link": "https://payloadspace.com/lunar-outpost-closes-30m-series-b-unveils-new-rover/",
-      "summary": "The fundraise highlights the huge demand from investors looking to capitalize on NASA’s new vision for the US presence on the Moon. The post Lunar Outpost Closes $30M Series B, Unveils New Rover appeared first on Payload .",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: SES, Lunar Outpost, NASA",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Private Markets Agent",
-      "published_utc": "2026-05-08T12:31:11Z",
-      "age_hours": 52.5,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 6,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract",
-        "funding"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593730",
       "feed_label": "SpaceNews",
+      "category": "Space Industry",
       "source_url": "https://spacenews.com/feed/",
-      "company": [
-        "SES",
-        "MP Materials",
-        "Lunar Outpost"
-      ],
-      "ticker": "SGBAF",
-      "layer": [
-        "Lunar/Deep Space",
-        "NASA/Gov"
-      ],
-      "ring": 1,
-      "headline": "Lunar Outpost raises $30 million",
-      "link": "https://spacenews.com/lunar-outpost-raises-30-million/",
-      "summary": "Lunar Outpost, a developer of lunar rovers, has raised $30 million as it works to revamp designs to meet NASA’s revised Artemis architecture.",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: SES, MP Materials, Lunar Outpost",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Private Markets Agent",
-      "published_utc": "2026-05-08T01:43:07Z",
-      "age_hours": 63.3,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 6,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract",
-        "funding"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Satellite Today",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "company": [
-        "Skyroot Aerospace",
-        "MP Materials"
-      ],
-      "ticker": "MP",
-      "layer": [
-        "Launch",
-        "Infrastructure"
-      ],
-      "ring": 1,
-      "headline": "Skyroot Secures $60M in Funding, Becoming India’s First Space ‘Unicorn’",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/skyroot-secures-60m-in-funding-becoming-indias-first-space-unicorn/",
-      "summary": "Skyroot Aerospace, the Indian launch startup, has secured another $60 million in funding. The company is one of the rising stars in India’s space economy and becomes the nations first [] The post Skyroot Secures $60M in Funding, Becoming Indias First Space Unicorn appeared first on Via Satellite .",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: Skyroot Aerospace, MP Materials",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Private Markets Agent",
-      "published_utc": "2026-05-07T20:59:29Z",
-      "age_hours": 68.0,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 5,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "contract"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "SpaceNews",
-      "source_url": "https://spacenews.com/feed/",
-      "company": [
-        "Boeing",
-        "Viasat"
-      ],
-      "ticker": "BA",
-      "layer": [
-        "Infrastructure"
-      ],
-      "ring": 1,
-      "headline": "Viasat wins $307 million Marine Corps satellite communications contract",
+      "title": "Viasat wins $307 million Marine Corps satellite communications contract",
       "link": "https://spacenews.com/viasat-wins-307-million-marine-corps-satellite-communications-contract/",
       "summary": "Five-year MECS2 award covers multi-orbit, multi-band commercial satellite services worldwide",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: Boeing, Viasat",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "General Scout Agent",
       "published_utc": "2026-05-09T15:34:25Z",
-      "age_hours": 25.4,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
+      "published_display": "2026-05-09 15:34 UTC",
+      "age_hours": 30.6,
+      "date_warning": null,
+      "alert_types": [
+        "contract",
+        "funding"
+      ],
       "alert_score": 5,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "acquisition"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Satellite Today",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "company": [
-        "Boeing",
-        "Globalstar"
-      ],
-      "ticker": "BA",
-      "layer": [
-        "Infrastructure",
-        "Communications"
-      ],
-      "ring": 1,
-      "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
-      "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
-      "summary": "Globalstar grew revenue 17% year-over-year in the first quarter of 2026, which Globalstar reported as the operator is now in a process to be acquired by Amazon. Globalstar provided a [] The post Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process appeared first on Via Satellite .",
-      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Boeing, Globalstar",
-      "recommended_action": "Assess impact on supply chain and competing positions",
-      "recommended_agent": "M&A Monitoring Agent",
-      "published_utc": "2026-05-08T19:07:30Z",
-      "age_hours": 45.9,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "urgency": "same_day"
     },
     {
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "acquisition"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 5,
-      "feed_label": "Data Center Dynamics",
-      "source_url": "https://www.datacenterdynamics.com/en/rss/",
-      "company": [
-        "IREN",
-        "MP Materials"
-      ],
-      "ticker": "IREN",
-      "layer": [
-        "Infrastructure",
-        "AI/Compute"
-      ],
-      "ring": 1,
-      "headline": "Iren acquires Spanish data center developer Nostrum",
-      "link": "https://www.datacenterdynamics.com/en/news/iren-acquires-spanish-data-center-developer-nostrum/",
-      "summary": "Busy week for the former crypto company",
-      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: IREN, MP Materials",
-      "recommended_action": "Assess impact on supply chain and competing positions",
-      "recommended_agent": "M&A Monitoring Agent",
-      "published_utc": "2026-05-08T16:44:00Z",
-      "age_hours": 48.3,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "acquisition"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://payloadspace.com/?p=28112",
       "feed_label": "Payload Space",
+      "category": "Space Industry",
       "source_url": "https://payloadspace.com/feed/",
-      "company": [
-        "Rocket Lab",
-        "SES",
-        "MP Materials"
+      "title": "HawkEye 360 Raises $416M in IPO",
+      "link": "https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/",
+      "summary": "The VA-based company priced its 16M shares at $26 per share—at the top of the $24-$26 range shared in the company’s S-1 filing on May 1. The post HawkEye 360 Raises $416M in IPO appeared first on Payload .",
+      "published_utc": "2026-05-08T11:54:44Z",
+      "published_display": "2026-05-08 11:54 UTC",
+      "age_hours": 58.3,
+      "date_warning": null,
+      "alert_types": [
+        "funding",
+        "ipo"
       ],
-      "ticker": "RKLB",
-      "layer": [
-        "Launch",
-        "Defense/SDA"
-      ],
-      "ring": 1,
-      "headline": "Rocket Lab To Acquire Motiv Space Systems",
-      "link": "https://payloadspace.com/rocket-lab-to-acquire-motiv-space-systems/",
-      "summary": "Rocket Lab will acquire space robotics company Motiv Space Systems. The acquisition, announced Thursday evening in conjunction with Rocket Lab’s Q1 earnings, will achieve two goals: Motiv is expected to be rebranded as Rocket Lab Robotics when the acquisition closes, which is scheduled for Q2. Other news: Rocket Lab announced a few other pieces of… The post Rocket Lab To Acquire Motiv Space System",
-      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Rocket Lab, SES, MP Materials",
-      "recommended_action": "Assess impact on supply chain and competing positions",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-08T12:19:15Z",
-      "age_hours": 52.7,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "alert_score": 5,
+      "urgency": "same_day"
     },
     {
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "acquisition"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593883",
       "feed_label": "SpaceNews",
+      "category": "Space Industry",
       "source_url": "https://spacenews.com/feed/",
-      "company": [
-        "Rocket Lab",
-        "Planet Labs",
-        "MP Materials"
-      ],
-      "ticker": "RKLB",
-      "layer": [
-        "Launch"
-      ],
-      "ring": 1,
-      "headline": "Rocket Lab announces large launch contract and plans to acquire space robotics company",
-      "link": "https://spacenews.com/rocket-lab-announces-large-launch-contract-and-plans-to-acquire-space-robotics-company/",
-      "summary": "Rocket Lab announced May 7 the largest launch contract in the company’s history as it also moves to acquire a space robotics company.",
-      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Rocket Lab, Planet Labs, MP Materials",
-      "recommended_action": "Assess impact on supply chain and competing positions",
-      "recommended_agent": "M&A Monitoring Agent",
-      "published_utc": "2026-05-08T11:40:09Z",
-      "age_hours": 53.3,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
-        "defense_award"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "SpaceNews",
-      "source_url": "https://spacenews.com/feed/",
-      "company": [
-        "Rocket Lab",
-        "MP Materials"
-      ],
-      "ticker": "RKLB",
-      "layer": [
-        "Launch",
-        "Defense/SDA"
-      ],
-      "ring": 1,
-      "headline": "Rocket Lab joins Raytheon on space interceptor program for Golden Dome",
-      "link": "https://spacenews.com/rocket-lab-joins-raytheon-on-space-interceptor-program-for-golden-dome/",
-      "summary": "The company also announced a new contract to fly hypersonic test flights for Anduril",
-      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Directly involves tracked universe companies: Rocket Lab, MP Materials",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-07T22:00:18Z",
-      "age_hours": 67.0,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "same_day",
-      "alert_score": 4,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": true,
-      "event_type": [
+      "title": "ESA and JAXA finalize agreement on Apophis asteroid mission",
+      "link": "https://spacenews.com/esa-and-jaxa-finalize-agreement-on-apophis-asteroid-mission/",
+      "summary": "ESA and JAXA have finalized an agreement to collaborate on a mission to study the asteroid Apophis during its close flyby of Earth in 2029.",
+      "published_utc": "2026-05-10T15:55:52Z",
+      "published_display": "2026-05-10 15:55 UTC",
+      "age_hours": 6.3,
+      "date_warning": null,
+      "alert_types": [
         "earnings"
       ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Satellite Today",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "company": [
-        "Boeing",
-        "MDA Space",
-        "Globalstar"
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593795",
+      "feed_label": "SpaceNews",
+      "category": "Space Industry",
+      "source_url": "https://spacenews.com/feed/",
+      "title": "MDA Space continues work on Gateway robotic arm",
+      "link": "https://spacenews.com/mda-space-continues-work-on-gateway-robotic-arm/",
+      "summary": "MDA Space is continuing work on a robotic arm for the lunar Gateway while it discusses the future of the project with the Canadian Space Agency.",
+      "published_utc": "2026-05-09T23:35:03Z",
+      "published_display": "2026-05-09 23:35 UTC",
+      "age_hours": 22.6,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
       ],
-      "ticker": "BA",
-      "layer": [
-        "Infrastructure",
-        "Communications"
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://theaviationist.com/?p=104472",
+      "feed_label": "The Aviationist",
+      "category": "Aerospace/Suppliers",
+      "source_url": "https://theaviationist.com/feed",
+      "title": "U.S. F-16 Sports AGM-88 HARM Kill Marking in New Photo",
+      "link": "https://theaviationist.com/2026/05/10/us-f16-harm-kill-mark/",
+      "summary": "A small silhouette of a High-speed Anti-Radiation Missile can be seen painted below the cockpit in this new photo released by CENTCOM, indicating that the jet was likely responsible for destroying an Iranian air defence site. The small but clear marking almost certainly denotes a direct hit against an Iranian air defence radar site or []",
+      "published_utc": "2026-05-09T23:24:18Z",
+      "published_display": "2026-05-09 23:24 UTC",
+      "age_hours": 22.8,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
       ],
-      "ring": 1,
-      "headline": "MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says ‘No Change’ Due to Globalstar Deal",
-      "link": "https://www.satellitetoday.com/finance/2026/05/07/mda-space-satellite-revenue-grows-40-in-q1-greenley-says-no-change-due-to-globalstar-deal/",
-      "summary": "MDA Space posted 32% year-over-year revenue growth in the first quarter of 2026 and more than 40% growth for its satellite manufacturing business, driven by work for Telesat Lightspeed and [] The post MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says No Change Due to Globalstar Deal appeared first on Via Satellite .",
-      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Boeing, MDA Space, Globalstar",
-      "recommended_action": "Review guidance and revenue trend before next position decision",
-      "recommended_agent": "Capital Markets Agent",
-      "published_utc": "2026-05-07T19:51:57Z",
-      "age_hours": 69.1,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "xeowHk8hrdtfGGE5Ni5xAo",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "This Week In Space podcast: Episode 209 — Astronauts for America",
+      "link": "https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-209-astronauts-for-america",
+      "summary": "On Episode 209 of This Week In Space, Rod Pyle and Tariq Malik talk with Garrett Reisman and Steve Lindsey, the leaders of the new organization Astronauts for America.",
+      "published_utc": "2026-05-09T14:47:29Z",
+      "published_display": "2026-05-09 14:47 UTC",
+      "age_hours": 31.4,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "m7xXfLHPDgpdLAXL7ZL6Yh",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "NASA's twin Voyager spacecraft are very low on power after nearly 50 years. How long can they keep going?",
+      "link": "https://www.space.com/space-exploration/how-long-can-the-voyager-probes-keep-exploring-interstellar-space-nasa-gearing-up-for-big-bang-maneuver-to-boost-dwindling-power-levels",
+      "summary": "Voyager, the iconic twin spacecraft that NASA launched in 1977, are still flying in interstellar space. But their power is dwindling, and it's unclear how much longer they can last.",
+      "published_utc": "2026-05-09T13:00:00Z",
+      "published_display": "2026-05-09 13:00 UTC",
+      "age_hours": 33.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "o5oRWuKzbN8CPBFZHMMRTE",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "How you'd really die in space: What sci-fi gets right (and wrong) about extra-terrestrial expirations",
+      "link": "https://www.space.com/entertainment/space-movies-shows/how-youd-really-die-in-space-what-sci-fi-gets-right-and-wrong-about-extra-terrestrial-expirations",
+      "summary": "What sci-fi gets right (and mostly wrong) about all the ways that space wants to kill you.",
+      "published_utc": "2026-05-08T18:00:00Z",
+      "published_display": "2026-05-08 18:00 UTC",
+      "age_hours": 52.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/iren-acquires-spanish-data-center-developer-nostrum/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "Iren acquires Spanish data center developer Nostrum",
+      "link": "https://www.datacenterdynamics.com/en/news/iren-acquires-spanish-data-center-developer-nostrum/",
+      "summary": "Busy week for the former crypto company",
+      "published_utc": "2026-05-08T16:44:00Z",
+      "published_display": "2026-05-08 16:44 UTC",
+      "age_hours": 53.5,
+      "date_warning": null,
+      "alert_types": [
+        "acquisition"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.defensenews.com/news/your-navy/2026/05/08/us-forces-disable-iranian-flagged-tankers-trying-to-cross-blockade/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "US forces disable Iranian-flagged tankers trying to cross blockade",
+      "link": "https://www.defensenews.com/news/your-navy/2026/05/08/us-forces-disable-iranian-flagged-tankers-trying-to-cross-blockade/",
+      "summary": "This week, U.S. forces around the Strait of Hormuz have launched strikes against Iranian military facilities and disabled missiles launched by the IRGC.",
+      "published_utc": "2026-05-08T16:28:20Z",
+      "published_display": "2026-05-08 16:28 UTC",
+      "age_hours": 53.7,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/stockland-files-to-develop-250mw-data-center-campus-in-melbourne-australia/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "Stockland files to develop 250MW data center campus in Melbourne, Australia",
+      "link": "https://www.datacenterdynamics.com/en/news/stockland-files-to-develop-250mw-data-center-campus-in-melbourne-australia/",
+      "summary": "Aussie real estate firm targeting several sites across Melbourne",
+      "published_utc": "2026-05-08T15:34:56Z",
+      "published_display": "2026-05-08 15:34 UTC",
+      "age_hours": 54.6,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.nasa.gov/?post_type=image-article&p=993906",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "Glowing Views from the Space Station",
+      "link": "https://www.nasa.gov/image-article/glowing-views-from-the-space-station/",
+      "summary": "NASA astronaut Chris Williams captured the Milky Way rising above Earths atmospheric glow on April 13, 2026, while aboard a SpaceX Dragon docked to the International Space Station. This atmospheric glow is also called airglow. It occurs when atoms and molecules in the upper atmosphere, excited by sunlight, emit light to shed their excess energy. []",
+      "published_utc": "2026-05-08T15:21:17Z",
+      "published_display": "2026-05-08 15:21 UTC",
+      "age_hours": 54.9,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "jdXjXqwDLfjU2etX42LjjF",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "The charred hull of Artemis 2's Orion | Space photo of the day for May 8, 2026",
+      "link": "https://www.space.com/space-exploration/human-spaceflight/the-charred-hull-of-artemis-2s-orion-space-photo-of-the-day-for-may-8-2026",
+      "summary": "NASA's Artemis 2 Orion spacecraft rests after its flight around the moon, charred from the return to Earth.",
+      "published_utc": "2026-05-08T15:00:00Z",
+      "published_display": "2026-05-08 15:00 UTC",
+      "age_hours": 55.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.nasa.gov/?post_type=press-release&p=994155",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "NASA Names Brian Hughes to Launch Operations Role",
+      "link": "https://www.nasa.gov/news-release/nasa-names-brian-hughes-to-launch-operations-role/",
+      "summary": "NASA announced Friday that Brian Hughes will return to the agency as senior director of launch operations, based at the agency’s Kennedy Space Center in Florida. In this role, Hughes will provide enterprise-level leadership, strategic direction, and operational oversight for NASA’s launch infrastructure. Reporting to NASA Headquarters in Washington, Hughes will have direct responsibility for []",
+      "published_utc": "2026-05-08T14:00:15Z",
+      "published_display": "2026-05-08 14:00 UTC",
+      "age_hours": 56.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/amazon-data-services-buys-1300-acres-of-land-outside-austin-texas/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "Amazon Data Services buys 1,300 acres of land outside Austin, Texas",
+      "link": "https://www.datacenterdynamics.com/en/news/amazon-data-services-buys-1300-acres-of-land-outside-austin-texas/",
+      "summary": "Company hasn't detailed plans for site acquired through data center unit",
+      "published_utc": "2026-05-08T13:58:36Z",
+      "published_display": "2026-05-08 13:58 UTC",
+      "age_hours": 56.2,
+      "date_warning": null,
+      "alert_types": [
+        "acquisition"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://breakingdefense.com/?p=83526",
+      "feed_label": "Breaking Defense",
+      "category": "Defense/SDA",
+      "source_url": "https://breakingdefense.com/feed/",
+      "title": "Rheinmetall Q1 sales jump 8% year on year, as naval business era begins with promise",
+      "link": "https://breakingdefense.com/2026/05/rheinmetall-q1-sales-jump-8-percent-year-on-year-as-naval-business-era-begins-with-promise/",
+      "summary": "“The technology group’s order books remain at record levels,” said the Dusseldorf-based firm as it also predicted significant growth acceleration for Q2.",
+      "published_utc": "2026-05-08T12:55:22Z",
+      "published_display": "2026-05-08 12:55 UTC",
+      "age_hours": 57.3,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://breakingdefense.com/?p=83501",
+      "feed_label": "Breaking Defense",
+      "category": "Defense/SDA",
+      "source_url": "https://breakingdefense.com/feed/",
+      "title": "Munitions at risk? Inside the Pentagon’s $350B gamble",
+      "link": "https://breakingdefense.com/2026/05/heres-whats-at-risk-if-the-pentagons-350b-reconciliation-gambit-fails/",
+      "summary": "Congress has teed up a second reconciliation bill with immigration enforcement money, but future reconciliation funds for defense remain nebulous.",
+      "published_utc": "2026-05-08T12:45:00Z",
+      "published_display": "2026-05-08 12:45 UTC",
+      "age_hours": 57.5,
+      "date_warning": null,
+      "alert_types": [
+        "defense_award"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "ZLYLuGHnWjAsDwD9ojqQ6d",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "SpaceX just fired up its 33-engine Starship 'V3' Super Heavy rocket booster. When could it fly? (video)",
+      "link": "https://www.space.com/space-exploration/launches-spacecraft/spacex-just-fired-up-its-33-engine-starship-v3-super-heavy-rocket-booster-when-could-it-fly",
+      "summary": "SpaceX just took a big step toward its next Starship test flight, firing up all 33 engines of the vehicle's Super Heavy on the pad in Texas.",
+      "published_utc": "2026-05-08T12:00:00Z",
+      "published_display": "2026-05-08 12:00 UTC",
+      "age_hours": 58.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.defensenews.com/global/europe/2026/05/08/turkey-touts-propellant-breakthrough-for-yildirimhan-long-range-ballistic-missile/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "Turkey touts propellant breakthrough for Yıldırımhan long-range ballistic missile",
+      "link": "https://www.defensenews.com/global/europe/2026/05/08/turkey-touts-propellant-breakthrough-for-yildirimhan-long-range-ballistic-missile/",
+      "summary": "The Turkish government has been working on hypersonic technologies and liquid-propellant propulsion systems for nearly a decade.",
+      "published_utc": "2026-05-08T11:14:37Z",
+      "published_display": "2026-05-08 11:14 UTC",
+      "age_hours": 59.0,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "3BHDCfKSVJBpqMEpc4MVTA",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "NASA's Artemis 2 astronauts saw flashes on the far side of the moon that cameras struggle to capture. Here's why scientists are excited",
+      "link": "https://www.space.com/space-exploration/artemis/nasas-artemis-2-astronauts-saw-flashes-on-the-far-side-of-the-moon-that-cameras-struggle-to-capture-heres-why-scientists-are-excited",
+      "summary": "The Artemis 2 astronauts saw several impact flashes on the moon during their epic April 6 flyby, observations that have excited scientists and mission planners alike.",
+      "published_utc": "2026-05-08T10:00:00Z",
+      "published_display": "2026-05-08 10:00 UTC",
+      "age_hours": 60.2,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://payloadspace.com/?p=28106",
+      "feed_label": "Payload Space",
+      "category": "Space Industry",
+      "source_url": "https://payloadspace.com/feed/",
+      "title": "SatVu Positions Thermal Imaging as the Missing EO Layer",
+      "link": "https://payloadspace.com/satvu-positions-thermal-imaging-as-the-missing-eo-layer/",
+      "summary": "SatVu is officially back in business. The post SatVu Positions Thermal Imaging as the Missing EO Layer appeared first on Payload .",
+      "published_utc": "2026-05-08T06:15:00Z",
+      "published_display": "2026-05-08 06:15 UTC",
+      "age_hours": 64.0,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.nasa.gov/?p=994061",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "Meet the Fleet: NASA Armstrong Continues Legacy of Flight Research",
+      "link": "https://www.nasa.gov/centers-and-facilities/armstrong/meet-the-fleet-nasa-armstrong-continues-legacy-of-flight-research/",
+      "summary": "NASA’s home for experimental flight is welcoming more flyers to its already high-performing fleet as it continues to support science and aeronautics test missions – continuing the legacy of pioneers like Neil Armstrong. NASA’s Armstrong Flight Research Center in Edwards, California, added multiple aircraft this year: two F-15s supersonic jets, a Pilatus PC-12 utility plane, []",
+      "published_utc": "2026-05-07T23:45:41Z",
+      "published_display": "2026-05-07 23:45 UTC",
+      "age_hours": 70.5,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "california-duo-opened-burrito-spot-201500173.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "California duo opened a burrito spot in a Home Depot parking lot — the business now brings in $2.3 million",
+      "link": "https://finance.yahoo.com/economy/policy/articles/california-duo-opened-burrito-spot-201500173.html",
+      "summary": "",
+      "published_utc": "2026-05-10T20:15:00Z",
+      "published_display": "2026-05-10 20:15 UTC",
+      "age_hours": 2.0,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
+      ],
+      "alert_score": 2,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "wpFde9ikc6qrS9rYjwLhEk",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "'Pragmata' director Yonghee Cho on creating Capcom’s resonant sci-fi lunar adventure (interview)",
+      "link": "https://www.space.com/entertainment/space-movies-shows/pragmata-director-yonghee-cho-on-creating-capcoms-resonant-sci-fi-lunar-adventure-interview",
+      "summary": "'Designing something new as a creator is incredibly exciting, but at the same time, it’s an extremely challenging endeavor.'",
+      "published_utc": "2026-05-10T14:00:00Z",
+      "published_display": "2026-05-10 14:00 UTC",
+      "age_hours": 8.2,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
+      ],
+      "alert_score": 2,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/opinions/the-latest-ghg-protocol-proposal-raises-the-bar-for-100-renewable-reporting-in-data-centers/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "The latest GHG protocol proposal raises the bar for “100% renewable” reporting in data centers",
+      "link": "https://www.datacenterdynamics.com/en/opinions/the-latest-ghg-protocol-proposal-raises-the-bar-for-100-renewable-reporting-in-data-centers/",
+      "summary": "Hourly data highlights where renewable coverage still falls short",
+      "published_utc": "2026-05-10T13:00:28Z",
+      "published_display": "2026-05-10 13:00 UTC",
+      "age_hours": 9.2,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
+      ],
+      "alert_score": 2,
+      "urgency": "same_day"
     }
   ],
   "watch": [
     {
-      "urgency": "watch",
-      "alert_score": 1,
-      "confidence": "low",
-      "false_positive_risk": "high",
-      "requires_council_review": false,
-      "event_type": [
-        "product_launch"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 8,
-      "feed_label": "Air & Space Forces",
-      "source_url": "https://www.airandspaceforces.com/feed/",
-      "company": [
-        "Planet Labs"
-      ],
-      "ticker": "PL",
-      "layer": [
-        "Defense/SDA"
-      ],
-      "ring": 1,
-      "headline": "Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027",
-      "link": "https://www.airandspaceforces.com/missile-defense-agency-counter-hypersonic-test-2027/",
-      "summary": "The Missile Defense Agency plans to test its ability to track and take down a hypersonic missile, staging a test flight in fiscal 2027 called “Project Maverick.” The post Missile Defense Agency Plans Counter-Hypersonic Test in Fiscal 2027 appeared first on Air & Space Forces Magazine .",
-      "why_it_matters": "Directly involves tracked universe companies: Planet Labs",
-      "recommended_action": "Monitor and log for next council review",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-08T18:20:14Z",
-      "age_hours": 46.7,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "watch",
-      "alert_score": 1,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": false,
-      "event_type": [
-        "contract"
-      ],
-      "disqualified": true,
-      "disqualify_reason": "macro_markets",
-      "source_weight": 5,
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/accelerate-infrastructure-opportunities-raises-630m-for-critical-infrastructure-expansion-projects/",
       "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
       "source_url": "https://www.datacenterdynamics.com/en/rss/",
-      "company": [
-        "SES"
-      ],
-      "ticker": "SGBAF",
-      "layer": [
-        "General"
-      ],
-      "ring": 2,
-      "headline": "Accelerate Infrastructure Opportunities raises $630m for critical infrastructure expansion projects",
+      "title": "Accelerate Infrastructure Opportunities raises $630m for critical infrastructure expansion projects",
       "link": "https://www.datacenterdynamics.com/en/news/accelerate-infrastructure-opportunities-raises-630m-for-critical-infrastructure-expansion-projects/",
       "summary": "Includes digital infrastructure and renewables",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: SES",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "General Scout Agent",
       "published_utc": "2026-05-08T15:01:17Z",
-      "age_hours": 50.0,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "published_display": "2026-05-08 15:01 UTC",
+      "age_hours": 55.2,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
+      ],
+      "alert_score": 2,
+      "urgency": "watch"
     },
     {
-      "urgency": "watch",
-      "alert_score": 1,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": false,
-      "event_type": [
-        "contract"
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://payloadspace.com/?p=28115",
+      "feed_label": "Payload Space",
+      "category": "Space Industry",
+      "source_url": "https://payloadspace.com/feed/",
+      "title": "Lunar Outpost Closes $30M Series B, Unveils New Rover",
+      "link": "https://payloadspace.com/lunar-outpost-closes-30m-series-b-unveils-new-rover/",
+      "summary": "The fundraise highlights the huge demand from investors looking to capitalize on NASA’s new vision for the US presence on the Moon. The post Lunar Outpost Closes $30M Series B, Unveils New Rover appeared first on Payload .",
+      "published_utc": "2026-05-08T12:31:11Z",
+      "published_display": "2026-05-08 12:31 UTC",
+      "age_hours": 57.7,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
       ],
-      "disqualified": true,
-      "disqualify_reason": "macro_markets",
-      "source_weight": 5,
-      "feed_label": "Data Center Dynamics",
-      "source_url": "https://www.datacenterdynamics.com/en/rss/",
-      "company": [],
-      "ticker": null,
-      "layer": [
-        "AI/Compute"
-      ],
-      "ring": 3,
-      "headline": "Medallion sues InfraPartners for $15m over unfinished Lagos data center",
-      "link": "https://www.datacenterdynamics.com/en/news/medallion-sues-infrapartners-for-15m-over-unfinished-lagos-data-center/",
-      "summary": "Digital Realty subsidiary seeks damages after alleged issues at modular build",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Data & AI Agent",
-      "published_utc": "2026-05-08T14:10:00Z",
-      "age_hours": 50.8,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "alert_score": 2,
+      "urgency": "watch"
     },
     {
-      "urgency": "watch",
-      "alert_score": 1,
-      "confidence": "high",
-      "false_positive_risk": "low",
-      "requires_council_review": false,
-      "event_type": [
-        "contract"
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-05-10T22:12:54Z",
+      "raw_feed_guid": "https://spacenews.com/?p=593421",
+      "feed_label": "SpaceNews",
+      "category": "Space Industry",
+      "source_url": "https://spacenews.com/feed/",
+      "title": "Lunar Outpost raises $30 million",
+      "link": "https://spacenews.com/lunar-outpost-raises-30-million/",
+      "summary": "Lunar Outpost, a developer of lunar rovers, has raised $30 million as it works to revamp designs to meet NASA’s revised Artemis architecture.",
+      "published_utc": "2026-05-08T01:43:07Z",
+      "published_display": "2026-05-08 01:43 UTC",
+      "age_hours": 68.5,
+      "date_warning": null,
+      "alert_types": [
+        "funding"
       ],
-      "disqualified": true,
-      "disqualify_reason": "general_defense",
-      "source_weight": 8,
-      "feed_label": "Breaking Defense",
-      "source_url": "https://breakingdefense.com/feed/",
-      "company": [],
-      "ticker": null,
-      "layer": [
-        "Defense/SDA"
-      ],
-      "ring": 3,
-      "headline": "Munitions at risk? Inside the Pentagon’s $350B gamble",
-      "link": "https://breakingdefense.com/2026/05/heres-whats-at-risk-if-the-pentagons-350b-reconciliation-gambit-fails/",
-      "summary": "Congress has teed up a second reconciliation bill with immigration enforcement money, but future reconciliation funds for defense remain nebulous.",
-      "why_it_matters": "Contract award confirms revenue visibility and backlog growth",
-      "recommended_action": "Confirm contract size and duration; assess backlog impact",
-      "recommended_agent": "Defense & SDA Agent",
-      "published_utc": "2026-05-08T12:45:00Z",
-      "age_hours": 52.3,
-      "created_at_utc": "2026-05-10T19:08:32Z"
-    },
-    {
-      "urgency": "watch",
-      "alert_score": 1,
-      "confidence": "low",
-      "false_positive_risk": "high",
-      "requires_council_review": false,
-      "event_type": [
-        "product_launch"
-      ],
-      "disqualified": false,
-      "disqualify_reason": null,
-      "source_weight": 5,
-      "feed_label": "Space.com",
-      "source_url": "https://www.space.com/feeds/all",
-      "company": [
-        "SpaceX"
-      ],
-      "ticker": null,
-      "layer": [
-        "Launch"
-      ],
-      "ring": 1,
-      "headline": "SpaceX just fired up its 33-engine Starship 'V3' Super Heavy rocket booster. When could it fly? (video)",
-      "link": "https://www.space.com/space-exploration/launches-spacecraft/spacex-just-fired-up-its-33-engine-starship-v3-super-heavy-rocket-booster-when-could-it-fly",
-      "summary": "SpaceX just took a big step toward its next Starship test flight, firing up all 33 engines of the vehicle's Super Heavy on the pad in Texas.",
-      "why_it_matters": "Directly involves tracked universe companies: SpaceX",
-      "recommended_action": "Monitor and log for next council review",
-      "recommended_agent": "Launch & Infrastructure Agent",
-      "published_utc": "2026-05-08T12:00:00Z",
-      "age_hours": 53.0,
-      "created_at_utc": "2026-05-10T19:08:32Z"
+      "alert_score": 2,
+      "urgency": "watch"
     }
   ]
 }

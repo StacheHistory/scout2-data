@@ -263,6 +263,15 @@
         "Energy/Materials": 1
       },
       "notes": ""
+    },
+    {
+      "run_timestamp_utc": "2026-05-10T22:12:54Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 0,
+      "items_live": 79,
+      "alerts_count": 56,
+      "items_quarantined": 193,
+      "archive_file": "archive/scout2_dump_20260510_2212.json"
     }
   ]
 }
