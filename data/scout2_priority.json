@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "system": "Scout-2 Phase 2 / Investing with SPACE",
+    "version": "1.1",
+    "generated_at_utc": "2026-05-10T19:00:17Z",
+    "total_candidates": 19,
+    "signals_ranked": 10,
+    "scoring_note": "Priority score = alert_score + confidence + tracked_company_status + revenue_event + core_layer_hits + feed_repetition + dollar_amount + freshness - false_positive_risk - staleness"
+  },
+  "priority_signals": [
+    {
+      "rank": 1,
+      "priority_score": 20.0,
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "event_type": [
+        "earnings",
+        "defense_award"
+      ],
+      "urgency": "same_day",
+      "alert_score": 8,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/rocket-lab-q1-takeaways-neutron-momentum-sbi-deal-and-robotics-acquisition/",
+      "summary": "Rocket Lab hit record quarterly revenue in the first quarter of 2026 and shared momentum for the upcoming Neutron launch vehicle as well as a robotics acquisition and work on [] The post Rocket Lab Q1 Takeaways: Neutron Momentum, SBI Deal and Robotics Acquisition appeared first on Via Satellite .",
+      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Rocket Lab",
+      "cross_layer_impact": [
+        "Defense/SDA",
+        "Ground Segment",
+        "Infrastructure",
+        "Launch",
+        "Logistics"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 45.9,
+      "published_utc": "2026-05-08T19:04:34Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 2,
+      "priority_score": 19.0,
+      "company": "HawkEye 360",
+      "ticker": "HE360",
+      "event_type": [
+        "contract",
+        "ipo"
+      ],
+      "urgency": "same_day",
+      "alert_score": 7,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "HawkEye 360 Raises $416M, Pricing at High End for IPO",
+      "link": "https://www.satellitetoday.com/finance/2026/05/07/hawkeye-360-raises-416m-pricing-at-high-end-for-ipo/",
+      "summary": "HawkEye 360 raised $416 million in its initial public offering (IPO) on Thursday, becoming the second space company to go public this year. The signals intelligence company began trading on [] The post HawkEye 360 Raises $416M, Pricing at High End for IPO appeared first on Via Satellite .",
+      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: HawkEye 360, SES, MP Materials",
+      "cross_layer_impact": [
+        "AI/Compute",
+        "Communications",
+        "Data/EO",
+        "Defense/SDA",
+        "Energy/Materials",
+        "Infrastructure"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Review S-1 filing and valuation before IPO date",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 68.9,
+      "published_utc": "2026-05-07T20:03:15Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 3,
+      "priority_score": 19.0,
+      "company": "SES",
+      "ticker": "SGBAF",
+      "event_type": [
+        "contract",
+        "funding"
+      ],
+      "urgency": "same_day",
+      "alert_score": 6,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Lunar Outpost Closes $30M Series B, Unveils New Rover",
+      "link": "https://payloadspace.com/lunar-outpost-closes-30m-series-b-unveils-new-rover/",
+      "summary": "The fundraise highlights the huge demand from investors looking to capitalize on NASA’s new vision for the US presence on the Moon. The post Lunar Outpost Closes $30M Series B, Unveils New Rover appeared first on Payload .",
+      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: SES, Lunar Outpost, NASA",
+      "cross_layer_impact": [
+        "Communications",
+        "Logistics",
+        "Lunar/Deep Space",
+        "NASA/Gov"
+      ],
+      "score_impact": "+2 to +4",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "today",
+      "feed_label": "Payload Space",
+      "age_hours": 52.5,
+      "published_utc": "2026-05-08T12:31:11Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 4,
+      "priority_score": 18.0,
+      "company": "Planet Labs",
+      "ticker": "PL",
+      "event_type": [
+        "earnings"
+      ],
+      "urgency": "immediate",
+      "alert_score": 6,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Here’s What You Need to Know About ​PayPal Holdings’ (PYPL) Q1 2026 Earnings",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/know-paypal-holdings-pypl-q1-155238714.html",
+      "summary": "",
+      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Planet Labs",
+      "cross_layer_impact": [
+        "Data/EO",
+        "General"
+      ],
+      "score_impact": "+2 to +3",
+      "recommended_action": "Review guidance and revenue trend before next position decision",
+      "time_sensitivity": "immediate",
+      "feed_label": "Yahoo Finance",
+      "age_hours": 1.1,
+      "published_utc": "2026-05-10T15:52:38Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 5,
+      "priority_score": 18.0,
+      "company": "Boeing",
+      "ticker": "BA",
+      "event_type": [
+        "contract",
+        "ipo"
+      ],
+      "urgency": "same_day",
+      "alert_score": 7,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "HawkEye 360 Raises $416M in IPO",
+      "link": "https://payloadspace.com/hawkeye-360-raises-416m-in-ipo/",
+      "summary": "The VA-based company priced its 16M shares at $26 per share—at the top of the $24-$26 range shared in the company’s S-1 filing on May 1. The post HawkEye 360 Raises $416M in IPO appeared first on Payload .",
+      "why_it_matters": "IPO creates new publicly tradeable space thesis vehicle | Contract award confirms revenue visibility and backlog growth | Directly involves tracked universe companies: Boeing, HawkEye 360, SES",
+      "cross_layer_impact": [
+        "AI/Compute",
+        "Communications",
+        "Data/EO",
+        "Defense/SDA",
+        "General",
+        "Infrastructure"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Review S-1 filing and valuation before IPO date",
+      "time_sensitivity": "today",
+      "feed_label": "Payload Space",
+      "age_hours": 53.1,
+      "published_utc": "2026-05-08T11:54:44Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 6,
+      "priority_score": 17.0,
+      "company": "Skyroot Aerospace",
+      "ticker": "MP",
+      "event_type": [
+        "contract",
+        "funding"
+      ],
+      "urgency": "same_day",
+      "alert_score": 6,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Skyroot Secures $60M in Funding, Becoming India’s First Space ‘Unicorn’",
+      "link": "https://www.satellitetoday.com/finance/2026/05/07/skyroot-secures-60m-in-funding-becoming-indias-first-space-unicorn/",
+      "summary": "Skyroot Aerospace, the Indian launch startup, has secured another $60 million in funding. The company is one of the rising stars in India’s space economy and becomes the nations first [] The post Skyroot Secures $60M in Funding, Becoming Indias First Space Unicorn appeared first on Via Satellite .",
+      "why_it_matters": "Contract award confirms revenue visibility and backlog growth | Private funding round signals investor confidence in this thesis layer | Directly involves tracked universe companies: Skyroot Aerospace, MP Materials",
+      "cross_layer_impact": [
+        "Energy/Materials",
+        "Infrastructure",
+        "Launch"
+      ],
+      "score_impact": "+2 to +4",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 68.0,
+      "published_utc": "2026-05-07T20:59:29Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 7,
+      "priority_score": 17.0,
+      "company": "Boeing",
+      "ticker": "BA",
+      "event_type": [
+        "acquisition"
+      ],
+      "urgency": "same_day",
+      "alert_score": 5,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process",
+      "link": "https://www.satellitetoday.com/finance/2026/05/08/globalstar-grows-revenue-17-in-q1-amid-amazon-acquisition-process/",
+      "summary": "Globalstar grew revenue 17% year-over-year in the first quarter of 2026, which Globalstar reported as the operator is now in a process to be acquired by Amazon. Globalstar provided a [] The post Globalstar Grows Revenue 17% in Q1 Amid Amazon Acquisition Process appeared first on Via Satellite .",
+      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Boeing, Globalstar",
+      "cross_layer_impact": [
+        "Communications",
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch",
+        "Logistics"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Assess impact on supply chain and competing positions",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 45.9,
+      "published_utc": "2026-05-08T19:07:30Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 8,
+      "priority_score": 17.0,
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "event_type": [
+        "acquisition"
+      ],
+      "urgency": "same_day",
+      "alert_score": 4,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Rocket Lab To Acquire Motiv Space Systems",
+      "link": "https://payloadspace.com/rocket-lab-to-acquire-motiv-space-systems/",
+      "summary": "Rocket Lab will acquire space robotics company Motiv Space Systems. The acquisition, announced Thursday evening in conjunction with Rocket Lab’s Q1 earnings, will achieve two goals: Motiv is expected to be rebranded as Rocket Lab Robotics when the acquisition closes, which is scheduled for Q2. Other",
+      "why_it_matters": "M&A reshapes competitive landscape and supply chain dependencies | Directly involves tracked universe companies: Rocket Lab, SES, MP Materials",
+      "cross_layer_impact": [
+        "Communications",
+        "Defense/SDA",
+        "Energy/Materials",
+        "Infrastructure",
+        "Launch",
+        "Logistics"
+      ],
+      "score_impact": "+3 to +5",
+      "recommended_action": "Assess impact on supply chain and competing positions",
+      "time_sensitivity": "today",
+      "feed_label": "Payload Space",
+      "age_hours": 52.7,
+      "published_utc": "2026-05-08T12:19:15Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 9,
+      "priority_score": 17.0,
+      "company": "Rocket Lab",
+      "ticker": "RKLB",
+      "event_type": [
+        "defense_award"
+      ],
+      "urgency": "same_day",
+      "alert_score": 4,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "Rocket Lab joins Raytheon on space interceptor program for Golden Dome",
+      "link": "https://spacenews.com/rocket-lab-joins-raytheon-on-space-interceptor-program-for-golden-dome/",
+      "summary": "The company also announced a new contract to fly hypersonic test flights for Anduril",
+      "why_it_matters": "Direct DoD/USSF contract signal — validates defense space spending thesis | Directly involves tracked universe companies: Rocket Lab, MP Materials",
+      "cross_layer_impact": [
+        "Defense/SDA",
+        "Energy/Materials",
+        "Ground Segment",
+        "Launch",
+        "Logistics"
+      ],
+      "score_impact": "+2 to +4",
+      "recommended_action": "Confirm contract size and duration; assess backlog impact",
+      "time_sensitivity": "today",
+      "feed_label": "SpaceNews",
+      "age_hours": 67.0,
+      "published_utc": "2026-05-07T22:00:18Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    },
+    {
+      "rank": 10,
+      "priority_score": 15.0,
+      "company": "Boeing",
+      "ticker": "BA",
+      "event_type": [
+        "earnings"
+      ],
+      "urgency": "same_day",
+      "alert_score": 4,
+      "confidence": "high",
+      "false_positive_risk": "low",
+      "requires_council_review": true,
+      "headline": "MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says ‘No Change’ Due to Globalstar Deal",
+      "link": "https://www.satellitetoday.com/finance/2026/05/07/mda-space-satellite-revenue-grows-40-in-q1-greenley-says-no-change-due-to-globalstar-deal/",
+      "summary": "MDA Space posted 32% year-over-year revenue growth in the first quarter of 2026 and more than 40% growth for its satellite manufacturing business, driven by work for Telesat Lightspeed and [] The post MDA Space Satellite Revenue Grows 40% in Q1, Greenley Says No Change Due to Globalstar Deal appeare",
+      "why_it_matters": "Earnings data validates or challenges current thesis assumptions | Directly involves tracked universe companies: Boeing, MDA Space, Globalstar",
+      "cross_layer_impact": [
+        "Communications",
+        "Defense/SDA",
+        "Infrastructure",
+        "Launch",
+        "Logistics",
+        "Lunar/Deep Space"
+      ],
+      "score_impact": "+2 to +3",
+      "recommended_action": "Review guidance and revenue trend before next position decision",
+      "time_sensitivity": "today",
+      "feed_label": "Satellite Today",
+      "age_hours": 69.1,
+      "published_utc": "2026-05-07T19:51:57Z",
+      "created_at_utc": "2026-05-10T19:00:17Z"
+    }
+  ]
+}

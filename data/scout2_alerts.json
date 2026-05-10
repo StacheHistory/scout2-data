@@ -2,7 +2,7 @@
   "meta": {
     "system": "Scout-2 Phase 2 / Investing with SPACE",
     "version": "1.1",
-    "run_timestamp_utc": "2026-05-10T18:48:46Z",
+    "run_timestamp_utc": "2026-05-10T19:00:17Z",
     "total_alerts": 19,
     "immediate_count": 1,
     "same_day_count": 13,
@@ -39,7 +39,7 @@
       "recommended_agent": "Capital Markets Agent",
       "published_utc": "2026-05-10T15:52:38Z",
       "age_hours": 1.1,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     }
   ],
   "same_day": [
@@ -75,7 +75,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-08T19:04:34Z",
       "age_hours": 45.9,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -110,7 +110,7 @@
       "recommended_agent": "Capital Markets Agent",
       "published_utc": "2026-05-08T11:54:44Z",
       "age_hours": 53.1,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -146,7 +146,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-07T20:03:15Z",
       "age_hours": 68.9,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -182,7 +182,7 @@
       "recommended_agent": "Private Markets Agent",
       "published_utc": "2026-05-08T12:31:11Z",
       "age_hours": 52.5,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -218,7 +218,7 @@
       "recommended_agent": "Private Markets Agent",
       "published_utc": "2026-05-08T01:43:07Z",
       "age_hours": 63.3,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -253,7 +253,7 @@
       "recommended_agent": "Private Markets Agent",
       "published_utc": "2026-05-07T20:59:29Z",
       "age_hours": 68.0,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -286,7 +286,7 @@
       "recommended_agent": "General Scout Agent",
       "published_utc": "2026-05-09T15:34:25Z",
       "age_hours": 25.4,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -320,7 +320,7 @@
       "recommended_agent": "M&A Monitoring Agent",
       "published_utc": "2026-05-08T19:07:30Z",
       "age_hours": 45.9,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -354,7 +354,7 @@
       "recommended_agent": "M&A Monitoring Agent",
       "published_utc": "2026-05-08T16:44:00Z",
       "age_hours": 48.3,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -389,7 +389,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-08T12:19:15Z",
       "age_hours": 52.7,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -423,7 +423,7 @@
       "recommended_agent": "M&A Monitoring Agent",
       "published_utc": "2026-05-08T11:40:09Z",
       "age_hours": 53.3,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -457,7 +457,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-07T22:00:18Z",
       "age_hours": 67.0,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "same_day",
@@ -492,7 +492,7 @@
       "recommended_agent": "Capital Markets Agent",
       "published_utc": "2026-05-07T19:51:57Z",
       "age_hours": 69.1,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     }
   ],
   "watch": [
@@ -526,7 +526,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-08T18:20:14Z",
       "age_hours": 46.7,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "watch",
@@ -558,7 +558,7 @@
       "recommended_agent": "General Scout Agent",
       "published_utc": "2026-05-08T15:01:17Z",
       "age_hours": 50.0,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "watch",
@@ -588,7 +588,7 @@
       "recommended_agent": "Data & AI Agent",
       "published_utc": "2026-05-08T14:10:00Z",
       "age_hours": 50.8,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "watch",
@@ -618,7 +618,7 @@
       "recommended_agent": "Defense & SDA Agent",
       "published_utc": "2026-05-08T12:45:00Z",
       "age_hours": 52.3,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     },
     {
       "urgency": "watch",
@@ -650,7 +650,7 @@
       "recommended_agent": "Launch & Infrastructure Agent",
       "published_utc": "2026-05-08T12:00:00Z",
       "age_hours": 53.0,
-      "created_at_utc": "2026-05-10T18:48:46Z"
+      "created_at_utc": "2026-05-10T19:00:17Z"
     }
   ]
 }

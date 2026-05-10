@@ -1221,6 +1221,266 @@ def build_email_alert(alerts: list, summary: dict) -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  PRIORITY SIGNAL RANKER
+#  Combines alert_score + confidence + feed repetition + layer breadth
+#  + revenue/contract size signals to rank the top 10 signals.
+# ══════════════════════════════════════════════════════════════════════
+
+# Layers considered "core" to the thesis — boost items touching these
+CORE_LAYERS = {"Launch", "Defense/SDA", "Communications", "Data/EO", "Lunar/Deep Space"}
+
+# Event types that imply direct revenue or capital impact
+REVENUE_EVENTS = {"contract", "earnings", "guidance", "ipo", "acquisition", "defense_award"}
+
+# Time sensitivity mapping
+def time_sensitivity(urgency: str, age_hours: float) -> str:
+    if urgency == "immediate" or age_hours <= 6:
+        return "immediate"
+    if urgency == "same_day" or age_hours <= 24:
+        return "today"
+    return "multi-day"
+
+
+def score_impact_estimate(event_types: list, companies: list) -> str:
+    """Estimate directional score impact as a string like '+2 to +4'."""
+    HARD_EVENTS = {"contract", "earnings", "ipo", "acquisition", "defense_award", "guidance"}
+    hard = [e for e in event_types if e in HARD_EVENTS]
+    if not hard:
+        return "+0 to +1"
+
+    # Public companies get scored more aggressively
+    has_public = any(
+        UNIVERSE_MAP.get(c.lower(), {}).get("status") == "public"
+        for c in companies
+    )
+
+    if len(hard) >= 2:
+        return "+3 to +5" if has_public else "+1 to +3"
+    if "ipo" in hard or "acquisition" in hard:
+        return "+3 to +5"
+    if "contract" in hard or "defense_award" in hard:
+        return "+2 to +4" if has_public else "+1 to +2"
+    if "earnings" in hard or "guidance" in hard:
+        return "+2 to +3" if has_public else "+1"
+    return "+1 to +2"
+
+
+def cross_layer_impact(companies: list, event_types: list, layers: list) -> list:
+    """
+    Identify which thesis layers are impacted beyond the primary layer.
+    Uses universe layer map for tracked companies + detected layers.
+    """
+    impacted = set(layers)
+
+    # Add layers from all tracked companies involved
+    for c in companies:
+        entry = UNIVERSE_MAP.get(c.lower(), {})
+        for layer in entry.get("layers", []):
+            impacted.add(layer)
+
+    # Acquisition/partnership ripple to supply chain / logistics
+    if "acquisition" in event_types:
+        impacted.add("Logistics")
+        impacted.add("Infrastructure")
+    if "defense_award" in event_types:
+        impacted.add("Defense/SDA")
+        impacted.add("Ground Segment")
+    if "ipo" in event_types:
+        impacted.add("AI/Compute")  # capital markets cross-signal
+
+    return sorted(list(impacted))[:6]  # cap at 6
+
+
+def build_priority(alerts: list, scores: list) -> dict:
+    """
+    Rank top 10 signals from all alerts.
+
+    Priority score = base_score + boosts - penalties
+
+    Boosts:
+    + confidence high   → +3
+    + confidence medium → +1
+    + tracked public company → +3
+    + tracked private company → +1
+    + revenue event type → +2
+    + core layer hit → +2 per core layer (max +4)
+    + multi-feed repetition → +2
+    + dollar amount in headline → +2
+    + age <= 6h → +2
+    + age <= 24h → +1
+
+    Penalties:
+    - fp_risk high → -3
+    - fp_risk medium → -1
+    - no tracked company → -2
+    - single soft event only → -2
+    - age > 48h → -1
+    """
+    # Build a score map for quick lookup
+    score_map = {s["company"]: s.get("score", 5) for s in scores}
+
+    # Track headlines seen across multiple items for repetition boost
+    from collections import Counter
+    company_mention_count: Counter = Counter()
+    for alert in alerts:
+        for c in alert.get("company", []):
+            company_mention_count[c] += 1
+
+    candidates = []
+
+    for alert in alerts:
+        event_types = alert.get("event_type", [])
+        companies   = alert.get("company", [])
+        layers      = alert.get("layer", [])
+        confidence  = alert.get("confidence", "low")
+        fp_risk     = alert.get("false_positive_risk", "high")
+        urgency     = alert.get("urgency", "watch")
+        age_hours   = alert.get("age_hours") or 72
+        headline    = alert.get("headline", "")
+        base_score  = alert.get("alert_score", 1)
+
+        # ── Calculate priority score ──────────────────────────────────
+        priority = float(base_score)
+
+        # Confidence boost
+        if confidence == "high":
+            priority += 3
+        elif confidence == "medium":
+            priority += 1
+
+        # Tracked company boost
+        public_match  = any(UNIVERSE_MAP.get(c.lower(), {}).get("status") == "public"  for c in companies)
+        private_match = any(UNIVERSE_MAP.get(c.lower(), {}).get("status") == "private" for c in companies)
+        if public_match:
+            priority += 3
+        elif private_match:
+            priority += 1
+        else:
+            priority -= 2  # no tracked company
+
+        # Revenue/capital event boost
+        if any(e in REVENUE_EVENTS for e in event_types):
+            priority += 2
+
+        # Soft-only penalty
+        SOFT_ONLY = {"partnership", "product_launch"}
+        if event_types and all(e in SOFT_ONLY for e in event_types):
+            priority -= 2
+
+        # Core layer boost (max +4)
+        core_hits = sum(1 for l in layers if l in CORE_LAYERS)
+        priority += min(core_hits * 2, 4)
+
+        # Multi-feed repetition boost (company seen in 3+ alerts)
+        top_company = companies[0] if companies else None
+        if top_company and company_mention_count[top_company] >= 3:
+            priority += 2
+        elif top_company and company_mention_count[top_company] >= 2:
+            priority += 1
+
+        # Dollar amount in headline
+        if re.search(r'\$[\d,]+\s*(million|billion|m\b|b\b)', headline, re.IGNORECASE):
+            priority += 2
+
+        # Freshness boost
+        if age_hours <= 6:
+            priority += 2
+        elif age_hours <= 24:
+            priority += 1
+        elif age_hours > 48:
+            priority -= 1
+
+        # False positive penalty
+        if fp_risk == "high":
+            priority -= 3
+        elif fp_risk == "medium":
+            priority -= 1
+
+        # Urgency floor — watch items can't rank above 8
+        if urgency == "watch":
+            priority = min(priority, 8.0)
+
+        candidates.append({
+            "_priority_score": round(priority, 2),
+            "alert":           alert,
+        })
+
+    # Sort by priority score descending
+    candidates.sort(key=lambda x: -x["_priority_score"])
+
+    # ── Build top 10 output ───────────────────────────────────────────
+    top10 = []
+    seen_keys = set()
+
+    for c in candidates:
+        if len(top10) >= 10:
+            break
+
+        alert       = c["alert"]
+        companies   = alert.get("company", [])
+        event_types = alert.get("event_type", [])
+        layers      = alert.get("layer", [])
+        age_hours   = alert.get("age_hours") or 72
+        urgency     = alert.get("urgency", "watch")
+
+        # Dedup: skip if same company + same primary event type already ranked
+        primary_company = companies[0] if companies else "unknown"
+        primary_event   = event_types[0] if event_types else "unknown"
+        dedup_key       = f"{primary_company}:{primary_event}"
+        if dedup_key in seen_keys:
+            continue
+        seen_keys.add(dedup_key)
+
+        # Ticker lookup
+        ticker = alert.get("ticker")
+        if not ticker and companies:
+            entry = UNIVERSE_MAP.get(primary_company.lower(), {})
+            ticker = entry.get("ticker")
+
+        rank = len(top10) + 1
+        top10.append({
+            "rank":               rank,
+            "priority_score":     c["_priority_score"],
+            "company":            primary_company,
+            "ticker":             ticker,
+            "event_type":         event_types,
+            "urgency":            urgency,
+            "alert_score":        alert.get("alert_score", 1),
+            "confidence":         alert.get("confidence", "low"),
+            "false_positive_risk":alert.get("false_positive_risk", "high"),
+            "requires_council_review": alert.get("requires_council_review", False),
+            "headline":           alert.get("headline", ""),
+            "link":               alert.get("link", ""),
+            "summary":            alert.get("summary", "")[:300],
+            "why_it_matters":     alert.get("why_it_matters", ""),
+            "cross_layer_impact": cross_layer_impact(companies, event_types, layers),
+            "score_impact":       score_impact_estimate(event_types, companies),
+            "recommended_action": alert.get("recommended_action", "watch"),
+            "time_sensitivity":   time_sensitivity(urgency, age_hours),
+            "feed_label":         alert.get("feed_label", ""),
+            "age_hours":          age_hours,
+            "published_utc":      alert.get("published_utc", ""),
+            "created_at_utc":     NOW_STR,
+        })
+
+    return {
+        "meta": {
+            "system":            SYSTEM_NAME,
+            "version":           VERSION,
+            "generated_at_utc":  NOW_STR,
+            "total_candidates":  len(candidates),
+            "signals_ranked":    len(top10),
+            "scoring_note": (
+                "Priority score = alert_score + confidence + tracked_company_status "
+                "+ revenue_event + core_layer_hits + feed_repetition "
+                "+ dollar_amount + freshness - false_positive_risk - staleness"
+            ),
+        },
+        "priority_signals": top10,
+    }
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  MAIN
 # ══════════════════════════════════════════════════════════════════════
 
@@ -1270,6 +1530,7 @@ def main():
     universe     = build_universe(scores)
     supply_chain = build_supply_chain(items)
     recommendations = build_recommendations(alerts)
+    priority     = build_priority(alerts, scores)
     run_entry    = update_run_history(history_path, stats, alerts, scores, trends)
     summary      = build_dashboard_summary(stats, alerts, scores, trends, feed_logs)
     email_text   = build_email_alert(alerts, summary)
@@ -1305,6 +1566,7 @@ def main():
     save_json(data_dir / "scout2_universe.json",         universe,        args.quiet)
     save_json(data_dir / "scout2_supply_chain.json",     supply_chain,    args.quiet)
     save_json(data_dir / "scout2_recommendations.json",  recommendations, args.quiet)
+    save_json(data_dir / "scout2_priority.json",         priority,        args.quiet)
     save_json(data_dir / "scout2_dashboard_summary.json",summary,         args.quiet)
 
     # Email alert text
@@ -1319,6 +1581,7 @@ def main():
         print(f"  🚨 Immediate alerts : {len(immediate)}", file=sys.stderr)
         print(f"  ⚡ Same-day alerts  : {len(same_day)}", file=sys.stderr)
         print(f"  👁  Watch alerts    : {len(watch_)}", file=sys.stderr)
+        print(f"  🏆 Priority signals : {len(priority['priority_signals'])}", file=sys.stderr)
         print(f"  🏢 Universe tracked : {len(MASTER_UNIVERSE)}", file=sys.stderr)
         print(f"  📊 Companies scored : {len(scores)}", file=sys.stderr)
         print(f"{'─'*50}\n", file=sys.stderr)
