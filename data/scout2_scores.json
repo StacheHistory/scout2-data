@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at_utc": "2026-05-10T19:00:17Z"
+    "generated_at_utc": "2026-05-10T19:08:32Z"
   },
   "scores": [
     {
@@ -21,7 +21,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "MP Materials",
@@ -39,7 +39,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "NASA",
@@ -57,7 +57,7 @@
       "signal_status": "active",
       "capital_priority": "watch",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Planet Labs",
@@ -75,7 +75,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Rocket Lab",
@@ -95,7 +95,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "SES",
@@ -113,7 +113,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "HawkEye 360",
@@ -132,7 +132,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Lunar Outpost",
@@ -151,7 +151,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Globalstar",
@@ -169,7 +169,7 @@
       "signal_status": "active",
       "capital_priority": "high",
       "recommended_action": "buy_on_pullback",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "MDA Space",
@@ -189,7 +189,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Nvidia",
@@ -207,7 +207,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Skyroot Aerospace",
@@ -225,7 +225,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "SpaceX",
@@ -245,7 +245,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "IREN",
@@ -263,7 +263,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Telesat",
@@ -281,7 +281,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Viasat",
@@ -300,7 +300,7 @@
       "signal_status": "active",
       "capital_priority": "medium",
       "recommended_action": "hold",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "AST SpaceMobile",
@@ -448,7 +448,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Capella Space",
@@ -744,7 +744,7 @@
       "signal_status": "active",
       "capital_priority": "watch",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "NRO",
@@ -896,7 +896,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Relativity Space",
@@ -933,7 +933,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Shield AI",
@@ -990,7 +990,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     },
     {
       "company": "Starfighters Space",
@@ -1100,7 +1100,7 @@
       "signal_status": "active",
       "capital_priority": "low",
       "recommended_action": "watch",
-      "last_signal_at_utc": "2026-05-10T19:00:17Z"
+      "last_signal_at_utc": "2026-05-10T19:08:32Z"
     }
   ]
 }

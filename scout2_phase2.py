@@ -1408,8 +1408,201 @@ def build_priority(alerts: list, scores: list) -> dict:
     # Sort by priority score descending
     candidates.sort(key=lambda x: -x["_priority_score"])
 
+    # ── Impact scoring helpers ────────────────────────────────────────
+
+    def capital_impact_score(event_types: list, companies: list,
+                              confidence: str, headline: str) -> int:
+        """
+        1–10. How significant is the capital/revenue impact?
+        High for confirmed contracts with dollar values,
+        earnings beats, IPO pricing, acquisitions.
+        """
+        score = 3  # base
+        HARD = {"contract", "earnings", "ipo", "acquisition", "defense_award", "guidance"}
+        hard_count = sum(1 for e in event_types if e in HARD)
+        score += hard_count * 2
+
+        # Dollar amount in headline boosts significantly
+        if re.search(r'\$[\d,]+\s*(billion|b\b)', headline, re.IGNORECASE):
+            score += 3
+        elif re.search(r'\$[\d,]+\s*(million|m\b)', headline, re.IGNORECASE):
+            score += 2
+
+        # Public company = higher capital relevance
+        has_public = any(UNIVERSE_MAP.get(c.lower(), {}).get("status") == "public"
+                         for c in companies)
+        if has_public:
+            score += 1
+
+        # Confidence modifier
+        if confidence == "low":
+            score -= 2
+        elif confidence == "medium":
+            score -= 1
+
+        return max(1, min(10, score))
+
+
+    def probability_of_follow_through(event_types: list, confidence: str,
+                                       fp_risk: str, companies: list) -> int:
+        """
+        1–10. How likely is this signal to result in real market action?
+        Higher for confirmed events on public tracked companies.
+        Lower for speculation, single-source, or no tracked company.
+        """
+        score = 5
+        if confidence == "high":    score += 2
+        elif confidence == "medium":score += 1
+        elif confidence == "low":   score -= 2
+
+        if fp_risk == "low":    score += 2
+        elif fp_risk == "medium":score += 0
+        elif fp_risk == "high": score -= 3
+
+        has_public = any(UNIVERSE_MAP.get(c.lower(), {}).get("status") == "public"
+                         for c in companies)
+        if has_public:    score += 1
+        elif not companies: score -= 2
+
+        CONFIRMED = {"contract", "earnings", "ipo", "acquisition"}
+        if any(e in CONFIRMED for e in event_types):
+            score += 1
+
+        return max(1, min(10, score))
+
+
+    def calc_time_horizon(event_types: list, urgency: str, age_hours: float) -> str:
+        """
+        intraday | short_term (1–7d) | medium_term (1–4w) | long_term (1–6m)
+        """
+        if urgency == "immediate" and age_hours <= 12:
+            return "intraday"
+        if event_types and any(e in {"earnings", "ipo"} for e in event_types):
+            return "short_term"
+        if event_types and any(e in {"contract", "defense_award", "guidance"} for e in event_types):
+            return "medium_term"
+        if event_types and any(e in {"acquisition", "funding"} for e in event_types):
+            return "medium_term"
+        if urgency == "same_day":
+            return "short_term"
+        return "long_term"
+
+
+    def thesis_alignment_score(layers: list, companies: list, event_types: list) -> int:
+        """
+        1–10. How well does this signal align with the Investing with SPACE thesis?
+        Core layers + tracked companies + hard events = high alignment.
+        """
+        score = 3
+        core_hits = sum(1 for l in layers if l in CORE_LAYERS)
+        score += core_hits * 2
+
+        has_tracked = any(c.lower() in UNIVERSE_MAP for c in companies)
+        if has_tracked:
+            score += 2
+
+        THESIS_EVENTS = {"contract", "defense_award", "ipo", "earnings", "acquisition"}
+        if any(e in THESIS_EVENTS for e in event_types):
+            score += 1
+
+        # Ring 1 company = tighter thesis alignment
+        ring1 = any(UNIVERSE_MAP.get(c.lower(), {}).get("ring") == 1 for c in companies)
+        if ring1:
+            score += 1
+
+        return max(1, min(10, score))
+
+
+    def calc_layer_weight(layers: list) -> str:
+        """core | ring2 | emerging | infrastructure"""
+        CORE   = {"Launch", "Defense/SDA", "Communications", "Data/EO", "Lunar/Deep Space"}
+        RING2  = {"AI/Compute", "Energy/Materials", "Logistics"}
+        INFRA  = {"Infrastructure", "Ground Segment", "Testing/Validation", "Software/OS"}
+        if any(l in CORE  for l in layers): return "core"
+        if any(l in INFRA for l in layers): return "infrastructure"
+        if any(l in RING2 for l in layers): return "ring2"
+        return "emerging"
+
+
+    def signal_strength_reasons(companies: list, event_types: list,
+                                  mention_count: int, headline: str) -> list:
+        """Build list of reasons that support the signal strength."""
+        reasons = []
+        if mention_count >= 3:
+            reasons.append("repeated across feeds")
+        if companies and any(c.lower() in UNIVERSE_MAP for c in companies):
+            reasons.append("direct company involvement")
+        if re.search(r'\$[\d,]+\s*(million|billion|m\b|b\b)', headline, re.IGNORECASE):
+            reasons.append("revenue impact implied")
+        MACRO = {"defense_award", "ipo"}
+        if any(e in MACRO for e in event_types):
+            reasons.append("macro trend support")
+        if not reasons:
+            reasons.append("single source signal")
+        return reasons
+
+
+    def expected_market_reaction(event_types: list, confidence: str,
+                                   fp_risk: str, age_hours: float) -> str:
+        """underpriced | fairly priced | overreaction risk"""
+        # Very fresh + high confidence + hard event → likely underpriced
+        if (confidence == "high" and fp_risk == "low"
+                and age_hours <= 12
+                and any(e in {"contract", "earnings", "defense_award"} for e in event_types)):
+            return "underpriced"
+        # Stale or low confidence → overreaction risk if already moved
+        if age_hours > 36 or confidence == "low" or fp_risk == "high":
+            return "overreaction risk"
+        return "fairly priced"
+
+
+    def calc_execution_risk(confidence: str, fp_risk: str,
+                             companies: list, event_types: list) -> str:
+        """low | medium | high"""
+        risk_score = 0
+        if confidence == "low":    risk_score += 2
+        elif confidence == "medium":risk_score += 1
+        if fp_risk == "high":      risk_score += 2
+        elif fp_risk == "medium":  risk_score += 1
+        if not companies:          risk_score += 2
+        SPECULATIVE = {"partnership", "product_launch", "funding"}
+        if event_types and all(e in SPECULATIVE for e in event_types):
+            risk_score += 1
+        if risk_score >= 4:   return "high"
+        if risk_score >= 2:   return "medium"
+        return "low"
+
+
+    def net_signal_rating(capital_impact: int, prob_follow: int,
+                           thesis_align: int, priority_score: float,
+                           execution_risk: str, market_reaction: str) -> int:
+        """
+        Final composite 1–10 rating combining all impact dimensions.
+        Weighted: thesis_align (30%) + capital_impact (25%) +
+                  prob_follow (25%) + priority_norm (20%)
+        Then adjusted for execution risk and market reaction.
+        """
+        # Normalise priority_score to 1–10
+        priority_norm = max(1, min(10, round(priority_score / 2)))
+
+        raw = (thesis_align * 0.30 +
+               capital_impact * 0.25 +
+               prob_follow    * 0.25 +
+               priority_norm  * 0.20)
+
+        # Execution risk adjustment
+        if execution_risk == "high":   raw -= 1.5
+        elif execution_risk == "medium":raw -= 0.5
+
+        # Market reaction adjustment
+        if market_reaction == "underpriced":  raw += 0.5
+        elif market_reaction == "overreaction risk": raw -= 0.5
+
+        return max(1, min(10, round(raw)))
+
+
     # ── Build top 10 output ───────────────────────────────────────────
-    top10 = []
+    top10     = []
     seen_keys = set()
 
     for c in candidates:
@@ -1422,6 +1615,10 @@ def build_priority(alerts: list, scores: list) -> dict:
         layers      = alert.get("layer", [])
         age_hours   = alert.get("age_hours") or 72
         urgency     = alert.get("urgency", "watch")
+        confidence  = alert.get("confidence", "low")
+        fp_risk     = alert.get("false_positive_risk", "high")
+        headline    = alert.get("headline", "")
+        p_score     = c["_priority_score"]
 
         # Dedup: skip if same company + same primary event type already ranked
         primary_company = companies[0] if companies else "unknown"
@@ -1434,33 +1631,60 @@ def build_priority(alerts: list, scores: list) -> dict:
         # Ticker lookup
         ticker = alert.get("ticker")
         if not ticker and companies:
-            entry = UNIVERSE_MAP.get(primary_company.lower(), {})
+            entry  = UNIVERSE_MAP.get(primary_company.lower(), {})
             ticker = entry.get("ticker")
+
+        mention_count = company_mention_count.get(primary_company, 1)
+
+        # ── Compute all impact scores ─────────────────────────────────
+        cap_impact    = capital_impact_score(event_types, companies, confidence, headline)
+        prob_follow   = probability_of_follow_through(event_types, confidence, fp_risk, companies)
+        t_horizon     = calc_time_horizon(event_types, urgency, age_hours)
+        thesis_align  = thesis_alignment_score(layers, companies, event_types)
+        lyr_weight    = calc_layer_weight(layers)
+        sig_reasons   = signal_strength_reasons(companies, event_types, mention_count, headline)
+        mkt_reaction  = expected_market_reaction(event_types, confidence, fp_risk, age_hours)
+        exec_risk     = calc_execution_risk(confidence, fp_risk, companies, event_types)
+        net_rating    = net_signal_rating(cap_impact, prob_follow, thesis_align,
+                                          p_score, exec_risk, mkt_reaction)
 
         rank = len(top10) + 1
         top10.append({
-            "rank":               rank,
-            "priority_score":     c["_priority_score"],
-            "company":            primary_company,
-            "ticker":             ticker,
-            "event_type":         event_types,
-            "urgency":            urgency,
-            "alert_score":        alert.get("alert_score", 1),
-            "confidence":         alert.get("confidence", "low"),
-            "false_positive_risk":alert.get("false_positive_risk", "high"),
-            "requires_council_review": alert.get("requires_council_review", False),
-            "headline":           alert.get("headline", ""),
-            "link":               alert.get("link", ""),
-            "summary":            alert.get("summary", "")[:300],
-            "why_it_matters":     alert.get("why_it_matters", ""),
-            "cross_layer_impact": cross_layer_impact(companies, event_types, layers),
-            "score_impact":       score_impact_estimate(event_types, companies),
-            "recommended_action": alert.get("recommended_action", "watch"),
-            "time_sensitivity":   time_sensitivity(urgency, age_hours),
-            "feed_label":         alert.get("feed_label", ""),
-            "age_hours":          age_hours,
-            "published_utc":      alert.get("published_utc", ""),
-            "created_at_utc":     NOW_STR,
+            "rank":                      rank,
+            "priority_score":            p_score,
+            "net_signal_rating":         net_rating,
+            # ── Identity ─────────────────────────────────────────────
+            "company":                   primary_company,
+            "ticker":                    ticker,
+            "event_type":                event_types,
+            "urgency":                   urgency,
+            # ── Alert quality ────────────────────────────────────────
+            "alert_score":               alert.get("alert_score", 1),
+            "confidence":                confidence,
+            "false_positive_risk":       fp_risk,
+            "requires_council_review":   alert.get("requires_council_review", False),
+            # ── Impact scoring (new) ──────────────────────────────────
+            "capital_impact_score":      cap_impact,
+            "probability_of_follow_through": prob_follow,
+            "time_horizon":              t_horizon,
+            "thesis_alignment_score":    thesis_align,
+            "layer_weight":              lyr_weight,
+            "signal_strength_reason":    sig_reasons,
+            "expected_market_reaction":  mkt_reaction,
+            "execution_risk":            exec_risk,
+            # ── Legacy fields (kept for dashboard compat) ─────────────
+            "headline":                  headline,
+            "link":                      alert.get("link", ""),
+            "summary":                   alert.get("summary", "")[:300],
+            "why_it_matters":            alert.get("why_it_matters", ""),
+            "cross_layer_impact":        cross_layer_impact(companies, event_types, layers),
+            "score_impact":              score_impact_estimate(event_types, companies),
+            "recommended_action":        alert.get("recommended_action", "watch"),
+            "time_sensitivity":          time_sensitivity(urgency, age_hours),
+            "feed_label":                alert.get("feed_label", ""),
+            "age_hours":                 age_hours,
+            "published_utc":             alert.get("published_utc", ""),
+            "created_at_utc":            NOW_STR,
         })
 
     return {
@@ -1470,6 +1694,17 @@ def build_priority(alerts: list, scores: list) -> dict:
             "generated_at_utc":  NOW_STR,
             "total_candidates":  len(candidates),
             "signals_ranked":    len(top10),
+            "field_guide": {
+                "net_signal_rating":             "1–10 composite: thesis_align(30%) + capital_impact(25%) + prob_follow(25%) + priority_norm(20%) ± risk/reaction adjustments",
+                "capital_impact_score":          "1–10: revenue/contract significance, dollar amounts, public company relevance",
+                "probability_of_follow_through": "1–10: likelihood signal results in real market action",
+                "time_horizon":                  "intraday | short_term (1–7d) | medium_term (1–4w) | long_term (1–6m)",
+                "thesis_alignment_score":        "1–10: fit with Investing with SPACE core thesis layers",
+                "layer_weight":                  "core | ring2 | emerging | infrastructure",
+                "signal_strength_reason":        "evidence supporting the signal quality",
+                "expected_market_reaction":      "underpriced | fairly priced | overreaction risk",
+                "execution_risk":                "low | medium | high — risk of acting on this signal",
+            },
             "scoring_note": (
                 "Priority score = alert_score + confidence + tracked_company_status "
                 "+ revenue_event + core_layer_hits + feed_repetition "
