@@ -370,6 +370,15 @@
       "alerts_count": 106,
       "items_quarantined": 131,
       "archive_file": "archive/scout2_dump_20260514_1200.json"
+    },
+    {
+      "run_timestamp_utc": "2026-05-14T17:00:11Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 0,
+      "items_live": 130,
+      "alerts_count": 103,
+      "items_quarantined": 142,
+      "archive_file": "archive/scout2_dump_20260514_1700.json"
     }
   ]
 }
