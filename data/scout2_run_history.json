@@ -1,53 +1,6 @@
 {
   "runs": [
     {
-      "run_timestamp_utc": "2026-05-10T19:00:17Z",
-      "items_live": 94,
-      "alerts_count": 19,
-      "immediate_count": 1,
-      "same_day_count": 13,
-      "watch_count": 5,
-      "top_score_mover": "Boeing",
-      "top_new_company": null,
-      "top_layer_mover": null,
-      "company_counts": {
-        "SES": 13,
-        "Nvidia": 2,
-        "MP Materials": 28,
-        "Planet Labs": 29,
-        "Boeing": 18,
-        "MDA Space": 2,
-        "Viasat": 1,
-        "Voyager Space": 1,
-        "NASA": 22,
-        "SpaceX": 3,
-        "NGA": 1,
-        "Globalstar": 2,
-        "Rocket Lab": 4,
-        "IREN": 1,
-        "Blue Origin": 1,
-        "Spire Global": 2,
-        "Lunar Outpost": 2,
-        "HawkEye 360": 2,
-        "SatVu": 2,
-        "Telesat": 2,
-        "Skyroot Aerospace": 1,
-        "Redwire": 1
-      },
-      "layer_counts": {
-        "Lunar/Deep Space": 17,
-        "AI/Compute": 12,
-        "Infrastructure": 27,
-        "Defense/SDA": 25,
-        "Launch": 19,
-        "NASA/Gov": 20,
-        "Data/EO": 3,
-        "Communications": 2,
-        "Energy/Materials": 1
-      },
-      "notes": ""
-    },
-    {
       "run_timestamp_utc": "2026-05-10T19:08:32Z",
       "items_live": 94,
       "alerts_count": 19,
@@ -380,6 +333,15 @@
       "alerts_count": 36,
       "items_quarantined": 220,
       "archive_file": "archive/scout2_dump_20260526_1200.json"
+    },
+    {
+      "run_timestamp_utc": "2026-05-28T12:00:03Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 0,
+      "items_live": 131,
+      "alerts_count": 97,
+      "items_quarantined": 139,
+      "archive_file": "archive/scout2_dump_20260528_1200.json"
     }
   ]
 }
