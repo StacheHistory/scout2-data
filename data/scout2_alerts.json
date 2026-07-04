@@ -2,10 +2,10 @@
   "meta": {
     "system": "Scout-2 / Investing with SPACE",
     "version": "4.0",
-    "run_timestamp_utc": "2026-07-04T17:00:03Z",
-    "total_alerts": 75,
-    "immediate_count": 30,
-    "same_day_count": 43,
+    "run_timestamp_utc": "2026-07-04T22:00:03Z",
+    "total_alerts": 60,
+    "immediate_count": 24,
+    "same_day_count": 34,
     "watch_count": 2,
     "description": "High-signal items only: contracts, earnings, funding, IPO signals, defense awards, acquisitions. urgency: immediate=act now, same_day=review today, watch=monitor"
   },
@@ -13,31 +13,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441922",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "Unseenlabs Orders 2 Cubesats from GomSpace",
-      "link": "https://www.satellitetoday.com/manufacturing/2026/07/01/unseenlabs-orders-2-cubesats-from-gomspace/",
-      "summary": "French radio frequency (RF) detection company Unseenlabs has ordered two additional cubesats from smallsat manufacturer GomSpace. GomSpace announced the contract worth 2.2 million euro ($2.5 million) on Wednesday. The satellites, [] The post Unseenlabs Orders 2 Cubesats from GomSpace appeared first on Via Satellite .",
-      "published_utc": "2026-07-01T20:59:33Z",
-      "published_display": "2026-07-01 20:59 UTC",
-      "age_hours": 68.0,
-      "date_warning": null,
-      "alert_types": [
-        "contract",
-        "funding",
-        "ipo",
-        "defense_award"
-      ],
-      "alert_score": 11,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603698",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -47,7 +23,7 @@
       "summary": "Watchdog cites growing costs for missile-warning satellites, digital engineering gaps and workforce reductions that could slow national security launches The post GAO flags satellite costs, launch risks in Space Force portfolio appeared first on SpaceNews .",
       "published_utc": "2026-07-04T10:17:06Z",
       "published_display": "2026-07-04 10:17 UTC",
-      "age_hours": 6.7,
+      "age_hours": 11.7,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -60,7 +36,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "Yh2kzCKfPdtpYw9Xdzykni",
       "feed_label": "Space.com",
       "category": "Space Industry",
@@ -70,7 +46,7 @@
       "summary": "A U.S. Space Force mission pitting two satellites against each other has completed the organization's first tactical intercept of an orbital target.",
       "published_utc": "2026-07-03T16:00:00Z",
       "published_display": "2026-07-03 16:00 UTC",
-      "age_hours": 25.0,
+      "age_hours": 30.0,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -83,7 +59,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.airandspaceforces.com/?p=273092",
       "feed_label": "Air & Space Forces",
       "category": "Defense/SDA",
@@ -93,7 +69,7 @@
       "summary": "The Air Force is quietly wrapping up a round of market research on arming its tanker fleet with weapons capable of shooting down incoming enemy threats. The service awarded contracts to four firms beginning in February to study options for equipping refuelers such as the KC-135 Stratotanker and KC-46 Pegasus with active self-defense technology. The post Air Force Taps Industry to Study Active Defenses for Tanker Fleet appeared first on Air & Space Forces Magazine .",
       "published_utc": "2026-07-02T20:15:03Z",
       "published_display": "2026-07-02 20:15 UTC",
-      "age_hours": 44.8,
+      "age_hours": 49.8,
       "date_warning": null,
       "alert_types": [
         "contract",
@@ -106,53 +82,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.airandspaceforces.com/?p=273001",
-      "feed_label": "Air & Space Forces",
-      "category": "Defense/SDA",
-      "source_url": "https://www.airandspaceforces.com/feed/",
-      "title": "Trump Takes Flight in New ‘Bridge’ Air Force One",
-      "link": "https://www.airandspaceforces.com/new-bridge-air-force-one-qatar-first-flight-with-trump/",
-      "summary": "The new “Bridge” Air Force One donated by Qatar made its official debut July 1, carrying President Donald Trump to North Dakota. The post Trump Takes Flight in New ‘Bridge’ Air Force One appeared first on Air & Space Forces Magazine .",
-      "published_utc": "2026-07-01T21:26:31Z",
-      "published_display": "2026-07-01 21:26 UTC",
-      "age_hours": 67.6,
-      "date_warning": null,
-      "alert_types": [
-        "contract",
-        "ipo",
-        "defense_award"
-      ],
-      "alert_score": 9,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.airandspaceforces.com/?p=273002",
-      "feed_label": "Air & Space Forces",
-      "category": "Defense/SDA",
-      "source_url": "https://www.airandspaceforces.com/feed/",
-      "title": "Satellites Maneuver Around Each Other on Rapid Timelines for Victus Haze Mission",
-      "link": "https://www.airandspaceforces.com/victus-haze-mission-rapid-maneuvers-satellites/",
-      "summary": "Now that the Space Force has launched satellite into orbit on less than 17 hours’ notice, the companies operating the satellites involved in the mission involved say their space domain awareness and maneuver operations are progressing faster than expected. The post Satellites Maneuver Around Each Other on Rapid Timelines for Victus Haze Mission appeared first on Air & Space Forces Magazine .",
-      "published_utc": "2026-07-01T20:44:49Z",
-      "published_display": "2026-07-01 20:44 UTC",
-      "age_hours": 68.3,
-      "date_warning": null,
-      "alert_types": [
-        "earnings",
-        "ipo",
-        "defense_award"
-      ],
-      "alert_score": 9,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.nasa.gov/?p=984447",
       "feed_label": "NASA Breaking News",
       "category": "NASA/Gov",
@@ -162,7 +92,7 @@
       "summary": "NASA’s live coverage of the Artemis II mission missiondrew unprecedentedpublicinterest– includingmore than149.4million viewsofthe launch, lunar flyby, splashdownonNASA-ownedplatforms, including the 24/7 streams covering the mission and the Orion spacecraftviews–demonstratingstrong, sustained global engagement throughout the mission. Around the Clock Live Broadcast NASA’s Artemis II Crew Launches to the Moon broadcast set unprecedented viewership records across the agency’s []",
       "published_utc": "2026-07-02T18:02:21Z",
       "published_display": "2026-07-02 18:02 UTC",
-      "age_hours": 47.0,
+      "age_hours": 52.0,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -175,7 +105,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://breakingdefense.com/?p=88763",
       "feed_label": "Breaking Defense",
       "category": "Defense/SDA",
@@ -185,7 +115,7 @@
       "summary": "The department has already issued guidance to its program offices on how to spend the money before the deadline hits.",
       "published_utc": "2026-07-02T15:21:24Z",
       "published_display": "2026-07-02 15:21 UTC",
-      "age_hours": 49.6,
+      "age_hours": 54.6,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -198,7 +128,29 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "spacex-stock-buy-first-earnings-202500618.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Is SpaceX Stock a Buy Before Its First Earnings Report as a Public Company?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/spacex-stock-buy-first-earnings-202500618.html",
+      "summary": "",
+      "published_utc": "2026-07-04T20:25:00Z",
+      "published_display": "2026-07-04 20:25 UTC",
+      "age_hours": 1.6,
+      "date_warning": null,
+      "alert_types": [
+        "earnings",
+        "ipo"
+      ],
+      "alert_score": 6,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603634",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -208,7 +160,7 @@
       "summary": "A Pegasus XL launched a mission to reboost a NASA astrophysics spacecraft on what may be the final flight of that rocket. The post Pegasus launches Swift reboost mission appeared first on SpaceNews .",
       "published_utc": "2026-07-03T20:55:34Z",
       "published_display": "2026-07-03 20:55 UTC",
-      "age_hours": 20.1,
+      "age_hours": 25.1,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -220,7 +172,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.airandspaceforces.com/?p=273082",
       "feed_label": "Air & Space Forces",
       "category": "Defense/SDA",
@@ -230,7 +182,7 @@
       "summary": "A flu outbreak at Air Force Basic Military Training has killed one recruit and sickened more than 280 others at Joint Base San Antonio-Lackland, Texas, according to the congressman who represents the base. The post Flu Outbreak Sickens Hundreds at Air Force Basic Military Training appeared first on Air & Space Forces Magazine .",
       "published_utc": "2026-07-03T00:02:22Z",
       "published_display": "2026-07-03 00:02 UTC",
-      "age_hours": 41.0,
+      "age_hours": 46.0,
       "date_warning": null,
       "alert_types": [
         "ipo",
@@ -242,7 +194,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "CJnEcTrzHRby3Zq8r53F4W",
       "feed_label": "Space.com",
       "category": "Space Industry",
@@ -252,7 +204,7 @@
       "summary": "A SpaceX Falcon 9 rocket carrying 24 Starlink satellites launched from Vandenberg Space Force Base in California on Wednesday, July 1, 2026.",
       "published_utc": "2026-07-02T22:32:50Z",
       "published_display": "2026-07-02 22:32 UTC",
-      "age_hours": 42.5,
+      "age_hours": 47.5,
       "date_warning": null,
       "alert_types": [
         "ipo",
@@ -264,7 +216,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.airandspaceforces.com/?p=273094",
       "feed_label": "Air & Space Forces",
       "category": "Defense/SDA",
@@ -274,7 +226,7 @@
       "summary": "The Air Force got a glimpse of its potential future this week, when an F-15EX fighter flew alongside a Collaborative Combat Aircraft during a major Pacific exercise. The post PHOTOS: F-15EX Flies with CCA Drone in the Pacific appeared first on Air & Space Forces Magazine .",
       "published_utc": "2026-07-02T21:06:03Z",
       "published_display": "2026-07-02 21:06 UTC",
-      "age_hours": 43.9,
+      "age_hours": 48.9,
       "date_warning": null,
       "alert_types": [
         "ipo",
@@ -286,7 +238,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.airandspaceforces.com/?p=273110",
       "feed_label": "Air & Space Forces",
       "category": "Defense/SDA",
@@ -296,7 +248,7 @@
       "summary": "For the first time, members of the Space Force joined with the Air Force in using advanced artificial intelligence in a complex command-and-control experiment to speed up combat decision-making. The post Guardians, Airmen Use AI in Experiment to Supercharge Battle Management appeared first on Air & Space Forces Magazine .",
       "published_utc": "2026-07-02T21:05:00Z",
       "published_display": "2026-07-02 21:05 UTC",
-      "age_hours": 43.9,
+      "age_hours": 48.9,
       "date_warning": null,
       "alert_types": [
         "ipo",
@@ -308,7 +260,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.satellitetoday.com/?p=441959",
       "feed_label": "Satellite Today",
       "category": "Satellite/Comms",
@@ -318,7 +270,7 @@
       "summary": "The Amazon Leo constellation now has enough satellites in orbit to support “continuous service across initial latitudes,” after a United Launch Alliance (ULA) mission in the early hours of Thursday. [] The post Amazon Leo Constellation Ready to Support Initial Service After ULA Mission appeared first on Via Satellite .",
       "published_utc": "2026-07-02T19:55:17Z",
       "published_display": "2026-07-02 19:55 UTC",
-      "age_hours": 45.1,
+      "age_hours": 50.1,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -330,7 +282,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.satellitetoday.com/?p=441956",
       "feed_label": "Satellite Today",
       "category": "Satellite/Comms",
@@ -340,7 +292,7 @@
       "summary": "German launcher in development Isar Aerospace secured a launch contract with Planet to launch one of Planet’s next-generation Pelican satellites, as early as late 2026. Isar Aerospace and Planet announced [] The post Isar Aerospace Lands Big Win With Planet Launch Contract appeared first on Via Satellite .",
       "published_utc": "2026-07-02T19:50:13Z",
       "published_display": "2026-07-02 19:50 UTC",
-      "age_hours": 45.2,
+      "age_hours": 50.2,
       "date_warning": null,
       "alert_types": [
         "contract",
@@ -352,7 +304,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://breakingdefense.com/?p=88822",
       "feed_label": "Breaking Defense",
       "category": "Defense/SDA",
@@ -362,7 +314,7 @@
       "summary": "The watchdogs annual weapons systems assessment revealed new details about high-profile programs, from Air Force One to Army missiles.",
       "published_utc": "2026-07-02T18:43:12Z",
       "published_display": "2026-07-02 18:43 UTC",
-      "age_hours": 46.3,
+      "age_hours": 51.3,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -374,7 +326,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603496",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -384,7 +336,7 @@
       "summary": "Isar Aerospace won a contract from Planet’s German subsidiary to launch an imaging satellite, demonstrating an end-to-end space capability for the country. The post Isar Aerospace to launch German-built Planet imaging satellite appeared first on SpaceNews .",
       "published_utc": "2026-07-02T18:20:48Z",
       "published_display": "2026-07-02 18:20 UTC",
-      "age_hours": 46.7,
+      "age_hours": 51.7,
       "date_warning": null,
       "alert_types": [
         "contract",
@@ -396,7 +348,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.defenseone.com/threats/2026/07/does-space-force-have-enough-lawyers-tomorrows-wars-senators-want-know/414586/",
       "feed_label": "Defense One",
       "category": "Business/Markets",
@@ -406,7 +358,7 @@
       "summary": "As service extends its capabilities and reach, SASC orders up a look at its prospective legal needs.",
       "published_utc": "2026-07-02T16:45:28Z",
       "published_display": "2026-07-02 16:45 UTC",
-      "age_hours": 48.2,
+      "age_hours": 53.2,
       "date_warning": null,
       "alert_types": [
         "ipo",
@@ -418,7 +370,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "wDEUxnY6cnRVWqtmnWhck7",
       "feed_label": "Space.com",
       "category": "Space Industry",
@@ -428,7 +380,7 @@
       "summary": "Just in time for UFO Day.",
       "published_utc": "2026-07-02T14:00:00Z",
       "published_display": "2026-07-02 14:00 UTC",
-      "age_hours": 51.0,
+      "age_hours": 56.0,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -440,7 +392,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://payloadspace.com/?p=30515",
       "feed_label": "Payload Space",
       "category": "Space Industry",
@@ -450,7 +402,7 @@
       "summary": "Aurora is one of three missions in a series of planned government-backed demos to validate new technologies in orbit The post Exclusive: Austria Taps R-Space for Its Second Military Sat appeared first on Payload .",
       "published_utc": "2026-07-02T12:00:00Z",
       "published_display": "2026-07-02 12:00 UTC",
-      "age_hours": 53.0,
+      "age_hours": 58.0,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -462,7 +414,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603440",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -472,7 +424,7 @@
       "summary": "An Atlas 5 lifted off July 2 carrying a set of Amazon Leo satellites in the final launch by that vehicle to carry a satellite payload. The post Final Atlas 5 Amazon Leo mission launches appeared first on SpaceNews .",
       "published_utc": "2026-07-02T09:54:25Z",
       "published_display": "2026-07-02 09:54 UTC",
-      "age_hours": 55.1,
+      "age_hours": 60.1,
       "date_warning": null,
       "alert_types": [
         "earnings",
@@ -484,7 +436,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.aerospacetestinginternational.com/?p=23476",
       "feed_label": "Aerospace Testing Intl",
       "category": "Aerospace/Suppliers",
@@ -494,7 +446,7 @@
       "summary": "Joby Aviation is partnering with Toyota to build production capacity for its eVTOL aircraft Continue reading Joby and Toyota to scale up eVTOL manufacturing at Aerospace Testing International.",
       "published_utc": "2026-07-02T09:26:16Z",
       "published_display": "2026-07-02 09:26 UTC",
-      "age_hours": 55.6,
+      "age_hours": 60.6,
       "date_warning": null,
       "alert_types": [
         "contract",
@@ -506,61 +458,17 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.airandspaceforces.com/?p=273015",
-      "feed_label": "Air & Space Forces",
-      "category": "Defense/SDA",
-      "source_url": "https://www.airandspaceforces.com/feed/",
-      "title": "F-15EX Makes Another Visit to Kadena as Base Preps for Permanent Aircraft",
-      "link": "https://www.airandspaceforces.com/f-15ex-return-visit-kadena-permanent-fighters/",
-      "summary": "An F-15EX fighter touched down at Kadena Air Base, Japan, this week—thought still not on a permanent basis. The Eagle II is on a “visit” to the crucial Pacific base on Okinawa, according to a July 1 release. The post F-15EX Makes Another Visit to Kadena as Base Preps for Permanent Aircraft appeared first on Air & Space Forces Magazine .",
-      "published_utc": "2026-07-01T21:17:19Z",
-      "published_display": "2026-07-01 21:17 UTC",
-      "age_hours": 67.7,
-      "date_warning": null,
-      "alert_types": [
-        "ipo",
-        "defense_award"
-      ],
-      "alert_score": 6,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.airandspaceforces.com/?p=272990",
-      "feed_label": "Air & Space Forces",
-      "category": "Defense/SDA",
-      "source_url": "https://www.airandspaceforces.com/feed/",
-      "title": "Thunderbirds Arrive in DC for July 4: ‘You Can Just Feel the Energy’",
-      "link": "https://www.airandspaceforces.com/usaf-thunderbirds-america-250-july-4-dc/",
-      "summary": "On July 4, thousands of people will brave 100-degree weather in downtown Washington, D.C., for America’s 250th anniversary. And high above them, the pilots of the U.S. Air Force Thunderbirds will be hot too—not that it will stop their red, white, and blue F-16s. The post Thunderbirds Arrive in DC for July 4: ‘You Can Just Feel the Energy’ appeared first on Air & Space Forces Magazine .",
-      "published_utc": "2026-07-01T20:34:42Z",
-      "published_display": "2026-07-01 20:34 UTC",
-      "age_hours": 68.4,
-      "date_warning": null,
-      "alert_types": [
-        "ipo",
-        "defense_award"
-      ],
-      "alert_score": 6,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "nvidia-vs-strategy-stock-better-162700393.html",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "nvidia-stock-nearly-flat-2026-205000376.html",
       "feed_label": "Yahoo Finance",
       "category": "Business/Markets",
       "source_url": "https://finance.yahoo.com/news/rssindex",
-      "title": "Nvidia vs. Strategy: Which Stock Has a Better Chance of Surging 10x by 2036?",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-vs-strategy-stock-better-162700393.html",
+      "title": "Nvidia Stock Is Nearly Flat for 2026. Time to Cash Out, or Load Up on Shares?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-nearly-flat-2026-205000376.html",
       "summary": "",
-      "published_utc": "2026-07-04T16:27:00Z",
-      "published_display": "2026-07-04 16:27 UTC",
-      "age_hours": 0.6,
+      "published_utc": "2026-07-04T20:50:00Z",
+      "published_display": "2026-07-04 20:50 UTC",
+      "age_hours": 1.2,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -571,7 +479,49 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "equinox-gold-eqx-just-cleared-191444301.html",
+      "feed_label": "Yahoo Finance",
+      "category": "Business/Markets",
+      "source_url": "https://finance.yahoo.com/news/rssindex",
+      "title": "Equinox Gold (EQX) Just Cleared A Major Roadblock, Is The Stock Ready To Skyrocket?",
+      "link": "https://finance.yahoo.com/markets/stocks/articles/equinox-gold-eqx-just-cleared-191444301.html",
+      "summary": "",
+      "published_utc": "2026-07-04T19:14:44Z",
+      "published_display": "2026-07-04 19:14 UTC",
+      "age_hours": 2.8,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "uuvGEBL3K5iKXdsBtvZqLD",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "America 250: From 1776 to the moon and beyond (A Space.com series)",
+      "link": "https://www.space.com/space-exploration/america-250-from-1776-to-the-moon-and-beyond-a-space-com-series",
+      "summary": "As the United States celebrates its 250th birthday, our Space.com team took a look back at American advances in space since 1776, and where we might be headed.",
+      "published_utc": "2026-07-04T18:18:45Z",
+      "published_display": "2026-07-04 18:18 UTC",
+      "age_hours": 3.7,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "immediate"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "qiaAAD8TccuXqFeMVWJKn5",
       "feed_label": "Space.com",
       "category": "Space Industry",
@@ -581,91 +531,7 @@
       "summary": "On Episode 217 of This Week In Space, Rod Pyle and Tariq Malik discuss the progression of American space efforts.",
       "published_utc": "2026-07-04T16:26:21Z",
       "published_display": "2026-07-04 16:26 UTC",
-      "age_hours": 0.6,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "jim-cramer-ast-spacemobile-think-143029882.html",
-      "feed_label": "Yahoo Finance",
-      "category": "Business/Markets",
-      "source_url": "https://finance.yahoo.com/news/rssindex",
-      "title": "Jim Cramer on AST SpaceMobile: “I Think It Can Make Money in Two Years”",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-ast-spacemobile-think-143029882.html",
-      "summary": "",
-      "published_utc": "2026-07-04T14:30:29Z",
-      "published_display": "2026-07-04 14:30 UTC",
-      "age_hours": 2.5,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "jim-cramer-spacex-stock-now-142353782.html",
-      "feed_label": "Yahoo Finance",
-      "category": "Business/Markets",
-      "source_url": "https://finance.yahoo.com/news/rssindex",
-      "title": "Jim Cramer on SpaceX: “This Stock Is Now Hostage to the Mechanics of the Market”",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-spacex-stock-now-142353782.html",
-      "summary": "",
-      "published_utc": "2026-07-04T14:23:53Z",
-      "published_display": "2026-07-04 14:23 UTC",
-      "age_hours": 2.6,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "jim-cramer-calls-medline-best-141935578.html",
-      "feed_label": "Yahoo Finance",
-      "category": "Business/Markets",
-      "source_url": "https://finance.yahoo.com/news/rssindex",
-      "title": "Jim Cramer Calls Medline the “Best IPO of the Year”",
-      "link": "https://finance.yahoo.com/markets/stocks/articles/jim-cramer-calls-medline-best-141935578.html",
-      "summary": "",
-      "published_utc": "2026-07-04T14:19:35Z",
-      "published_display": "2026-07-04 14:19 UTC",
-      "age_hours": 2.7,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "immediate"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://science.nasa.gov/missions/hubble/nasas-hubble-spies-stellar-sparkler-for-july-4th/",
-      "feed_label": "NASA Breaking News",
-      "category": "NASA/Gov",
-      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-      "title": "NASA’s Hubble Spies Stellar Sparkler for July 4th",
-      "link": "https://science.nasa.gov/missions/hubble/nasas-hubble-spies-stellar-sparkler-for-july-4th/",
-      "summary": "Red, white, and blue stars glitter like a sparkler being waved on a dark night in this new image from NASA’s Hubble Space Telescope.",
-      "published_utc": "2026-07-04T11:15:37Z",
-      "published_display": "2026-07-04 11:15 UTC",
-      "age_hours": 5.7,
+      "age_hours": 5.6,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -678,7 +544,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://theaviationist.com/?p=105475",
       "feed_label": "The Aviationist",
       "category": "Aerospace/Suppliers",
@@ -688,7 +554,7 @@
       "summary": "The Global Combat Air Programme (GCAP) sixth-generation fighter project is advancing to its next development stage with a new boost of funding by partners Italy, Japan, and the UK, running through to the end of 2027. Announced on Jul. 3, 2026, the huge new contract will provide for the next steps in finalising the design []",
       "published_utc": "2026-07-03T16:35:53Z",
       "published_display": "2026-07-03 16:35 UTC",
-      "age_hours": 24.4,
+      "age_hours": 29.4,
       "date_warning": null,
       "alert_types": [
         "contract",
@@ -700,7 +566,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603603",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -710,7 +576,7 @@
       "summary": "HELSINKI — Hongqing Technology, the satellite manufacturing affiliate of launch firm Landspace, has secured one of the largest single raises for a Chinese commercial satellite maker. The funding round, announced [] The post Chinese satellite manufacturer Hongqing raises $191 million appeared first on SpaceNews .",
       "published_utc": "2026-07-03T13:10:37Z",
       "published_display": "2026-07-03 13:10 UTC",
-      "age_hours": 27.8,
+      "age_hours": 32.8,
       "date_warning": null,
       "alert_types": [
         "funding",
@@ -722,7 +588,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603491",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -732,7 +598,7 @@
       "summary": "WARSAW, Poland — The Polish state-owned bank BGK and European venture capital firm 3TS Capital Partners have unveiled an investment of around 35 million zloty ($10 million) in Poland’s space [] The post Polish space tech company Sybilla Technologies secures funds to enter U.S. market appeared first on SpaceNews .",
       "published_utc": "2026-07-02T17:38:50Z",
       "published_display": "2026-07-02 17:38 UTC",
-      "age_hours": 47.4,
+      "age_hours": 52.4,
       "date_warning": null,
       "alert_types": [
         "funding",
@@ -744,7 +610,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://breakingdefense.com/?p=88791",
       "feed_label": "Breaking Defense",
       "category": "Defense/SDA",
@@ -754,7 +620,7 @@
       "summary": "“KNDS and its shareholders will continue to monitor the capital markets conditions closely and stand ready to resume the IPO process as soon as market conditions allow,” said the European firm.",
       "published_utc": "2026-07-02T13:42:30Z",
       "published_display": "2026-07-02 13:42 UTC",
-      "age_hours": 51.3,
+      "age_hours": 56.3,
       "date_warning": null,
       "alert_types": [
         "funding",
@@ -766,7 +632,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.defensenews.com/global/europe/2026/07/02/tank-maker-knds-delays-stock-listing-citing-defense-market-volatility/",
       "feed_label": "Defense News",
       "category": "Defense/SDA",
@@ -776,7 +642,7 @@
       "summary": "“KNDS and its shareholders will continue to monitor the capital markets conditions closely and stand ready to resume the IPO process,\" the company said.",
       "published_utc": "2026-07-02T10:12:36Z",
       "published_display": "2026-07-02 10:12 UTC",
-      "age_hours": 54.8,
+      "age_hours": 59.8,
       "date_warning": null,
       "alert_types": [
         "funding",
@@ -788,51 +654,28 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441924",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "Ovzon Wins New Defense Deal with European NATO Nation",
-      "link": "https://www.satellitetoday.com/government-military/2026/07/01/ovzon-wins-new-defense-deal-with-european-nato-nation/",
-      "summary": "Ovzon has won a significant new defence with a European NATO country worth 74 million Swedish krona ($7.1 million). The deal comprises of Ovzon’s complete satellite communications solution, based on [] The post Ovzon Wins New Defense Deal with European NATO Nation appeared first on Via Satellite .",
-      "published_utc": "2026-07-01T21:05:19Z",
-      "published_display": "2026-07-01 21:05 UTC",
-      "age_hours": 67.9,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://science.nasa.gov/missions/hubble/nasas-hubble-spies-stellar-sparkler-for-july-4th/",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "NASA’s Hubble Spies Stellar Sparkler for July 4th",
+      "link": "https://science.nasa.gov/missions/hubble/nasas-hubble-spies-stellar-sparkler-for-july-4th/",
+      "summary": "Red, white, and blue stars glitter like a sparkler being waved on a dark night in this new image from NASA’s Hubble Space Telescope.",
+      "published_utc": "2026-07-04T11:15:37Z",
+      "published_display": "2026-07-04 11:15 UTC",
+      "age_hours": 10.7,
       "date_warning": null,
       "alert_types": [
-        "funding",
-        "acquisition"
+        "ipo"
       ],
-      "alert_score": 5,
+      "alert_score": 3,
       "urgency": "same_day"
     },
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defenseone.com/business/2026/07/defense-business-brief-radar-makers-answer-drone-boom-armys-private-capital-appetite-one-lawmakers-caution-contractors/414570/",
-      "feed_label": "Defense One",
-      "category": "Business/Markets",
-      "source_url": "https://www.defenseone.com/rss/all/",
-      "title": "Defense Business Brief: A radar-maker’s answer to the drone boom; the Army’s private capital appetite; One lawmaker’s caution for contractors",
-      "link": "https://www.defenseone.com/business/2026/07/defense-business-brief-radar-makers-answer-drone-boom-armys-private-capital-appetite-one-lawmakers-caution-contractors/414570/",
-      "summary": "",
-      "published_utc": "2026-07-01T17:55:23Z",
-      "published_display": "2026-07-01 17:55 UTC",
-      "age_hours": 71.1,
-      "date_warning": null,
-      "alert_types": [
-        "contract",
-        "funding"
-      ],
-      "alert_score": 5,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://science.nasa.gov/missions/hubble/nasas-hubble-captures-crimson-cloud-sparkling-with-white-blue-stars/",
       "feed_label": "NASA Breaking News",
       "category": "NASA/Gov",
@@ -842,153 +685,6 @@
       "summary": "Blue and white stars shine brightly against crimson gas in this image from NASA’s Hubble Space Telescope.",
       "published_utc": "2026-07-03T15:01:17Z",
       "published_display": "2026-07-03 15:01 UTC",
-      "age_hours": 26.0,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "HzwDQ8dkBBmb8rigNL8es",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "Space science has come a long way since July 4, 1776. Here's a look back at the saga",
-      "link": "https://www.space.com/astronomy/space-science-has-come-a-long-way-since-july-4-1776-heres-a-look-back-at-the-saga",
-      "summary": "Celebrating America's 250th birthday, Space.com looks back at what our understanding of space was like in 1776 and what major developments occurred to change our thinking.",
-      "published_utc": "2026-07-03T14:54:32Z",
-      "published_display": "2026-07-03 14:54 UTC",
-      "age_hours": 26.1,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/amazons-carbon-emissions-grow-by-16-percent-in-2025-on-the-back-of-record-data-center-capacity-additions/",
-      "feed_label": "Data Center Dynamics",
-      "category": "Tech/AI/Compute",
-      "source_url": "https://www.datacenterdynamics.com/en/rss/",
-      "title": "Amazon's carbon emissions grow by 16 percent in 2025, on the back of record data center capacity additions",
-      "link": "https://www.datacenterdynamics.com/en/news/amazons-carbon-emissions-grow-by-16-percent-in-2025-on-the-back-of-record-data-center-capacity-additions/",
-      "summary": "Company admits demand could impact progress to net-zero by 2040",
-      "published_utc": "2026-07-03T14:32:21Z",
-      "published_display": "2026-07-03 14:32 UTC",
-      "age_hours": 26.5,
-      "date_warning": null,
-      "alert_types": [
-        "earnings"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "QPxNEZ55LACCgkvq5imcXJ",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "Infant stars celebrate their independence with cosmic fireworks| Space photo of the day for July 3, 2026",
-      "link": "https://www.space.com/astronomy/galaxies/infant-stars-celebrate-their-independence-with-cosmic-fireworks-space-photo-of-the-day-for-july-3-2026",
-      "summary": "Infant stars celebrate their independence with cosmic fireworks in a stunning new image from the James Webb Space Telescope.",
-      "published_utc": "2026-07-03T14:00:00Z",
-      "published_display": "2026-07-03 14:00 UTC",
-      "age_hours": 27.0,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/danske-bank-extends-aws-cloud-contract/",
-      "feed_label": "Data Center Dynamics",
-      "category": "Tech/AI/Compute",
-      "source_url": "https://www.datacenterdynamics.com/en/rss/",
-      "title": "Data center operater extends lease of Vanda 3 data center in Stockholm, Sweden",
-      "link": "https://www.datacenterdynamics.com/en/news/danske-bank-extends-aws-cloud-contract/",
-      "summary": "Also secures additional 30MW of power at site",
-      "published_utc": "2026-07-03T13:10:30Z",
-      "published_display": "2026-07-03 13:10 UTC",
-      "age_hours": 27.8,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defenseone.com/technology/2026/07/these-light-weight-power-cells-run-nuclear-waste-and-could-power-next-gen-drones/414585/",
-      "feed_label": "Defense One",
-      "category": "Business/Markets",
-      "source_url": "https://www.defenseone.com/rss/all/",
-      "title": "These light-weight power cells run on nuclear waste and could power next-gen drones",
-      "link": "https://www.defenseone.com/technology/2026/07/these-light-weight-power-cells-run-nuclear-waste-and-could-power-next-gen-drones/414585/",
-      "summary": "DARPA program aims to create a 30-year battery minimally viable prototype by early 2027.",
-      "published_utc": "2026-07-03T12:00:00Z",
-      "published_display": "2026-07-03 12:00 UTC",
-      "age_hours": 29.0,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://theaviationist.com/?p=105444",
-      "feed_label": "The Aviationist",
-      "category": "Aerospace/Suppliers",
-      "source_url": "https://theaviationist.com/feed",
-      "title": "New Report Blames Russia’s Shadow Fleet for Europe Drone Incursions",
-      "link": "https://theaviationist.com/2026/07/03/europe-drone-incursions-russia-shadow-fleet/",
-      "summary": "A report by the International Institute for Strategic Studies (IISS) assesses that it is ‘highly likely’ many of recent drone incidents throughout Europe were ordered by Moscow as part of a wider hybrid campaign against NATO. The investigation focuses on incidents taking place between August 2024 and February 2026, including incursions into the airspace of []",
-      "published_utc": "2026-07-03T11:14:21Z",
-      "published_display": "2026-07-03 11:14 UTC",
-      "age_hours": 29.8,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "6t76bjotzeY9UASaHyMVtn",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "America at 500: Where will we be in space in 2276?",
-      "link": "https://www.space.com/space-exploration/america-at-500-where-will-we-be-in-space-in-2276",
-      "summary": "When the U.S. was born, humanity was still seven years away from balloon-borne flight. Where might we be another 250 years from now, should the nation be fortunate enough to survive that long?",
-      "published_utc": "2026-07-03T10:00:00Z",
-      "published_display": "2026-07-03 10:00 UTC",
       "age_hours": 31.0,
       "date_warning": null,
       "alert_types": [
@@ -1000,59 +696,17 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.aerospacetestinginternational.com/?p=23482",
-      "feed_label": "Aerospace Testing Intl",
-      "category": "Aerospace/Suppliers",
-      "source_url": "https://www.aerospacetestinginternational.com/feed",
-      "title": "FAA sets out noise-based certification path for supersonic flight over the US",
-      "link": "https://www.aerospacetestinginternational.com/news/faa-sets-out-noise-based-certification-path-for-supersonic-flight-over-the-us.html",
-      "summary": "US regulator the FAA has proposed replacing its five-decade ban on overland supersonic flight with a performance-based noise standard Continue reading FAA sets out noise-based certification path for supersonic flight over the US at Aerospace Testing International.",
-      "published_utc": "2026-07-03T08:50:32Z",
-      "published_display": "2026-07-03 08:50 UTC",
-      "age_hours": 32.2,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://payloadspace.com/?p=30524",
-      "feed_label": "Payload Space",
-      "category": "Space Industry",
-      "source_url": "https://payloadspace.com/feed/",
-      "title": "Inside the Deepening Ties Between Europe and the Middle East",
-      "link": "https://payloadspace.com/inside-the-deepening-ties-between-europe-and-the-middle-east/",
-      "summary": "While European sovereignty may be driven by a response to the deterioration of geopolitical ties to the US, it’s opened the door for Middle Eastern space companies. The post Inside the Deepening Ties Between Europe and the Middle East appeared first on Payload .",
-      "published_utc": "2026-07-03T05:46:00Z",
-      "published_display": "2026-07-03 05:46 UTC",
-      "age_hours": 35.2,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "3ApoXvib4jLEqixZhbhpkg",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "HzwDQ8dkBBmb8rigNL8es",
       "feed_label": "Space.com",
       "category": "Space Industry",
       "source_url": "https://www.space.com/feeds/all",
-      "title": "SpaceX fires up all 6 of Starship's engines ahead of 13th test flight (video)",
-      "link": "https://www.space.com/space-exploration/launches-spacecraft/spacex-fires-up-all-6-of-starships-engines-ahead-of-13th-test-flight-video",
-      "summary": "SpaceX completed a Starship engine test at its Starbase facility recently, igniting all six of the vehicle's engines for a full minute.",
-      "published_utc": "2026-07-02T22:00:00Z",
-      "published_display": "2026-07-02 22:00 UTC",
-      "age_hours": 43.0,
+      "title": "Space science has come a long way since July 4, 1776. Here's a look back at the saga",
+      "link": "https://www.space.com/astronomy/space-science-has-come-a-long-way-since-july-4-1776-heres-a-look-back-at-the-saga",
+      "summary": "Celebrating America's 250th birthday, Space.com looks back at what our understanding of space was like in 1776 and what major developments occurred to change our thinking.",
+      "published_utc": "2026-07-03T14:54:32Z",
+      "published_display": "2026-07-03 14:54 UTC",
+      "age_hours": 31.1,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -1063,164 +717,17 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441952",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "Mitsubishi Electric to Acquire Infostellar",
-      "link": "https://www.satellitetoday.com/finance/2026/07/02/mitsubishi-electric-to-acquire-infostellar/",
-      "summary": "Mitsubishi Electric has made a statement of intent by acquiring one of the most talked about companies in the Japanese space sector over the last few years. It is to [] The post Mitsubishi Electric to Acquire Infostellar appeared first on Via Satellite .",
-      "published_utc": "2026-07-02T19:46:24Z",
-      "published_display": "2026-07-02 19:46 UTC",
-      "age_hours": 45.2,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441949",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "Vodafone Ireland Conducts Emergency Services D2D Call With AST SpaceMobile JV",
-      "link": "https://www.satellitetoday.com/connectivity/2026/07/02/vodafone-ireland-conducts-emergency-services-d2d-call-with-ast-spacemobile-jv/",
-      "summary": "Vodafone Ireland has conducted a successful test call with AST SpaceMobile’s satellite constellation as part of tests for connectivity for emergency and first responders. Vodafone Ireland reported the tests on [] The post Vodafone Ireland Conducts Emergency Services D2D Call With AST SpaceMobile JV appeared first on Via Satellite .",
-      "published_utc": "2026-07-02T19:42:40Z",
-      "published_display": "2026-07-02 19:42 UTC",
-      "age_hours": 45.3,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://spacenews.com/?p=603501",
-      "feed_label": "SpaceNews",
-      "category": "Space Industry",
-      "source_url": "https://spacenews.com/feed/",
-      "title": "Perovskite solar panel startup Verde Technologies shifts focus to space",
-      "link": "https://spacenews.com/perovskite-solar-panel-startup-verde-technologies-shifts-focus-to-space/",
-      "summary": "Verde Technologies is turning to space to commercialize perovskite-based solar panels, shifting its initial focus away from rooftops in a bet that the thin-film material can help power orbital data centers and other large constellations. The post Perovskite solar panel startup Verde Technologies shifts focus to space appeared first on SpaceNews .",
-      "published_utc": "2026-07-02T19:27:36Z",
-      "published_display": "2026-07-02 19:27 UTC",
-      "age_hours": 45.5,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "RKm2NjeVhg64Skkt7qh6og",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "'Stellar death is not the end': James Webb Space Telescope glimpses the fate of the solar system in a weird exoplanet orbiting a dead star",
-      "link": "https://www.space.com/astronomy/stars/stellar-death-is-not-the-end-james-webb-space-telescope-glimpses-the-fate-of-the-solar-system-in-a-weird-exoplanet-orbiting-a-dead-star",
-      "summary": "\"It's like using a time machine to peer into the distant future of our solar system.\"",
-      "published_utc": "2026-07-02T18:00:00Z",
-      "published_display": "2026-07-02 18:00 UTC",
-      "age_hours": 47.0,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://breakingdefense.com/?p=88815",
-      "feed_label": "Breaking Defense",
-      "category": "Defense/SDA",
-      "source_url": "https://breakingdefense.com/feed/",
-      "title": "Australia announces defense industry policy and acquisitions reforms",
-      "link": "https://breakingdefense.com/2026/07/australia-announces-defense-industry-policy-and-acquisitions-reforms/",
-      "summary": "Australian Defence Minister Richard Marles said the reforms seek to build “a more agile, disciplined and strategically focused Defence organisation.",
-      "published_utc": "2026-07-02T17:42:04Z",
-      "published_display": "2026-07-02 17:42 UTC",
-      "age_hours": 47.3,
-      "date_warning": null,
-      "alert_types": [
-        "acquisition"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defensenews.com/news/your-army/2026/07/02/gen-christopher-donahue-relinquishes-command-of-us-army-europe-and-africa/",
-      "feed_label": "Defense News",
-      "category": "Defense/SDA",
-      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
-      "title": "Gen. Christopher Donahue relinquishes command of US Army Europe and Africa",
-      "link": "https://www.defensenews.com/news/your-army/2026/07/02/gen-christopher-donahue-relinquishes-command-of-us-army-europe-and-africa/",
-      "summary": "U.S. Army Gen. Christopher Donahue relinquished command on Thursday. The Army has not given a reason for the leadership change.",
-      "published_utc": "2026-07-02T16:49:16Z",
-      "published_display": "2026-07-02 16:49 UTC",
-      "age_hours": 48.2,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defensenews.com/industry/techwatch/2026/07/02/defense-startups-raid-auto-and-fracking-sectors-for-parts-to-speed-weapons-output/",
-      "feed_label": "Defense News",
-      "category": "Defense/SDA",
-      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
-      "title": "Defense startups raid auto and fracking sectors for parts to speed weapons output",
-      "link": "https://www.defensenews.com/industry/techwatch/2026/07/02/defense-startups-raid-auto-and-fracking-sectors-for-parts-to-speed-weapons-output/",
-      "summary": "Defense tech startups are repurposing automotive chips and pipes used in fracking in an effort to deliver weapons to the Pentagon faster and at lower cost.",
-      "published_utc": "2026-07-02T16:42:32Z",
-      "published_display": "2026-07-02 16:42 UTC",
-      "age_hours": 48.3,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defensenews.com/industry/techwatch/2026/07/02/us-navy-seeks-to-boost-production-of-new-anti-radar-missile/",
-      "feed_label": "Defense News",
-      "category": "Defense/SDA",
-      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
-      "title": "US Navy seeks to boost production of new anti-radar missile",
-      "link": "https://www.defensenews.com/industry/techwatch/2026/07/02/us-navy-seeks-to-boost-production-of-new-anti-radar-missile/",
-      "summary": "Naval Air Systems Command is asking industry whether it is capable of supplying up to 600 Advanced Emission Suppression Missiles per year.",
-      "published_utc": "2026-07-02T15:37:04Z",
-      "published_display": "2026-07-02 15:37 UTC",
-      "age_hours": 49.4,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/amazons-carbon-emissions-grow-by-16-percent-in-2025-on-the-back-of-record-data-center-capacity-additions/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "Amazon's carbon emissions grow by 16 percent in 2025, on the back of record data center capacity additions",
+      "link": "https://www.datacenterdynamics.com/en/news/amazons-carbon-emissions-grow-by-16-percent-in-2025-on-the-back-of-record-data-center-capacity-additions/",
+      "summary": "Company admits demand could impact progress to net-zero by 2040",
+      "published_utc": "2026-07-03T14:32:21Z",
+      "published_display": "2026-07-03 14:32 UTC",
+      "age_hours": 31.5,
       "date_warning": null,
       "alert_types": [
         "earnings"
@@ -1231,16 +738,205 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.nasa.gov/?post_type=image-article&p=1014204",
-      "feed_label": "NASA Breaking News",
-      "category": "NASA/Gov",
-      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
-      "title": "Good Morning, Earth!",
-      "link": "https://www.nasa.gov/image-article/good-morning-earth/",
-      "summary": "NASA astronaut Chris Williams took this photo of an orbital sunrise from the International Space Station on June 26, 2026. In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets. Learn more about the orbiting laboratory. Image credit: NASA/Chris Williams",
-      "published_utc": "2026-07-02T14:41:24Z",
-      "published_display": "2026-07-02 14:41 UTC",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "QPxNEZ55LACCgkvq5imcXJ",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "Infant stars celebrate their independence with cosmic fireworks| Space photo of the day for July 3, 2026",
+      "link": "https://www.space.com/astronomy/galaxies/infant-stars-celebrate-their-independence-with-cosmic-fireworks-space-photo-of-the-day-for-july-3-2026",
+      "summary": "Infant stars celebrate their independence with cosmic fireworks in a stunning new image from the James Webb Space Telescope.",
+      "published_utc": "2026-07-03T14:00:00Z",
+      "published_display": "2026-07-03 14:00 UTC",
+      "age_hours": 32.0,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/danske-bank-extends-aws-cloud-contract/",
+      "feed_label": "Data Center Dynamics",
+      "category": "Tech/AI/Compute",
+      "source_url": "https://www.datacenterdynamics.com/en/rss/",
+      "title": "Data center operater extends lease of Vanda 3 data center in Stockholm, Sweden",
+      "link": "https://www.datacenterdynamics.com/en/news/danske-bank-extends-aws-cloud-contract/",
+      "summary": "Also secures additional 30MW of power at site",
+      "published_utc": "2026-07-03T13:10:30Z",
+      "published_display": "2026-07-03 13:10 UTC",
+      "age_hours": 32.8,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.defenseone.com/technology/2026/07/these-light-weight-power-cells-run-nuclear-waste-and-could-power-next-gen-drones/414585/",
+      "feed_label": "Defense One",
+      "category": "Business/Markets",
+      "source_url": "https://www.defenseone.com/rss/all/",
+      "title": "These light-weight power cells run on nuclear waste and could power next-gen drones",
+      "link": "https://www.defenseone.com/technology/2026/07/these-light-weight-power-cells-run-nuclear-waste-and-could-power-next-gen-drones/414585/",
+      "summary": "DARPA program aims to create a 30-year battery minimally viable prototype by early 2027.",
+      "published_utc": "2026-07-03T12:00:00Z",
+      "published_display": "2026-07-03 12:00 UTC",
+      "age_hours": 34.0,
+      "date_warning": null,
+      "alert_types": [
+        "defense_award"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://theaviationist.com/?p=105444",
+      "feed_label": "The Aviationist",
+      "category": "Aerospace/Suppliers",
+      "source_url": "https://theaviationist.com/feed",
+      "title": "New Report Blames Russia’s Shadow Fleet for Europe Drone Incursions",
+      "link": "https://theaviationist.com/2026/07/03/europe-drone-incursions-russia-shadow-fleet/",
+      "summary": "A report by the International Institute for Strategic Studies (IISS) assesses that it is ‘highly likely’ many of recent drone incidents throughout Europe were ordered by Moscow as part of a wider hybrid campaign against NATO. The investigation focuses on incidents taking place between August 2024 and February 2026, including incursions into the airspace of []",
+      "published_utc": "2026-07-03T11:14:21Z",
+      "published_display": "2026-07-03 11:14 UTC",
+      "age_hours": 34.8,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "6t76bjotzeY9UASaHyMVtn",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "America at 500: Where will we be in space in 2276?",
+      "link": "https://www.space.com/space-exploration/america-at-500-where-will-we-be-in-space-in-2276",
+      "summary": "When the U.S. was born, humanity was still seven years away from balloon-borne flight. Where might we be another 250 years from now, should the nation be fortunate enough to survive that long?",
+      "published_utc": "2026-07-03T10:00:00Z",
+      "published_display": "2026-07-03 10:00 UTC",
+      "age_hours": 36.0,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.aerospacetestinginternational.com/?p=23482",
+      "feed_label": "Aerospace Testing Intl",
+      "category": "Aerospace/Suppliers",
+      "source_url": "https://www.aerospacetestinginternational.com/feed",
+      "title": "FAA sets out noise-based certification path for supersonic flight over the US",
+      "link": "https://www.aerospacetestinginternational.com/news/faa-sets-out-noise-based-certification-path-for-supersonic-flight-over-the-us.html",
+      "summary": "US regulator the FAA has proposed replacing its five-decade ban on overland supersonic flight with a performance-based noise standard Continue reading FAA sets out noise-based certification path for supersonic flight over the US at Aerospace Testing International.",
+      "published_utc": "2026-07-03T08:50:32Z",
+      "published_display": "2026-07-03 08:50 UTC",
+      "age_hours": 37.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://payloadspace.com/?p=30524",
+      "feed_label": "Payload Space",
+      "category": "Space Industry",
+      "source_url": "https://payloadspace.com/feed/",
+      "title": "Inside the Deepening Ties Between Europe and the Middle East",
+      "link": "https://payloadspace.com/inside-the-deepening-ties-between-europe-and-the-middle-east/",
+      "summary": "While European sovereignty may be driven by a response to the deterioration of geopolitical ties to the US, it’s opened the door for Middle Eastern space companies. The post Inside the Deepening Ties Between Europe and the Middle East appeared first on Payload .",
+      "published_utc": "2026-07-03T05:46:00Z",
+      "published_display": "2026-07-03 05:46 UTC",
+      "age_hours": 40.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "3ApoXvib4jLEqixZhbhpkg",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "SpaceX fires up all 6 of Starship's engines ahead of 13th test flight (video)",
+      "link": "https://www.space.com/space-exploration/launches-spacecraft/spacex-fires-up-all-6-of-starships-engines-ahead-of-13th-test-flight-video",
+      "summary": "SpaceX completed a Starship engine test at its Starbase facility recently, igniting all six of the vehicle's engines for a full minute.",
+      "published_utc": "2026-07-02T22:00:00Z",
+      "published_display": "2026-07-02 22:00 UTC",
+      "age_hours": 48.0,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.satellitetoday.com/?p=441952",
+      "feed_label": "Satellite Today",
+      "category": "Satellite/Comms",
+      "source_url": "https://www.satellitetoday.com/feed/",
+      "title": "Mitsubishi Electric to Acquire Infostellar",
+      "link": "https://www.satellitetoday.com/finance/2026/07/02/mitsubishi-electric-to-acquire-infostellar/",
+      "summary": "Mitsubishi Electric has made a statement of intent by acquiring one of the most talked about companies in the Japanese space sector over the last few years. It is to [] The post Mitsubishi Electric to Acquire Infostellar appeared first on Via Satellite .",
+      "published_utc": "2026-07-02T19:46:24Z",
+      "published_display": "2026-07-02 19:46 UTC",
+      "age_hours": 50.2,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.satellitetoday.com/?p=441949",
+      "feed_label": "Satellite Today",
+      "category": "Satellite/Comms",
+      "source_url": "https://www.satellitetoday.com/feed/",
+      "title": "Vodafone Ireland Conducts Emergency Services D2D Call With AST SpaceMobile JV",
+      "link": "https://www.satellitetoday.com/connectivity/2026/07/02/vodafone-ireland-conducts-emergency-services-d2d-call-with-ast-spacemobile-jv/",
+      "summary": "Vodafone Ireland has conducted a successful test call with AST SpaceMobile’s satellite constellation as part of tests for connectivity for emergency and first responders. Vodafone Ireland reported the tests on [] The post Vodafone Ireland Conducts Emergency Services D2D Call With AST SpaceMobile JV appeared first on Via Satellite .",
+      "published_utc": "2026-07-02T19:42:40Z",
+      "published_display": "2026-07-02 19:42 UTC",
       "age_hours": 50.3,
       "date_warning": null,
       "alert_types": [
@@ -1252,7 +948,154 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://spacenews.com/?p=603501",
+      "feed_label": "SpaceNews",
+      "category": "Space Industry",
+      "source_url": "https://spacenews.com/feed/",
+      "title": "Perovskite solar panel startup Verde Technologies shifts focus to space",
+      "link": "https://spacenews.com/perovskite-solar-panel-startup-verde-technologies-shifts-focus-to-space/",
+      "summary": "Verde Technologies is turning to space to commercialize perovskite-based solar panels, shifting its initial focus away from rooftops in a bet that the thin-film material can help power orbital data centers and other large constellations. The post Perovskite solar panel startup Verde Technologies shifts focus to space appeared first on SpaceNews .",
+      "published_utc": "2026-07-02T19:27:36Z",
+      "published_display": "2026-07-02 19:27 UTC",
+      "age_hours": 50.5,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "RKm2NjeVhg64Skkt7qh6og",
+      "feed_label": "Space.com",
+      "category": "Space Industry",
+      "source_url": "https://www.space.com/feeds/all",
+      "title": "'Stellar death is not the end': James Webb Space Telescope glimpses the fate of the solar system in a weird exoplanet orbiting a dead star",
+      "link": "https://www.space.com/astronomy/stars/stellar-death-is-not-the-end-james-webb-space-telescope-glimpses-the-fate-of-the-solar-system-in-a-weird-exoplanet-orbiting-a-dead-star",
+      "summary": "\"It's like using a time machine to peer into the distant future of our solar system.\"",
+      "published_utc": "2026-07-02T18:00:00Z",
+      "published_display": "2026-07-02 18:00 UTC",
+      "age_hours": 52.0,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://breakingdefense.com/?p=88815",
+      "feed_label": "Breaking Defense",
+      "category": "Defense/SDA",
+      "source_url": "https://breakingdefense.com/feed/",
+      "title": "Australia announces defense industry policy and acquisitions reforms",
+      "link": "https://breakingdefense.com/2026/07/australia-announces-defense-industry-policy-and-acquisitions-reforms/",
+      "summary": "Australian Defence Minister Richard Marles said the reforms seek to build “a more agile, disciplined and strategically focused Defence organisation.",
+      "published_utc": "2026-07-02T17:42:04Z",
+      "published_display": "2026-07-02 17:42 UTC",
+      "age_hours": 52.3,
+      "date_warning": null,
+      "alert_types": [
+        "acquisition"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.defensenews.com/news/your-army/2026/07/02/gen-christopher-donahue-relinquishes-command-of-us-army-europe-and-africa/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "Gen. Christopher Donahue relinquishes command of US Army Europe and Africa",
+      "link": "https://www.defensenews.com/news/your-army/2026/07/02/gen-christopher-donahue-relinquishes-command-of-us-army-europe-and-africa/",
+      "summary": "U.S. Army Gen. Christopher Donahue relinquished command on Thursday. The Army has not given a reason for the leadership change.",
+      "published_utc": "2026-07-02T16:49:16Z",
+      "published_display": "2026-07-02 16:49 UTC",
+      "age_hours": 53.2,
+      "date_warning": null,
+      "alert_types": [
+        "defense_award"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.defensenews.com/industry/techwatch/2026/07/02/defense-startups-raid-auto-and-fracking-sectors-for-parts-to-speed-weapons-output/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "Defense startups raid auto and fracking sectors for parts to speed weapons output",
+      "link": "https://www.defensenews.com/industry/techwatch/2026/07/02/defense-startups-raid-auto-and-fracking-sectors-for-parts-to-speed-weapons-output/",
+      "summary": "Defense tech startups are repurposing automotive chips and pipes used in fracking in an effort to deliver weapons to the Pentagon faster and at lower cost.",
+      "published_utc": "2026-07-02T16:42:32Z",
+      "published_display": "2026-07-02 16:42 UTC",
+      "age_hours": 53.3,
+      "date_warning": null,
+      "alert_types": [
+        "defense_award"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.defensenews.com/industry/techwatch/2026/07/02/us-navy-seeks-to-boost-production-of-new-anti-radar-missile/",
+      "feed_label": "Defense News",
+      "category": "Defense/SDA",
+      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
+      "title": "US Navy seeks to boost production of new anti-radar missile",
+      "link": "https://www.defensenews.com/industry/techwatch/2026/07/02/us-navy-seeks-to-boost-production-of-new-anti-radar-missile/",
+      "summary": "Naval Air Systems Command is asking industry whether it is capable of supplying up to 600 Advanced Emission Suppression Missiles per year.",
+      "published_utc": "2026-07-02T15:37:04Z",
+      "published_display": "2026-07-02 15:37 UTC",
+      "age_hours": 54.4,
+      "date_warning": null,
+      "alert_types": [
+        "earnings"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
+      "raw_feed_guid": "https://www.nasa.gov/?post_type=image-article&p=1014204",
+      "feed_label": "NASA Breaking News",
+      "category": "NASA/Gov",
+      "source_url": "https://www.nasa.gov/rss/dyn/breaking_news.rss",
+      "title": "Good Morning, Earth!",
+      "link": "https://www.nasa.gov/image-article/good-morning-earth/",
+      "summary": "NASA astronaut Chris Williams took this photo of an orbital sunrise from the International Space Station on June 26, 2026. In 24 hours, the space station makes 16 orbits of Earth, traveling through 16 sunrises and sunsets. Learn more about the orbiting laboratory. Image credit: NASA/Chris Williams",
+      "published_utc": "2026-07-02T14:41:24Z",
+      "published_display": "2026-07-02 14:41 UTC",
+      "age_hours": 55.3,
+      "date_warning": null,
+      "alert_types": [
+        "ipo"
+      ],
+      "alert_score": 3,
+      "urgency": "same_day"
+    },
+    {
+      "fetch_mode": "live",
+      "http_status": 200,
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://science.nasa.gov/missions/webb/nasas-webb-reveals-stars-sparking-to-life-in-cosmic-celebration/",
       "feed_label": "NASA Breaking News",
       "category": "NASA/Gov",
@@ -1262,7 +1105,7 @@
       "summary": "NASA’s James Webb Space Telescope has captured the infrared light of numerous features that previously were impossible to see beyond the thick dust of the FS Tau star system. In addition to myriad background galaxies that burst into view like fireworks for the United States’ 250th anniversary celebrations, this image flickers with a number of […]",
       "published_utc": "2026-07-02T14:00:00Z",
       "published_display": "2026-07-02 14:00 UTC",
-      "age_hours": 51.0,
+      "age_hours": 56.0,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -1273,7 +1116,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603456",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -1283,7 +1126,7 @@
       "summary": "In this episode of Space Minds, Mike Gruss talks with Kymeta’s Ryan Stevenson. They discuss the benefits and challenges of multi-orbit and multi-band connectivity in a single terminal. About Space [] The post Making satellite communications more resilient appeared first on SpaceNews .",
       "published_utc": "2026-07-02T13:50:47Z",
       "published_display": "2026-07-02 13:50 UTC",
-      "age_hours": 51.2,
+      "age_hours": 56.2,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -1294,7 +1137,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.defenseone.com/technology/2026/07/genaimil-records-almost-17m-users-plans-new-model-additions/414569/",
       "feed_label": "Defense One",
       "category": "Business/Markets",
@@ -1304,7 +1147,7 @@
       "summary": "“It's just a really exciting time for generative AI in the department,” the Pentagon’s chief artificial intelligence officer said.",
       "published_utc": "2026-07-02T13:00:00Z",
       "published_display": "2026-07-02 13:00 UTC",
-      "age_hours": 52.0,
+      "age_hours": 57.0,
       "date_warning": null,
       "alert_types": [
         "defense_award"
@@ -1315,7 +1158,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://theaviationist.com/?p=105415",
       "feed_label": "The Aviationist",
       "category": "Aerospace/Suppliers",
@@ -1325,7 +1168,7 @@
       "summary": "Three crew members were recovered alive after an MH-60S assigned to the USS George H.W. Bush ditched in the Arabian Sea, while search and rescue operations continue for a fourth crew member. An MH-60S Seahawk helicopter assigned to the USS George H.W. Bush (CVN 77) aircraft carrier conducted an emergency water landing in the Arabian []",
       "published_utc": "2026-07-02T10:08:15Z",
       "published_display": "2026-07-02 10:08 UTC",
-      "age_hours": 54.9,
+      "age_hours": 59.9,
       "date_warning": null,
       "alert_types": [
         "earnings"
@@ -1336,7 +1179,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.aerospacetestinginternational.com/?p=23474",
       "feed_label": "Aerospace Testing Intl",
       "category": "Aerospace/Suppliers",
@@ -1346,7 +1189,7 @@
       "summary": "Evolution Measurement Group is partnering with Aero Sensor to offer customers integrated flow probe and pressure measurement solutions Continue reading Evolution Measurement Group partners with Aero Sensor on flow probes at Aerospace Testing International.",
       "published_utc": "2026-07-02T09:08:40Z",
       "published_display": "2026-07-02 09:08 UTC",
-      "age_hours": 55.9,
+      "age_hours": 60.9,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -1357,7 +1200,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.defenseone.com/defense-systems/2026/07/under-new-management-pentagons-autonomous-systems-get-new-oversight/414584/",
       "feed_label": "Defense One",
       "category": "Business/Markets",
@@ -1367,7 +1210,7 @@
       "summary": "Defense Secretary Pete Hegseth ordered the creation of the DRPM-UxS, or direct reporting portfolio manager for unmanned offensive and defensive systems, via memo.",
       "published_utc": "2026-07-02T01:10:48Z",
       "published_display": "2026-07-02 01:10 UTC",
-      "age_hours": 63.8,
+      "age_hours": 68.8,
       "date_warning": null,
       "alert_types": [
         "defense_award"
@@ -1378,7 +1221,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://spacenews.com/?p=603367",
       "feed_label": "SpaceNews",
       "category": "Space Industry",
@@ -1388,7 +1231,7 @@
       "summary": "A new report links the long-running technical problems with Boeing’s CST-100 Starliner commercial crew vehicle to a combination of overconfidence, unrealistic schedules and NASA’s lack of insight into the vehicle. The post Report links Starliner problems to overconfidence and unrealistic schedules appeared first on SpaceNews .",
       "published_utc": "2026-07-01T22:19:01Z",
       "published_display": "2026-07-01 22:19 UTC",
-      "age_hours": 66.7,
+      "age_hours": 71.7,
       "date_warning": null,
       "alert_types": [
         "ipo"
@@ -1399,175 +1242,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441932",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "The Internet in Space: The Apps that Dominate Satellite Traffic and Why it Matters",
-      "link": "https://www.satellitetoday.com/opinion/2026/07/01/the-internet-in-space-the-apps-that-dominate-satellite-traffic-and-why-it-matters/",
-      "summary": "What do people actually do on satellite networks? And, for non-government applications, does it even matter? As thousands of new satellites are launched into orbit, much of the conversation has [] The post The Internet in Space: The Apps that Dominate Satellite Traffic and Why it Matters appeared first on Via Satellite .",
-      "published_utc": "2026-07-01T21:27:35Z",
-      "published_display": "2026-07-01 21:27 UTC",
-      "age_hours": 67.5,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.satellitetoday.com/?p=441926",
-      "feed_label": "Satellite Today",
-      "category": "Satellite/Comms",
-      "source_url": "https://www.satellitetoday.com/feed/",
-      "title": "Dish Satellite TV and Wireless Businesses File for Chapter 11 Bankruptcy",
-      "link": "https://www.satellitetoday.com/finance/2026/07/01/dish-satellite-tv-and-wireless-businesses-file-for-chapter-11-bankruptcy/",
-      "summary": "The satellite TV business Dish DBS and Dish Wireless filed for Chapter 11 bankruptcy on Tuesday, stating the move will facilitate transitioning the Dish Wireless business after the company’s spectrum [] The post Dish Satellite TV and Wireless Businesses File for Chapter 11 Bankruptcy appeared first on Via Satellite .",
-      "published_utc": "2026-07-01T21:09:08Z",
-      "published_display": "2026-07-01 21:09 UTC",
-      "age_hours": 67.8,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "oMXURCyumbRABcuQnFWYVY",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "Atlas V rocket launches 29 Amazon Leo broadband satellites to orbit from Florida (video)",
-      "link": "https://www.space.com/space-exploration/launches-spacecraft/ula-atlas-v-amazon-leo-8-internet-satellite-launch",
-      "summary": "A United Launch Alliance Atlas V rocket launched 29 more Amazon Leo internet satellites to orbit from Florida early Thursday morning (July 2).",
-      "published_utc": "2026-07-01T20:00:00Z",
-      "published_display": "2026-07-01 20:00 UTC",
-      "age_hours": 69.0,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defensenews.com/industry/techwatch/2026/07/01/the-us-military-wants-a-fleet-of-laser-trucks-heres-what-they-might-look-like/",
-      "feed_label": "Defense News",
-      "category": "Defense/SDA",
-      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
-      "title": "The US military wants a fleet of laser trucks. Here’s what they might look like.",
-      "link": "https://www.defensenews.com/industry/techwatch/2026/07/01/the-us-military-wants-a-fleet-of-laser-trucks-heres-what-they-might-look-like/",
-      "summary": "Two ground vehicles could define how the Pentagon fields high-energy laser weapons at scale.",
-      "published_utc": "2026-07-01T19:47:37Z",
-      "published_display": "2026-07-01 19:47 UTC",
-      "age_hours": 69.2,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://spacenews.com/?p=603326",
-      "feed_label": "SpaceNews",
-      "category": "Space Industry",
-      "source_url": "https://spacenews.com/feed/",
-      "title": "FCC to vote on satellite licensing overhaul July 22",
-      "link": "https://spacenews.com/fcc-to-vote-on-satellite-licensing-overhaul-july-22/",
-      "summary": "The FCC is set to vote July 22 on an order to overhaul its satellite application process, creating a “licensing assembly line” to keep up with increasingly large and complex constellation plans. The post FCC to vote on satellite licensing overhaul July 22 appeared first on SpaceNews .",
-      "published_utc": "2026-07-01T19:45:36Z",
-      "published_display": "2026-07-01 19:45 UTC",
-      "age_hours": 69.2,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://breakingdefense.com/?p=88726",
-      "feed_label": "Breaking Defense",
-      "category": "Defense/SDA",
-      "source_url": "https://breakingdefense.com/feed/",
-      "title": "Space firm Vantor expands portfolio as it tracks ‘geopolitical shift in the marketplace’: CEO",
-      "link": "https://breakingdefense.com/2026/07/space-firm-vantor-expands-portfolio-as-it-tracks-geopolitical-shift-in-the-marketplace-ceo/",
-      "summary": "Vantors growing international business is about 70 percent defense and 30 percent commercial, CEO Dan Smoot told Breaking Defense.",
-      "published_utc": "2026-07-01T19:41:24Z",
-      "published_display": "2026-07-01 19:41 UTC",
-      "age_hours": 69.3,
-      "date_warning": null,
-      "alert_types": [
-        "ipo"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "qJeyLmgJciAHYLnfVtdXRV",
-      "feed_label": "Space.com",
-      "category": "Space Industry",
-      "source_url": "https://www.space.com/feeds/all",
-      "title": "'Rocket's Red Glare': How NASA's Artemis 2 moon mission celebrated America's 250th birthday",
-      "link": "https://www.space.com/space-exploration/artemis/rockets-red-glare-how-nasas-artemis-2-moon-mission-celebrated-americas-250th-birthday",
-      "summary": "NASA joined in the semiquincentennial celebrations this year by painting \"America 250\" on the rocket that launched the Artemis 2 astronauts around the moon.",
-      "published_utc": "2026-07-01T19:00:00Z",
-      "published_display": "2026-07-01 19:00 UTC",
-      "age_hours": 70.0,
-      "date_warning": null,
-      "alert_types": [
-        "earnings"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
-      "raw_feed_guid": "https://www.defensenews.com/news/pentagon-congress/2026/07/01/pentagons-push-to-field-weapons-faster-risks-outrunning-its-own-oversight-watchdog-finds/",
-      "feed_label": "Defense News",
-      "category": "Defense/SDA",
-      "source_url": "https://www.defensenews.com/arc/outboundfeeds/rss/",
-      "title": "Pentagon’s push to field weapons faster risks outrunning its own oversight, watchdog finds",
-      "link": "https://www.defensenews.com/news/pentagon-congress/2026/07/01/pentagons-push-to-field-weapons-faster-risks-outrunning-its-own-oversight-watchdog-finds/",
-      "summary": "Workforce reductions meant that weapon systems reach warfighters with “undocumented shortfalls related to effectiveness, suitability, [and] survivability.\"",
-      "published_utc": "2026-07-01T17:34:53Z",
-      "published_display": "2026-07-01 17:34 UTC",
-      "age_hours": 71.4,
-      "date_warning": null,
-      "alert_types": [
-        "defense_award"
-      ],
-      "alert_score": 3,
-      "urgency": "same_day"
-    },
-    {
-      "fetch_mode": "live",
-      "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://theaviationist.com/?p=105478",
       "feed_label": "The Aviationist",
       "category": "Aerospace/Suppliers",
@@ -1577,7 +1252,7 @@
       "summary": "The long awaited Defence Investment Plan has finally been published for public viewing and it seemingly generates more questions for UK Defence than it answers. In one of his last acts as Prime Minister of the United Kingdom, Sir Keir Starmer has released the UKs Defence Investment Plan (DIP), cementing the largest sustained funding increase []",
       "published_utc": "2026-07-04T14:20:40Z",
       "published_display": "2026-07-04 14:20 UTC",
-      "age_hours": 2.7,
+      "age_hours": 7.7,
       "date_warning": null,
       "alert_types": [
         "funding"
@@ -1590,7 +1265,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/cpp-investments-to-pump-175-billion-into-eqt-and-edgeconnexs-ai-data-center-build-out/",
       "feed_label": "Data Center Dynamics",
       "category": "Tech/AI/Compute",
@@ -1600,7 +1275,7 @@
       "summary": "EdgeConneX claims 10GW development pipeline",
       "published_utc": "2026-07-03T15:38:31Z",
       "published_display": "2026-07-03 15:38 UTC",
-      "age_hours": 25.4,
+      "age_hours": 30.4,
       "date_warning": null,
       "alert_types": [
         "funding"
@@ -1611,7 +1286,7 @@
     {
       "fetch_mode": "live",
       "http_status": 200,
-      "retrieved_at_utc": "2026-07-04T17:00:03Z",
+      "retrieved_at_utc": "2026-07-04T22:00:03Z",
       "raw_feed_guid": "https://www.datacenterdynamics.com/en/news/national-grid-ventures-invests-175bn-in-joulent-for-35-stake-to-develop-large-load-power-solutions-national-grid-ventures-ngv-the-commercial-arm-of-national-grid-has-agreed-to-invest-175-billion-for-a-35-stake-in-us-power-infrastructure-develope/",
       "feed_label": "Data Center Dynamics",
       "category": "Tech/AI/Compute",
@@ -1621,7 +1296,7 @@
       "summary": "Joulent is a portfolio company of Engine No. 1",
       "published_utc": "2026-07-03T15:30:28Z",
       "published_display": "2026-07-03 15:30 UTC",
-      "age_hours": 25.5,
+      "age_hours": 30.5,
       "date_warning": null,
       "alert_types": [
         "funding"
