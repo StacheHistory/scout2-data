@@ -1,15 +1,6 @@
 {
   "runs": [
     {
-      "run_timestamp_utc": "2026-06-20T17:00:03Z",
-      "feeds_attempted": 17,
-      "feeds_failed": 0,
-      "items_live": 108,
-      "alerts_count": 84,
-      "items_quarantined": 163,
-      "archive_file": "archive/scout2_dump_20260620_1700.json"
-    },
-    {
       "run_timestamp_utc": "2026-06-22T12:00:03Z",
       "feeds_attempted": 17,
       "feeds_failed": 0,
@@ -269,6 +260,15 @@
       "alerts_count": 30,
       "items_quarantined": 223,
       "archive_file": "archive/scout2_dump_20260705_2200.json"
+    },
+    {
+      "run_timestamp_utc": "2026-07-06T12:00:03Z",
+      "feeds_attempted": 17,
+      "feeds_failed": 1,
+      "items_live": 59,
+      "alerts_count": 35,
+      "items_quarantined": 198,
+      "archive_file": "archive/scout2_dump_20260706_1200.json"
     }
   ]
 }
